@@ -32,6 +32,51 @@ Everything that remains is CC BY-SA 4.0, and **any derivative of it distributed
 from this repository is licensed CC BY-SA 4.0** in accordance with the
 share-alike terms.
 
+## Original work in this repository: the authored peripheral nerves
+
+**The peripheral nerves in this repository are not derived from BodyParts3D,
+from Z-Anatomy, or from any other source model. They are original schematic
+additions, and they are not imaging-derived anatomy.**
+
+Z-Anatomy has no peripheral nervous system. Its "Nervous system & Sense organs"
+collection is brain, cranial nerve nuclei, spinal ganglia and sense organs; it
+contains no brachial plexus, no median, ulnar or radial nerve, no sciatic,
+femoral, tibial or common fibular nerve. Ten structures in the MVMT map — the
+ten the nerve glides depend on — therefore had no geometry at all.
+
+Those ten are authored here as bezier curves converted to tubes, anchored to
+landmark geometry that does exist in the model. They were written from a
+specification and a practitioner's reading of the anatomy, then checked
+against the real bones. See `tools/nerve_paths.py` for the paths,
+`tools/verify_nerves.py` for the checks, `nerves.json` for the resolved
+coordinates, and `verification/` for the renders.
+
+### What that means for anyone using them
+
+Rendered beside the muscles and bones they will look equally authoritative.
+**They are not.** The rest of the model comes from cadaveric and imaging data
+via BodyParts3D. These are approximations of where a nerve runs, accurate
+enough to show a path and a relationship, and not accurate enough to be
+measured against.
+
+The distinction is carried in the assets themselves, not only in this file:
+
+- every authored object carries `authored = True` and `source = "schematic"`,
+  exported into the glTF as node `extras`
+- they export to **`nerves.glb`**, separately from every model-derived export,
+  and are never merged into one
+- the viewer must render them visually distinct from model-derived geometry,
+  and must show **"Schematic — indicative path only"** whenever a nerve is
+  selected or the nerve layer is on
+
+### Licensing
+
+As original work they are not encumbered by the upstream chain. They are
+released under the same **CC BY-SA 4.0** as the rest of this repository, so
+that a consumer of the combined work has one licence to satisfy rather than
+two. Attribution for them belongs to this project, not to Z-Anatomy or DBCLS,
+and neither upstream should be cited as their source.
+
 ## Full third-party breakdown
 
 Every component named in Z-Anatomy's `License.txt`:

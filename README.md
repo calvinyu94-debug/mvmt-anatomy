@@ -20,7 +20,8 @@ they are kept separate from model-derived geometry at every stage. See
 | [`inventory.csv`](inventory.csv) | 7,184 objects from `Z-Anatomy/Startup.blend` — name, type, collection path, parent, triangle and vertex counts, material, visibility, world-space bounding box and centroid |
 | [`inventory-summary.md`](inventory-summary.md) | The inventory read back: totals, breakdown by collection, heaviest objects, unit scale, and the structural oddities that matter downstream |
 | [`EXCLUSIONS.md`](EXCLUSIONS.md) | Every object that must never enter an export, with the licence reason. Derived from the CSV, meant to be enforced programmatically |
-| [`ATTRIBUTION.md`](ATTRIBUTION.md) | The licence chain, including the third-party components that are **not** CC BY-SA |
+| [`ATTRIBUTION.md`](ATTRIBUTION.md) | The licence chain, including the third-party components that are **not** CC BY-SA, and the original-work status of the authored nerves |
+| [`CLAUDE.md`](CLAUDE.md) | Standing notes for working in this repo: what has bitten us, and what is still owed |
 | [`tools/inventory.py`](tools/inventory.py) | The Blender script that produces `inventory.csv` |
 | [`tools/nerve_paths.py`](tools/nerve_paths.py) | Waypoints for the ten authored nerves, anchored to landmark objects, with the departures from the original specification and why |
 | [`tools/build_nerves.py`](tools/build_nerves.py) | Builds the nerves and exports `nerves.glb` and `nerves.json` |
@@ -49,7 +50,11 @@ they are kept separate from model-derived geometry at every stage. See
   objects, "Scalenes" is three, and most of the file is never referenced at all.
   It is the next job, and it is written against this inventory rather than
   against guesses.
-- No viewer.
+- No viewer — and with it, **the schematic treatment for the authored nerves is
+  still owed**: a distinct material, and a visible "Schematic — indicative path
+  only" label whenever a nerve is selected or the nerve layer is on. The
+  exported `authored`/`source` flags are what that keys off, not a substitute
+  for it. See [CLAUDE.md](CLAUDE.md#open-debts).
 
 ## Reproducing the inventory
 

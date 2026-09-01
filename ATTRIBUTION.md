@@ -62,12 +62,14 @@ measured against.
 The distinction is carried in the assets themselves, not only in this file:
 
 - every authored object carries `authored = True` and `source = "schematic"`,
-  exported into the glTF as node `extras`
+  exported into the glTF as node `extras` — **done**
 - they export to **`nerves.glb`**, separately from every model-derived export,
-  and are never merged into one
+  and are never merged into one — **done**
 - the viewer must render them visually distinct from model-derived geometry,
   and must show **"Schematic — indicative path only"** whenever a nerve is
-  selected or the nerve layer is on
+  selected or the nerve layer is on — **owed, not done.** No viewer exists yet.
+  The two flags above are what it keys off; they are not a substitute for the
+  treatment. Tracked in [CLAUDE.md](CLAUDE.md#open-debts).
 
 ### Licensing
 

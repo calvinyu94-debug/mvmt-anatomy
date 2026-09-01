@@ -1,0 +1,12 @@
+# Source models — never commit, always fetched locally
+*.blend
+*.blend1
+*.fbx
+*.glb
+*.gltf
+*.bin
+source/
+
+# OS noise
+.DS_Store
+Thumbs.db

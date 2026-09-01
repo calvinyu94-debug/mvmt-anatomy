@@ -210,12 +210,13 @@ by the structure map.
 ## What this means for the decimation budget
 
 - The whole-body navigation model has to come down from **4.09 M triangles**.
-- **~479 K triangles (11.7%) leave on licence grounds** before any decimation —
-  brain/CNS, inner and middle ear, kidney. None is referenced by the structure
-  map.
-- A further **~7 K** goes with the label infrastructure, and 951 CURVE and
+- **451,631 triangles (11.02%) leave on licence grounds** before any decimation
+  — brain/CNS, inner and middle ear, kidney; 172 objects in total. None is
+  referenced by the structure map. See [EXCLUSIONS.md](EXCLUSIONS.md) for the
+  object-level list and the counts the pipeline should assert.
+- A further **7,191** goes with the label infrastructure, and 951 CURVE and
   1,660 FONT objects disappear entirely.
-- That leaves roughly **3.6 M triangles** of referenced-or-plausible anatomy as
+- That leaves roughly **3.64 M triangles** of referenced-or-plausible anatomy as
   the real starting point for the two-tier split.
 - The muscular system is 52% of it, and it is where the clinical value is, so
   it should get a disproportionate share of the regional budget rather than an

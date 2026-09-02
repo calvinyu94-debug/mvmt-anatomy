@@ -16,8 +16,9 @@ did not have. Every landmark must:
 
 Then the named relationships a practitioner checks first, each reported
 with its margin in millimetres. Distal/proximal on the forearm is measured
-along the forearm's own axis: the A-pose forearm leans 13 degrees, and in
-world Z the two styloids come out level.
+along the forearm's own axis: the A-pose forearm leans 16 degrees, and in
+world Z the radial styloid comes out 0.7 mm higher than the ulnar. A
+world-axis check fails a correct result there.
 
 Prints VERIFY_LANDMARKS_OK or VERIFY_LANDMARKS_FAIL with a count, and exits
 non-zero on failure.
@@ -112,12 +113,16 @@ def check_depth(recs):
 
     # The two humeral shoulder landmarks lie under the deltoid, which in this
     # model is 24-26 mm thick over them. Reported against the same hull, not
-    # asserted - a fail here would be the model's soft tissue, not a
-    # misplaced point. Decide separately whether the limit should bind them.
+    # asserted. This is a decision, not a waived check: the 20 mm limit is a
+    # proxy for "a hand can find this", and the proxy is wrong where thick
+    # muscle overlies bone - the greater tubercle is palpated through the
+    # deltoid, which is how supraspinatus is reached. A fail here would be
+    # the model's soft tissue, not a misplaced point. (CYU, PR #4.)
     for r in recs:
         if r["hull"] and not r["limb"]:
             info("under-deltoid-" + r["id"],
-                 "hull %s, skin %s (%s) - over the 20 mm limb limit, not asserted"
+                 "hull %s, skin %s (%s) - over the 20 mm limb limit; reported, not "
+                 "asserted: palpable through the deltoid, the limit does not fit here"
                  % (mm(r["hullDepth"]), mm(r["depth"]), r["nearestSkin"]))
 
 

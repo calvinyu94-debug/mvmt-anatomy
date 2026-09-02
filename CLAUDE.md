@@ -59,6 +59,29 @@ the tibial plateau for the joint line, the medial epicondyle for the adductor
 tubercle, the opisthocranion for the inion. Every one is kept in
 `landmarks.json` under `firstPass`.
 
+Those last three are a **different failure class from a wrong coordinate**,
+and it is worth keeping the two apart. A wrong coordinate is a right
+description read off the wrong axis: the fix is a different number, or a rule
+that reads the geometry instead. A wrong structure is a wrong *description* -
+"the plateau centre" is the intercondylar eminence, "the femur's medial
+extreme" is the epicondyle, "the most posterior occipital point" is the
+opisthocranion - and no amount of retargeting fixes it, because the number
+faithfully found what was asked for. The fix is a different description,
+which is what the rules for those three now encode. Keep this pattern for
+anything similar: write the anatomical description as an executable rule on
+the geometry, so the description is what gets reviewed and the landmarks
+regenerate if the model changes.
+
+## World axes are not anatomical axes either
+
+The model is in an A-pose. The forearm leans ~16 degrees, so the radial
+styloid sits **higher** than the ulnar in world Z while being correctly
+distal along the forearm. Any proximal / distal, medial / lateral or
+anterior / posterior assertion must be measured along the relevant anatomical
+axis, not a world axis. A world-axis check can fail a correct result - and,
+just as quietly, pass a wrong one. `verify_landmarks.forearm_axis` is the
+pattern: derive the axis from the bone's own ends, then project.
+
 ## Things the landmark job learned about the bones
 
 - **Five anchor bones carry loose vertices** that belong to no face: sacrum
@@ -97,11 +120,15 @@ tubercle, the opisthocranion for the inion. Every one is kept in
   tubercle reads 22 mm to skin but 4 mm to the muscle hull. It is a
   measuring reference only; nothing from that collection is exported.
 - **The deltoid is 24-26 mm thick over the greater tubercle and the bicipital
-  groove** by both measures, so those two fail the brief's 20 mm limb-depth
-  limit as written. They are reported by `verify_landmarks.py`, not
-  asserted, because the number is the model's soft tissue and not a
-  misplaced point. Whether the limit should bind them is CYU's call, not
-  settled.
+  groove** by both measures, so those two exceed the brief's 20 mm limb-depth
+  limit as written. They are reported by `verify_landmarks.py` under
+  `under-deltoid-…`, not asserted. This is a decision, not a waived check:
+  the 20 mm limit was a proxy for "a hand can find this", and the proxy is
+  wrong where thick muscle overlies bone. The greater tubercle is palpable
+  *through* the deltoid - that is how supraspinatus is reached - so a depth
+  of 24 mm there is the model's soft tissue and says nothing about whether
+  the point is misplaced. The limit stays asserted for the 18 limb landmarks
+  it fits. Decided by CYU on PR #4.
 
 ## The model mirrors by negative scale and shares mesh data
 

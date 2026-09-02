@@ -245,7 +245,10 @@ def knee_joint_line(V, lo, hi):
 # limb    True for the landmarks the 20 mm depth limit applies to: the elbow,
 #         wrist, hand, knee, ankle and foot groups and the greater trochanter.
 #         The two humeral shoulder landmarks are measured against the same
-#         upper-limb hull but reported rather than asserted - see hull below
+#         upper-limb hull but reported rather than asserted: they are
+#         palpated through a deltoid the model makes 24-26 mm thick, and the
+#         limit was a proxy for palpability that does not fit there (CYU,
+#         PR #4). See hull below
 # hull    which limb cross-section the hull depth is measured in, if any
 # paired  False for the six midline landmarks, which carry one resolved point
 # rule    (direction, bounds) for a plain extreme, or a function (V, lo, hi)

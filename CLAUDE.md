@@ -83,6 +83,25 @@ viewport-evaluated mesh, and `sourceTriangles` in the manifest is that count;
 against. Insertion patches are the exception and stay as flat base meshes:
 their 0.5 mm Solidify skin would take 63,843 triangles to 931,484.
 
+## Object names follow TA2 content, not TA2 word order
+
+**Do not match clinical names against this model by substring.** Z-Anatomy's
+names carry the TA2 terms but frequently invert the adjectives — it is
+`Rectus posterior major capitis muscle`, not `Rectus capitis posterior major`
+— and `colli` is used throughout where clinical English uses `cervicis`:
+`Semispinalis colli muscle`, `Splenius colli muscle`, `Multifidus colli
+muscle`, `Longissimus colli muscle`, `Iliocostalis colli muscle`. A substring
+match on clinical names silently drops at least twelve structures, and they
+read as absent from the model rather than as a matching failure — the
+suboccipitals nearly went down as "not modelled" during the structure-map
+join for exactly this reason.
+
+Match on **normalised token sets**: content words only, dropping `muscle`,
+`of`, `part` and the side suffix, with `colli ≡ cervicis`, and compare as
+sets so word order cannot matter. `tools/regions.py` already treats `colli`,
+`cervicis` and `capitis` as one class for region assignment; anything that
+joins names to this model needs the same treatment.
+
 ## Blender process notes
 
 - **Cycles crashes (`ccl::create_mesh` access violation) rendering meshes

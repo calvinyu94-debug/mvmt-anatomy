@@ -14,3 +14,6 @@ Thumbs.db
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Decimation sample tiles regenerate from samples.glb; the region renders are the committed review set
+verification/decimation/

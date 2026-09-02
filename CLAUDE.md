@@ -47,6 +47,62 @@ geometry; the first pass was wrong in eleven places and most of them traced back
 to it. All eleven are recorded in [`tools/nerve_paths.py`](tools/nerve_paths.py)
 and carried into `nerves.json`.
 
+The landmark job hit the same trap harder, and answered it differently: the
+42 landmarks in [`tools/landmark_anchors.py`](tools/landmark_anchors.py) are
+**rules on the bone's real vertices** ("the most lateral femoral vertex",
+"the most anterior vertex in the top 3 mm of the manubrium's midline"), and
+`uvw` is computed from the rule's result, never authored. The brief's
+first-pass `uvw` values landed a median 19 mm from the rule's point, 78 mm at
+worst (the ASIS: the hip bone's box corner is nowhere near the bone), inside
+the bone four times, and on the wrong structure three times - the centre of
+the tibial plateau for the joint line, the medial epicondyle for the adductor
+tubercle, the opisthocranion for the inion. Every one is kept in
+`landmarks.json` under `firstPass`.
+
+## Things the landmark job learned about the bones
+
+- **Five anchor bones carry loose vertices** that belong to no face: sacrum
+  21, scapula 25, fibula 19, atlas 13, occipital 4, manubrium 3. A rule that
+  picks one returns a point on no surface; the sacral base first came out
+  7 mm off the bone that way. `build_landmarks.bvh_for` returns only
+  face-referenced vertices.
+- **`Atlas (C1)` and `Mandible` are single unsided objects.** The brief named
+  `Atlas (C1).l` and `Mandible.l`, which do not exist. Left-side rules on them
+  select `x > 0`; the right is still the mirror.
+- **"Distal" is not "lower Z" on the forearm.** The A-pose forearm leans 16
+  degrees; in world Z the radial styloid is 0.7 mm *higher* than the ulnar,
+  along the forearm's own axis it is 8 mm more distal. Measure proximal /
+  distal along the limb axis. The leg is within 1 degree of vertical.
+- **In the A-pose the hand hangs at the height of the greater trochanter,**
+  7 cm lateral of it. A lower-limb slice selected by centroid height alone
+  picks up the fingers and reported the trochanter 47 mm deep inside the
+  hull; the slice is now bounded at X < 0.21.
+- **The occipital bone has no inion bump.** Its midline profile is smoothly
+  convex, most posterior 3 cm above where the inion belongs. What it has is
+  the kink where the nuchal plane (dy/dz ~0.8) meets the occipital plane
+  (dy/dz ~0.2); the extreme vertex in a direction between those two normals
+  sits on it.
+- **The humerus does not resolve the bicipital groove** at 4,280 triangles:
+  the anterior profile has one prominence (the lesser tubercle) and recedes
+  laterally into the greater. The groove is placed on the anterior surface
+  midway between the two tubercles' extremes.
+- **Collection 9, `Regions of human body`, is a usable skin reference.** It
+  holds 130 named surface patches (Solidify shells) from the frontal region
+  to the sole. Distance to the nearest patch is how far a landmark is under
+  the skin, and the patch's *name* is a check in itself - the lateral
+  malleolus lands nearest `Lateral malleolus.l`, the coracoid nearest
+  `Deltopectoral triangle.l`. Two cautions: the patches hug bony prominences
+  (0.0 mm at the medial epicondyle) and they do not tile the body, so where
+  the patch over a point is absent the reading is an overestimate - Gerdy's
+  tubercle reads 22 mm to skin but 4 mm to the muscle hull. It is a
+  measuring reference only; nothing from that collection is exported.
+- **The deltoid is 24-26 mm thick over the greater tubercle and the bicipital
+  groove** by both measures, so those two fail the brief's 20 mm limb-depth
+  limit as written. They are reported by `verify_landmarks.py`, not
+  asserted, because the number is the model's soft tissue and not a
+  misplaced point. Whether the limit should bind them is CYU's call, not
+  settled.
+
 ## The model mirrors by negative scale and shares mesh data
 
 **971 of the 2,054 kept musculoskeletal objects are the `.l` side of a pair
@@ -152,8 +208,8 @@ treatment.
   `*.glb` are gitignored. Records of what was built (`nerves.json`,
   `verification/*.png`, `inventory.csv`) are committed.
 - Every headless script prints a machine-checkable line and exits non-zero on
-  failure: `INVENTORY_OK`, `NERVES_OK`, `VERIFY_OK`. A missing landmark is a
-  hard error, never a silent skip — a path must never quietly drift onto the
-  wrong geometry.
+  failure: `INVENTORY_OK`, `NERVES_OK`, `VERIFY_OK`, `LANDMARKS_OK`,
+  `VERIFY_LANDMARKS_OK`. A missing landmark is a hard error, never a silent
+  skip — a path must never quietly drift onto the wrong geometry.
 - [`EXCLUSIONS.md`](EXCLUSIONS.md) is authoritative for licence exclusions and
   is meant to be enforced programmatically, not remembered.

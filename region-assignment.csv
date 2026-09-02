@@ -1,0 +1,2055 @@
+sourceName,region,system,side,signal,detail,triangles
+Articular capsule of temporomandibular joint.l,head-jaw,articular,l,hierarchy,Joints of skull,200
+Articular capsule of temporomandibular joint.r,head-jaw,articular,r,hierarchy,Joints of skull,200
+Articular disc of temporomandibular joint.l,head-jaw,articular,l,hierarchy,Joints of skull,288
+Articular disc of temporomandibular joint.r,head-jaw,articular,r,hierarchy,Joints of skull,288
+Lateral temporomandibular ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,24
+Lateral temporomandibular ligament.r,head-jaw,articular,r,hierarchy,Joints of skull,24
+Pterygospinous ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,2
+Pterygospinous ligament.r,head-jaw,articular,r,hierarchy,Joints of skull,2
+Sphenomandibular ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,26
+Sphenomandibular ligament.r,head-jaw,articular,r,hierarchy,Joints of skull,26
+Stylohyoid ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,156
+Stylohyoid ligament.r,head-jaw,articular,r,hierarchy,Joints of skull,156
+Stylomandibular ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,10
+Stylomandibular ligament.r,head-jaw,articular,r,hierarchy,Joints of skull,10
+Bucinator.o1l,head-jaw,insertion,l,parent,Bucinator.l,22
+Bucinator.o1r,head-jaw,insertion,r,parent,Bucinator.r,22
+Bucinator.ol,head-jaw,insertion,l,parent,Bucinator.l,25
+Bucinator.or,head-jaw,insertion,r,parent,Bucinator.r,25
+Depressor anguli oris.ol,head-jaw,insertion,l,parent,Depressor anguli oris.l,17
+Depressor anguli oris.or,head-jaw,insertion,r,parent,Depressor anguli oris.r,17
+Depressor labii inferioris.ol,head-jaw,insertion,l,parent,Depressor labii inferioris.l,23
+Depressor labii inferioris.or,head-jaw,insertion,r,parent,Depressor labii inferioris.r,23
+Depressor septi nasi.ol,head-jaw,insertion,l,parent,Depressor septi nasi.l,25
+Depressor septi nasi.or,head-jaw,insertion,r,parent,Depressor septi nasi.r,25
+Frontalis muscle.ol,head-jaw,insertion,l,parent,Frontalis muscle.l,77
+Frontalis muscle.or,head-jaw,insertion,r,parent,Frontalis muscle.r,77
+Lateral pterygoid muscle.o1l,head-jaw,insertion,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,27
+Lateral pterygoid muscle.o1r,head-jaw,insertion,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,27
+Lateral pterygoid muscle.ol,head-jaw,insertion,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,59
+Lateral pterygoid muscle.or,head-jaw,insertion,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,59
+Levator anguli oris.ol,head-jaw,insertion,l,parent,Levator anguli oris.l,20
+Levator anguli oris.or,head-jaw,insertion,r,parent,Levator anguli oris.r,20
+Levator labii superioris.ol,head-jaw,insertion,l,parent,Levator labii superioris.l,69
+Levator labii superioris.or,head-jaw,insertion,r,parent,Levator labii superioris.r,69
+Levator nasolabialis.ol,head-jaw,insertion,l,parent,Levator nasolabialis.l,24
+Levator nasolabialis.or,head-jaw,insertion,r,parent,Levator nasolabialis.r,24
+Masseter.el,head-jaw,insertion,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,39
+Masseter.er,head-jaw,insertion,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,39
+Masseter.o1l,head-jaw,insertion,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,70
+Masseter.o1r,head-jaw,insertion,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,70
+Masseter.ol,head-jaw,insertion,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,92
+Masseter.or,head-jaw,insertion,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,92
+Medial pterygoid muscle.el,head-jaw,insertion,l,parent,Medial pterygoid muscle.l,21
+Medial pterygoid muscle.er,head-jaw,insertion,r,parent,Medial pterygoid muscle.r,21
+Medial pterygoid muscle.ol,head-jaw,insertion,l,parent,Medial pterygoid muscle.l,45
+Medial pterygoid muscle.or,head-jaw,insertion,r,parent,Medial pterygoid muscle.r,45
+Mentalis muscle.ol,head-jaw,insertion,l,parent,Mentalis muscle.l,4
+Mentalis muscle.or,head-jaw,insertion,r,parent,Mentalis muscle.r,4
+Nasalis muscle.ol,head-jaw,insertion,l,parent,Nasalis muscle.l,34
+Nasalis muscle.or,head-jaw,insertion,r,parent,Nasalis muscle.r,34
+Occipitalis muscle.ol,head-jaw,insertion,l,parent,Occipitalis muscle.l,31
+Occipitalis muscle.or,head-jaw,insertion,r,parent,Occipitalis muscle.r,31
+Orbicularis oris muscle.ol,head-jaw,insertion,l,parent,Orbicularis oris muscle.l,10
+Orbicularis oris muscle.or,head-jaw,insertion,r,parent,Orbicularis oris muscle.r,10
+Orbital part of orbicularis oculi.ol,head-jaw,insertion,l,parent,Orbital part of orbicularis oculi.l,16
+Orbital part of orbicularis oculi.or,head-jaw,insertion,r,parent,Orbital part of orbicularis oculi.r,16
+Procerus muscle.el,head-jaw,insertion,l,parent,Procerus muscle.l,17
+Procerus muscle.ol,head-jaw,insertion,l,parent,Procerus muscle.l,18
+Procerus muscle.or,head-jaw,insertion,r,parent,Procerus muscle.r,18
+Temporalis muscle.el,head-jaw,insertion,l,parent,Temporalis muscle.l,135
+Temporalis muscle.er,head-jaw,insertion,r,parent,Temporalis muscle.r,135
+Temporalis muscle.o1l,head-jaw,insertion,l,parent,Temporalis muscle.l,94
+Temporalis muscle.o1r,head-jaw,insertion,r,parent,Temporalis muscle.r,94
+Temporalis muscle.o2l,head-jaw,insertion,l,parent,Temporalis muscle.l,232
+Temporalis muscle.o2r,head-jaw,insertion,r,parent,Temporalis muscle.r,232
+Temporalis muscle.o3l,head-jaw,insertion,l,parent,Temporalis muscle.l,91
+Temporalis muscle.o3r,head-jaw,insertion,r,parent,Temporalis muscle.r,91
+Temporalis muscle.o4l,head-jaw,insertion,l,parent,Temporalis muscle.l,412
+Temporalis muscle.o4r,head-jaw,insertion,r,parent,Temporalis muscle.r,412
+Zygomaticus major muscle.ol,head-jaw,insertion,l,parent,Zygomaticus major muscle.l,8
+Zygomaticus major muscle.or,head-jaw,insertion,r,parent,Zygomaticus major muscle.r,8
+Zygomaticus minor muscle.ol,head-jaw,insertion,l,parent,Zygomaticus minor muscle.l,10
+Zygomaticus minor muscle.or,head-jaw,insertion,r,parent,Zygomaticus minor muscle.r,10
+Bucinator.l,head-jaw,muscular,l,hierarchy,Muscles of head,884
+Bucinator.r,head-jaw,muscular,r,hierarchy,Muscles of head,884
+Common tendinous ring.l,head-jaw,muscular,l,hierarchy,Muscles of head,362
+Common tendinous ring.r,head-jaw,muscular,r,hierarchy,Muscles of head,362
+Corrugator supercilii.l,head-jaw,muscular,l,hierarchy,Muscles of head,278
+Corrugator supercilii.r,head-jaw,muscular,r,hierarchy,Muscles of head,278
+Deep part of masseter.l,head-jaw,muscular,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,994
+Deep part of masseter.r,head-jaw,muscular,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,994
+Depressor anguli oris.l,head-jaw,muscular,l,hierarchy,Muscles of head,594
+Depressor anguli oris.r,head-jaw,muscular,r,hierarchy,Muscles of head,594
+Depressor labii inferioris.l,head-jaw,muscular,l,hierarchy,Muscles of head,832
+Depressor labii inferioris.r,head-jaw,muscular,r,hierarchy,Muscles of head,832
+Depressor septi nasi.l,head-jaw,muscular,l,hierarchy,Muscles of head,276
+Depressor septi nasi.r,head-jaw,muscular,r,hierarchy,Muscles of head,276
+Epicranial aponeurosis.l,head-jaw,muscular,l,hierarchy,Muscles of head,20118
+Epicranial aponeurosis.r,head-jaw,muscular,r,hierarchy,Muscles of head,20118
+Frontalis muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,5874
+Frontalis muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,5874
+Genioglossus muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,3746
+Genioglossus muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,3746
+Hyoglossus muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1424
+Hyoglossus muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1424
+Inferior head of lateral pterygoid muscle.l,head-jaw,muscular,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,326
+Inferior head of lateral pterygoid muscle.r,head-jaw,muscular,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,326
+Inferior oblique muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1148
+Inferior oblique muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1148
+Inferior rectus muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1736
+Inferior rectus muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1736
+Inferior tarsus.l,head-jaw,muscular,l,hierarchy,Muscles of head,108
+Inferior tarsus.r,head-jaw,muscular,r,hierarchy,Muscles of head,108
+Lateral rectus muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1600
+Lateral rectus muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1600
+Levator anguli oris.l,head-jaw,muscular,l,hierarchy,Muscles of head,330
+Levator anguli oris.r,head-jaw,muscular,r,hierarchy,Muscles of head,330
+Levator labii superioris.l,head-jaw,muscular,l,hierarchy,Muscles of head,540
+Levator labii superioris.r,head-jaw,muscular,r,hierarchy,Muscles of head,540
+Levator nasolabialis.l,head-jaw,muscular,l,hierarchy,Muscles of head,172
+Levator nasolabialis.r,head-jaw,muscular,r,hierarchy,Muscles of head,172
+Levator palpebrae superioris.l,head-jaw,muscular,l,hierarchy,Muscles of head,2152
+Levator palpebrae superioris.r,head-jaw,muscular,r,hierarchy,Muscles of head,2152
+Masseteric fascia.l,head-jaw,muscular,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,398
+Masseteric fascia.r,head-jaw,muscular,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,398
+Medial pterygoid muscle.l,head-jaw,muscular,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,496
+Medial pterygoid muscle.r,head-jaw,muscular,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,496
+Medial rectus muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1252
+Medial rectus muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1252
+Mentalis muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,166
+Mentalis muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,166
+Nasalis muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,704
+Nasalis muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,704
+Occipitalis muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,2602
+Occipitalis muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,2602
+Orbicularis oris muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1880
+Orbicularis oris muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1880
+Orbital part of orbicularis oculi.l,head-jaw,muscular,l,hierarchy,Muscles of head,2390
+Orbital part of orbicularis oculi.r,head-jaw,muscular,r,hierarchy,Muscles of head,2390
+Palpebral part of orbicularis oculi.l,head-jaw,muscular,l,hierarchy,Muscles of head,830
+Palpebral part of orbicularis oculi.r,head-jaw,muscular,r,hierarchy,Muscles of head,830
+Procerus muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,546
+Procerus muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,546
+Risorius muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,592
+Risorius muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,592
+Superficial layer of temporal fascia.l,head-jaw,muscular,l,hierarchy,division:Head,685
+Superficial layer of temporal fascia.r,head-jaw,muscular,r,hierarchy,division:Head,685
+Superficial part of masseter.l,head-jaw,muscular,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,1404
+Superficial part of masseter.r,head-jaw,muscular,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,1404
+Superior head of lateral pterygoid muscle.l,head-jaw,muscular,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,226
+Superior head of lateral pterygoid muscle.r,head-jaw,muscular,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,226
+Superior oblique muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1750
+Superior oblique muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1750
+Superior rectus muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,1284
+Superior rectus muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,1284
+Superior tarsus.l,head-jaw,muscular,l,hierarchy,Muscles of head,178
+Superior tarsus.r,head-jaw,muscular,r,hierarchy,Muscles of head,178
+Temporalis muscle.l,head-jaw,muscular,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,10260
+Temporalis muscle.r,head-jaw,muscular,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,10260
+Temporoparietalis muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,11972
+Temporoparietalis muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,11972
+Trochlea of superior oblique muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,192
+Trochlea of superior oblique muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,192
+Zygomaticus major muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,798
+Zygomaticus major muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,798
+Zygomaticus minor muscle.l,head-jaw,muscular,l,hierarchy,Muscles of head,432
+Zygomaticus minor muscle.r,head-jaw,muscular,r,hierarchy,Muscles of head,432
+Anterior cells of ethmoid bone.l,head-jaw,skeletal,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,136
+Anterior cells of ethmoid bone.r,head-jaw,skeletal,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,136
+Ethmoid bone,head-jaw,skeletal,,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,4215
+Frontal bone,head-jaw,skeletal,,hierarchy,Cranium,7776
+Inferior nasal concha bone.l,head-jaw,skeletal,l,hierarchy,Cranium,476
+Inferior nasal concha bone.r,head-jaw,skeletal,r,hierarchy,Cranium,476
+Lacrimal bone.l,head-jaw,skeletal,l,hierarchy,Cranium,588
+Lacrimal bone.r,head-jaw,skeletal,r,hierarchy,Cranium,588
+Lateral process of nasal septal cartilage.l,head-jaw,skeletal,l,hierarchy,Cranium,347
+Lateral process of nasal septal cartilage.r,head-jaw,skeletal,r,hierarchy,Cranium,347
+Lower canine.l,head-jaw,skeletal,l,hierarchy,Teeth,1276
+Lower canine.r,head-jaw,skeletal,r,hierarchy,Teeth,1276
+Lower first molar tooth.l,head-jaw,skeletal,l,hierarchy,Teeth,4508
+Lower first molar tooth.r,head-jaw,skeletal,r,hierarchy,Teeth,4508
+Lower first premolar.l,head-jaw,skeletal,l,hierarchy,Teeth,1222
+Lower first premolar.r,head-jaw,skeletal,r,hierarchy,Teeth,1222
+Lower lateral incisor.l,head-jaw,skeletal,l,hierarchy,Teeth,1040
+Lower lateral incisor.r,head-jaw,skeletal,r,hierarchy,Teeth,1040
+Lower medial incisor.l,head-jaw,skeletal,l,hierarchy,Teeth,984
+Lower medial incisor.r,head-jaw,skeletal,r,hierarchy,Teeth,984
+Lower second molar tooth.l,head-jaw,skeletal,l,hierarchy,Teeth,1676
+Lower second molar tooth.r,head-jaw,skeletal,r,hierarchy,Teeth,1676
+Lower second premolar.l,head-jaw,skeletal,l,hierarchy,Teeth,1180
+Lower second premolar.r,head-jaw,skeletal,r,hierarchy,Teeth,1180
+Major alar cartilage.l,head-jaw,skeletal,l,hierarchy,Cranium,344
+Major alar cartilage.r,head-jaw,skeletal,r,hierarchy,Cranium,344
+Mandible,head-jaw,skeletal,,hierarchy,Mandible,18838
+Maxilla.l,head-jaw,skeletal,l,hierarchy,Cranium,4798
+Maxilla.r,head-jaw,skeletal,r,hierarchy,Cranium,4798
+Middle cells of ethmoid bone.l,head-jaw,skeletal,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,160
+Middle cells of ethmoid bone.r,head-jaw,skeletal,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,160
+Nasal bone.l,head-jaw,skeletal,l,hierarchy,Cranium,292
+Nasal bone.r,head-jaw,skeletal,r,hierarchy,Cranium,292
+Nasal septal cartilage,head-jaw,skeletal,,hierarchy,Cranium,360
+Occipital bone,head-jaw,skeletal,,hierarchy,Cranium,7531
+Palatine bone.l,head-jaw,skeletal,l,hierarchy,Cranium,1460
+Palatine bone.r,head-jaw,skeletal,r,hierarchy,Cranium,1460
+Parietal bone.l,head-jaw,skeletal,l,hierarchy,Cranium,6886
+Parietal bone.r,head-jaw,skeletal,r,hierarchy,Cranium,6780
+Posterior cells of ethmoid bone.l,head-jaw,skeletal,l,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,216
+Posterior cells of ethmoid bone.r,head-jaw,skeletal,r,override,ethmoid air cells carry no collection tags; the masticator insertions are named as a group,216
+Sinus of frontal bone,head-jaw,skeletal,,hierarchy,Cranium,1504
+Sinus of sphenoid bone,head-jaw,skeletal,,hierarchy,Cranium,384
+Sphenoid bone,head-jaw,skeletal,,hierarchy,Cranium,7308
+Temporal bone.l,head-jaw,skeletal,l,hierarchy,Cranium,14094
+Temporal bone.r,head-jaw,skeletal,r,hierarchy,Cranium,14094
+Upper canine.l,head-jaw,skeletal,l,hierarchy,Cranium,1470
+Upper canine.r,head-jaw,skeletal,r,hierarchy,Cranium,1470
+Upper first molar tooth.l,head-jaw,skeletal,l,hierarchy,Cranium,2176
+Upper first molar tooth.r,head-jaw,skeletal,r,hierarchy,Cranium,2176
+Upper first premolar.l,head-jaw,skeletal,l,hierarchy,Cranium,1684
+Upper first premolar.r,head-jaw,skeletal,r,hierarchy,Cranium,1684
+Upper lateral incisor.l,head-jaw,skeletal,l,hierarchy,Cranium,1454
+Upper lateral incisor.r,head-jaw,skeletal,r,hierarchy,Cranium,1454
+Upper medial incisor.l,head-jaw,skeletal,l,hierarchy,Cranium,1368
+Upper medial incisor.r,head-jaw,skeletal,r,hierarchy,Cranium,1368
+Upper second molar tooth.l,head-jaw,skeletal,l,hierarchy,Cranium,1844
+Upper second molar tooth.r,head-jaw,skeletal,r,hierarchy,Cranium,1844
+Upper second premolar.l,head-jaw,skeletal,l,hierarchy,Cranium,1554
+Upper second premolar.r,head-jaw,skeletal,r,hierarchy,Cranium,1554
+Vomer,head-jaw,skeletal,,hierarchy,Cranium,1022
+Zygomatic bone.l,head-jaw,skeletal,l,hierarchy,Cranium,1328
+Zygomatic bone.r,head-jaw,skeletal,r,hierarchy,Cranium,1328
+Cricopharyngeal ligament.l,cervical,articular,l,hierarchy,Laryngeal joints,3119
+Cricopharyngeal ligament.r,cervical,articular,r,hierarchy,Laryngeal joints,3119
+Intervertebral disc C2-C3,cervical,articular,,override,cervical level,848
+Intervertebral disc C3-C4,cervical,articular,,override,cervical level,688
+Intervertebral disc C4-C5,cervical,articular,,override,cervical level,856
+Intervertebral disc C5-C6,cervical,articular,,override,cervical level,968
+Intervertebral disc C6-C7,cervical,articular,,override,cervical level,834
+Intervertebral disc C7-T1,cervical,articular,,override,cervical level,1168
+Lateral thyrohyoid ligament.l,cervical,articular,l,hierarchy,Laryngeal joints,912
+Lateral thyrohyoid ligament.r,cervical,articular,r,hierarchy,Laryngeal joints,912
+Median cricothyroid ligament,cervical,articular,,hierarchy,Laryngeal joints,1958
+Median thyrohyoid ligament,cervical,articular,,hierarchy,Laryngeal joints,2771
+Nuchal ligament,cervical,articular,,override,named cervical / capital part; hyoid and nuchal ligament,63
+Nucleus pulposus C2-C3,cervical,articular,,override,cervical level,960
+Nucleus pulposus C3-C4,cervical,articular,,override,cervical level,960
+Nucleus pulposus C4-C5,cervical,articular,,override,cervical level,960
+Nucleus pulposus C5-C6,cervical,articular,,override,cervical level,960
+Nucleus pulposus C6-C7,cervical,articular,,override,cervical level,960
+Nucleus pulposus C7-T1,cervical,articular,,override,cervical level,960
+Quadrangular membrane.l,cervical,articular,l,hierarchy,Laryngeal joints,4592
+Quadrangular membrane.r,cervical,articular,r,hierarchy,Laryngeal joints,4592
+Anterior belly of digastric muscle.el,cervical,insertion,l,parent,Anterior belly of digastric muscle.l,15
+Anterior belly of digastric muscle.er,cervical,insertion,r,parent,Anterior belly of digastric muscle.r,15
+Geniohyoid muscle.el,cervical,insertion,l,parent,Geniohyoid muscle.l,39
+Geniohyoid muscle.er,cervical,insertion,r,parent,Geniohyoid muscle.r,39
+Geniohyoid muscle.ol,cervical,insertion,l,parent,Geniohyoid muscle.l,7
+Geniohyoid muscle.or,cervical,insertion,r,parent,Geniohyoid muscle.r,7
+Iliocostalis colli muscle.el,cervical,insertion,l,parent,Iliocostalis colli muscle.r,22
+Iliocostalis colli muscle.er,cervical,insertion,r,parent,Iliocostalis colli muscle.r,22
+Levator scapulae.el,cervical,insertion,l,parent,Levator scapulae.l,897
+Levator scapulae.er,cervical,insertion,r,parent,Levator scapulae.r,897
+Levator scapulae.o1l,cervical,insertion,l,parent,Levator scapulae.l,8
+Levator scapulae.o1r,cervical,insertion,r,parent,Levator scapulae.r,8
+Levator scapulae.o2l,cervical,insertion,l,parent,Levator scapulae.l,30
+Levator scapulae.o2r,cervical,insertion,r,parent,Levator scapulae.r,30
+Levator scapulae.o3l,cervical,insertion,l,parent,Levator scapulae.l,31
+Levator scapulae.o3r,cervical,insertion,r,parent,Levator scapulae.r,31
+Levator scapulae.ol,cervical,insertion,l,parent,Levator scapulae.l,14
+Levator scapulae.or,cervical,insertion,r,parent,Levator scapulae.r,14
+Longus capitis muscle.ol,cervical,insertion,l,parent,Longus capitis muscle.l,8
+Longus capitis muscle.or,cervical,insertion,r,parent,Longus capitis muscle.r,8
+Mylohyoid muscle.ol,cervical,insertion,l,parent,Mylohyoid muscle.l,25
+Mylohyoid muscle.or,cervical,insertion,r,parent,Mylohyoid muscle.r,25
+Obliquus inferior capitis muscle.el,cervical,insertion,l,parent,Obliquus inferior capitis muscle.l,26
+Obliquus inferior capitis muscle.er,cervical,insertion,r,parent,Obliquus inferior capitis muscle.r,26
+Obliquus inferior capitis muscle.ol,cervical,insertion,l,parent,Obliquus inferior capitis muscle.l,14
+Obliquus inferior capitis muscle.or,cervical,insertion,r,parent,Obliquus inferior capitis muscle.r,14
+Obliquus superior capitis muscle.ol,cervical,insertion,l,parent,Obliquus superior capitis muscle.l,38
+Obliquus superior capitis muscle.or,cervical,insertion,r,parent,Obliquus superior capitis muscle.r,38
+Omohyoid muscle.el,cervical,insertion,l,parent,Omohyoid muscle.l,15
+Omohyoid muscle.er,cervical,insertion,r,parent,Omohyoid muscle.r,15
+Omohyoid muscle.ol,cervical,insertion,l,parent,Omohyoid muscle.l,73
+Omohyoid muscle.or,cervical,insertion,r,parent,Omohyoid muscle.r,73
+Rectus anterior capitis muscle.el,cervical,insertion,l,parent,Rectus anterior capitis muscle.l,21
+Rectus anterior capitis muscle.er,cervical,insertion,r,parent,Rectus anterior capitis muscle.r,21
+Rectus anterior capitis muscle.ol,cervical,insertion,l,parent,Rectus anterior capitis muscle.l,7
+Rectus anterior capitis muscle.or,cervical,insertion,r,parent,Rectus anterior capitis muscle.r,7
+Rectus lateralis capitis muscle.ol,cervical,insertion,l,parent,Rectus lateralis capitis muscle.l,31
+Rectus lateralis capitis muscle.or,cervical,insertion,r,parent,Rectus lateralis capitis muscle.r,31
+Rectus posterior major capitis muscle.el,cervical,insertion,l,parent,Rectus posterior major capitis muscle.l,19
+Rectus posterior major capitis muscle.er,cervical,insertion,r,parent,Rectus posterior major capitis muscle.r,19
+Rectus posterior major capitis muscle.ol,cervical,insertion,l,parent,Rectus posterior major capitis muscle.l,17
+Rectus posterior major capitis muscle.or,cervical,insertion,r,parent,Rectus posterior major capitis muscle.r,17
+Rectus posterior minor capitis muscle.el,cervical,insertion,l,parent,Rectus posterior minor capitis muscle.l,33
+Rectus posterior minor capitis muscle.er,cervical,insertion,r,parent,Rectus posterior minor capitis muscle.r,33
+Rectus posterior minor capitis muscle.ol,cervical,insertion,l,parent,Rectus posterior minor capitis muscle.l,17
+Rectus posterior minor capitis muscle.or,cervical,insertion,r,parent,Rectus posterior minor capitis muscle.r,17
+Scalenus anterior muscle.e1l,cervical,insertion,l,parent,Scalenus anterior muscle.l,18
+Scalenus anterior muscle.e1r,cervical,insertion,r,parent,Scalenus anterior muscle.r,18
+Scalenus anterior muscle.e2l,cervical,insertion,l,parent,Scalenus anterior muscle.l,10
+Scalenus anterior muscle.e2r,cervical,insertion,r,parent,Scalenus anterior muscle.r,10
+Scalenus anterior muscle.el,cervical,insertion,l,parent,Scalenus anterior muscle.l,24
+Scalenus anterior muscle.er,cervical,insertion,r,parent,Scalenus anterior muscle.r,24
+Scalenus anterior muscle.ol,cervical,insertion,l,parent,Scalenus anterior muscle.l,78
+Scalenus anterior muscle.or,cervical,insertion,r,parent,Scalenus anterior muscle.r,78
+Scalenus medius muscle.e1l,cervical,insertion,l,parent,Scalenus medius muscle.l,27
+Scalenus medius muscle.e1r,cervical,insertion,r,parent,Scalenus medius muscle.r,27
+Scalenus medius muscle.el,cervical,insertion,l,parent,Scalenus medius muscle.l,39
+Scalenus medius muscle.er,cervical,insertion,r,parent,Scalenus medius muscle.r,39
+Scalenus medius muscle.ol,cervical,insertion,l,parent,Scalenus medius muscle.l,102
+Scalenus medius muscle.or,cervical,insertion,r,parent,Scalenus medius muscle.r,102
+Scalenus posterior muscle.el,cervical,insertion,l,parent,Scalenus posterior muscle.l,40
+Scalenus posterior muscle.er,cervical,insertion,r,parent,Scalenus posterior muscle.r,40
+Spinalis capitis muscle.el,cervical,insertion,l,parent,Spinalis capitis muscle.l,25
+Spinalis capitis muscle.er,cervical,insertion,r,parent,Spinalis capitis muscle.r,25
+Splenius colli muscle.e1l,cervical,insertion,l,parent,Splenius colli muscle.l,46
+Splenius colli muscle.e1r,cervical,insertion,r,parent,Splenius colli muscle.r,46
+Splenius colli muscle.el,cervical,insertion,l,parent,Splenius colli muscle.l,17
+Splenius colli muscle.er,cervical,insertion,r,parent,Splenius colli muscle.r,17
+Sternocleidomastoid muscle.el,cervical,insertion,l,parent,Sternocleidomastoid muscle.l,210
+Sternocleidomastoid muscle.er,cervical,insertion,r,parent,Sternocleidomastoid muscle.r,210
+Sternocleidomastoid muscle.o1l,cervical,insertion,l,parent,Sternocleidomastoid muscle.l,28
+Sternocleidomastoid muscle.o1r,cervical,insertion,r,parent,Sternocleidomastoid muscle.r,28
+Sternocleidomastoid muscle.ol,cervical,insertion,l,parent,Sternocleidomastoid muscle.l,80
+Sternocleidomastoid muscle.or,cervical,insertion,r,parent,Sternocleidomastoid muscle.r,80
+Sternohyoid muscle.el,cervical,insertion,l,parent,Sternohyoid muscle.l,33
+Sternohyoid muscle.er,cervical,insertion,r,parent,Sternohyoid muscle.r,33
+Sternohyoid muscle.ol,cervical,insertion,l,parent,Sternohyoid muscle.l,113
+Sternohyoid muscle.or,cervical,insertion,r,parent,Sternohyoid muscle.r,113
+Thyrohyoid muscle.el,cervical,insertion,l,parent,Thyrohyoid muscle.l,80
+Thyrohyoid muscle.er,cervical,insertion,r,parent,Thyrohyoid muscle.r,80
+Thyrohyoid muscle.ol,cervical,insertion,l,parent,Thyrohyoid muscle.l,34
+Thyrohyoid muscle.or,cervical,insertion,r,parent,Thyrohyoid muscle.r,34
+Anterior belly of digastric muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,392
+Anterior belly of digastric muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,392
+Ary-epiglottic part of oblique arytenoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1022
+Ary-epiglottic part of oblique arytenoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1022
+External part of thyro-arytenoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,2236
+External part of thyro-arytenoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,2236
+Geniohyoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,530
+Geniohyoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,530
+Iliocostalis colli muscle,cervical,muscular,,override,named cervical / capital part; hyoid and nuchal ligament,2050
+Iliocostalis colli muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,2050
+Inferior pharyngeal constrictor.l,cervical,muscular,l,hierarchy,Muscles of neck,3696
+Inferior pharyngeal constrictor.r,cervical,muscular,r,hierarchy,Muscles of neck,3696
+Intermediate tendon of digastric muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,228
+Intermediate tendon of digastric muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,228
+Interspinales colli muscles.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,444
+Interspinales colli muscles.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,444
+Lateral crico-arytenoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1624
+Lateral crico-arytenoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1624
+Levator scapulae.l,cervical,muscular,l,hierarchy,division:Neck,3082
+Levator scapulae.r,cervical,muscular,r,hierarchy,division:Neck,3082
+Longissimus capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,1574
+Longissimus capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,1574
+Longissimus colli muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,1826
+Longissimus colli muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,1826
+Longus capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,1980
+Longus capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,1980
+Longus colli muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,6294
+Longus colli muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,6294
+Middle pharyngeal constrictor.l,cervical,muscular,l,hierarchy,Muscles of neck,2948
+Middle pharyngeal constrictor.r,cervical,muscular,r,hierarchy,Muscles of neck,2948
+Multifidus colli muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,1390
+Multifidus colli muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,1390
+Mylohyoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1122
+Mylohyoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1122
+Oblique part of cricothyroid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,2060
+Oblique part of cricothyroid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,2060
+Obliquus inferior capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,540
+Obliquus inferior capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,540
+Obliquus superior capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,654
+Obliquus superior capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,654
+Omohyoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,2706
+Omohyoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,2706
+Palatopharyngeus muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,15282
+Palatopharyngeus muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,15282
+Platysma.l,cervical,muscular,l,hierarchy,Muscles of neck,6548
+Platysma.r,cervical,muscular,r,hierarchy,Muscles of neck,6548
+Posterior belly of digastric muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1276
+Posterior belly of digastric muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1276
+Posterior crico-arytenoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1812
+Posterior crico-arytenoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1812
+Rectus anterior capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,396
+Rectus anterior capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,396
+Rectus lateralis capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,360
+Rectus lateralis capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,360
+Rectus posterior major capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,788
+Rectus posterior major capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,788
+Rectus posterior minor capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,432
+Rectus posterior minor capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,432
+Rotatores.l,cervical,muscular,l,hierarchy,division:Neck,6518
+Rotatores.r,cervical,muscular,r,hierarchy,division:Neck,6518
+Scalenus anterior muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1386
+Scalenus anterior muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1386
+Scalenus medius muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,2078
+Scalenus medius muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,2078
+Scalenus posterior muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1326
+Scalenus posterior muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1326
+Semispinalis colli muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,2584
+Semispinalis colli muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,2584
+Spinalis capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,2560
+Spinalis capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,2560
+Spinalis colli muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,596
+Spinalis colli muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,596
+Splenius capitis muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,5262
+Splenius capitis muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,5262
+Splenius colli muscle.l,cervical,muscular,l,override,named cervical / capital part; hyoid and nuchal ligament,4314
+Splenius colli muscle.r,cervical,muscular,r,override,named cervical / capital part; hyoid and nuchal ligament,4314
+Sternocleidomastoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,4952
+Sternocleidomastoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,4952
+Sternohyoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1394
+Sternohyoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1394
+Sternothyroid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1088
+Sternothyroid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1088
+Straight part of cricothyroid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,1180
+Straight part of cricothyroid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,1180
+Stylohyoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,694
+Stylohyoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,694
+Stylopharyngeus muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,9478
+Stylopharyngeus muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,9478
+Superficial investing cervical fascia.l,cervical,muscular,l,hierarchy,division:Neck,3336
+Superficial investing cervical fascia.r,cervical,muscular,r,hierarchy,division:Neck,3336
+Superior pharyngeal constrictor.l,cervical,muscular,l,hierarchy,Muscles of neck,5334
+Superior pharyngeal constrictor.r,cervical,muscular,r,hierarchy,Muscles of neck,5334
+Thyro-epiglottic part of thyro-arytenoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,3110
+Thyro-epiglottic part of thyro-arytenoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,3110
+Thyrohyoid muscle.l,cervical,muscular,l,hierarchy,Muscles of neck,700
+Thyrohyoid muscle.r,cervical,muscular,r,hierarchy,Muscles of neck,700
+Transverse arytenoid muscle,cervical,muscular,,hierarchy,Muscles of neck,1822
+Arytenoid cartilage.l,cervical,skeletal,l,hierarchy,division:Neck,640
+Arytenoid cartilage.r,cervical,skeletal,r,hierarchy,division:Neck,640
+Atlas (C1),cervical,skeletal,,hierarchy,Cervical vertebrae,2194
+Axis (C2),cervical,skeletal,,hierarchy,Cervical vertebrae,2334
+Corniculate cartilage.l,cervical,skeletal,l,hierarchy,division:Neck,136
+Corniculate cartilage.r,cervical,skeletal,r,hierarchy,division:Neck,136
+Cricoid cartilage,cervical,skeletal,,hierarchy,division:Neck,1882
+Hyoid bone,cervical,skeletal,,override,named cervical / capital part; hyoid and nuchal ligament,1324
+Thyroid cartilage,cervical,skeletal,,hierarchy,division:Neck,4488
+Vertebra C3,cervical,skeletal,,hierarchy,Cervical vertebrae,2440
+Vertebra C4,cervical,skeletal,,hierarchy,Cervical vertebrae,1940
+Vertebra C5,cervical,skeletal,,hierarchy,Cervical vertebrae,2336
+Vertebra C6,cervical,skeletal,,hierarchy,Cervical vertebrae,2304
+Vertebra C7,cervical,skeletal,,hierarchy,Cervical vertebrae,2164
+Acromioclavicular ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,8
+Acromioclavicular ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,8
+Anterior sternoclavicular ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,8
+Anterior sternoclavicular ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,8
+Articular capsule of acromioclavicular joint.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,32
+Articular capsule of acromioclavicular joint.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,32
+Articular capsule of glenohumeral joint.l,shoulder,articular,l,hierarchy,Glenohumeral joint,367
+Articular capsule of glenohumeral joint.r,shoulder,articular,r,hierarchy,Glenohumeral joint,367
+Articular capsule of sternoclavicular joint.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,28
+Articular capsule of sternoclavicular joint.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,28
+Articular disc of acromioclavicular joint.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,4
+Articular disc of acromioclavicular joint.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,4
+Articular disc of sternoclavicular joint.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,4
+Articular disc of sternoclavicular joint.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,4
+Conoid ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,4
+Conoid ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,4
+Coraco-acromial ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,2
+Coraco-acromial ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,2
+Coracohumeral ligament.l,shoulder,articular,l,hierarchy,Glenohumeral joint,16
+Coracohumeral ligament.r,shoulder,articular,r,hierarchy,Glenohumeral joint,16
+Costoclavicular ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,2
+Costoclavicular ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,2
+Glenoid labrum.l,shoulder,articular,l,hierarchy,Glenohumeral joint,214
+Glenoid labrum.r,shoulder,articular,r,hierarchy,Glenohumeral joint,214
+Inferior glenohumeral ligament.l,shoulder,articular,l,hierarchy,Glenohumeral joint,29
+Inferior glenohumeral ligament.r,shoulder,articular,r,hierarchy,Glenohumeral joint,29
+Inferior transverse scapular ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,2
+Inferior transverse scapular ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,2
+Interclavicular ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,6
+Interclavicular ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,6
+Middle glenohumeral ligament.l,shoulder,articular,l,hierarchy,Glenohumeral joint,25
+Middle glenohumeral ligament.r,shoulder,articular,r,hierarchy,Glenohumeral joint,25
+Posterior sternoclavicular ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,12
+Posterior sternoclavicular ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,12
+Superior glenohumeral ligament.l,shoulder,articular,l,hierarchy,Glenohumeral joint,15
+Superior glenohumeral ligament.r,shoulder,articular,r,hierarchy,Glenohumeral joint,15
+Superior transverse scapular ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,2
+Superior transverse scapular ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,2
+Transverse humeral ligament.l,shoulder,articular,l,hierarchy,Glenohumeral joint,12
+Transverse humeral ligament.r,shoulder,articular,r,hierarchy,Glenohumeral joint,12
+Trapezoid ligament.l,shoulder,articular,l,hierarchy,Joints of pectoral girdle,4
+Trapezoid ligament.r,shoulder,articular,r,hierarchy,Joints of pectoral girdle,4
+(Abdominal part of pectoralis major muscle).ol,shoulder,insertion,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,87
+(Abdominal part of pectoralis major muscle).or,shoulder,insertion,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,87
+Acromial part of deltoid muscle.ol,shoulder,insertion,l,parent,Acromial part of deltoid muscle.l,510
+Acromial part of deltoid muscle.or,shoulder,insertion,r,parent,Acromial part of deltoid muscle.r,510
+Ascending part of trapezius muscle.el,shoulder,insertion,l,parent,Ascending part of trapezius muscle.l,21
+Ascending part of trapezius muscle.er,shoulder,insertion,r,parent,Ascending part of trapezius muscle.r,21
+Ascending part of trapezius muscle.ol,shoulder,insertion,l,parent,Ascending part of trapezius muscle.l,61
+Ascending part of trapezius muscle.or,shoulder,insertion,r,parent,Ascending part of trapezius muscle.r,61
+Clavicular part of deltoid muscle.ol,shoulder,insertion,l,parent,Clavicular part of deltoid muscle.l,125
+Clavicular part of deltoid muscle.or,shoulder,insertion,r,parent,Clavicular part of deltoid muscle.r,125
+Coracobrachialis muscle.ol,shoulder,insertion,l,parent,Coracobrachialis muscle.l,209
+Coracobrachialis muscle.or,shoulder,insertion,r,parent,Coracobrachialis muscle.r,209
+Deltoid muscle.el,shoulder,insertion,l,centroid,z=1.289 |x|=0.207 y=+0.027,35
+Deltoid muscle.er,shoulder,insertion,r,centroid,z=1.289 |x|=0.207 y=+0.027,35
+Descending part of trapezius muscle.ol,shoulder,insertion,l,parent,Descending part of trapezius muscle.l,247
+Descending part of trapezius muscle.or,shoulder,insertion,r,parent,Descending part of trapezius muscle.r,247
+Infraspinatus muscle.el,shoulder,insertion,l,parent,Infraspinatus muscle.l,79
+Infraspinatus muscle.er,shoulder,insertion,r,parent,Infraspinatus muscle.r,79
+Infraspinatus muscle.ol,shoulder,insertion,l,parent,Infraspinatus muscle.l,1027
+Infraspinatus muscle.or,shoulder,insertion,r,parent,Infraspinatus muscle.r,1027
+Latissimus dorsi muscle.el,shoulder,insertion,l,parent,Latissimus dorsi muscle.l,234
+Latissimus dorsi muscle.er,shoulder,insertion,r,parent,Latissimus dorsi muscle.r,234
+Latissimus dorsi muscle.ol,shoulder,insertion,l,parent,Latissimus dorsi muscle.l,67
+Latissimus dorsi muscle.or,shoulder,insertion,r,parent,Latissimus dorsi muscle.r,67
+Pectoralis major muscle.el,shoulder,insertion,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,47
+Pectoralis major muscle.er,shoulder,insertion,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,47
+Pectoralis major muscle.ol,shoulder,insertion,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,108
+Pectoralis major muscle.or,shoulder,insertion,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,108
+Pectoralis minor muscle.e1l,shoulder,insertion,l,parent,Pectoralis minor muscle.l,187
+Pectoralis minor muscle.e1r,shoulder,insertion,r,parent,Pectoralis minor muscle.r,187
+Pectoralis minor muscle.e2l,shoulder,insertion,l,parent,Pectoralis minor muscle.l,137
+Pectoralis minor muscle.e2r,shoulder,insertion,r,parent,Pectoralis minor muscle.r,137
+Pectoralis minor muscle.el,shoulder,insertion,l,parent,Pectoralis minor muscle.l,107
+Pectoralis minor muscle.er,shoulder,insertion,r,parent,Pectoralis minor muscle.r,107
+Pectoralis minor muscle.ol,shoulder,insertion,l,parent,Pectoralis minor muscle.l,361
+Pectoralis minor muscle.or,shoulder,insertion,r,parent,Pectoralis minor muscle.r,361
+Rhomboid major muscle.el,shoulder,insertion,l,parent,Rhomboid major muscle.l,1238
+Rhomboid major muscle.er,shoulder,insertion,r,parent,Rhomboid major muscle.r,1238
+Rhomboid minor muscle.el,shoulder,insertion,l,parent,Rhomboid minor muscle.l,354
+Rhomboid minor muscle.er,shoulder,insertion,r,parent,Rhomboid minor muscle.r,354
+Scapular spinal part of deltoid muscle.ol,shoulder,insertion,l,parent,Scapular spinal part of deltoid muscle.l,872
+Scapular spinal part of deltoid muscle.or,shoulder,insertion,r,parent,Scapular spinal part of deltoid muscle.r,872
+Serratus anterior muscle.e1l,shoulder,insertion,l,parent,Serratus anterior muscle.l,143
+Serratus anterior muscle.e2l,shoulder,insertion,l,parent,Serratus anterior muscle.l,194
+Serratus anterior muscle.e2r,shoulder,insertion,r,parent,Serratus anterior muscle.r,194
+Serratus anterior muscle.e3l,shoulder,insertion,l,parent,Serratus anterior muscle.l,315
+Serratus anterior muscle.e3r,shoulder,insertion,r,parent,Serratus anterior muscle.r,315
+Serratus anterior muscle.e4l,shoulder,insertion,l,parent,Serratus anterior muscle.l,125
+Serratus anterior muscle.e4r,shoulder,insertion,r,parent,Serratus anterior muscle.r,125
+Serratus anterior muscle.e5l,shoulder,insertion,l,parent,Serratus anterior muscle.l,145
+Serratus anterior muscle.e5r,shoulder,insertion,r,parent,Serratus anterior muscle.r,145
+Serratus anterior muscle.e6l,shoulder,insertion,l,parent,Serratus anterior muscle.l,210
+Serratus anterior muscle.e6r,shoulder,insertion,r,parent,Serratus anterior muscle.r,210
+Serratus anterior muscle.e7l,shoulder,insertion,l,parent,Serratus anterior muscle.l,133
+Serratus anterior muscle.e7r,shoulder,insertion,r,parent,Serratus anterior muscle.r,133
+Serratus anterior muscle.e8l,shoulder,insertion,l,parent,Serratus anterior muscle.l,98
+Serratus anterior muscle.el,shoulder,insertion,l,parent,Serratus anterior muscle.l,128
+Serratus anterior muscle.er,shoulder,insertion,r,parent,Serratus anterior muscle.r,128
+Serratus anterior muscle.ol,shoulder,insertion,l,parent,Serratus anterior muscle.l,306
+Serratus anterior muscle.or,shoulder,insertion,r,parent,Serratus anterior muscle.r,306
+Sternocostal head of pectoralis major muscle.e1l,shoulder,insertion,l,parent,Sternocostal head of pectoralis major muscle.l,336
+Sternocostal head of pectoralis major muscle.e1r,shoulder,insertion,r,parent,Sternocostal head of pectoralis major muscle.r,336
+Sternocostal head of pectoralis major muscle.e2l,shoulder,insertion,l,parent,Sternocostal head of pectoralis major muscle.l,164
+Sternocostal head of pectoralis major muscle.e2r,shoulder,insertion,r,parent,Sternocostal head of pectoralis major muscle.r,164
+Sternocostal head of pectoralis major muscle.el,shoulder,insertion,l,parent,Sternocostal head of pectoralis major muscle.l,466
+Sternocostal head of pectoralis major muscle.er,shoulder,insertion,r,parent,Sternocostal head of pectoralis major muscle.r,466
+Subclavius muscle.ol,shoulder,insertion,l,parent,Subclavius muscle.l,47
+Subclavius muscle.or,shoulder,insertion,r,parent,Subclavius muscle.r,47
+Subscapularis muscle.el,shoulder,insertion,l,parent,Subscapularis muscle.l,28
+Subscapularis muscle.er,shoulder,insertion,r,parent,Subscapularis muscle.r,28
+Subscapularis muscle.ol,shoulder,insertion,l,parent,Subscapularis muscle.l,1319
+Subscapularis muscle.or,shoulder,insertion,r,parent,Subscapularis muscle.r,1319
+Supraspinatus muscle.el,shoulder,insertion,l,parent,Supraspinatus muscle.l,89
+Supraspinatus muscle.er,shoulder,insertion,r,parent,Supraspinatus muscle.r,89
+Supraspinatus muscle.ol,shoulder,insertion,l,parent,Supraspinatus muscle.l,598
+Supraspinatus muscle.or,shoulder,insertion,r,parent,Supraspinatus muscle.r,598
+Teres major muscle.ol,shoulder,insertion,l,parent,Teres major muscle.l,353
+Teres major muscle.or,shoulder,insertion,r,parent,Teres major muscle.r,353
+Teres minor muscle.el,shoulder,insertion,l,parent,Teres minor muscle.l,127
+Teres minor muscle.er,shoulder,insertion,r,parent,Teres minor muscle.r,127
+Teres minor muscle.ol,shoulder,insertion,l,parent,Teres minor muscle.l,408
+Teres minor muscle.or,shoulder,insertion,r,parent,Teres minor muscle.r,408
+Transverse part of trapezius muscle.ol,shoulder,insertion,l,parent,Transverse part of trapezius muscle.l,214
+Transverse part of trapezius muscle.or,shoulder,insertion,r,parent,Transverse part of trapezius muscle.r,214
+(Abdominal part of pectoralis major muscle).l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1508
+(Abdominal part of pectoralis major muscle).r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1508
+Acromial part of deltoid muscle.l,shoulder,muscular,l,hierarchy,Scapulohumeral muscles,2964
+Acromial part of deltoid muscle.r,shoulder,muscular,r,hierarchy,Scapulohumeral muscles,2964
+Ascending part of trapezius muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4596
+Ascending part of trapezius muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4596
+Clavicular head of pectoralis major muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,850
+Clavicular head of pectoralis major muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,850
+Clavicular part of deltoid muscle.l,shoulder,muscular,l,hierarchy,Scapulohumeral muscles,2902
+Clavicular part of deltoid muscle.r,shoulder,muscular,r,hierarchy,Scapulohumeral muscles,2902
+Clavipectoral fascia.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1280
+Clavipectoral fascia.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1280
+Coracobrachial bursa.l,shoulder,muscular,l,centroid,z=1.377 |x|=0.148 y=+0.011,352
+Coracobrachial bursa.r,shoulder,muscular,r,centroid,z=1.377 |x|=0.148 y=+0.011,352
+Coracobrachialis muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1160
+Coracobrachialis muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1160
+Deltoid fascia.l,shoulder,muscular,l,centroid,z=1.346 |x|=0.163 y=+0.044,3541
+Deltoid fascia.r,shoulder,muscular,r,centroid,z=1.346 |x|=0.163 y=+0.044,3541
+Descending part of trapezius muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,6760
+Descending part of trapezius muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,6760
+Infraspinatus muscle.l,shoulder,muscular,l,hierarchy,Scapulohumeral muscles,3166
+Infraspinatus muscle.r,shoulder,muscular,r,hierarchy,Scapulohumeral muscles,3166
+Latissimus dorsi muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,21580
+Latissimus dorsi muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,21580
+Pectoral fascia.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,2709
+Pectoral fascia.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,2709
+Pectoralis minor muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4142
+Pectoralis minor muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4142
+Rhomboid major muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4800
+Rhomboid major muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4800
+Rhomboid minor muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1494
+Rhomboid minor muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1494
+Scapular spinal part of deltoid muscle.l,shoulder,muscular,l,hierarchy,Scapulohumeral muscles,4378
+Scapular spinal part of deltoid muscle.r,shoulder,muscular,r,hierarchy,Scapulohumeral muscles,4378
+Serratus anterior muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,25240
+Serratus anterior muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,25240
+Sternocostal head of pectoralis major muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,3222
+Sternocostal head of pectoralis major muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,3222
+Subacromial bursa.l,shoulder,muscular,l,centroid,z=1.406 |x|=0.161 y=+0.033,352
+Subacromial bursa.r,shoulder,muscular,r,centroid,z=1.406 |x|=0.161 y=+0.033,352
+Subclavius muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,794
+Subclavius muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,794
+Subcutaneous acromial bursa.l,shoulder,muscular,l,centroid,z=1.415 |x|=0.161 y=+0.044,352
+Subcutaneous acromial bursa.r,shoulder,muscular,r,centroid,z=1.415 |x|=0.161 y=+0.044,352
+Subdeltoid bursa.l,shoulder,muscular,l,centroid,z=1.392 |x|=0.191 y=+0.021,352
+Subdeltoid bursa.r,shoulder,muscular,r,centroid,z=1.392 |x|=0.191 y=+0.021,352
+Subscapularis muscle.l,shoulder,muscular,l,hierarchy,Scapulohumeral muscles,2954
+Subscapularis muscle.r,shoulder,muscular,r,hierarchy,Scapulohumeral muscles,2954
+Subtendinous bursa of infraspinatus muscle.l,shoulder,muscular,l,centroid,z=1.389 |x|=0.181 y=+0.043,352
+Subtendinous bursa of infraspinatus muscle.r,shoulder,muscular,r,centroid,z=1.389 |x|=0.181 y=+0.043,352
+Subtendinous bursa of teres major muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,352
+Subtendinous bursa of teres major muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,352
+Subtendinous bursa of trapezius muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,352
+Subtendinous bursa of trapezius muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,352
+Supraspinatus muscle.l,shoulder,muscular,l,hierarchy,Scapulohumeral muscles,1430
+Supraspinatus muscle.r,shoulder,muscular,r,hierarchy,Scapulohumeral muscles,1430
+Teres major muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1154
+Teres major muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,1154
+Teres minor muscle.l,shoulder,muscular,l,hierarchy,Scapulohumeral muscles,1522
+Teres minor muscle.r,shoulder,muscular,r,hierarchy,Scapulohumeral muscles,1522
+Transverse part of trapezius muscle.l,shoulder,muscular,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,2992
+Transverse part of trapezius muscle.r,shoulder,muscular,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,2992
+Clavicle.l,shoulder,skeletal,l,hierarchy,Bones of pectoral girdle,1550
+Clavicle.r,shoulder,skeletal,r,hierarchy,Bones of pectoral girdle,1550
+Humerus.l,shoulder,skeletal,l,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4280
+Humerus.r,shoulder,skeletal,r,override,scapular / glenohumeral muscles and the humerus: the shoulder to a clinician,4280
+Scapula.l,shoulder,skeletal,l,hierarchy,Bones of pectoral girdle,25326
+Scapula.r,shoulder,skeletal,r,hierarchy,Bones of pectoral girdle,25326
+Anterior longitudinal ligament,thoracic,articular,,override,single objects spanning the whole column; placed at their middle,560
+Costotransverse ligament.l,thoracic,articular,l,hierarchy,Thoracic joints,88
+Costotransverse ligament.r,thoracic,articular,r,hierarchy,Thoracic joints,88
+External intercostal membrane.l,thoracic,articular,l,override,act on the ribs,748
+External intercostal membrane.r,thoracic,articular,r,override,act on the ribs,748
+Internal intercostal membrane.l,thoracic,articular,l,override,act on the ribs,515
+Internal intercostal membrane.r,thoracic,articular,r,override,act on the ribs,515
+Interspinous ligaments,thoracic,articular,,override,single objects spanning the whole column; placed at their middle,48
+Intervertebral disc T1-T2,thoracic,articular,,override,thoracic level,1252
+Intervertebral disc T10-T11,thoracic,articular,,override,thoracic level,2870
+Intervertebral disc T11-T12,thoracic,articular,,override,thoracic level,3392
+Intervertebral disc T12-L1,thoracic,articular,,override,thoracic level,3328
+Intervertebral disc T2-T3,thoracic,articular,,override,thoracic level,1324
+Intervertebral disc T3-T4,thoracic,articular,,override,thoracic level,1360
+Intervertebral disc T4-T5,thoracic,articular,,override,thoracic level,1630
+Intervertebral disc T5-T6,thoracic,articular,,override,thoracic level,1738
+Intervertebral disc T6-T7,thoracic,articular,,override,thoracic level,2388
+Intervertebral disc T7-T8,thoracic,articular,,override,thoracic level,2658
+Intervertebral disc T8-T9,thoracic,articular,,override,thoracic level,2890
+Intervertebral disc T9-T10,thoracic,articular,,override,thoracic level,1248
+Intra-articular ligament of head of rib,thoracic,articular,,hierarchy,Thoracic joints,18
+Intra-articular ligament of head of rib.r,thoracic,articular,r,hierarchy,Thoracic joints,18
+Ligamenta flava,thoracic,articular,,override,single objects spanning the whole column; placed at their middle,540
+Nucleus pulposus T1-T2,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T10-T11,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T11-T12,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T12-L1,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T2-T3,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T3-T4,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T4-T5,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T5-T6,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T6-T7,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T7-T8,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T8-T9,thoracic,articular,,override,thoracic level,960
+Nucleus pulposus T9-T10,thoracic,articular,,override,thoracic level,960
+Posterior longitudinal ligament,thoracic,articular,,override,single objects spanning the whole column; placed at their middle,864
+Radiate ligament of head of rib.l,thoracic,articular,l,hierarchy,Thoracic joints,288
+Radiate ligament of head of rib.r,thoracic,articular,r,hierarchy,Thoracic joints,288
+Supraspinous ligament,thoracic,articular,,override,single objects spanning the whole column; placed at their middle,84
+Diaphragm.o1l,thoracic,insertion,l,parent,Diaphragm,98
+Diaphragm.o1r,thoracic,insertion,r,parent,Diaphragm,98
+Diaphragm.o2l,thoracic,insertion,l,parent,Diaphragm,54
+Diaphragm.o2r,thoracic,insertion,r,parent,Diaphragm,54
+Diaphragm.o3l,thoracic,insertion,l,parent,Diaphragm,29
+Diaphragm.o3r,thoracic,insertion,r,parent,Diaphragm,29
+Diaphragm.o4l,thoracic,insertion,l,parent,Diaphragm,488
+Diaphragm.o4r,thoracic,insertion,r,parent,Diaphragm,488
+Diaphragm.o5l,thoracic,insertion,l,parent,Diaphragm,85
+Diaphragm.o5r,thoracic,insertion,r,parent,Diaphragm,85
+Diaphragm.ol,thoracic,insertion,l,parent,Diaphragm,257
+Diaphragm.or,thoracic,insertion,r,parent,Diaphragm,257
+Levatores longi costarum.e10l,thoracic,insertion,l,parent,Levatores longi costarum.l,35
+Levatores longi costarum.e10r,thoracic,insertion,r,parent,Levatores longi costarum.r,35
+Levatores longi costarum.e1l,thoracic,insertion,l,parent,Levatores longi costarum.l,92
+Levatores longi costarum.e1r,thoracic,insertion,r,parent,Levatores longi costarum.r,92
+Levatores longi costarum.e2l,thoracic,insertion,l,parent,Levatores longi costarum.l,92
+Levatores longi costarum.e2r,thoracic,insertion,r,parent,Levatores longi costarum.r,92
+Levatores longi costarum.e3l,thoracic,insertion,l,parent,Levatores longi costarum.l,75
+Levatores longi costarum.e3r,thoracic,insertion,r,parent,Levatores longi costarum.r,75
+Levatores longi costarum.e4l,thoracic,insertion,l,parent,Levatores longi costarum.l,80
+Levatores longi costarum.e4r,thoracic,insertion,r,parent,Levatores longi costarum.r,80
+Levatores longi costarum.e5l,thoracic,insertion,l,parent,Levatores longi costarum.l,47
+Levatores longi costarum.e5r,thoracic,insertion,r,parent,Levatores longi costarum.r,47
+Levatores longi costarum.e6l,thoracic,insertion,l,parent,Levatores longi costarum.l,65
+Levatores longi costarum.e6r,thoracic,insertion,r,parent,Levatores longi costarum.r,65
+Levatores longi costarum.e7l,thoracic,insertion,l,parent,Levatores longi costarum.l,166
+Levatores longi costarum.e7r,thoracic,insertion,r,parent,Levatores longi costarum.r,166
+Levatores longi costarum.e8l,thoracic,insertion,l,parent,Levatores longi costarum.l,132
+Levatores longi costarum.e8r,thoracic,insertion,r,parent,Levatores longi costarum.r,132
+Levatores longi costarum.e9l,thoracic,insertion,l,parent,Levatores longi costarum.l,152
+Levatores longi costarum.e9r,thoracic,insertion,r,parent,Levatores longi costarum.r,152
+Levatores longi costarum.el,thoracic,insertion,l,parent,Levatores longi costarum.l,56
+Levatores longi costarum.er,thoracic,insertion,r,parent,Levatores longi costarum.r,56
+Longissimus thoracis muscle.e10l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,51
+Longissimus thoracis muscle.e10r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,51
+Longissimus thoracis muscle.e11l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,16
+Longissimus thoracis muscle.e11r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,16
+Longissimus thoracis muscle.e12l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,36
+Longissimus thoracis muscle.e12r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,36
+Longissimus thoracis muscle.e13l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,28
+Longissimus thoracis muscle.e13r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,28
+Longissimus thoracis muscle.e14l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,36
+Longissimus thoracis muscle.e14r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,36
+Longissimus thoracis muscle.e15l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,10
+Longissimus thoracis muscle.e15r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,10
+Longissimus thoracis muscle.e16l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,24
+Longissimus thoracis muscle.e16r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,24
+Longissimus thoracis muscle.e17l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,19
+Longissimus thoracis muscle.e17r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,19
+Longissimus thoracis muscle.e18l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,44
+Longissimus thoracis muscle.e18r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,44
+Longissimus thoracis muscle.e19l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,19
+Longissimus thoracis muscle.e19r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,19
+Longissimus thoracis muscle.e1l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,67
+Longissimus thoracis muscle.e1r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,67
+Longissimus thoracis muscle.e20l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,40
+Longissimus thoracis muscle.e20r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,40
+Longissimus thoracis muscle.e21l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,27
+Longissimus thoracis muscle.e21r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,27
+Longissimus thoracis muscle.e22l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,21
+Longissimus thoracis muscle.e22r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,21
+Longissimus thoracis muscle.e23l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,18
+Longissimus thoracis muscle.e23r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,18
+Longissimus thoracis muscle.e24l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,32
+Longissimus thoracis muscle.e24r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,32
+Longissimus thoracis muscle.e25l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,23
+Longissimus thoracis muscle.e25r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,23
+Longissimus thoracis muscle.e26l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,43
+Longissimus thoracis muscle.e26r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,43
+Longissimus thoracis muscle.e2l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,50
+Longissimus thoracis muscle.e2r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,50
+Longissimus thoracis muscle.e3l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,35
+Longissimus thoracis muscle.e3r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,35
+Longissimus thoracis muscle.e4l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,50
+Longissimus thoracis muscle.e4r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,50
+Longissimus thoracis muscle.e5l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,27
+Longissimus thoracis muscle.e5r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,27
+Longissimus thoracis muscle.e6l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,63
+Longissimus thoracis muscle.e6r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,63
+Longissimus thoracis muscle.e7l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,47
+Longissimus thoracis muscle.e7r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,47
+Longissimus thoracis muscle.e8l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,33
+Longissimus thoracis muscle.e8r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,33
+Longissimus thoracis muscle.e9l,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,28
+Longissimus thoracis muscle.e9r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,28
+Longissimus thoracis muscle.el,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,24
+Longissimus thoracis muscle.er,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,24
+Serratus posterior inferior muscle.e1l,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,101
+Serratus posterior inferior muscle.e2l,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,46
+Serratus posterior inferior muscle.e3l,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,60
+Serratus posterior inferior muscle.el,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,98
+Serratus posterior superior muscle.e1l,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,149
+Serratus posterior superior muscle.e2l,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,382
+Serratus posterior superior muscle.e3l,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,297
+Serratus posterior superior muscle.el,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,155
+Transversus thoracis muscle.o1l,thoracic,insertion,l,parent,Transversus thoracis muscle.l,64
+Transversus thoracis muscle.o1r,thoracic,insertion,r,parent,Transversus thoracis muscle.r,64
+Transversus thoracis muscle.ol,thoracic,insertion,l,parent,Transversus thoracis muscle.l,264
+Transversus thoracis muscle.or,thoracic,insertion,r,parent,Transversus thoracis muscle.r,264
+Diaphragm,thoracic,muscular,,override,act on the ribs,9592
+Diaphragmatic fascia,thoracic,muscular,,override,act on the ribs,4708
+External intercostal muscles.l,thoracic,muscular,l,override,act on the ribs,41410
+External intercostal muscles.r,thoracic,muscular,r,override,act on the ribs,41410
+Iliocostalis thoracis muscle.l,thoracic,muscular,l,override,named thoracic part of a long back muscle,5772
+Iliocostalis thoracis muscle.r,thoracic,muscular,r,override,named thoracic part of a long back muscle,5772
+Innermost intercostal muscles.l,thoracic,muscular,l,override,act on the ribs,38254
+Innermost intercostal muscles.r,thoracic,muscular,r,override,act on the ribs,38254
+Internal intercostal muscles.l,thoracic,muscular,l,override,act on the ribs,40184
+Internal intercostal muscles.r,thoracic,muscular,r,override,act on the ribs,40184
+Interspinales thoracis muscles.l,thoracic,muscular,l,override,act on the ribs,198
+Interspinales thoracis muscles.r,thoracic,muscular,r,override,act on the ribs,198
+Levatores breves costarum.l,thoracic,muscular,l,override,act on the ribs,2690
+Levatores breves costarum.r,thoracic,muscular,r,override,act on the ribs,2690
+Levatores longi costarum.l,thoracic,muscular,l,override,act on the ribs,5930
+Levatores longi costarum.r,thoracic,muscular,r,override,act on the ribs,5930
+Longissimus thoracis muscle.l,thoracic,muscular,l,override,named thoracic part of a long back muscle,9652
+Longissimus thoracis muscle.r,thoracic,muscular,r,override,named thoracic part of a long back muscle,9652
+Multifidus thoracis muscle.l,thoracic,muscular,l,override,named thoracic part of a long back muscle,3902
+Multifidus thoracis muscle.r,thoracic,muscular,r,override,named thoracic part of a long back muscle,3902
+Semispinalis thoracis muscle.l,thoracic,muscular,l,override,named thoracic part of a long back muscle,4972
+Semispinalis thoracis muscle.r,thoracic,muscular,r,override,named thoracic part of a long back muscle,4972
+Serratus posterior inferior muscle.l,thoracic,muscular,l,override,act on the ribs,8958
+Serratus posterior inferior muscle.r,thoracic,muscular,r,override,act on the ribs,8958
+Serratus posterior superior muscle.l,thoracic,muscular,l,override,act on the ribs,5518
+Serratus posterior superior muscle.r,thoracic,muscular,r,override,act on the ribs,5518
+Spinalis thoracis muscle.l,thoracic,muscular,l,override,named thoracic part of a long back muscle,5532
+Spinalis thoracis muscle.r,thoracic,muscular,r,override,named thoracic part of a long back muscle,5532
+Transversus thoracis muscle.l,thoracic,muscular,l,override,named thoracic part of a long back muscle,1670
+Transversus thoracis muscle.r,thoracic,muscular,r,override,named thoracic part of a long back muscle,1670
+Body of sternum,thoracic,skeletal,,hierarchy,Sternum,4466
+Costal cartilage of eighth rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,652
+Costal cartilage of eighth rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,652
+Costal cartilage of fifth rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,1082
+Costal cartilage of fifth rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,1082
+Costal cartilage of first rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,462
+Costal cartilage of first rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,462
+Costal cartilage of fourth rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,746
+Costal cartilage of fourth rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,746
+Costal cartilage of ninth rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,488
+Costal cartilage of ninth rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,488
+Costal cartilage of second rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,568
+Costal cartilage of second rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,568
+Costal cartilage of seventh rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,2294
+Costal cartilage of seventh rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,2294
+Costal cartilage of sixth rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,1354
+Costal cartilage of sixth rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,1354
+Costal cartilage of tenth rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,378
+Costal cartilage of tenth rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,378
+Costal cartilage of third rib.l,thoracic,skeletal,l,hierarchy,Costal cartilages,600
+Costal cartilage of third rib.r,thoracic,skeletal,r,hierarchy,Costal cartilages,600
+Eighth rib.l,thoracic,skeletal,l,hierarchy,Ribs,8270
+Eighth rib.r,thoracic,skeletal,r,hierarchy,Ribs,8270
+Eleventh rib.l,thoracic,skeletal,l,hierarchy,Ribs,5034
+Eleventh rib.r,thoracic,skeletal,r,hierarchy,Ribs,5034
+Fifth rib.l,thoracic,skeletal,l,hierarchy,Ribs,9376
+Fifth rib.r,thoracic,skeletal,r,hierarchy,Ribs,9376
+First rib.l,thoracic,skeletal,l,hierarchy,Ribs,3210
+First rib.r,thoracic,skeletal,r,hierarchy,Ribs,3210
+Fourth rib.l,thoracic,skeletal,l,hierarchy,Ribs,8646
+Fourth rib.r,thoracic,skeletal,r,hierarchy,Ribs,8646
+Manubrium of sternum,thoracic,skeletal,,hierarchy,Sternum,2662
+Ninth rib.l,thoracic,skeletal,l,hierarchy,Ribs,7778
+Ninth rib.r,thoracic,skeletal,r,hierarchy,Ribs,7778
+Second rib.l,thoracic,skeletal,l,hierarchy,Ribs,5364
+Second rib.r,thoracic,skeletal,r,hierarchy,Ribs,5364
+Seventh rib.l,thoracic,skeletal,l,hierarchy,Ribs,9776
+Seventh rib.r,thoracic,skeletal,r,hierarchy,Ribs,9776
+Sixth rib.l,thoracic,skeletal,l,hierarchy,Ribs,10132
+Sixth rib.r,thoracic,skeletal,r,hierarchy,Ribs,10132
+Tenth rib.l,thoracic,skeletal,l,hierarchy,Ribs,7026
+Tenth rib.r,thoracic,skeletal,r,hierarchy,Ribs,7026
+Third rib.l,thoracic,skeletal,l,hierarchy,Ribs,6980
+Third rib.r,thoracic,skeletal,r,hierarchy,Ribs,6980
+Twelfth rib.l,thoracic,skeletal,l,hierarchy,Ribs,3002
+Twelfth rib.r,thoracic,skeletal,r,hierarchy,Ribs,3002
+Vertebra T1,thoracic,skeletal,,hierarchy,Thoracic vertebrae,1946
+Vertebra T10,thoracic,skeletal,,hierarchy,Thoracic vertebrae,3058
+Vertebra T11,thoracic,skeletal,,hierarchy,Thoracic vertebrae,1798
+Vertebra T12,thoracic,skeletal,,hierarchy,Thoracic vertebrae,2586
+Vertebra T2,thoracic,skeletal,,hierarchy,Thoracic vertebrae,2142
+Vertebra T3,thoracic,skeletal,,hierarchy,Thoracic vertebrae,2344
+Vertebra T4,thoracic,skeletal,,hierarchy,Thoracic vertebrae,2216
+Vertebra T5,thoracic,skeletal,,hierarchy,Thoracic vertebrae,2152
+Vertebra T6,thoracic,skeletal,,hierarchy,Thoracic vertebrae,1780
+Vertebra T7,thoracic,skeletal,,hierarchy,Thoracic vertebrae,2794
+Vertebra T8,thoracic,skeletal,,hierarchy,Thoracic vertebrae,1733
+Vertebra T9,thoracic,skeletal,,hierarchy,Thoracic vertebrae,2978
+Xiphoid process,thoracic,skeletal,,hierarchy,Sternum,914
+Anterior sacro-iliac ligament.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,52
+Anterior sacro-iliac ligament.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,52
+Iliolumbar ligament.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,8
+Iliolumbar ligament.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,8
+Inferior pubic ligament,lumbar,articular,,hierarchy,Joints of pelvic girdle,8
+Intercornual ligament.l,lumbar,articular,l,override,"lumbar spine, pelvis and pelvic floor",4
+Intercornual ligament.r,lumbar,articular,r,override,"lumbar spine, pelvis and pelvic floor",4
+Interosseous sacro-iliac ligament.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,16
+Interosseous sacro-iliac ligament.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,16
+Interpubic disc,lumbar,articular,,hierarchy,Joints of pelvic girdle,104
+Intervertebral disc L1-L2,lumbar,articular,,override,lumbar level,3132
+Intervertebral disc L2-L3,lumbar,articular,,override,lumbar level,3388
+Intervertebral disc L3-L4,lumbar,articular,,override,lumbar level,3116
+Intervertebral disc L4-L5,lumbar,articular,,override,lumbar level,3286
+Intervertebral disc L5-S1,lumbar,articular,,override,lumbar level,3586
+Nucleus pulposus L1-L2,lumbar,articular,,override,lumbar level,960
+Nucleus pulposus L2-L3,lumbar,articular,,override,lumbar level,960
+Nucleus pulposus L3-L4,lumbar,articular,,override,lumbar level,960
+Nucleus pulposus L4-L5,lumbar,articular,,override,lumbar level,960
+Nucleus pulposus L5-S1,lumbar,articular,,override,lumbar level,960
+Obturator membrane.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,113
+Obturator membrane.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,113
+Posterior sacro-iliac ligament.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,151
+Posterior sacro-iliac ligament.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,151
+Pubic symphysis,lumbar,articular,,hierarchy,Joints of pelvic girdle,104
+Sacrococcygeal symphysis,lumbar,articular,,override,"lumbar spine, pelvis and pelvic floor",188
+Sacrospinous ligament.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,17
+Sacrospinous ligament.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,17
+Sacrotuberous ligament.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,47
+Sacrotuberous ligament.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,47
+Superior pubic ligament,lumbar,articular,,hierarchy,Joints of pelvic girdle,8
+Triradiate cartilage.l,lumbar,articular,l,hierarchy,Joints of pelvic girdle,79
+Triradiate cartilage.r,lumbar,articular,r,hierarchy,Joints of pelvic girdle,79
+Erector spinae.ol,lumbar,insertion,l,centroid,z=0.973 |x|=0.054 y=+0.063,57
+Erector spinae.or,lumbar,insertion,r,centroid,z=0.973 |x|=0.054 y=+0.063,57
+External abdominal oblique muscle.o1l,lumbar,insertion,l,parent,External abdominal oblique muscle.l,167
+External abdominal oblique muscle.o1r,lumbar,insertion,r,parent,External abdominal oblique muscle.r,167
+External abdominal oblique muscle.o2l,lumbar,insertion,l,parent,External abdominal oblique muscle.l,127
+External abdominal oblique muscle.o2r,lumbar,insertion,r,parent,External abdominal oblique muscle.r,127
+External abdominal oblique muscle.o3l,lumbar,insertion,l,parent,External abdominal oblique muscle.l,226
+External abdominal oblique muscle.o3r,lumbar,insertion,r,parent,External abdominal oblique muscle.r,226
+External abdominal oblique muscle.o4l,lumbar,insertion,l,parent,External abdominal oblique muscle.l,80
+External abdominal oblique muscle.o4r,lumbar,insertion,r,parent,External abdominal oblique muscle.r,80
+External abdominal oblique muscle.o5l,lumbar,insertion,l,parent,External abdominal oblique muscle.l,214
+External abdominal oblique muscle.o5r,lumbar,insertion,r,parent,External abdominal oblique muscle.r,214
+External abdominal oblique muscle.ol,lumbar,insertion,l,parent,External abdominal oblique muscle.l,144
+External abdominal oblique muscle.or,lumbar,insertion,r,parent,External abdominal oblique muscle.r,144
+Internal abdominal oblique muscle.o1l,lumbar,insertion,l,parent,Internal abdominal oblique muscle.l,118
+Internal abdominal oblique muscle.o1r,lumbar,insertion,r,parent,Internal abdominal oblique muscle.r,118
+Internal abdominal oblique muscle.o2l,lumbar,insertion,l,parent,Internal abdominal oblique muscle.l,91
+Internal abdominal oblique muscle.o2r,lumbar,insertion,r,parent,Internal abdominal oblique muscle.r,91
+Internal abdominal oblique muscle.o3l,lumbar,insertion,l,parent,Internal abdominal oblique muscle.l,82
+Internal abdominal oblique muscle.o3r,lumbar,insertion,r,parent,Internal abdominal oblique muscle.r,82
+Internal abdominal oblique muscle.o4l,lumbar,insertion,l,parent,Internal abdominal oblique muscle.l,494
+Internal abdominal oblique muscle.o4r,lumbar,insertion,r,parent,Internal abdominal oblique muscle.r,494
+Internal abdominal oblique muscle.ol,lumbar,insertion,l,parent,Internal abdominal oblique muscle.l,388
+Internal abdominal oblique muscle.or,lumbar,insertion,r,parent,Internal abdominal oblique muscle.r,388
+Levator ani.ol,lumbar,insertion,l,override,"lumbar spine, pelvis and pelvic floor",42
+Levator ani.or,lumbar,insertion,r,override,"lumbar spine, pelvis and pelvic floor",42
+Rectus abdominis muscle.el,lumbar,insertion,l,parent,Rectus abdominis muscle.l,54
+Rectus abdominis muscle.er,lumbar,insertion,r,parent,Rectus abdominis muscle.r,54
+Rectus abdominis muscle.ol,lumbar,insertion,l,parent,Rectus abdominis muscle.l,327
+Rectus abdominis muscle.or,lumbar,insertion,r,parent,Rectus abdominis muscle.r,327
+Transversus abdominis muscle.ol,lumbar,insertion,l,parent,Transversus abdominis muscle.l,80
+Transversus abdominis muscle.or,lumbar,insertion,r,parent,Transversus abdominis muscle.r,80
+Anterior layer of thoracolumbar fascia.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",176
+Anterior layer of thoracolumbar fascia.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",176
+Coccygeus muscle.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",1034
+Coccygeus muscle.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",1034
+Dorsal parts of lateral intertransversarii lumborum muscles.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",720
+Dorsal parts of lateral intertransversarii lumborum muscles.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",720
+External abdominal oblique muscle.l,lumbar,muscular,l,hierarchy,Muscles of abdomen,29622
+External abdominal oblique muscle.r,lumbar,muscular,r,hierarchy,Muscles of abdomen,29622
+External anal sphincter.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",202
+External anal sphincter.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",202
+Iliococcygeus muscle.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",1962
+Iliococcygeus muscle.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",1962
+Iliocostalis lumborum muscle.l,lumbar,muscular,l,override,named lumbar part of a long back muscle,10038
+Iliocostalis lumborum muscle.r,lumbar,muscular,r,override,named lumbar part of a long back muscle,10038
+Iliopectineal arch.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",26
+Iliopectineal arch.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",26
+Iliopsoas fascia.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",1602
+Iliopsoas fascia.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",1602
+Inguinal ligament.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",1056
+Inguinal ligament.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",1056
+Internal abdominal oblique muscle.l,lumbar,muscular,l,hierarchy,Muscles of abdomen,28869
+Internal abdominal oblique muscle.r,lumbar,muscular,r,hierarchy,Muscles of abdomen,28869
+Interspinales lumborum muscles.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",562
+Interspinales lumborum muscles.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",562
+Investing abdominal fascia.l,lumbar,muscular,l,hierarchy,Abdominal part of muscular system,11106
+Investing abdominal fascia.r,lumbar,muscular,r,hierarchy,Abdominal part of muscular system,11106
+Linea alba,lumbar,muscular,,override,"lumbar spine, pelvis and pelvic floor",338
+Middle layer of thoracolumbar fascia.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",160
+Middle layer of thoracolumbar fascia.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",160
+Multifidus lumborum muscle.l,lumbar,muscular,l,override,named lumbar part of a long back muscle,2820
+Multifidus lumborum muscle.r,lumbar,muscular,r,override,named lumbar part of a long back muscle,2820
+Piriformis fascia.l,lumbar,muscular,l,centroid,z=0.888 |x|=0.079 y=+0.044,926
+Piriformis fascia.r,lumbar,muscular,r,centroid,z=0.888 |x|=0.079 y=+0.044,926
+Posterior layer of thoracolumbar fascia.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",313
+Posterior layer of thoracolumbar fascia.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",313
+Psoas major.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",5474
+Psoas major.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",5474
+Pubo-analis muscle.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",1440
+Pubo-analis muscle.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",1440
+Pubococcygeus muscle.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",2512
+Pubococcygeus muscle.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",2512
+Pyramidalis muscle.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",1112
+Pyramidalis muscle.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",1112
+Quadratus lumborum muscle.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",2832
+Quadratus lumborum muscle.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",2832
+Rectus abdominis muscle.l,lumbar,muscular,l,hierarchy,Muscles of abdomen,20604
+Rectus abdominis muscle.r,lumbar,muscular,r,hierarchy,Muscles of abdomen,20604
+Tendinous arch of levator ani.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",750
+Tendinous arch of levator ani.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",750
+Transversalis fascia,lumbar,muscular,,override,"lumbar spine, pelvis and pelvic floor",4207
+Transversus abdominis muscle.l,lumbar,muscular,l,hierarchy,Muscles of abdomen,34328
+Transversus abdominis muscle.r,lumbar,muscular,r,hierarchy,Muscles of abdomen,34328
+Ventral parts of lateral intertransversarii lumborum muscles.l,lumbar,muscular,l,override,"lumbar spine, pelvis and pelvic floor",996
+Ventral parts of lateral intertransversarii lumborum muscles.r,lumbar,muscular,r,override,"lumbar spine, pelvis and pelvic floor",996
+Coccyx,lumbar,skeletal,,override,"lumbar spine, pelvis and pelvic floor",1166
+Hip bone.l,lumbar,skeletal,l,override,"lumbar spine, pelvis and pelvic floor",3788
+Hip bone.r,lumbar,skeletal,r,override,"lumbar spine, pelvis and pelvic floor",3788
+Sacrum,lumbar,skeletal,,override,"lumbar spine, pelvis and pelvic floor",11676
+Vertebra L1,lumbar,skeletal,,hierarchy,Lumbar vertebrae,3162
+Vertebra L2,lumbar,skeletal,,hierarchy,Lumbar vertebrae,2688
+Vertebra L3,lumbar,skeletal,,hierarchy,Lumbar vertebrae,3160
+Vertebra L4,lumbar,skeletal,,hierarchy,Lumbar vertebrae,3804
+Vertebra L5,lumbar,skeletal,,hierarchy,Lumbar vertebrae,4032
+Acetabular labrum.l,hip,articular,l,hierarchy,Hip joint,352
+Acetabular labrum.r,hip,articular,r,hierarchy,Hip joint,352
+Articular capsule of hip joint.l,hip,articular,l,hierarchy,Hip joint,280
+Articular capsule of hip joint.r,hip,articular,r,hierarchy,Hip joint,280
+Descending part of iliofemoral ligament.l,hip,articular,l,hierarchy,Hip joint,64
+Descending part of iliofemoral ligament.r,hip,articular,r,hierarchy,Hip joint,64
+Frenula capsulae.l,hip,articular,l,hierarchy,Hip joint,216
+Frenula capsulae.r,hip,articular,r,hierarchy,Hip joint,216
+Ischiofemoral ligament.l,hip,articular,l,hierarchy,Hip joint,71
+Ischiofemoral ligament.r,hip,articular,r,hierarchy,Hip joint,71
+Ligament of head of femur.l,hip,articular,l,hierarchy,Hip joint,192
+Ligament of head of femur.r,hip,articular,r,hierarchy,Hip joint,192
+Pubofemoral ligament.l,hip,articular,l,hierarchy,Hip joint,40
+Pubofemoral ligament.r,hip,articular,r,hierarchy,Hip joint,40
+Transverse acetabular ligament.l,hip,articular,l,hierarchy,Hip joint,60
+Transverse acetabular ligament.r,hip,articular,r,hierarchy,Hip joint,60
+Transverse part of iliofemoral ligament.l,hip,articular,l,hierarchy,Hip joint,48
+Transverse part of iliofemoral ligament.r,hip,articular,r,hierarchy,Hip joint,48
+Adductor longus.el,hip,insertion,l,parent,Adductor longus.l,29
+Adductor longus.er,hip,insertion,r,parent,Adductor longus.r,29
+Adductor longus.ol,hip,insertion,l,parent,Adductor longus.l,23
+Adductor longus.or,hip,insertion,r,parent,Adductor longus.r,23
+Adductor magnus.el,hip,insertion,l,parent,Adductor magnus.l,133
+Adductor magnus.er,hip,insertion,r,parent,Adductor magnus.r,133
+Adductor magnus.ol,hip,insertion,l,parent,Adductor magnus.l,60
+Adductor magnus.or,hip,insertion,r,parent,Adductor magnus.r,60
+Gluteus maximus muscle.el,hip,insertion,l,parent,Gluteus maximus muscle.l,60
+Gluteus maximus muscle.er,hip,insertion,r,parent,Gluteus maximus muscle.r,60
+Gluteus maximus muscle.ol,hip,insertion,l,parent,Gluteus maximus muscle.l,76
+Gluteus maximus muscle.or,hip,insertion,r,parent,Gluteus maximus muscle.r,76
+Gluteus medius muscle.el,hip,insertion,l,parent,Gluteus medius muscle.l,38
+Gluteus medius muscle.er,hip,insertion,r,parent,Gluteus medius muscle.r,38
+Gluteus medius muscle.ol,hip,insertion,l,parent,Gluteus medius muscle.l,61
+Gluteus medius muscle.or,hip,insertion,r,parent,Gluteus medius muscle.r,61
+Gluteus minimus muscle.ol,hip,insertion,l,parent,Gluteus minimus muscle.l,93
+Gluteus minimus muscle.or,hip,insertion,r,parent,Gluteus minimus muscle.r,93
+Gracilis muscle.el,hip,insertion,l,parent,Gracilis muscle.l,14
+Gracilis muscle.er,hip,insertion,r,parent,Gracilis muscle.r,14
+Gracilis muscle.ol,hip,insertion,l,parent,Gracilis muscle.l,59
+Gracilis muscle.or,hip,insertion,r,parent,Gracilis muscle.r,59
+Iliacus muscle.ol,hip,insertion,l,parent,Iliacus muscle.l,80
+Iliacus muscle.or,hip,insertion,r,parent,Iliacus muscle.r,80
+Iliopsoas muscle.el,hip,insertion,l,centroid,z=0.790 |x|=0.094 y=+0.023,114
+Iliopsoas muscle.er,hip,insertion,r,centroid,z=0.790 |x|=0.094 y=+0.023,114
+Inferior gemellus muscle.ol,hip,insertion,l,parent,Inferior gemellus muscle.l,21
+Inferior gemellus muscle.or,hip,insertion,r,parent,Inferior gemellus muscle.r,21
+Long head of biceps femoris.ol,hip,insertion,l,parent,Long head of biceps femoris.l,23
+Long head of biceps femoris.or,hip,insertion,r,parent,Long head of biceps femoris.r,23
+Obturator externus.ol,hip,insertion,l,parent,Obturator externus.l,204
+Obturator externus.or,hip,insertion,r,parent,Obturator externus.r,204
+Obturator internus.ol,hip,insertion,l,parent,Obturator internus.l,121
+Obturator internus.or,hip,insertion,r,parent,Obturator internus.r,121
+Pectineus muscle.el,hip,insertion,l,parent,Pectineus muscle.l,17
+Pectineus muscle.ol,hip,insertion,l,parent,Pectineus muscle.l,63
+Pectineus muscle.or,hip,insertion,r,parent,Pectineus muscle.r,63
+Piriformis muscle.el,hip,insertion,l,parent,Piriformis muscle.l,22
+Piriformis muscle.ol,hip,insertion,l,parent,Piriformis muscle.l,152
+Piriformis muscle.or,hip,insertion,r,parent,Piriformis muscle.r,152
+Quadratus femoris muscle.el,hip,insertion,l,parent,Quadratus femoris muscle.l,43
+Quadratus femoris muscle.er,hip,insertion,r,parent,Quadratus femoris muscle.r,43
+Quadratus femoris muscle.ol,hip,insertion,l,parent,Quadratus femoris muscle.l,27
+Quadratus femoris muscle.or,hip,insertion,r,parent,Quadratus femoris muscle.r,27
+Rectus femoris muscle.ol,hip,insertion,l,parent,Rectus femoris muscle.l,30
+Rectus femoris muscle.or,hip,insertion,r,parent,Rectus femoris muscle.r,30
+Sartorius muscle.el,hip,insertion,l,parent,Sartorius muscle.l,8
+Sartorius muscle.er,hip,insertion,r,parent,Sartorius muscle.r,8
+Sartorius muscle.ol,hip,insertion,l,parent,Sartorius muscle.l,83
+Sartorius muscle.or,hip,insertion,r,parent,Sartorius muscle.r,83
+Semimembranosus muscle.el,hip,insertion,l,parent,Semimembranosus muscle.l,43
+Semimembranosus muscle.er,hip,insertion,r,parent,Semimembranosus muscle.r,43
+Semimembranosus muscle.ol,hip,insertion,l,parent,Semimembranosus muscle.l,32
+Semimembranosus muscle.or,hip,insertion,r,parent,Semimembranosus muscle.r,32
+Semitendinosus muscle.el,hip,insertion,l,parent,Semitendinosus muscle.l,28
+Semitendinosus muscle.er,hip,insertion,r,parent,Semitendinosus muscle.r,28
+Semitendinosus muscle.ol,hip,insertion,l,parent,Semitendinosus muscle.l,55
+Semitendinosus muscle.or,hip,insertion,r,parent,Semitendinosus muscle.r,55
+Short head of biceps femoris.el,hip,insertion,l,parent,Short head of biceps femoris.l,65
+Superior gemellus muscle.ol,hip,insertion,l,parent,Superior gemellus muscle.l,39
+Superior gemellus muscle.or,hip,insertion,r,parent,Superior gemellus muscle.r,39
+Tensor fasciae latae.ol,hip,insertion,l,parent,Tensor fasciae latae.l,19
+Tensor fasciae latae.or,hip,insertion,r,parent,Tensor fasciae latae.r,19
+Trochanteric insertion.el,hip,insertion,l,override,thigh and gluteal region,28
+Trochanteric insertion.er,hip,insertion,r,override,thigh and gluteal region,28
+Vastus intermedius muscle.ol,hip,insertion,l,parent,Vastus intermedius muscle.l,113
+Vastus intermedius muscle.or,hip,insertion,r,parent,Vastus intermedius muscle.r,113
+Vastus lateralis muscle.ol,hip,insertion,l,parent,Vastus lateralis muscle.l,121
+Vastus lateralis muscle.or,hip,insertion,r,parent,Vastus lateralis muscle.r,121
+Vastus medialis muscle.ol,hip,insertion,l,parent,Vastus medialis muscle.l,117
+Vastus medialis muscle.or,hip,insertion,r,parent,Vastus medialis muscle.r,117
+(Adductor minimus).l,hip,muscular,l,hierarchy,Medial compartment of thigh,948
+(Adductor minimus).r,hip,muscular,r,hierarchy,Medial compartment of thigh,948
+(Iliopectineal bursa).l,hip,muscular,l,override,thigh and gluteal region,352
+(Iliopectineal bursa).r,hip,muscular,r,override,thigh and gluteal region,352
+Adductor brevis.l,hip,muscular,l,hierarchy,Medial compartment of thigh,2132
+Adductor brevis.r,hip,muscular,r,hierarchy,Medial compartment of thigh,2132
+Adductor longus.l,hip,muscular,l,hierarchy,Medial compartment of thigh,3714
+Adductor longus.r,hip,muscular,r,hierarchy,Medial compartment of thigh,3714
+Adductor magnus.l,hip,muscular,l,hierarchy,Medial compartment of thigh,8192
+Adductor magnus.r,hip,muscular,r,hierarchy,Medial compartment of thigh,8192
+Bursa of piriformis muscle.l,hip,muscular,l,override,thigh and gluteal region,352
+Bursa of piriformis muscle.r,hip,muscular,r,override,thigh and gluteal region,352
+Fascia lata.l,hip,muscular,l,override,thigh and gluteal region,12907
+Fascia lata.r,hip,muscular,r,override,thigh and gluteal region,12907
+Gluteus maximus muscle.l,hip,muscular,l,hierarchy,Superficial gluteal muscles,3326
+Gluteus maximus muscle.r,hip,muscular,r,hierarchy,Superficial gluteal muscles,3326
+Gluteus medius muscle.l,hip,muscular,l,hierarchy,Superficial gluteal muscles,5176
+Gluteus medius muscle.r,hip,muscular,r,hierarchy,Superficial gluteal muscles,5176
+Gluteus minimus muscle.l,hip,muscular,l,hierarchy,Superficial gluteal muscles,6250
+Gluteus minimus muscle.r,hip,muscular,r,hierarchy,Superficial gluteal muscles,6250
+Gracilis muscle.l,hip,muscular,l,hierarchy,Posterior compartment of thigh,4812
+Gracilis muscle.r,hip,muscular,r,hierarchy,Medial compartment of thigh,4812
+Iliacus muscle.l,hip,muscular,l,override,thigh and gluteal region,4354
+Iliacus muscle.r,hip,muscular,r,override,thigh and gluteal region,4354
+Iliotibial tract.l,hip,muscular,l,override,thigh and gluteal region,48612
+Iliotibial tract.r,hip,muscular,r,override,thigh and gluteal region,48612
+Inferior gemellus muscle.l,hip,muscular,l,hierarchy,Deep gluteal muscles,976
+Inferior gemellus muscle.r,hip,muscular,r,hierarchy,Deep gluteal muscles,976
+Intermuscular gluteal bursae.l,hip,muscular,l,override,thigh and gluteal region,292
+Intermuscular gluteal bursae.r,hip,muscular,r,override,thigh and gluteal region,292
+Lateral femoral intermuscular septum.l,hip,muscular,l,override,thigh and gluteal region,588
+Lateral femoral intermuscular septum.r,hip,muscular,r,override,thigh and gluteal region,588
+Long head of biceps femoris.l,hip,muscular,l,hierarchy,Posterior compartment of thigh,7258
+Long head of biceps femoris.r,hip,muscular,r,hierarchy,Posterior compartment of thigh,7258
+Medial femoral intermuscular septum.l,hip,muscular,l,override,thigh and gluteal region,7714
+Medial femoral intermuscular septum.r,hip,muscular,r,override,thigh and gluteal region,7714
+Obturator externus.l,hip,muscular,l,hierarchy,Deep gluteal muscles,1156
+Obturator externus.r,hip,muscular,r,hierarchy,Medial compartment of thigh,1156
+Obturator internus.l,hip,muscular,l,override,thigh and gluteal region,3760
+Obturator internus.r,hip,muscular,r,override,thigh and gluteal region,3760
+Pectineus muscle.l,hip,muscular,l,hierarchy,Medial compartment of thigh,1952
+Pectineus muscle.r,hip,muscular,r,hierarchy,Medial compartment of thigh,1952
+Piriformis muscle.l,hip,muscular,l,hierarchy,Deep gluteal muscles,1500
+Piriformis muscle.r,hip,muscular,r,hierarchy,Deep gluteal muscles,1500
+Quadratus femoris muscle.l,hip,muscular,l,hierarchy,Deep gluteal muscles,1646
+Quadratus femoris muscle.r,hip,muscular,r,hierarchy,Deep gluteal muscles,1646
+Rectus femoris muscle.l,hip,muscular,l,hierarchy,Anterior compartment of thigh,8276
+Rectus femoris muscle.r,hip,muscular,r,hierarchy,Anterior compartment of thigh,8276
+Sartorius muscle.l,hip,muscular,l,hierarchy,Anterior compartment of thigh,4966
+Sartorius muscle.r,hip,muscular,r,hierarchy,Anterior compartment of thigh,4966
+Sciatic bursa of gluteus maximus muscle.l,hip,muscular,l,centroid,z=0.813 |x|=0.059 y=+0.048,352
+Sciatic bursa of gluteus maximus muscle.r,hip,muscular,r,centroid,z=0.813 |x|=0.059 y=+0.048,352
+Sciatic bursa of obturator internus.l,hip,muscular,l,override,thigh and gluteal region,352
+Sciatic bursa of obturator internus.r,hip,muscular,r,override,thigh and gluteal region,352
+Semimembranosus muscle.l,hip,muscular,l,hierarchy,Posterior compartment of thigh,7442
+Semimembranosus muscle.r,hip,muscular,r,hierarchy,Posterior compartment of thigh,7442
+Semitendinosus muscle.l,hip,muscular,l,hierarchy,Posterior compartment of thigh,4316
+Semitendinosus muscle.r,hip,muscular,r,hierarchy,Posterior compartment of thigh,4316
+Short head of biceps femoris.l,hip,muscular,l,hierarchy,Posterior compartment of thigh,2476
+Short head of biceps femoris.r,hip,muscular,r,hierarchy,Posterior compartment of thigh,2476
+Subcutaneous trochanteric bursa.l,hip,muscular,l,override,thigh and gluteal region,352
+Subcutaneous trochanteric bursa.r,hip,muscular,r,override,thigh and gluteal region,352
+Subtendinous bursa of iliacus muscle.l,hip,muscular,l,override,thigh and gluteal region,352
+Subtendinous bursa of iliacus muscle.r,hip,muscular,r,override,thigh and gluteal region,352
+Subtendinous bursa of obturator internus.l,hip,muscular,l,override,thigh and gluteal region,352
+Subtendinous bursa of obturator internus.r,hip,muscular,r,override,thigh and gluteal region,352
+Superior bursa of biceps femoris muscle.l,hip,muscular,l,override,thigh and gluteal region,352
+Superior bursa of biceps femoris muscle.r,hip,muscular,r,override,thigh and gluteal region,352
+Superior gemellus muscle.l,hip,muscular,l,hierarchy,Deep gluteal muscles,404
+Superior gemellus muscle.r,hip,muscular,r,hierarchy,Deep gluteal muscles,404
+Tensor fasciae latae.l,hip,muscular,l,hierarchy,Superficial gluteal muscles,1862
+Tensor fasciae latae.r,hip,muscular,r,hierarchy,Superficial gluteal muscles,1862
+Trochanteric bursa of gluteus maximus muscle.l,hip,muscular,l,override,thigh and gluteal region,352
+Trochanteric bursa of gluteus maximus muscle.r,hip,muscular,r,override,thigh and gluteal region,352
+Trochanteric bursa of gluteus medius muscle.l,hip,muscular,l,override,thigh and gluteal region,352
+Trochanteric bursa of gluteus medius muscle.r,hip,muscular,r,override,thigh and gluteal region,352
+Trochanteric bursa of gluteus minimus muscle.l,hip,muscular,l,override,thigh and gluteal region,352
+Trochanteric bursa of gluteus minimus muscle.r,hip,muscular,r,override,thigh and gluteal region,352
+Vastus intermedius muscle.l,hip,muscular,l,hierarchy,Anterior compartment of thigh,6164
+Vastus intermedius muscle.r,hip,muscular,r,hierarchy,Anterior compartment of thigh,6164
+Vastus lateralis muscle.l,hip,muscular,l,hierarchy,Anterior compartment of thigh,9356
+Vastus lateralis muscle.r,hip,muscular,r,hierarchy,Anterior compartment of thigh,9356
+Vastus medialis muscle.l,hip,muscular,l,hierarchy,Anterior compartment of thigh,6460
+Vastus medialis muscle.r,hip,muscular,r,hierarchy,Anterior compartment of thigh,6460
+Femur.l,hip,skeletal,l,override,thigh and gluteal region,3794
+Femur.r,hip,skeletal,r,override,thigh and gluteal region,3794
+Anterior cruciate ligament.l,knee,articular,l,hierarchy,Knee joint,1576
+Anterior cruciate ligament.r,knee,articular,r,hierarchy,Knee joint,1576
+Anterior ligament of fibular head.l,knee,articular,l,hierarchy,Superior tibiofibular joint,8
+Anterior ligament of fibular head.r,knee,articular,r,hierarchy,Superior tibiofibular joint,8
+Anterior meniscotibial ligament (Lateral meniscus).l,knee,articular,l,hierarchy,Knee joint,24
+Anterior meniscotibial ligament (Lateral meniscus).r,knee,articular,r,hierarchy,Knee joint,24
+Anterior meniscotibial ligament (Medial meniscus).l,knee,articular,l,hierarchy,Knee joint,9
+Anterior meniscotibial ligament (Medial meniscus).r,knee,articular,r,hierarchy,Knee joint,9
+Arcuate popliteal ligament.l,knee,articular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,31
+Arcuate popliteal ligament.r,knee,articular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,31
+Articular capsule of knee joint.l,knee,articular,l,hierarchy,Knee joint,726
+Articular capsule of knee joint.r,knee,articular,r,hierarchy,Knee joint,726
+Articular capsule of superior tibiofibular joint.l,knee,articular,l,hierarchy,Superior tibiofibular joint,56
+Articular capsule of superior tibiofibular joint.r,knee,articular,r,hierarchy,Superior tibiofibular joint,56
+Deep part of tibial collateral ligament.l,knee,articular,l,hierarchy,Knee joint,20
+Deep part of tibial collateral ligament.r,knee,articular,r,hierarchy,Knee joint,20
+Fibular collateral ligament.l,knee,articular,l,hierarchy,Knee joint,6
+Fibular collateral ligament.r,knee,articular,r,hierarchy,Knee joint,6
+Infrapatellar fat pad.l,knee,articular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,48
+Infrapatellar fat pad.r,knee,articular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,48
+Interosseous membrane of leg.l,knee,articular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,12642
+Interosseous membrane of leg.r,knee,articular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,12642
+Lateral meniscus.l,knee,articular,l,hierarchy,Knee joint,116
+Lateral meniscus.r,knee,articular,r,hierarchy,Knee joint,116
+Medial meniscus.l,knee,articular,l,hierarchy,Knee joint,68
+Medial meniscus.r,knee,articular,r,hierarchy,Knee joint,68
+Meniscopatellar ligament.l,knee,articular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,12
+Meniscopatellar ligament.r,knee,articular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,12
+Oblique popliteal ligament.l,knee,articular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,35
+Oblique popliteal ligament.r,knee,articular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,35
+Popliteofibular ligament.l,knee,articular,l,hierarchy,Knee joint,22
+Popliteofibular ligament.r,knee,articular,r,hierarchy,Knee joint,22
+Posterior cruciate ligament.l,knee,articular,l,hierarchy,Knee joint,788
+Posterior cruciate ligament.r,knee,articular,r,hierarchy,Knee joint,788
+Posterior ligament of fibular head.l,knee,articular,l,hierarchy,Superior tibiofibular joint,16
+Posterior ligament of fibular head.r,knee,articular,r,hierarchy,Superior tibiofibular joint,16
+Posterior meniscotibial ligament (Lateral meniscus).l,knee,articular,l,hierarchy,Knee joint,18
+Posterior meniscotibial ligament (Lateral meniscus).r,knee,articular,r,hierarchy,Knee joint,18
+Posterior meniscotibial ligament (Medial meniscus).l,knee,articular,l,hierarchy,Knee joint,30
+Posterior meniscotibial ligament (Medial meniscus).r,knee,articular,r,hierarchy,Knee joint,30
+Superficial part of tibial collateral ligament.l,knee,articular,l,hierarchy,Knee joint,12
+Superficial part of tibial collateral ligament.r,knee,articular,r,hierarchy,Knee joint,12
+Transverse ligament of knee.l,knee,articular,l,hierarchy,Knee joint,48
+Transverse ligament of knee.r,knee,articular,r,hierarchy,Knee joint,48
+Articularis genus muscle.ol,knee,insertion,l,centroid,z=0.502 |x|=0.087 y=-0.003,19
+Articularis genus muscle.or,knee,insertion,r,centroid,z=0.502 |x|=0.087 y=-0.003,19
+Biceps femoris muscle.el,knee,insertion,l,centroid,z=0.410 |x|=0.118 y=+0.044,51
+Biceps femoris muscle.er,knee,insertion,r,centroid,z=0.410 |x|=0.118 y=+0.044,51
+Lateral head of gastrocnemius.ol,knee,insertion,l,parent,Lateral head of gastrocnemius.l,22
+Lateral head of gastrocnemius.or,knee,insertion,r,parent,Lateral head of gastrocnemius.r,22
+Medial head of gastrocnemius.ol,knee,insertion,l,parent,Medial head of gastrocnemius.l,72
+Medial head of gastrocnemius.or,knee,insertion,r,parent,Medial head of gastrocnemius.r,72
+Patellar ligament.el,knee,insertion,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,43
+Patellar ligament.er,knee,insertion,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,43
+Patellar ligament.ol,knee,insertion,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,54
+Patellar ligament.or,knee,insertion,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,54
+Popliteus muscle.el,knee,insertion,l,parent,Popliteus muscle.l,57
+Popliteus muscle.er,knee,insertion,r,parent,Popliteus muscle.r,57
+Popliteus muscle.ol,knee,insertion,l,parent,Popliteus muscle.l,29
+Popliteus muscle.or,knee,insertion,r,parent,Popliteus muscle.r,29
+Quadriceps femoris muscle.el,knee,insertion,l,centroid,z=0.459 |x|=0.085 y=-0.012,50
+Quadriceps femoris muscle.er,knee,insertion,r,centroid,z=0.459 |x|=0.085 y=-0.012,50
+Anserine bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,120
+Anserine bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,120
+Deep infrapatellar bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Deep infrapatellar bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Inferior subtendinous bursa of biceps femoris muscle.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Inferior subtendinous bursa of biceps femoris muscle.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Lateral head of gastrocnemius.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,4908
+Lateral head of gastrocnemius.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,4908
+Lateral patellar retinaculum.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,7
+Lateral patellar retinaculum.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,7
+Lateral subtendinous bursa of gastrocnemius muscle.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Lateral subtendinous bursa of gastrocnemius muscle.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Medial head of gastrocnemius.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,6462
+Medial head of gastrocnemius.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,6462
+Medial patellar retinaculum.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,10
+Medial patellar retinaculum.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,10
+Medial subtendinous bursa of gastrocnemius muscle.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,80
+Medial subtendinous bursa of gastrocnemius muscle.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,80
+Popliteal fascia.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,488
+Popliteal fascia.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,488
+Popliteus muscle.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,1132
+Popliteus muscle.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,1132
+Semimembranosus bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Semimembranosus bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Subcutaneous bursa of tuberosity of tibia.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,352
+Subcutaneous bursa of tuberosity of tibia.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,352
+Subcutaneous infrapatellar bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,352
+Subcutaneous infrapatellar bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,352
+Subcutaneous prepatellar bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Subcutaneous prepatellar bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Subfacial prepatellar bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Subfacial prepatellar bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Subtendinous bursa of sartorius muscle.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,132
+Subtendinous bursa of sartorius muscle.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,132
+Subtendinous prepatellar bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Subtendinous prepatellar bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,96
+Suprapatellar bursa.l,knee,muscular,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,132
+Suprapatellar bursa.r,knee,muscular,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,132
+Fibula.l,knee,skeletal,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,1264
+Fibula.r,knee,skeletal,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,1264
+Patella.l,knee,skeletal,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,276
+Patella.r,knee,skeletal,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,276
+Tibia.l,knee,skeletal,l,override,structures at the knee the hierarchy files under leg / thigh / lower limb,1670
+Tibia.r,knee,skeletal,r,override,structures at the knee the hierarchy files under leg / thigh / lower limb,1670
+Annular ligament of radius.l,elbow-wrist,articular,l,hierarchy,Elbow joint,36
+Annular ligament of radius.r,elbow-wrist,articular,r,hierarchy,Elbow joint,36
+Articular capsule of elbow joint.l,elbow-wrist,articular,l,hierarchy,Elbow joint,762
+Articular capsule of elbow joint.r,elbow-wrist,articular,r,hierarchy,Elbow joint,762
+Articular capsule of radiocarpal joint.l,elbow-wrist,articular,l,hierarchy,Distal radio-ulnar joint,331
+Articular capsule of radiocarpal joint.r,elbow-wrist,articular,r,hierarchy,Distal radio-ulnar joint,331
+Articular capsules of distal interphalangeal joints.l,elbow-wrist,articular,l,hierarchy,Joints of hand,376
+Articular capsules of distal interphalangeal joints.r,elbow-wrist,articular,r,hierarchy,Joints of hand,376
+Articular capsules of metacarpophalangeal joints.l,elbow-wrist,articular,l,hierarchy,Joints of hand,392
+Articular capsules of metacarpophalangeal joints.r,elbow-wrist,articular,r,hierarchy,Joints of hand,392
+Articular capsules of proximal interphalangeal joints.l,elbow-wrist,articular,l,hierarchy,Joints of hand,348
+Articular capsules of proximal interphalangeal joints.r,elbow-wrist,articular,r,hierarchy,Joints of hand,348
+Articular disc of distal radio-ulnar joint.l,elbow-wrist,articular,l,hierarchy,Distal radio-ulnar joint,7
+Articular disc of distal radio-ulnar joint.r,elbow-wrist,articular,r,hierarchy,Distal radio-ulnar joint,7
+Capitohamate interosseous ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Capitohamate interosseous ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Collateral interphalangeal ligaments of hand.l,elbow-wrist,articular,l,hierarchy,Joints of hand,152
+Collateral interphalangeal ligaments of hand.r,elbow-wrist,articular,r,hierarchy,Joints of hand,152
+Collateral metacarpophalangeal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,80
+Collateral metacarpophalangeal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,80
+Deep transverse metacarpal ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,12
+Deep transverse metacarpal ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,12
+Dorsal carpometacarpal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,26
+Dorsal carpometacarpal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,26
+Dorsal intercarpal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,39
+Dorsal intercarpal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,39
+Dorsal metacarpal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,8
+Dorsal metacarpal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,8
+Dorsal radio-ulnar ligament.l,elbow-wrist,articular,l,hierarchy,Distal radio-ulnar joint,2
+Dorsal radio-ulnar ligament.r,elbow-wrist,articular,r,hierarchy,Distal radio-ulnar joint,2
+Dorsal radiocarpal ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,20
+Dorsal radiocarpal ligament.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,20
+Dorsal scaphotriquetral ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,8
+Dorsal scaphotriquetral ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,8
+Dorsal ulnocarpal ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,8
+Dorsal ulnocarpal ligament.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,8
+Interosseous membrane of forearm.l,elbow-wrist,articular,l,centroid,z=0.953 |x|=0.248 y=+0.008,2766
+Interosseous membrane of forearm.r,elbow-wrist,articular,r,centroid,z=0.953 |x|=0.248 y=+0.008,2766
+Interosseous metacarpal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,8
+Interosseous metacarpal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,8
+Lunotriquetral interosseous ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Lunotriquetral interosseous ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Oblique cord.l,elbow-wrist,articular,l,hierarchy,Radio-ulnar syndesmoses,2
+Oblique cord.r,elbow-wrist,articular,r,hierarchy,Radio-ulnar syndesmoses,2
+Palmar capitohamate ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Palmar capitohamate ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Palmar carpometacarpal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,29
+Palmar carpometacarpal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,29
+Palmar interphalangeal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,72
+Palmar interphalangeal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,72
+Palmar lunotriquetral ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Palmar lunotriquetral ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Palmar metacarpal ligaments.l,elbow-wrist,articular,l,hierarchy,Joints of hand,8
+Palmar metacarpal ligaments.r,elbow-wrist,articular,r,hierarchy,Joints of hand,8
+Palmar radio-ulnar ligament.l,elbow-wrist,articular,l,hierarchy,Distal radio-ulnar joint,6
+Palmar radio-ulnar ligament.r,elbow-wrist,articular,r,hierarchy,Distal radio-ulnar joint,6
+Palmar scaphotriquetral ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,6
+Palmar scaphotriquetral ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,6
+Palmar trapezoideocapitate ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Palmar trapezoideocapitate ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Pisohamate ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Pisohamate ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Pisometacarpal ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Pisometacarpal ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Pisotriquetral ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,20
+Pisotriquetral ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,20
+Quadrate ligament.l,elbow-wrist,articular,l,hierarchy,Elbow joint,2
+Quadrate ligament.r,elbow-wrist,articular,r,hierarchy,Elbow joint,2
+Radial collateral ligament of wrist joint.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,12
+Radial collateral ligament of wrist joint.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,12
+Radial collateral ligament.l,elbow-wrist,articular,l,hierarchy,Elbow joint,8
+Radial collateral ligament.r,elbow-wrist,articular,r,hierarchy,Elbow joint,8
+Radiate carpal ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,35
+Radiate carpal ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,35
+Radiocapitate ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,2
+Radiocapitate ligament.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,2
+Radioscaphocapitate ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,4
+Radioscaphocapitate ligament.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,4
+Scaphocapitate ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Scaphocapitate ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Scapholunate interosseous ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Scapholunate interosseous ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Scaphotrapeziotrapezoidal ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,12
+Scaphotrapeziotrapezoidal ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,12
+Trapeziotrapezoidal interosseous ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Trapeziotrapezoidal interosseous ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Trapezoideocapitate interosseous ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Trapezoideocapitate interosseous ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Triquetrocapitate ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,4
+Triquetrocapitate ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,4
+Triquetrohamate ligament.l,elbow-wrist,articular,l,hierarchy,Joints of hand,2
+Triquetrohamate ligament.r,elbow-wrist,articular,r,hierarchy,Joints of hand,2
+Ulnar collateral ligament of wrist joint.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,10
+Ulnar collateral ligament of wrist joint.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,10
+Ulnar collateral ligament.l,elbow-wrist,articular,l,hierarchy,Elbow joint,12
+Ulnar collateral ligament.r,elbow-wrist,articular,r,hierarchy,Elbow joint,12
+Ulnocapitate ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,10
+Ulnocapitate ligament.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,10
+Ulnolunate ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,8
+Ulnolunate ligament.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,8
+Ulnopisiform ligament,elbow-wrist,articular,,hierarchy,Radiocarpal joint,2
+Ulnopisiform ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,2
+Ulnotriquetral ligament.l,elbow-wrist,articular,l,hierarchy,Radiocarpal joint,4
+Ulnotriquetral ligament.r,elbow-wrist,articular,r,hierarchy,Radiocarpal joint,4
+Abductor digiti minimi of hand.el,elbow-wrist,insertion,l,parent,Abductor digiti minimi of hand.l,66
+Abductor digiti minimi of hand.er,elbow-wrist,insertion,r,parent,Abductor digiti minimi of hand.r,66
+Abductor digiti minimi of hand.ol,elbow-wrist,insertion,l,parent,Abductor digiti minimi of hand.l,48
+Abductor digiti minimi of hand.or,elbow-wrist,insertion,r,parent,Abductor digiti minimi of hand.r,48
+Abductor pollicis longus.el,elbow-wrist,insertion,l,parent,Abductor pollicis longus.l,14
+Abductor pollicis longus.er,elbow-wrist,insertion,r,parent,Abductor pollicis longus.r,14
+Abductor pollicis longus.ol,elbow-wrist,insertion,l,parent,Abductor pollicis longus.l,110
+Abductor pollicis longus.or,elbow-wrist,insertion,r,parent,Abductor pollicis longus.r,110
+Adductor pollicis.e1l,elbow-wrist,insertion,l,centroid,z=0.807 |x|=0.309 y=-0.046,18
+Adductor pollicis.e1r,elbow-wrist,insertion,r,centroid,z=0.807 |x|=0.309 y=-0.046,18
+Adductor pollicis.el,elbow-wrist,insertion,l,centroid,z=0.845 |x|=0.266 y=-0.025,30
+Adductor pollicis.er,elbow-wrist,insertion,r,centroid,z=0.845 |x|=0.266 y=-0.025,30
+Anconeus muscle.el,elbow-wrist,insertion,l,parent,Anconeus muscle.l,24
+Anconeus muscle.er,elbow-wrist,insertion,r,parent,Anconeus muscle.r,24
+Anconeus muscle.ol,elbow-wrist,insertion,l,parent,Anconeus muscle.l,31
+Anconeus muscle.or,elbow-wrist,insertion,r,parent,Anconeus muscle.r,31
+Biceps brachii muscle.el,elbow-wrist,insertion,l,centroid,z=1.062 |x|=0.234 y=+0.020,25
+Biceps brachii muscle.er,elbow-wrist,insertion,r,centroid,z=1.062 |x|=0.234 y=+0.020,25
+Brachialis muscle.el,elbow-wrist,insertion,l,parent,Brachialis muscle.l,67
+Brachialis muscle.er,elbow-wrist,insertion,r,parent,Brachialis muscle.r,67
+Brachialis muscle.ol,elbow-wrist,insertion,l,parent,Brachialis muscle.l,192
+Brachialis muscle.or,elbow-wrist,insertion,r,parent,Brachialis muscle.r,192
+Brachioradialis muscle.el,elbow-wrist,insertion,l,parent,Brachioradialis muscle.l,32
+Brachioradialis muscle.er,elbow-wrist,insertion,r,parent,Brachioradialis muscle.r,32
+Brachioradialis muscle.ol,elbow-wrist,insertion,l,parent,Brachioradialis muscle.l,30
+Brachioradialis muscle.or,elbow-wrist,insertion,r,parent,Brachioradialis muscle.r,30
+Common extensor tendon.ol,elbow-wrist,insertion,l,centroid,z=1.112 |x|=0.247 y=+0.044,40
+Common extensor tendon.or,elbow-wrist,insertion,r,centroid,z=1.112 |x|=0.247 y=+0.044,40
+Common flexor tendon.ol,elbow-wrist,insertion,l,centroid,z=1.106 |x|=0.191 y=+0.032,44
+Common flexor tendon.or,elbow-wrist,insertion,r,centroid,z=1.106 |x|=0.191 y=+0.032,44
+Deep head of flexor pollicis brevis.o1l,elbow-wrist,insertion,l,parent,Deep head of flexor pollicis brevis.l,31
+Deep head of flexor pollicis brevis.o1r,elbow-wrist,insertion,r,parent,Deep head of flexor pollicis brevis.r,31
+Deep head of flexor pollicis brevis.ol,elbow-wrist,insertion,l,parent,Deep head of flexor pollicis brevis.l,64
+Deep head of flexor pollicis brevis.or,elbow-wrist,insertion,r,parent,Deep head of flexor pollicis brevis.r,64
+Dorsal interossei muscles of hand.o1l,elbow-wrist,insertion,l,parent,Dorsal interossei muscles of hand.l,63
+Dorsal interossei muscles of hand.o1r,elbow-wrist,insertion,r,parent,Dorsal interossei muscles of hand.r,63
+Dorsal interossei muscles of hand.o2l,elbow-wrist,insertion,l,parent,Dorsal interossei muscles of hand.l,53
+Dorsal interossei muscles of hand.o2r,elbow-wrist,insertion,r,parent,Dorsal interossei muscles of hand.r,53
+Dorsal interossei muscles of hand.o3l,elbow-wrist,insertion,l,parent,Dorsal interossei muscles of hand.l,51
+Dorsal interossei muscles of hand.o3r,elbow-wrist,insertion,r,parent,Dorsal interossei muscles of hand.r,51
+Dorsal interossei muscles of hand.o4l,elbow-wrist,insertion,l,parent,Dorsal interossei muscles of hand.l,18
+Dorsal interossei muscles of hand.o4r,elbow-wrist,insertion,r,parent,Dorsal interossei muscles of hand.r,18
+Dorsal interossei muscles of hand.ol,elbow-wrist,insertion,l,parent,Dorsal interossei muscles of hand.l,20
+Dorsal interossei muscles of hand.or,elbow-wrist,insertion,r,parent,Dorsal interossei muscles of hand.r,20
+Extensor carpi radialis brevis.el,elbow-wrist,insertion,l,parent,Extensor carpi radialis brevis.l,13
+Extensor carpi radialis brevis.er,elbow-wrist,insertion,r,parent,Extensor carpi radialis brevis.r,13
+Extensor carpi radialis longus.el,elbow-wrist,insertion,l,parent,Extensor carpi radialis longus.l,13
+Extensor carpi radialis longus.er,elbow-wrist,insertion,r,parent,Extensor carpi radialis longus.r,13
+Extensor carpi radialis longus.ol,elbow-wrist,insertion,l,parent,Extensor carpi radialis longus.l,63
+Extensor carpi radialis longus.or,elbow-wrist,insertion,r,parent,Extensor carpi radialis longus.r,63
+Extensor carpi ulnaris.el,elbow-wrist,insertion,l,centroid,z=0.846 |x|=0.243 y=-0.016,5
+Extensor carpi ulnaris.er,elbow-wrist,insertion,r,centroid,z=0.846 |x|=0.243 y=-0.016,5
+Extensor carpi ulnaris.ol,elbow-wrist,insertion,l,centroid,z=0.969 |x|=0.230 y=+0.022,9
+Extensor carpi ulnaris.or,elbow-wrist,insertion,r,centroid,z=0.969 |x|=0.230 y=+0.022,9
+Extensor digitorum.e1l,elbow-wrist,insertion,l,parent,Extensor digitorum.l,14
+Extensor digitorum.e1r,elbow-wrist,insertion,r,parent,Extensor digitorum.r,14
+Extensor digitorum.e2l,elbow-wrist,insertion,l,parent,Extensor digitorum.l,23
+Extensor digitorum.e2r,elbow-wrist,insertion,r,parent,Extensor digitorum.r,23
+Extensor digitorum.e3l,elbow-wrist,insertion,l,parent,Extensor digitorum.l,17
+Extensor digitorum.e3r,elbow-wrist,insertion,r,parent,Extensor digitorum.r,17
+Extensor digitorum.e4l,elbow-wrist,insertion,l,parent,Extensor digitorum.l,8
+Extensor digitorum.e4r,elbow-wrist,insertion,r,parent,Extensor digitorum.r,8
+Extensor digitorum.e5l,elbow-wrist,insertion,l,parent,Extensor digitorum.l,11
+Extensor digitorum.e5r,elbow-wrist,insertion,r,parent,Extensor digitorum.r,11
+Extensor digitorum.e6l,elbow-wrist,insertion,l,parent,Extensor digitorum.l,6
+Extensor digitorum.e6r,elbow-wrist,insertion,r,parent,Extensor digitorum.r,6
+Extensor digitorum.e7l,elbow-wrist,insertion,l,parent,Extensor digitorum.l,16
+Extensor digitorum.e7r,elbow-wrist,insertion,r,parent,Extensor digitorum.r,16
+Extensor digitorum.el,elbow-wrist,insertion,l,parent,Extensor digitorum.l,18
+Extensor digitorum.er,elbow-wrist,insertion,r,parent,Extensor digitorum.r,18
+Extensor indicis.el,elbow-wrist,insertion,l,parent,Extensor indicis.l,12
+Extensor indicis.er,elbow-wrist,insertion,r,parent,Extensor indicis.r,12
+Extensor indicis.ol,elbow-wrist,insertion,l,parent,Extensor indicis.l,45
+Extensor indicis.or,elbow-wrist,insertion,r,parent,Extensor indicis.r,45
+Extensor pollicis brevis.el,elbow-wrist,insertion,l,parent,Extensor pollicis brevis.l,14
+Extensor pollicis brevis.er,elbow-wrist,insertion,r,parent,Extensor pollicis brevis.r,14
+Extensor pollicis brevis.ol,elbow-wrist,insertion,l,parent,Extensor pollicis brevis.l,53
+Extensor pollicis brevis.or,elbow-wrist,insertion,r,parent,Extensor pollicis brevis.r,53
+Extensor pollicis longus.el,elbow-wrist,insertion,l,parent,Extensor pollicis longus.l,13
+Extensor pollicis longus.er,elbow-wrist,insertion,r,parent,Extensor pollicis longus.r,13
+Extensor pollicis longus.ol,elbow-wrist,insertion,l,parent,Extensor pollicis longus.l,64
+Extensor pollicis longus.or,elbow-wrist,insertion,r,parent,Extensor pollicis longus.r,64
+Flexor carpi ulnaris.el,elbow-wrist,insertion,l,centroid,z=0.849 |x|=0.244 y=-0.033,56
+Flexor carpi ulnaris.er,elbow-wrist,insertion,r,centroid,z=0.849 |x|=0.244 y=-0.033,56
+Flexor digiti minimi of hand.el,elbow-wrist,insertion,l,parent,Flexor digiti minimi of hand.l,62
+Flexor digiti minimi of hand.er,elbow-wrist,insertion,r,parent,Flexor digiti minimi of hand.r,62
+Flexor digiti minimi of hand.ol,elbow-wrist,insertion,l,parent,Flexor digiti minimi of hand.l,12
+Flexor digiti minimi of hand.or,elbow-wrist,insertion,r,parent,Flexor digiti minimi of hand.r,12
+Flexor digitorum profundus.e1l,elbow-wrist,insertion,l,parent,Flexor digitorum profundus.l,11
+Flexor digitorum profundus.e1r,elbow-wrist,insertion,r,parent,Flexor digitorum profundus.r,11
+Flexor digitorum profundus.e2l,elbow-wrist,insertion,l,parent,Flexor digitorum profundus.l,7
+Flexor digitorum profundus.e2r,elbow-wrist,insertion,r,parent,Flexor digitorum profundus.r,7
+Flexor digitorum profundus.e3l,elbow-wrist,insertion,l,parent,Flexor digitorum profundus.l,13
+Flexor digitorum profundus.e3r,elbow-wrist,insertion,r,parent,Flexor digitorum profundus.r,13
+Flexor digitorum profundus.el,elbow-wrist,insertion,l,parent,Flexor digitorum profundus.l,7
+Flexor digitorum profundus.er,elbow-wrist,insertion,r,parent,Flexor digitorum profundus.r,7
+Flexor digitorum superficialis.e1l,elbow-wrist,insertion,l,centroid,z=0.736 |x|=0.257 y=-0.065,24
+Flexor digitorum superficialis.e1r,elbow-wrist,insertion,r,centroid,z=0.736 |x|=0.257 y=-0.065,24
+Flexor digitorum superficialis.e2l,elbow-wrist,insertion,l,centroid,z=0.729 |x|=0.282 y=-0.067,25
+Flexor digitorum superficialis.e2r,elbow-wrist,insertion,r,centroid,z=0.729 |x|=0.282 y=-0.067,25
+Flexor digitorum superficialis.e3l,elbow-wrist,insertion,l,centroid,z=0.732 |x|=0.311 y=-0.060,25
+Flexor digitorum superficialis.e3r,elbow-wrist,insertion,r,centroid,z=0.732 |x|=0.311 y=-0.060,25
+Flexor digitorum superficialis.el,elbow-wrist,insertion,l,centroid,z=0.748 |x|=0.233 y=-0.063,24
+Flexor digitorum superficialis.er,elbow-wrist,insertion,r,centroid,z=0.748 |x|=0.233 y=-0.063,24
+Flexor digitorum superficialis.ol,elbow-wrist,insertion,l,centroid,z=1.029 |x|=0.246 y=+0.016,41
+Flexor digitorum superficialis.or,elbow-wrist,insertion,r,centroid,z=1.029 |x|=0.246 y=+0.016,41
+Flexor pollicis longus.el,elbow-wrist,insertion,l,parent,Flexor pollicis longus.l,6
+Flexor pollicis longus.er,elbow-wrist,insertion,r,parent,Flexor pollicis longus.r,6
+Flexor pollicis longus.o1l,elbow-wrist,insertion,l,parent,Flexor pollicis longus.l,125
+Flexor pollicis longus.o1r,elbow-wrist,insertion,r,parent,Flexor pollicis longus.r,125
+Flexor pollicis longus.ol,elbow-wrist,insertion,l,parent,Flexor pollicis longus.l,12
+Flexor pollicis longus.or,elbow-wrist,insertion,r,parent,Flexor pollicis longus.r,12
+Lateral head of triceps brachii.ol,elbow-wrist,insertion,l,parent,Lateral head of triceps brachii.l,72
+Lateral head of triceps brachii.or,elbow-wrist,insertion,r,parent,Lateral head of triceps brachii.r,72
+Long head of biceps brachii.ol,elbow-wrist,insertion,l,parent,Long head of biceps brachii.l,80
+Long head of biceps brachii.or,elbow-wrist,insertion,r,parent,Long head of biceps brachii.r,80
+Long head of triceps brachii.ol,elbow-wrist,insertion,l,parent,Long head of triceps brachii.l,105
+Long head of triceps brachii.or,elbow-wrist,insertion,r,parent,Long head of triceps brachii.r,105
+Medial head of triceps brachii.ol,elbow-wrist,insertion,l,parent,Medial head of triceps brachii.l,97
+Medial head of triceps brachii.or,elbow-wrist,insertion,r,parent,Medial head of triceps brachii.r,97
+Opponens digiti minimi muscle of hand.ol,elbow-wrist,insertion,l,parent,Opponens digiti minimi muscle of hand.l,16
+Opponens digiti minimi muscle of hand.or,elbow-wrist,insertion,r,parent,Opponens digiti minimi muscle of hand.r,16
+Pronator quadratus.el,elbow-wrist,insertion,l,parent,Pronator quadratus.l,39
+Pronator quadratus.ol,elbow-wrist,insertion,l,parent,Pronator quadratus.l,13
+Pronator teres.el,elbow-wrist,insertion,l,centroid,z=0.993 |x|=0.262 y=+0.016,16
+Pronator teres.er,elbow-wrist,insertion,r,centroid,z=0.993 |x|=0.262 y=+0.016,16
+Pronator teres.ol,elbow-wrist,insertion,l,centroid,z=1.119 |x|=0.198 y=+0.033,16
+Pronator teres.or,elbow-wrist,insertion,r,centroid,z=1.119 |x|=0.198 y=+0.033,16
+Short head of biceps brachii.ol,elbow-wrist,insertion,l,parent,Short head of biceps brachii.l,195
+Supinator.el,elbow-wrist,insertion,l,parent,Supinator.l,90
+Supinator.er,elbow-wrist,insertion,r,parent,Supinator.r,90
+Supinator.ol,elbow-wrist,insertion,l,parent,Supinator.l,29
+Supinator.or,elbow-wrist,insertion,r,parent,Supinator.r,29
+Triceps brachii muscle.el,elbow-wrist,insertion,l,centroid,z=1.101 |x|=0.214 y=+0.054,54
+Triceps brachii muscle.er,elbow-wrist,insertion,r,centroid,z=1.101 |x|=0.214 y=+0.054,54
+Ulnar head of flexor carpi ulnaris.ol,elbow-wrist,insertion,l,parent,Ulnar head of flexor carpi ulnaris.l,230
+Ulnar head of flexor carpi ulnaris.or,elbow-wrist,insertion,r,parent,Ulnar head of flexor carpi ulnaris.r,230
+Abductor digiti minimi of hand.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,672
+Abductor digiti minimi of hand.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,672
+Abductor pollicis brevis.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,624
+Abductor pollicis brevis.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,624
+Abductor pollicis longus.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,2462
+Abductor pollicis longus.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,2462
+Anconeus muscle.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,1442
+Anconeus muscle.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,1442
+Antebrachial fascia.l,elbow-wrist,muscular,l,override,arm distal to the shoulder,4460
+Antebrachial fascia.r,elbow-wrist,muscular,r,override,arm distal to the shoulder,4460
+Bicipitoradial bursa.l,elbow-wrist,muscular,l,override,arm distal to the shoulder,352
+Bicipitoradial bursa.r,elbow-wrist,muscular,r,override,arm distal to the shoulder,352
+Brachial fascia.l,elbow-wrist,muscular,l,override,arm distal to the shoulder,3018
+Brachial fascia.r,elbow-wrist,muscular,r,override,arm distal to the shoulder,3018
+Brachialis muscle.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of arm,3478
+Brachialis muscle.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of arm,3478
+Brachioradialis muscle.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,7312
+Brachioradialis muscle.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,7312
+Common flexor tendon sheath.l,elbow-wrist,muscular,l,centroid,z=0.817 |x|=0.263 y=-0.044,864
+Common flexor tendon sheath.r,elbow-wrist,muscular,r,centroid,z=0.817 |x|=0.263 y=-0.043,864
+Cruciform part of fibrous sheath of digit of hand.l,elbow-wrist,muscular,l,centroid,z=0.751 |x|=0.273 y=-0.057,282
+Cruciform part of fibrous sheath of digit of hand.r,elbow-wrist,muscular,r,centroid,z=0.751 |x|=0.273 y=-0.057,282
+Deep head of flexor pollicis brevis.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,746
+Deep head of flexor pollicis brevis.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,746
+Deep head of pronator teres.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,1114
+Deep head of pronator teres.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,1114
+Dorsal fascia of hand.l,elbow-wrist,muscular,l,centroid,z=0.778 |x|=0.280 y=-0.051,1445
+Dorsal fascia of hand.r,elbow-wrist,muscular,r,centroid,z=0.778 |x|=0.280 y=-0.051,1445
+Dorsal interossei muscles of hand.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,1364
+Dorsal interossei muscles of hand.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,1364
+Extensor carpi radialis brevis.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,3142
+Extensor carpi radialis brevis.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,3142
+Extensor carpi radialis longus.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,3706
+Extensor carpi radialis longus.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,3706
+Extensor digiti minimi.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,2152
+Extensor digiti minimi.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,2152
+Extensor digitorum.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,6410
+Extensor digitorum.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,6410
+Extensor indicis.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,1142
+Extensor indicis.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,1142
+Extensor pollicis brevis.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,1176
+Extensor pollicis brevis.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,1176
+Extensor pollicis longus.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,1602
+Extensor pollicis longus.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,1602
+Extensor retinaculum of wrist.l,elbow-wrist,muscular,l,hierarchy,Fascia of upper limb,146
+Extensor retinaculum of wrist.r,elbow-wrist,muscular,r,hierarchy,Fascia of upper limb,146
+Flexor carpi radialis.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,1666
+Flexor carpi radialis.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,1666
+Flexor digiti minimi of hand.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,308
+Flexor digiti minimi of hand.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,308
+Flexor digitorum profundus.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,7110
+Flexor digitorum profundus.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,7110
+Flexor pollicis longus.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,1666
+Flexor pollicis longus.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,1666
+Flexor retinaculum of wrist.l,elbow-wrist,muscular,l,hierarchy,Fascia of upper limb,215
+Flexor retinaculum of wrist.r,elbow-wrist,muscular,r,hierarchy,Fascia of upper limb,215
+Humeral head of extensor carpi ulnaris.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,830
+Humeral head of extensor carpi ulnaris.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,830
+Humeral head of flexor carpi ulnaris.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,3912
+Humeral head of flexor carpi ulnaris.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,3912
+Humero-ulnar head of flexor digitorum superficialis.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,12798
+Humero-ulnar head of flexor digitorum superficialis.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,12798
+Lateral head of triceps brachii.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of arm,3628
+Lateral head of triceps brachii.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of arm,3628
+Lateral intermuscular septum of arm.l,elbow-wrist,muscular,l,override,arm distal to the shoulder,160
+Lateral intermuscular septum of arm.r,elbow-wrist,muscular,r,override,arm distal to the shoulder,160
+Long head of biceps brachii.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of arm,3218
+Long head of biceps brachii.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of arm,3218
+Long head of triceps brachii.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of arm,3950
+Long head of triceps brachii.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of arm,3950
+Lumbrical muscles of hand.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,1368
+Lumbrical muscles of hand.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,1368
+Medial head of triceps brachii.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of arm,2686
+Medial head of triceps brachii.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of arm,2686
+Medial intermuscular septum of arm.l,elbow-wrist,muscular,l,override,arm distal to the shoulder,312
+Medial intermuscular septum of arm.r,elbow-wrist,muscular,r,override,arm distal to the shoulder,312
+Oblique head of adductor pollicis.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,450
+Oblique head of adductor pollicis.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,450
+Opponens digiti minimi muscle of hand.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,420
+Opponens digiti minimi muscle of hand.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,420
+Opponens pollicis muscle.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,384
+Opponens pollicis muscle.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,384
+Palmar aponeurosis.l,elbow-wrist,muscular,l,centroid,z=0.778 |x|=0.281 y=-0.063,1284
+Palmar aponeurosis.r,elbow-wrist,muscular,r,centroid,z=0.778 |x|=0.281 y=-0.063,1284
+Palmar interossei muscles.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,174
+Palmar interossei muscles.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,174
+Palmaris longus muscle.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,4374
+Palmaris longus muscle.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,4374
+Pronator quadratus.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,1020
+Pronator quadratus.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,1020
+Radial head of flexor digitorum superficialis.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,1276
+Radial head of flexor digitorum superficialis.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,1276
+Short head of biceps brachii.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of arm,2696
+Short head of biceps brachii.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of arm,2696
+Subtendinous bursa of triceps brachii muscle.l,elbow-wrist,muscular,l,override,arm distal to the shoulder,352
+Subtendinous bursa of triceps brachii muscle.r,elbow-wrist,muscular,r,override,arm distal to the shoulder,352
+Superficial head of flexor pollicis brevis.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,276
+Superficial head of flexor pollicis brevis.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,276
+Superficial head of pronator teres.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,2546
+Superficial head of pronator teres.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,2546
+Superficial transverse metacarpal ligament.l,elbow-wrist,muscular,l,hierarchy,Fascia of upper limb,64
+Superficial transverse metacarpal ligament.r,elbow-wrist,muscular,r,hierarchy,Fascia of upper limb,64
+Supinator.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,2754
+Supinator.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,2754
+Synovial sheaths of digits of hand.l,elbow-wrist,muscular,l,centroid,z=0.747 |x|=0.285 y=-0.060,436
+Synovial sheaths of digits of hand.r,elbow-wrist,muscular,r,centroid,z=0.747 |x|=0.285 y=-0.060,436
+Tendon sheath - abd. pollicis longus - ext. pollicis brevis.l,elbow-wrist,muscular,l,centroid,z=0.860 |x|=0.289 y=-0.013,680
+Tendon sheath - abd. pollicis longus - ext. pollicis brevis.r,elbow-wrist,muscular,r,centroid,z=0.860 |x|=0.289 y=-0.013,680
+Tendon sheath of extensor digitorum and extensor indicis.l,elbow-wrist,muscular,l,centroid,z=0.856 |x|=0.265 y=-0.004,148
+Tendon sheath of extensor digitorum and extensor indicis.r,elbow-wrist,muscular,r,centroid,z=0.856 |x|=0.265 y=-0.004,148
+Tendon sheath of extensors carpi radialis.l,elbow-wrist,muscular,l,centroid,z=0.866 |x|=0.281 y=-0.008,146
+Tendon sheath of extensors carpi radialis.r,elbow-wrist,muscular,r,centroid,z=0.866 |x|=0.281 y=-0.008,146
+Transverse head of adductor pollicis.l,elbow-wrist,muscular,l,hierarchy,Muscles of hand,1014
+Transverse head of adductor pollicis.r,elbow-wrist,muscular,r,hierarchy,Muscles of hand,1014
+Ulnar head of extensor carpi ulnaris.l,elbow-wrist,muscular,l,hierarchy,Posterior compartment of forearm,582
+Ulnar head of extensor carpi ulnaris.r,elbow-wrist,muscular,r,hierarchy,Posterior compartment of forearm,582
+Ulnar head of flexor carpi ulnaris.l,elbow-wrist,muscular,l,hierarchy,Anterior compartment of forearm,1466
+Ulnar head of flexor carpi ulnaris.r,elbow-wrist,muscular,r,hierarchy,Anterior compartment of forearm,1466
+Capitate bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,472
+Capitate bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,472
+Distal phalanx of fifth finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,192
+Distal phalanx of fifth finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,192
+Distal phalanx of first finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,222
+Distal phalanx of first finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,222
+Distal phalanx of fourth finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,134
+Distal phalanx of fourth finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,134
+Distal phalanx of second finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,250
+Distal phalanx of second finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,250
+Distal phalanx of third finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,192
+Distal phalanx of third finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,192
+Fifth metacarpal bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,512
+Fifth metacarpal bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,512
+First metacarpal bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,682
+First metacarpal bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,682
+Fourth metacarpal bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,642
+Fourth metacarpal bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,642
+Hamate bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,536
+Hamate bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,536
+Lunate bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,348
+Lunate bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,348
+Middle phalanx of fifth finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,292
+Middle phalanx of fifth finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,292
+Middle phalanx of fourth finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,446
+Middle phalanx of fourth finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,446
+Middle phalanx of second finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,314
+Middle phalanx of second finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,314
+Middle phalanx of third finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,360
+Middle phalanx of third finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,360
+Pisiform bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,278
+Pisiform bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,278
+Proximal phalanx of fifth finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,560
+Proximal phalanx of fifth finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,560
+Proximal phalanx of first finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,328
+Proximal phalanx of first finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,328
+Proximal phalanx of fourth finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,368
+Proximal phalanx of fourth finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,368
+Proximal phalanx of second finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,414
+Proximal phalanx of second finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,414
+Proximal phalanx of third finger of hand.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,440
+Proximal phalanx of third finger of hand.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,440
+Radius.l,elbow-wrist,skeletal,l,override,arm distal to the shoulder,784
+Radius.r,elbow-wrist,skeletal,r,override,arm distal to the shoulder,784
+Scaphoid bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,390
+Scaphoid bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,390
+Second metacarpal bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,764
+Second metacarpal bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,764
+Third metacarpal bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,708
+Third metacarpal bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,708
+Trapezium bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,500
+Trapezium bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,500
+Trapezoid bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,364
+Trapezoid bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,364
+Triquetrum bone.l,elbow-wrist,skeletal,l,hierarchy,division:Hand,176
+Triquetrum bone.r,elbow-wrist,skeletal,r,hierarchy,division:Hand,176
+Ulna.l,elbow-wrist,skeletal,l,override,arm distal to the shoulder,904
+Ulna.r,elbow-wrist,skeletal,r,override,arm distal to the shoulder,904
+Anterior talocalcaneal ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,8
+Anterior talocalcaneal ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,8
+Anterior talofibular ligament.l,ankle-foot,articular,l,hierarchy,Ankle joint,2
+Anterior talofibular ligament.r,ankle-foot,articular,r,hierarchy,Ankle joint,2
+Anterior tibiofibular ligament.l,ankle-foot,articular,l,hierarchy,Tibiofibular syndesmosis,24
+Anterior tibiofibular ligament.r,ankle-foot,articular,r,hierarchy,Tibiofibular syndesmosis,24
+Articular capsule of interphalangeal joint of great toe.l,ankle-foot,articular,l,hierarchy,Joints of foot,96
+Articular capsule of interphalangeal joint of great toe.r,ankle-foot,articular,r,hierarchy,Joints of foot,96
+Articular capsules of distal interphalangeal joints of foot.l,ankle-foot,articular,l,hierarchy,Joints of foot,356
+Articular capsules of distal interphalangeal joints of foot.r,ankle-foot,articular,r,hierarchy,Joints of foot,356
+Articular capsules of metatarsophalangeal joints.l,ankle-foot,articular,l,hierarchy,Joints of foot,438
+Articular capsules of metatarsophalangeal joints.r,ankle-foot,articular,r,hierarchy,Joints of foot,438
+Articular capsules of proximal interphalangeal joints of foot.l,ankle-foot,articular,l,hierarchy,Joints of foot,366
+Articular capsules of proximal interphalangeal joints of foot.r,ankle-foot,articular,r,hierarchy,Joints of foot,366
+Calcaneocuboid ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,8
+Calcaneocuboid ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,8
+Calcaneofibular ligament.l,ankle-foot,articular,l,hierarchy,Ankle joint,2
+Calcaneofibular ligament.r,ankle-foot,articular,r,hierarchy,Ankle joint,2
+Calcaneonavicular ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,8
+Calcaneonavicular ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,8
+Collateral interphalangeal ligaments of foot.l,ankle-foot,articular,l,hierarchy,Joints of foot,233
+Collateral interphalangeal ligaments of foot.r,ankle-foot,articular,r,hierarchy,Joints of foot,233
+Collateral metatarsophalangeal ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,144
+Collateral metatarsophalangeal ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,144
+Cuneocuboid interosseous ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,20
+Cuneocuboid interosseous ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,20
+Cuneometatarsal interosseous ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,6
+Cuneometatarsal interosseous ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,6
+Deep transverse metatarsal ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,10
+Deep transverse metatarsal ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,10
+Dorsal calcaneocuboid ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,2
+Dorsal calcaneocuboid ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,2
+Dorsal cuboideonavicular ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,2
+Dorsal cuboideonavicular ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,2
+Dorsal cuneocuboid ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,2
+Dorsal cuneocuboid ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,2
+Dorsal cuneonavicular ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,12
+Dorsal cuneonavicular ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,12
+Dorsal intercuneiform ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,4
+Dorsal intercuneiform ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,4
+Dorsal metatarsal ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,10
+Dorsal metatarsal ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,10
+Dorsal tarsometatarsal ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,28
+Dorsal tarsometatarsal ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,28
+Intercuneiform interosseous ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,4
+Intercuneiform interosseous ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,4
+Intersesamoid ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,16
+Intersesamoid ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,16
+Lateral talocalcaneal ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,4
+Lateral talocalcaneal ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,4
+Long plantar ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,3486
+Long plantar ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,3486
+Medial talocalcaneal ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,12
+Medial talocalcaneal ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,12
+Metatarsal interosseous ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,8
+Metatarsal interosseous ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,8
+Plantar calcaneocuboid ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,12
+Plantar calcaneocuboid ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,12
+Plantar calcaneonavicular ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,2
+Plantar calcaneonavicular ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,2
+Plantar cuboideonavicular ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,2
+Plantar cuboideonavicular ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,2
+Plantar cuneocuboid ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,8
+Plantar cuneocuboid ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,8
+Plantar cuneonavicular ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,10
+Plantar cuneonavicular ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,10
+Plantar intercuneiform ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,4
+Plantar intercuneiform ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,4
+Plantar interphalangeal ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,148
+Plantar interphalangeal ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,148
+Plantar metatarsal ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,8
+Plantar metatarsal ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,8
+Plantar metatarsophalangeal ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,80
+Plantar metatarsophalangeal ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,80
+Plantar tarsometatarsal ligaments.l,ankle-foot,articular,l,hierarchy,Joints of foot,20
+Plantar tarsometatarsal ligaments.r,ankle-foot,articular,r,hierarchy,Joints of foot,20
+Posterior talocalcaneal ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,6
+Posterior talocalcaneal ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,6
+Posterior talofibular ligament.l,ankle-foot,articular,l,hierarchy,Ankle joint,2
+Posterior talofibular ligament.r,ankle-foot,articular,r,hierarchy,Ankle joint,2
+Posterior tibiofibular ligament.l,ankle-foot,articular,l,hierarchy,Tibiofibular syndesmosis,24
+Posterior tibiofibular ligament.r,ankle-foot,articular,r,hierarchy,Tibiofibular syndesmosis,24
+Posterior tibiotalar ligament.l,ankle-foot,articular,l,hierarchy,Ankle joint,4
+Posterior tibiotalar ligament.r,ankle-foot,articular,r,hierarchy,Ankle joint,4
+Talocalcaneal interosseous ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,40
+Talocalcaneal interosseous ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,40
+Talonavicular ligament.l,ankle-foot,articular,l,hierarchy,Joints of foot,12
+Talonavicular ligament.r,ankle-foot,articular,r,hierarchy,Joints of foot,12
+Tibiocalcaneal ligament.l,ankle-foot,articular,l,hierarchy,Ankle joint,4
+Tibiocalcaneal ligament.r,ankle-foot,articular,r,hierarchy,Ankle joint,4
+Tibionavicular ligament.l,ankle-foot,articular,l,hierarchy,Ankle joint,20
+Tibionavicular ligament.r,ankle-foot,articular,r,hierarchy,Ankle joint,20
+Transverse tibiofibular ligament.l,ankle-foot,articular,l,hierarchy,Tibiofibular syndesmosis,8
+Transverse tibiofibular ligament.r,ankle-foot,articular,r,hierarchy,Tibiofibular syndesmosis,8
+(Opponens digiti minimi muscle of foot).ol,ankle-foot,insertion,l,centroid,z=0.020 |x|=0.123 y=-0.023,38
+(Opponens digiti minimi muscle of foot).or,ankle-foot,insertion,r,centroid,z=0.020 |x|=0.123 y=-0.023,38
+Abductor digiti minimi of foot.el,ankle-foot,insertion,l,parent,Abductor digiti minimi of foot.l,44
+Abductor digiti minimi of foot.er,ankle-foot,insertion,r,parent,Abductor digiti minimi of foot.r,44
+Abductor hallucis.el,ankle-foot,insertion,l,parent,Abductor hallucis.l,15
+Abductor hallucis.er,ankle-foot,insertion,r,parent,Abductor hallucis.r,15
+Abductor hallucis.ol,ankle-foot,insertion,l,parent,Abductor hallucis.l,32
+Abductor hallucis.or,ankle-foot,insertion,r,parent,Abductor hallucis.r,32
+Extensor digitorum brevis.e1l,ankle-foot,insertion,l,parent,Extensor digitorum brevis.l,23
+Extensor digitorum brevis.e1r,ankle-foot,insertion,r,parent,Extensor digitorum brevis.r,23
+Extensor digitorum brevis.e2l,ankle-foot,insertion,l,parent,Extensor digitorum brevis.l,18
+Extensor digitorum brevis.e2r,ankle-foot,insertion,r,parent,Extensor digitorum brevis.r,18
+Extensor digitorum brevis.el,ankle-foot,insertion,l,parent,Extensor digitorum brevis.l,17
+Extensor digitorum brevis.er,ankle-foot,insertion,r,parent,Extensor digitorum brevis.r,17
+Extensor digitorum longus.e1l,ankle-foot,insertion,l,parent,Extensor digitorum longus.l,14
+Extensor digitorum longus.e1r,ankle-foot,insertion,r,parent,Extensor digitorum longus.r,14
+Extensor digitorum longus.e2l,ankle-foot,insertion,l,parent,Extensor digitorum longus.l,19
+Extensor digitorum longus.e2r,ankle-foot,insertion,r,parent,Extensor digitorum longus.r,19
+Extensor digitorum longus.e3l,ankle-foot,insertion,l,parent,Extensor digitorum longus.l,6
+Extensor digitorum longus.e3r,ankle-foot,insertion,r,parent,Extensor digitorum longus.r,6
+Extensor digitorum longus.e4l,ankle-foot,insertion,l,parent,Extensor digitorum longus.l,13
+Extensor digitorum longus.e4r,ankle-foot,insertion,r,parent,Extensor digitorum longus.r,13
+Extensor digitorum longus.el,ankle-foot,insertion,l,parent,Extensor digitorum longus.l,15
+Extensor digitorum longus.er,ankle-foot,insertion,r,parent,Extensor digitorum longus.r,15
+Extensor digitorum longus.o1l,ankle-foot,insertion,l,parent,Extensor digitorum longus.l,237
+Extensor digitorum longus.o1r,ankle-foot,insertion,r,parent,Extensor digitorum longus.r,237
+Extensor digitorum longus.ol,ankle-foot,insertion,l,parent,Extensor digitorum longus.l,17
+Extensor digitorum longus.or,ankle-foot,insertion,r,parent,Extensor digitorum longus.r,17
+Extensor hallucis brevis.ol,ankle-foot,insertion,l,parent,Extensor hallucis brevis.l,29
+Extensor hallucis brevis.or,ankle-foot,insertion,r,parent,Extensor hallucis brevis.r,29
+Extensor hallucis longus.el,ankle-foot,insertion,l,parent,Extensor hallucis longus.l,18
+Extensor hallucis longus.er,ankle-foot,insertion,r,parent,Extensor hallucis longus.r,18
+Extensor hallucis longus.ol,ankle-foot,insertion,l,parent,Extensor hallucis longus.l,352
+Extensor hallucis longus.or,ankle-foot,insertion,r,parent,Extensor hallucis longus.r,352
+Fibularis brevis muscle.el,ankle-foot,insertion,l,parent,Fibularis brevis muscle.l,50
+Fibularis brevis muscle.er,ankle-foot,insertion,r,parent,Fibularis brevis muscle.r,50
+Fibularis brevis muscle.ol,ankle-foot,insertion,l,parent,Fibularis brevis muscle.l,56
+Fibularis brevis muscle.or,ankle-foot,insertion,r,parent,Fibularis brevis muscle.r,56
+Fibularis longus muscle.ol,ankle-foot,insertion,l,parent,Fibularis longus muscle.l,98
+Fibularis longus muscle.or,ankle-foot,insertion,r,parent,Fibularis longus muscle.r,98
+Fibularis tertius muscle.el,ankle-foot,insertion,l,parent,Fibularis tertius muscle.l,24
+Fibularis tertius muscle.er,ankle-foot,insertion,r,parent,Fibularis tertius muscle.r,24
+Fibularis tertius muscle.ol,ankle-foot,insertion,l,parent,Fibularis tertius muscle.l,8
+Fibularis tertius muscle.or,ankle-foot,insertion,r,parent,Fibularis tertius muscle.r,8
+Flexor digiti minimi of foot.el,ankle-foot,insertion,l,parent,Flexor digiti minimi of foot.l,29
+Flexor digiti minimi of foot.er,ankle-foot,insertion,r,parent,Flexor digiti minimi of foot.r,29
+Flexor digitorum brevis.e1l,ankle-foot,insertion,l,parent,Flexor digitorum brevis.l,58
+Flexor digitorum brevis.e1r,ankle-foot,insertion,r,parent,Flexor digitorum brevis.r,58
+Flexor digitorum brevis.e2l,ankle-foot,insertion,l,parent,Flexor digitorum brevis.l,25
+Flexor digitorum brevis.e2r,ankle-foot,insertion,r,parent,Flexor digitorum brevis.r,25
+Flexor digitorum brevis.el,ankle-foot,insertion,l,parent,Flexor digitorum brevis.l,39
+Flexor digitorum brevis.er,ankle-foot,insertion,r,parent,Flexor digitorum brevis.r,39
+Flexor digitorum brevis.ol,ankle-foot,insertion,l,parent,Flexor digitorum brevis.l,47
+Flexor digitorum brevis.or,ankle-foot,insertion,r,parent,Flexor digitorum brevis.r,47
+Flexor digitorum longus.e1l,ankle-foot,insertion,l,parent,Flexor digitorum longus.l,20
+Flexor digitorum longus.e1r,ankle-foot,insertion,r,parent,Flexor digitorum longus.r,20
+Flexor digitorum longus.e2l,ankle-foot,insertion,l,parent,Flexor digitorum longus.l,10
+Flexor digitorum longus.e2r,ankle-foot,insertion,r,parent,Flexor digitorum longus.r,10
+Flexor digitorum longus.e3l,ankle-foot,insertion,l,parent,Flexor digitorum longus.l,17
+Flexor digitorum longus.e3r,ankle-foot,insertion,r,parent,Flexor digitorum longus.r,17
+Flexor digitorum longus.el,ankle-foot,insertion,l,parent,Flexor digitorum longus.l,18
+Flexor digitorum longus.er,ankle-foot,insertion,r,parent,Flexor digitorum longus.r,18
+Flexor digitorum longus.ol,ankle-foot,insertion,l,parent,Flexor digitorum longus.l,25
+Flexor digitorum longus.or,ankle-foot,insertion,r,parent,Flexor digitorum longus.r,25
+Flexor hallucis longus.el,ankle-foot,insertion,l,parent,Flexor hallucis longus.l,17
+Flexor hallucis longus.er,ankle-foot,insertion,r,parent,Flexor hallucis longus.r,17
+Flexor hallucis longus.ol,ankle-foot,insertion,l,parent,Flexor hallucis longus.l,266
+Flexor hallucis longus.or,ankle-foot,insertion,r,parent,Flexor hallucis longus.r,266
+Lateral head of flexor hallucis brevis.el,ankle-foot,insertion,l,parent,Lateral head of flexor hallucis brevis.l,15
+Lateral head of flexor hallucis brevis.er,ankle-foot,insertion,r,parent,Lateral head of flexor hallucis brevis.r,15
+Lateral head of flexor hallucis brevis.o1l,ankle-foot,insertion,l,parent,Lateral head of flexor hallucis brevis.l,21
+Lateral head of flexor hallucis brevis.o1r,ankle-foot,insertion,r,parent,Lateral head of flexor hallucis brevis.r,21
+Lateral head of flexor hallucis brevis.ol,ankle-foot,insertion,l,parent,Lateral head of flexor hallucis brevis.l,98
+Lateral head of flexor hallucis brevis.or,ankle-foot,insertion,r,parent,Lateral head of flexor hallucis brevis.r,98
+Long plantar ligament.o1l,ankle-foot,insertion,l,parent,Long plantar ligament.l,37
+Long plantar ligament.o1r,ankle-foot,insertion,r,parent,Long plantar ligament.r,37
+Long plantar ligament.o2l,ankle-foot,insertion,l,parent,Long plantar ligament.l,26
+Long plantar ligament.o2r,ankle-foot,insertion,r,parent,Long plantar ligament.r,26
+Long plantar ligament.o3l,ankle-foot,insertion,l,parent,Long plantar ligament.l,8
+Long plantar ligament.o3r,ankle-foot,insertion,r,parent,Long plantar ligament.r,8
+Long plantar ligament.o4l,ankle-foot,insertion,l,parent,Long plantar ligament.l,24
+Long plantar ligament.o4r,ankle-foot,insertion,r,parent,Long plantar ligament.r,24
+Long plantar ligament.ol,ankle-foot,insertion,l,parent,Long plantar ligament.l,52
+Long plantar ligament.or,ankle-foot,insertion,r,parent,Long plantar ligament.r,52
+Medial head of flexor hallucis brevis.el,ankle-foot,insertion,l,parent,Medial head of flexor hallucis brevis.l,17
+Medial head of flexor hallucis brevis.er,ankle-foot,insertion,r,parent,Medial head of flexor hallucis brevis.r,17
+Oblique head of adductor hallucis.el,ankle-foot,insertion,l,parent,Oblique head of adductor hallucis.l,17
+Oblique head of adductor hallucis.er,ankle-foot,insertion,r,parent,Oblique head of adductor hallucis.r,17
+Oblique head of adductor hallucis.o1l,ankle-foot,insertion,l,parent,Oblique head of adductor hallucis.l,76
+Oblique head of adductor hallucis.o1r,ankle-foot,insertion,r,parent,Oblique head of adductor hallucis.r,76
+Oblique head of adductor hallucis.ol,ankle-foot,insertion,l,parent,Oblique head of adductor hallucis.l,31
+Oblique head of adductor hallucis.or,ankle-foot,insertion,r,parent,Oblique head of adductor hallucis.r,31
+Plantar interossei muscles.e1l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,18
+Plantar interossei muscles.e2l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,15
+Plantar interossei muscles.el,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,15
+Plantar interossei muscles.o1l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,27
+Plantar interossei muscles.o2l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,42
+Plantar interossei muscles.ol,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,25
+Plantaris muscle.ol,ankle-foot,insertion,l,parent,Plantaris muscle.l,38
+Plantaris muscle.or,ankle-foot,insertion,r,parent,Plantaris muscle.r,38
+Soleus muscle.o1l,ankle-foot,insertion,l,parent,Soleus muscle.l,60
+Soleus muscle.o1r,ankle-foot,insertion,r,parent,Soleus muscle.r,60
+Soleus muscle.ol,ankle-foot,insertion,l,parent,Soleus muscle.l,50
+Soleus muscle.or,ankle-foot,insertion,r,parent,Soleus muscle.r,50
+Tibialis anterior muscle.e1l,ankle-foot,insertion,l,parent,Tibialis anterior muscle.l,33
+Tibialis anterior muscle.e1r,ankle-foot,insertion,r,parent,Tibialis anterior muscle.r,33
+Tibialis anterior muscle.el,ankle-foot,insertion,l,parent,Tibialis anterior muscle.l,86
+Tibialis anterior muscle.er,ankle-foot,insertion,r,parent,Tibialis anterior muscle.r,86
+Tibialis anterior muscle.ol,ankle-foot,insertion,l,parent,Tibialis anterior muscle.l,380
+Tibialis anterior muscle.or,ankle-foot,insertion,r,parent,Tibialis anterior muscle.r,380
+Tibialis posterior muscle.ol,ankle-foot,insertion,l,parent,Tibialis posterior muscle.l,675
+Tibialis posterior muscle.or,ankle-foot,insertion,r,parent,Tibialis posterior muscle.r,675
+Transverse head of adductor hallucis.e1l,ankle-foot,insertion,l,parent,Transverse head of adductor hallucis.l,12
+Transverse head of adductor hallucis.e1r,ankle-foot,insertion,r,parent,Transverse head of adductor hallucis.r,12
+Transverse head of adductor hallucis.e2l,ankle-foot,insertion,l,parent,Transverse head of adductor hallucis.l,69
+Transverse head of adductor hallucis.e2r,ankle-foot,insertion,r,parent,Transverse head of adductor hallucis.r,69
+Transverse head of adductor hallucis.e3l,ankle-foot,insertion,l,parent,Transverse head of adductor hallucis.l,34
+Transverse head of adductor hallucis.e3r,ankle-foot,insertion,r,parent,Transverse head of adductor hallucis.r,34
+Transverse head of adductor hallucis.ol,ankle-foot,insertion,l,parent,Transverse head of adductor hallucis.l,6
+Transverse head of adductor hallucis.or,ankle-foot,insertion,r,parent,Transverse head of adductor hallucis.r,6
+Triceps surae muscle.el,ankle-foot,insertion,l,centroid,z=0.040 |x|=0.069 y=+0.086,61
+Triceps surae muscle.er,ankle-foot,insertion,r,centroid,z=0.040 |x|=0.069 y=+0.086,61
+(Opponens digiti minimi muscle of foot).l,ankle-foot,muscular,l,hierarchy,Muscles of foot,236
+(Opponens digiti minimi muscle of foot).r,ankle-foot,muscular,r,hierarchy,Muscles of foot,236
+Abductor digiti minimi of foot.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,1280
+Abductor digiti minimi of foot.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,1280
+Abductor hallucis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,1688
+Abductor hallucis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,1688
+Anterior intermuscular septum of leg.l,ankle-foot,muscular,l,centroid,z=0.259 |x|=0.112 y=+0.036,208
+Anterior intermuscular septum of leg.r,ankle-foot,muscular,r,centroid,z=0.259 |x|=0.112 y=+0.036,208
+Calcaneal tendon.l,ankle-foot,muscular,l,hierarchy,Posterior compartment of leg,4377
+Calcaneal tendon.r,ankle-foot,muscular,r,hierarchy,Posterior compartment of leg,4377
+Common tendon sheath of fibularis muscles.l,ankle-foot,muscular,l,centroid,z=0.062 |x|=0.097 y=+0.052,384
+Common tendon sheath of fibularis muscles.r,ankle-foot,muscular,r,centroid,z=0.062 |x|=0.097 y=+0.052,384
+Crural fascia.l,ankle-foot,muscular,l,centroid,z=0.228 |x|=0.086 y=-0.015,10875
+Crural fascia.r,ankle-foot,muscular,r,centroid,z=0.228 |x|=0.086 y=-0.015,10875
+Dorsal interossei muscles of foot.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,1946
+Dorsal interossei muscles of foot.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,1946
+Extensor digitorum brevis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,3184
+Extensor digitorum brevis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,3184
+Extensor digitorum longus.l,ankle-foot,muscular,l,hierarchy,Anterior compartment of leg,3176
+Extensor digitorum longus.r,ankle-foot,muscular,r,hierarchy,Anterior compartment of leg,3176
+Extensor hallucis brevis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,1118
+Extensor hallucis brevis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,1118
+Extensor hallucis longus.l,ankle-foot,muscular,l,hierarchy,Anterior compartment of leg,2362
+Extensor hallucis longus.r,ankle-foot,muscular,r,hierarchy,Anterior compartment of leg,2362
+Fibularis brevis muscle.l,ankle-foot,muscular,l,hierarchy,Lateral compartment of leg,3446
+Fibularis brevis muscle.r,ankle-foot,muscular,r,hierarchy,Lateral compartment of leg,3446
+Fibularis longus muscle.l,ankle-foot,muscular,l,hierarchy,Lateral compartment of leg,5522
+Fibularis longus muscle.r,ankle-foot,muscular,r,hierarchy,Lateral compartment of leg,5522
+Fibularis tertius muscle.l,ankle-foot,muscular,l,hierarchy,Anterior compartment of leg,586
+Fibularis tertius muscle.r,ankle-foot,muscular,r,hierarchy,Anterior compartment of leg,586
+Flexor digiti minimi of foot.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,464
+Flexor digiti minimi of foot.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,464
+Flexor digitorum brevis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,3224
+Flexor digitorum brevis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,3224
+Flexor digitorum longus.l,ankle-foot,muscular,l,hierarchy,Posterior compartment of leg,6836
+Flexor digitorum longus.r,ankle-foot,muscular,r,hierarchy,Posterior compartment of leg,6836
+Flexor hallucis longus.l,ankle-foot,muscular,l,hierarchy,Posterior compartment of leg,5878
+Flexor hallucis longus.r,ankle-foot,muscular,r,hierarchy,Posterior compartment of leg,5878
+Flexor retinaculum of ankle.l,ankle-foot,muscular,l,centroid,z=0.053 |x|=0.054 y=+0.057,298
+Flexor retinaculum of ankle.r,ankle-foot,muscular,r,centroid,z=0.053 |x|=0.054 y=+0.057,298
+Inferior extensor retinaculum of ankle.l,ankle-foot,muscular,l,centroid,z=0.092 |x|=0.080 y=+0.025,119
+Inferior extensor retinaculum of ankle.r,ankle-foot,muscular,r,centroid,z=0.092 |x|=0.080 y=+0.025,119
+Inferior fibular retinaculum.l,ankle-foot,muscular,l,centroid,z=0.049 |x|=0.106 y=-0.004,35
+Inferior fibular retinaculum.r,ankle-foot,muscular,r,centroid,z=0.049 |x|=0.106 y=-0.004,35
+Lateral head of flexor hallucis brevis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,966
+Lateral head of flexor hallucis brevis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,966
+Lumbrical muscles of foot.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,418
+Lumbrical muscles of foot.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,418
+Medial head of flexor hallucis brevis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,514
+Medial head of flexor hallucis brevis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,514
+Oblique head of adductor hallucis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,904
+Oblique head of adductor hallucis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,904
+Plantar aponeurosis.l,ankle-foot,muscular,l,centroid,z=0.016 |x|=0.095 y=-0.002,406
+Plantar aponeurosis.r,ankle-foot,muscular,r,centroid,z=0.016 |x|=0.095 y=-0.002,406
+Plantar interossei muscles.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,1242
+Plantar interossei muscles.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,1242
+Plantar tendon sheath of fibularis longus muscle.l,ankle-foot,muscular,l,centroid,z=0.032 |x|=0.099 y=+0.010,160
+Plantar tendon sheath of fibularis longus muscle.r,ankle-foot,muscular,r,centroid,z=0.032 |x|=0.099 y=+0.010,160
+Plantaris muscle.l,ankle-foot,muscular,l,hierarchy,Posterior compartment of leg,4698
+Plantaris muscle.r,ankle-foot,muscular,r,hierarchy,Posterior compartment of leg,4698
+Posterior intermuscular septum of leg.l,ankle-foot,muscular,l,centroid,z=0.245 |x|=0.113 y=+0.059,265
+Posterior intermuscular septum of leg.r,ankle-foot,muscular,r,centroid,z=0.245 |x|=0.113 y=+0.059,265
+Quadratus plantae muscle.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,1176
+Quadratus plantae muscle.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,1176
+Soleus muscle.l,ankle-foot,muscular,l,hierarchy,Posterior compartment of leg,6774
+Soleus muscle.r,ankle-foot,muscular,r,hierarchy,Posterior compartment of leg,6774
+Subcutaneous bursa of lateral malleolus.l,ankle-foot,muscular,l,centroid,z=0.070 |x|=0.108 y=+0.050,60
+Subcutaneous bursa of lateral malleolus.r,ankle-foot,muscular,r,centroid,z=0.070 |x|=0.108 y=+0.050,60
+Subcutaneous bursa of medial malleolus.l,ankle-foot,muscular,l,centroid,z=0.090 |x|=0.049 y=+0.036,60
+Subcutaneous bursa of medial malleolus.r,ankle-foot,muscular,r,centroid,z=0.090 |x|=0.049 y=+0.036,60
+Subcutaneous calcaneal bursa.l,ankle-foot,muscular,l,centroid,z=0.043 |x|=0.069 y=+0.089,48
+Subcutaneous calcaneal bursa.r,ankle-foot,muscular,r,centroid,z=0.043 |x|=0.069 y=+0.089,48
+Subtendinous bursa of tibialis anterior.l,ankle-foot,muscular,l,centroid,z=0.054 |x|=0.062 y=-0.019,64
+Subtendinous bursa of tibialis anterior.r,ankle-foot,muscular,r,centroid,z=0.054 |x|=0.062 y=-0.019,64
+Subtendinous calcaneal bursa.l,ankle-foot,muscular,l,centroid,z=0.066 |x|=0.075 y=+0.076,136
+Subtendinous calcaneal bursa.r,ankle-foot,muscular,r,centroid,z=0.066 |x|=0.075 y=+0.076,136
+Superficial transverse metatarsal ligament.l,ankle-foot,muscular,l,centroid,z=0.009 |x|=0.101 y=-0.064,99
+Superficial transverse metatarsal ligament.r,ankle-foot,muscular,r,centroid,z=0.009 |x|=0.101 y=-0.064,99
+Superior extensor retinaculum of ankle.l,ankle-foot,muscular,l,centroid,z=0.126 |x|=0.087 y=+0.030,97
+Superior extensor retinaculum of ankle.r,ankle-foot,muscular,r,centroid,z=0.126 |x|=0.087 y=+0.030,97
+Superior fibular retinaculum.l,ankle-foot,muscular,l,centroid,z=0.066 |x|=0.080 y=+0.022,254
+Superior fibular retinaculum.r,ankle-foot,muscular,r,centroid,z=0.066 |x|=0.080 y=+0.022,254
+Tendon of extensor digitorum longus.l,ankle-foot,muscular,l,hierarchy,Anterior compartment of leg,5184
+Tendon of extensor digitorum longus.r,ankle-foot,muscular,r,hierarchy,Anterior compartment of leg,5184
+Tendon sheath of extensor digitorum longus.l,ankle-foot,muscular,l,centroid,z=0.105 |x|=0.094 y=+0.014,128
+Tendon sheath of extensor digitorum longus.r,ankle-foot,muscular,r,centroid,z=0.105 |x|=0.094 y=+0.014,128
+Tendon sheath of flexor digitorum longus.l,ankle-foot,muscular,l,centroid,z=0.066 |x|=0.059 y=+0.048,256
+Tendon sheath of flexor digitorum longus.r,ankle-foot,muscular,r,centroid,z=0.066 |x|=0.059 y=+0.048,256
+Tendon sheath of flexor hallucis longus.l,ankle-foot,muscular,l,centroid,z=0.069 |x|=0.068 y=+0.051,432
+Tendon sheath of flexor hallucis longus.r,ankle-foot,muscular,r,centroid,z=0.069 |x|=0.068 y=+0.051,432
+Tendon sheath of tibialis anterior.l,ankle-foot,muscular,l,centroid,z=0.108 |x|=0.076 y=+0.013,240
+Tendon sheath of tibialis anterior.r,ankle-foot,muscular,r,centroid,z=0.108 |x|=0.076 y=+0.013,240
+Tendon sheath of tibialis posterior muscle.l,ankle-foot,muscular,l,centroid,z=0.077 |x|=0.057 y=+0.044,286
+Tendon sheath of tibialis posterior muscle.r,ankle-foot,muscular,r,centroid,z=0.077 |x|=0.057 y=+0.044,286
+Tibialis anterior muscle.l,ankle-foot,muscular,l,hierarchy,Anterior compartment of leg,3526
+Tibialis anterior muscle.r,ankle-foot,muscular,r,hierarchy,Anterior compartment of leg,3526
+Tibialis posterior muscle.l,ankle-foot,muscular,l,hierarchy,Posterior compartment of leg,5526
+Tibialis posterior muscle.r,ankle-foot,muscular,r,hierarchy,Posterior compartment of leg,5526
+Transverse head of adductor hallucis.l,ankle-foot,muscular,l,hierarchy,Muscles of foot,366
+Transverse head of adductor hallucis.r,ankle-foot,muscular,r,hierarchy,Muscles of foot,366
+Transverse intermuscular septum of leg.l,ankle-foot,muscular,l,centroid,z=0.256 |x|=0.082 y=+0.050,495
+Transverse intermuscular septum of leg.r,ankle-foot,muscular,r,centroid,z=0.256 |x|=0.082 y=+0.050,495
+Calcaneus.l,ankle-foot,skeletal,l,hierarchy,division:Foot,1448
+Calcaneus.r,ankle-foot,skeletal,r,hierarchy,division:Foot,1448
+Cuboid bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,998
+Cuboid bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,998
+Distal phalanx of fifth finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,236
+Distal phalanx of fifth finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,236
+Distal phalanx of first finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,466
+Distal phalanx of first finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,466
+Distal phalanx of fourth finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,278
+Distal phalanx of fourth finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,278
+Distal phalanx of second finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,236
+Distal phalanx of second finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,236
+Distal phalanx of third finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,318
+Distal phalanx of third finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,318
+Fifth metatarsal bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,894
+Fifth metatarsal bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,894
+First metatarsal bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,1088
+First metatarsal bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,1088
+Fourth metatarsal bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,834
+Fourth metatarsal bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,834
+Intermediate cuneiform bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,444
+Intermediate cuneiform bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,444
+Lateral cuneiform bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,638
+Lateral cuneiform bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,638
+Medial cuneiform bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,992
+Medial cuneiform bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,992
+Middle phalanx of fifth finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,216
+Middle phalanx of fifth finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,216
+Middle phalanx of fourth finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,448
+Middle phalanx of fourth finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,448
+Middle phalanx of second finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,382
+Middle phalanx of second finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,382
+Middle phalanx of third finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,400
+Middle phalanx of third finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,400
+Navicular bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,732
+Navicular bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,732
+Proximal phalanx of fifth finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,516
+Proximal phalanx of fifth finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,516
+Proximal phalanx of first finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,532
+Proximal phalanx of first finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,532
+Proximal phalanx of fourth finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,460
+Proximal phalanx of fourth finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,460
+Proximal phalanx of second finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,426
+Proximal phalanx of second finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,426
+Proximal phalanx of third finger of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,460
+Proximal phalanx of third finger of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,460
+Second metatarsal bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,690
+Second metatarsal bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,690
+Sesamoid bones of foot.l,ankle-foot,skeletal,l,hierarchy,division:Foot,290
+Sesamoid bones of foot.r,ankle-foot,skeletal,r,hierarchy,division:Foot,290
+Talus.l,ankle-foot,skeletal,l,hierarchy,division:Foot,1350
+Talus.r,ankle-foot,skeletal,r,hierarchy,division:Foot,1350
+Third metatarsal bone.l,ankle-foot,skeletal,l,hierarchy,division:Foot,814
+Third metatarsal bone.r,ankle-foot,skeletal,r,hierarchy,division:Foot,814

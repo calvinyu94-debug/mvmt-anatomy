@@ -1,13 +1,15 @@
 # mvmt-anatomy
 
 Anatomical model tooling for the MVMT structure map — an inventory of the
-Z-Anatomy atlas, and eventually a two-tier web viewer built from it.
+Z-Anatomy atlas, a musculoskeletal glTF export pipeline built on it, and
+eventually a two-tier web viewer.
 
-**No model-derived asset has been produced.** Nothing from Z-Anatomy has been
-decimated or exported. What this repo holds is an inventory, the licence
-analysis that has to precede any export — and one set of original geometry that
-is not derived from the model at all: the ten peripheral nerves the atlas does
-not contain, authored here from scratch.
+What this repo holds is the inventory, the licence analysis that precedes any
+export, the pipeline that produces the region assets and the records of what
+it produced (`manifest.json`, `region-assignment.csv`, renders) — and one set
+of original geometry that is not derived from the model at all: the ten
+peripheral nerves the atlas does not contain, authored here from scratch.
+**The exported `.glb` files themselves are built locally and never committed.**
 
 Those nerves are **schematic approximations, not imaging-derived anatomy**, and
 they are kept separate from model-derived geometry at every stage. See
@@ -22,7 +24,18 @@ they are kept separate from model-derived geometry at every stage. See
 | [`EXCLUSIONS.md`](EXCLUSIONS.md) | Every object that must never enter an export, with the licence reason. Derived from the CSV, meant to be enforced programmatically |
 | [`ATTRIBUTION.md`](ATTRIBUTION.md) | The licence chain, including the third-party components that are **not** CC BY-SA, and the original-work status of the authored nerves |
 | [`CLAUDE.md`](CLAUDE.md) | Standing notes for working in this repo: what has bitten us, and what is still owed |
+| [`manifest.json`](manifest.json) | What the viewer and the structure map read: every exported file with its triangle and byte counts, and the full join table of all 2,054 exported meshes by `sourceName` |
+| [`region-assignment.csv`](region-assignment.csv) | Every kept mesh, its region, system, side, which signal decided it and why, and its triangle count |
+| [`verification/export-report.md`](verification/export-report.md) | The export read back: kept counts against the brief, the region table with the centroid-only set called out, actual against target triangles, decimation deviation per tier, bytes, and what the model did that the inventory did not predict |
+| [`verification/regions/`](verification/regions/) | One 1600 px render per region at target detail with its context dimmed |
+| [`verification/decimation/`](verification/decimation/) | Twelve representative meshes at source / 50% / 12.5% / overview, side by side |
 | [`tools/inventory.py`](tools/inventory.py) | The Blender script that produces `inventory.csv` |
+| [`tools/scope.py`](tools/scope.py) | The scope filter (collections 1–4) and the licence filter from `EXCLUSIONS.md`, with the `EXPECTED` counts asserted |
+| [`tools/regions.py`](tools/regions.py) | Region assignment: a clinical override table, the collection hierarchy, insertion-to-muscle parentage, side pairing, centroid fallback — reviewable against the CSV without Blender |
+| [`tools/export_regions.py`](tools/export_regions.py) | The Blender script that bakes, decimates and exports the region files, the overview, the insertion layers and the manifest |
+| [`tools/render_export.py`](tools/render_export.py) | Renders the review images from the exported files, in a separate Blender |
+| [`tools/verify_export.py`](tools/verify_export.py) | Reads every exported file back and checks names, extras, counts, bytes, membership and winding against the manifest, the CSV and the inventory |
+| [`tools/export_report.py`](tools/export_report.py) | Writes `verification/export-report.md` from the committed records |
 | [`tools/nerve_paths.py`](tools/nerve_paths.py) | Waypoints for the ten authored nerves, anchored to landmark objects, with the departures from the original specification and why |
 | [`tools/build_nerves.py`](tools/build_nerves.py) | Builds the nerves and exports `nerves.glb` and `nerves.json` |
 | [`tools/verify_nerves.py`](tools/verify_nerves.py) | Checks them against the real geometry — bone intersection and the named anatomical relationships — and renders `verification/` |
@@ -39,17 +52,20 @@ they are kept separate from model-derived geometry at every stage. See
 - The ten missing peripheral nerves authored as schematic tubes, verified
   against the real bones — 11 checks, no nerve passing through bone — and
   exported to `nerves.glb`, separately from anything model-derived.
+- The musculoskeletal scope — 2,054 meshes after the licence filter — assigned
+  to the app's nine regions, decimated on two tiers and exported as
+  Draco-compressed glTF: a 212k-triangle whole-body overview, one file per
+  region at 50% with its neighbours dimmed as context at 12.5%, and a
+  full-resolution insertion layer per region. Every node carries the exact
+  Z-Anatomy `sourceName`, verified by reading the files back. See
+  [`verification/export-report.md`](verification/export-report.md).
 
 ## What has not been done
 
-- No decimation.
-- No export of model-derived geometry — no glTF, no GLB, no meshes from
-  Z-Anatomy. `nerves.glb` is original work and contains nothing from the atlas.
-- **No join between the 116-entry MVMT structure map and these 7,184 objects.**
-  That join is clinical judgement, not automation: "Rotator Cuff" is four
-  objects, "Scalenes" is three, and most of the file is never referenced at all.
-  It is the next job, and it is written against this inventory rather than
-  against guesses.
+- **No join between the MVMT structure map and the exported objects.** That
+  join is clinical judgement, not automation: "Rotator Cuff" is four objects,
+  "Scalenes" is three. It is authored separately, against the `objects` array
+  in `manifest.json`, which is complete and exact by construction.
 - No viewer — and with it, **the schematic treatment for the authored nerves is
   still owed**: a distinct material, and a visible "Schematic — indicative path
   only" label whenever a nerve is selected or the nerve layer is on. The
@@ -111,6 +127,44 @@ ulnar behind the medial epicondyle, the radial in the spiral groove, the common
 fibular at the fibular neck, the sciatic below piriformis, the tibial behind the
 medial malleolus, the median anterior at elbow and inside the carpal tunnel.
 Each reports its margin in millimetres rather than a bare pass.
+
+## Building the region exports
+
+All from the worktree root, against the same pinned Blender:
+
+```bash
+blender --background source/Z-Anatomy/Startup.blend --python tools/export_regions.py -- --out .
+```
+
+Prints `EXPORT_OK meshes=2054 regions=9 files=19 …` and writes the nineteen
+`.glb` files (gitignored), `samples.glb` (gitignored), `manifest.json` and
+`region-assignment.csv`. It asserts the scope figures and the `EXPECTED`
+exclusion counts first and stops on any drift. Then:
+
+```bash
+blender --background --factory-startup --python tools/render_export.py -- --manifest manifest.json
+```
+
+```bash
+blender --background --factory-startup --python tools/verify_export.py -- --manifest manifest.json
+```
+
+```bash
+python tools/export_report.py
+```
+
+The renders and the verifier run in a fresh Blender and read the exported
+files, not the export process's memory: the verifier checks every node's
+`sourceName` and extras against `inventory.csv`, the triangle counts from the
+index accessors, the bytes on disk, region membership, and winding by signed
+volume on the Draco-decoded geometry. It prints `VERIFY_EXPORT_OK checks=…`
+and exits non-zero on any failure.
+
+The region assignment can be reviewed without Blender:
+
+```bash
+python tools/regions.py
+```
 
 ## Provenance of the current inventory
 

@@ -47,6 +47,57 @@ geometry; the first pass was wrong in eleven places and most of them traced back
 to it. All eleven are recorded in [`tools/nerve_paths.py`](tools/nerve_paths.py)
 and carried into `nerves.json`.
 
+## The model mirrors by negative scale and shares mesh data
+
+**971 of the 2,054 kept musculoskeletal objects are the `.l` side of a pair
+that shares one mesh datablock with its `.r` twin under a reflecting world
+matrix (determinant −1).** Blender draws that correctly; a glTF export does
+not. Either the exporter writes one mesh with two nodes, one of them under a
+negative-scale transform that most viewers render inside-out, or a naive bake
+carries the reflected winding into the file. `tools/export_regions.py` bakes
+every object to world space and reverses the polygon winding wherever the
+determinant is negative, so every node has an identity transform and both
+sides wind outward. Verify winding in the exported file by **signed volume**
+(bmesh `calc_volume(signed=True)` on the decoded mesh) — a mirrored pair
+exported inside-out cannot have equal signed volumes — never by the viewport,
+which does not cull backfaces, and never by dotting normals, per above.
+
+Two related facts worth keeping:
+
+- A mirror transform followed by a winding flip leaves the signed volume equal
+  to the local-space one. Do not negate it again for mirrored objects — that
+  double-flip silently "corrected" 199 meshes that were already right.
+- A handful of closed meshes are wound inside-out in the atlas itself, on both
+  sides (the acetabular labrum). The export flips those and names them in
+  `manifest.json` under `geometry.windingCorrected`.
+
+## The base meshes are cages
+
+**1,201 kept objects carry Subdivision and Solidify modifiers, and the
+inventory counted base meshes.** For most ligaments the base mesh is a cage of
+a few triangles that only becomes a ligament once the modifiers run — the
+anterior talofibular ligament is two triangles before them. Skeletal,
+muscular and articular objects are therefore exported from the
+viewport-evaluated mesh, and `sourceTriangles` in the manifest is that count;
+`inventoryTriangles` is the base count the brief's budgets were written
+against. Insertion patches are the exception and stay as flat base meshes:
+their 0.5 mm Solidify skin would take 63,843 triangles to 931,484.
+
+## Blender process notes
+
+- **Cycles crashes (`ccl::create_mesh` access violation) rendering meshes
+  baked in the export process.** Renders are made afterwards by
+  `tools/render_export.py` in a factory-startup Blender that imports the
+  exported `.glb` files — which is the better review anyway, since it shows
+  what shipped.
+- **The glTF exporter drops a few degenerate triangles.** Manifest counts are
+  read back from each file's index accessors, not from the meshes handed to
+  the exporter.
+- The upstream `Regions of human body` division tags are wrong as well as
+  incomplete on the left (left tarsal bones are filed under `Right foot`).
+  `tools/regions.py` strips the side word from every division tag and takes
+  the side from the name suffix only.
+
 ## Open debts
 
 ### The schematic honesty requirement is half done

@@ -28,7 +28,6 @@ they are kept separate from model-derived geometry at every stage. See
 | [`region-assignment.csv`](region-assignment.csv) | Every kept mesh, its region, system, side, which signal decided it and why, and its triangle count |
 | [`verification/export-report.md`](verification/export-report.md) | The export read back: kept counts against the brief, the region table with the centroid-only set called out, actual against target triangles, decimation deviation per tier, bytes, and what the model did that the inventory did not predict |
 | [`verification/regions/`](verification/regions/) | One 1600 px render per region at target detail with its context dimmed |
-| [`verification/decimation/`](verification/decimation/) | Twelve representative meshes at source / 50% / 12.5% / overview, side by side |
 | [`tools/inventory.py`](tools/inventory.py) | The Blender script that produces `inventory.csv` |
 | [`tools/scope.py`](tools/scope.py) | The scope filter (collections 1–4) and the licence filter from `EXCLUSIONS.md`, with the `EXPECTED` counts asserted |
 | [`tools/regions.py`](tools/regions.py) | Region assignment: a clinical override table, the collection hierarchy, insertion-to-muscle parentage, side pairing, centroid fallback — reviewable against the CSV without Blender |

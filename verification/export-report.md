@@ -146,7 +146,7 @@ Against the brief's indicative bands (centroid height, base-mesh counts), using 
 
 ## 4. Decimation quality
 
-Blender Decimate, COLLAPSE, triangulated. Deviation is the nearest-surface distance from every decimated vertex back to the source mesh, per object, in millimetres; `max/diag` is the worst vertex relative to the object's bounding-box diagonal. Visual checks are in `verification/decimation/`.
+Blender Decimate, COLLAPSE, triangulated. Deviation is the nearest-surface distance from every decimated vertex back to the source mesh, per object, in millimetres; `max/diag` is the worst vertex relative to the object's bounding-box diagonal. Side-by-side tiles of twelve representative meshes at every tier are not committed; `tools/render_export.py` regenerates them into `verification/decimation/` from `samples.glb`.
 
 ### region tier (50%)
 

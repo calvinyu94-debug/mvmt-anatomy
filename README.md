@@ -40,6 +40,11 @@ they are kept separate from model-derived geometry at every stage. See
 | [`tools/verify_nerves.py`](tools/verify_nerves.py) | Checks them against the real geometry — bone intersection and the named anatomical relationships — and renders `verification/` |
 | [`nerves.json`](nerves.json) | Resolved waypoint coordinates, centrelines, radii, triangle counts and the `authored`/`source` flags |
 | [`verification/`](verification/) | Six orthographic renders of the nerves against a semi-transparent skeleton |
+| [`tools/landmark_anchors.py`](tools/landmark_anchors.py) | The 42 palpable landmarks, each as a geometric rule on its bone - the anatomical description made executable - with the brief's first-pass bounding-box estimates kept for comparison |
+| [`tools/build_landmarks.py`](tools/build_landmarks.py) | Resolves the rules against the model, measures each point and writes `landmarks.json` |
+| [`tools/verify_landmarks.py`](tools/verify_landmarks.py) | Checks every landmark for surface distance, depth and symmetry, asserts the named relationships with margins, and renders `verification/landmarks/` |
+| [`landmarks.json`](landmarks.json) | Every landmark's anchor (object, uvw, offset), resolved coordinates for both sides, signed surface distance, depth, nearest skin region, and where the first pass had landed |
+| [`verification/landmarks/`](verification/landmarks/) | Four orthographic renders - anterior, posterior, both laterals - of the landmarks as labelled spheres on a semi-transparent skeleton |
 
 ## What has been done
 
@@ -51,6 +56,13 @@ they are kept separate from model-derived geometry at every stage. See
 - The ten missing peripheral nerves authored as schematic tubes, verified
   against the real bones — 11 checks, no nerve passing through bone — and
   exported to `nerves.glb`, separately from anything model-derived.
+- The 42 palpable landmarks resolved as points on the model's bones - none
+  of them is a mesh in the atlas - each from a rule that encodes its
+  anatomical description on the bone's real vertices, verified on or just
+  outside the bone (1.0 to 2.0 mm), symmetric, shallow where a hand reaches
+  them, and holding the six named relationships. See
+  [`landmarks.json`](landmarks.json) and
+  [`verification/landmarks/`](verification/landmarks/).
 - The musculoskeletal scope — 2,054 meshes after the licence filter — assigned
   to the app's nine regions, decimated on two tiers and exported as
   Draco-compressed glTF: a 212k-triangle whole-body overview, one file per
@@ -126,6 +138,42 @@ ulnar behind the medial epicondyle, the radial in the spiral groove, the common
 fibular at the fibular neck, the sciatic below piriformis, the tibial behind the
 medial malleolus, the median anterior at elbow and inside the carpal tunnel.
 Each reports its margin in millimetres rather than a bare pass.
+
+## Building and verifying the landmarks
+
+```bash
+blender --background source/Z-Anatomy/Startup.blend --python tools/build_landmarks.py -- landmarks.json
+```
+
+Prints `LANDMARKS_OK count=42` and exits zero. A missing anchor object, a rule
+that selects nothing, or a point inside its bone is a hard error. No glTF is
+written: these are points, and the viewer places a marker.
+
+Each landmark is defined in `tools/landmark_anchors.py` as a rule on the
+bone's evaluated mesh - "the femoral vertex with the greatest X", "the most
+anterior vertex of the top 3 mm of the manubrium's midline" - resolved to a
+vertex and stepped 2 mm outward. The `uvw` and `offset` written to
+`landmarks.json` reproduce that point in the same anchor scheme the nerves
+use, but they are outputs of the rule, not inputs: the brief's first-pass
+`uvw` estimates were read off axis-aligned bounding boxes of oblique bones
+and landed up to 78 mm from the bone. Each is kept in the file under
+`firstPass` with how far it was off.
+
+```bash
+blender --background source/Z-Anatomy/Startup.blend --python tools/verify_landmarks.py -- --render verification/landmarks
+```
+
+Prints `VERIFY_LANDMARKS_OK checks=13 failed=0` and exits zero. The checks
+are: on or outside the bone on both sides (0 to +5 mm, sign by ray-cast
+parity), the anchor round-trips to the resolved point, the eighteen limb
+landmarks under 20 mm beneath the limb's convex cross-section, paired
+landmarks symmetric within 3 mm, and the six relationships - radial styloid
+distal to ulnar along the forearm axis, lateral malleolus distal and
+posterior to medial, PSIS behind ASIS and both above the ischial tuberosity,
+greater trochanter the most lateral hip point, acromion above and lateral to
+the coracoid, C7 behind and below C2 - each with its margin. It also reports
+each landmark's distance to the nearest of the atlas's own skin-region
+patches, and that patch's name, as an independent reading.
 
 ## Building the region exports
 

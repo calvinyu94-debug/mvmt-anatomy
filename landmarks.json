@@ -1,0 +1,2199 @@
+{
+ "version": 1,
+ "note": "Palpable landmarks as points on the model's bones. Each is the vertex its anatomical rule selects on the bone's evaluated mesh, stepped 2 mm outward. The anchor (object, uvw, offset) reproduces the resolved point; uvw is an output of the rule, not an estimate. Right side is the left with X negated.",
+ "units": "metres",
+ "up": "Z",
+ "sideConvention": {
+  "l": "+X",
+  "r": "-X"
+ },
+ "push": 0.002,
+ "landmarks": [
+  {
+   "id": "lm-mastoid-process",
+   "name": "Mastoid process",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The bony bump behind the earlobe - the inferolateral surface of the mastoid process",
+   "anchor": {
+    "object": "Temporal bone.l",
+    "uvw": [
+     0.7957,
+     0.6679,
+     0.2087
+    ],
+    "offset": [
+     0.00141,
+     0.0,
+     -0.00141
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.06101,
+     0.01956,
+     1.56284
+    ],
+    "r": [
+     -0.06101,
+     0.01956,
+     1.56284
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.0001,
+   "nearestSkin": "Auricular region.l",
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.55,
+     0.75,
+     0.15
+    ],
+    "resolved": [
+     0.04417,
+     0.02748,
+     1.55989
+    ],
+    "surfaceDistance": 0.00035,
+    "movedBy": 0.01884,
+    "moved": [
+     0.01684,
+     -0.00791,
+     0.00295
+    ]
+   }
+  },
+  {
+   "id": "lm-occipital-protuberance",
+   "name": "External occipital protuberance",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": false,
+   "target": "Midline bump on the outer occipital surface, where the nuchal plane meets the occipital plane",
+   "anchor": {
+    "object": "Occipital bone",
+    "uvw": [
+     0.5,
+     0.933,
+     0.3453
+    ],
+    "offset": [
+     0.0,
+     0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "m": [
+     -0.0,
+     0.09761,
+     1.5868
+    ]
+   },
+   "surfaceDistance": 0.00181,
+   "depth": 3e-05,
+   "nearestSkin": "Occipital region.r",
+   "surfaceDistanceRight": 0.00181,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.95,
+     0.55
+    ],
+    "resolved": [
+     -0.0,
+     0.09758,
+     1.60819
+    ],
+    "surfaceDistance": -0.00181,
+    "movedBy": 0.02138,
+    "moved": [
+     0.0,
+     3e-05,
+     -0.02138
+    ]
+   }
+  },
+  {
+   "id": "lm-superior-nuchal-line",
+   "name": "Superior nuchal line",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "On the ridge running laterally from the protuberance toward the mastoid - a third of the way along",
+   "anchor": {
+    "object": "Occipital bone",
+    "uvw": [
+     0.7039,
+     0.8609,
+     0.3076
+    ],
+    "offset": [
+     0.0,
+     0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.02431,
+     0.08926,
+     1.58287
+    ],
+    "r": [
+     -0.02431,
+     0.08926,
+     1.58287
+    ]
+   },
+   "surfaceDistance": 0.00136,
+   "depth": 0.00017,
+   "nearestSkin": "Occipital region.l",
+   "surfaceDistanceRight": 0.00136,
+   "firstPass": {
+    "uvw": [
+     0.68,
+     0.9,
+     0.48
+    ],
+    "resolved": [
+     0.02147,
+     0.09179,
+     1.60088
+    ],
+    "surfaceDistance": 0.00131,
+    "movedBy": 0.01841,
+    "moved": [
+     0.00285,
+     -0.00253,
+     -0.01801
+    ]
+   }
+  },
+  {
+   "id": "lm-c1-transverse",
+   "name": "C1 transverse process",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The most lateral point of the atlas transverse process",
+   "anchor": {
+    "object": "Atlas (C1)",
+    "uvw": [
+     1.0,
+     0.3817,
+     0.3891
+    ],
+    "offset": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.04504,
+     0.01561,
+     1.54075
+    ],
+    "r": [
+     -0.04504,
+     0.01561,
+     1.54075
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.01101,
+   "nearestSkin": "Sternocleidomastoid region.l",
+   "surfaceDistanceRight": 0.00201,
+   "firstPass": {
+    "uvw": [
+     0.95,
+     0.5,
+     0.5
+    ],
+    "resolved": [
+     0.03873,
+     0.02142,
+     1.54293
+    ],
+    "surfaceDistance": 0.00185,
+    "movedBy": 0.00884,
+    "moved": [
+     0.0063,
+     -0.0058,
+     -0.00218
+    ]
+   }
+  },
+  {
+   "id": "lm-c2-spinous",
+   "name": "C2 spinous process",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": false,
+   "target": "The most posterior point of the C2 spinous process",
+   "anchor": {
+    "object": "Axis (C2)",
+    "uvw": [
+     0.4861,
+     1.0,
+     0.063
+    ],
+    "offset": [
+     0.0,
+     0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "m": [
+     -0.00073,
+     0.05438,
+     1.51123
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00702,
+   "nearestSkin": "Posterior region of neck.r",
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.95,
+     0.4
+    ],
+    "resolved": [
+     2e-05,
+     0.04975,
+     1.52569
+    ],
+    "surfaceDistance": 0.00443,
+    "movedBy": 0.01521,
+    "moved": [
+     -0.00075,
+     0.00464,
+     -0.01446
+    ]
+   }
+  },
+  {
+   "id": "lm-c7-spinous",
+   "name": "C7 spinous process",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": false,
+   "target": "The most posterior point of the C7 spinous process",
+   "anchor": {
+    "object": "Vertebra C7",
+    "uvw": [
+     0.5,
+     1.0,
+     0.1793
+    ],
+    "offset": [
+     0.0,
+     0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "m": [
+     -0.0,
+     0.07923,
+     1.44336
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.012,
+   "nearestSkin": "Posterior region of neck.l",
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.95,
+     0.45
+    ],
+    "resolved": [
+     -0.0,
+     0.07371,
+     1.45067
+    ],
+    "surfaceDistance": 0.00029,
+    "movedBy": 0.00916,
+    "moved": [
+     -0.0,
+     0.00552,
+     -0.00731
+    ]
+   }
+  },
+  {
+   "id": "lm-mandible-angle",
+   "name": "Angle of mandible",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The posteroinferior corner of the mandible where ramus meets body",
+   "anchor": {
+    "object": "Mandible",
+    "uvw": [
+     0.8849,
+     0.8515,
+     0.367
+    ],
+    "offset": [
+     0.00067,
+     0.00133,
+     -0.00133
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.04044,
+     -0.01263,
+     1.52519
+    ],
+    "r": [
+     -0.04044,
+     -0.01263,
+     1.52519
+    ]
+   },
+   "surfaceDistance": 0.00154,
+   "depth": 0.00906,
+   "nearestSkin": "Sternocleidomastoid region.l",
+   "surfaceDistanceRight": 0.00154,
+   "firstPass": {
+    "uvw": [
+     0.85,
+     0.7,
+     0.1
+    ],
+    "resolved": [
+     0.03616,
+     -0.02637,
+     1.50453
+    ],
+    "surfaceDistance": 0.01159,
+    "movedBy": 0.02518,
+    "moved": [
+     0.00428,
+     0.01374,
+     0.02066
+    ]
+   }
+  },
+  {
+   "id": "lm-zygomatic-arch",
+   "name": "Zygomatic arch",
+   "region": "head-neck",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "Mid-length of the arch, on its lateral surface",
+   "anchor": {
+    "object": "Zygomatic bone.l",
+    "uvw": [
+     1.0,
+     0.908,
+     0.3587
+    ],
+    "offset": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.06432,
+     -0.03629,
+     1.57335
+    ],
+    "r": [
+     -0.06432,
+     -0.03629,
+     1.57335
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00031,
+   "nearestSkin": "Zygomatic region.l",
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.8,
+     0.55,
+     0.45
+    ],
+    "resolved": [
+     0.05618,
+     -0.05024,
+     1.57835
+    ],
+    "surfaceDistance": 0.00111,
+    "movedBy": 0.01691,
+    "moved": [
+     0.00814,
+     0.01395,
+     -0.005
+    ]
+   }
+  },
+  {
+   "id": "lm-acromion",
+   "name": "Acromion",
+   "region": "shoulder",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The flat lateral shelf forming the point of the shoulder - most lateral and superior scapular point",
+   "anchor": {
+    "object": "Scapula.l",
+    "uvw": [
+     1.0,
+     0.4049,
+     0.9644
+    ],
+    "offset": [
+     0.00179,
+     0.0,
+     0.00089
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.17536,
+     0.04492,
+     1.41291
+    ],
+    "r": [
+     -0.17536,
+     0.04492,
+     1.41291
+    ]
+   },
+   "surfaceDistance": 0.00187,
+   "depth": 0.00799,
+   "nearestSkin": "Deltoid region.l",
+   "surfaceDistanceRight": 0.00187,
+   "firstPass": {
+    "uvw": [
+     0.9,
+     0.25,
+     0.95
+    ],
+    "resolved": [
+     0.16228,
+     0.02725,
+     1.40966
+    ],
+    "surfaceDistance": 0.00114,
+    "movedBy": 0.02223,
+    "moved": [
+     0.01309,
+     0.01767,
+     0.00325
+    ]
+   }
+  },
+  {
+   "id": "lm-coracoid",
+   "name": "Coracoid process",
+   "region": "shoulder",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The anterior finger-shaped projection, roughly 2 cm inferomedial to the acromion",
+   "anchor": {
+    "object": "Scapula.l",
+    "uvw": [
+     0.6633,
+     0.0,
+     0.8366
+    ],
+    "offset": [
+     0.0,
+     -0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.13554,
+     -0.00326,
+     1.39112
+    ],
+    "r": [
+     -0.13554,
+     -0.00326,
+     1.39112
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00993,
+   "nearestSkin": "Deltopectoral triangle.l",
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.7,
+     0.1,
+     0.8
+    ],
+    "resolved": [
+     0.13969,
+     0.01014,
+     1.38513
+    ],
+    "surfaceDistance": 0.00554,
+    "movedBy": 0.01526,
+    "moved": [
+     -0.00415,
+     -0.01341,
+     0.00599
+    ]
+   }
+  },
+  {
+   "id": "lm-scapular-spine",
+   "name": "Spine of scapula",
+   "region": "shoulder",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "Mid-length of the posterior ridge",
+   "anchor": {
+    "object": "Scapula.l",
+    "uvw": [
+     0.4762,
+     0.8124,
+     0.817
+    ],
+    "offset": [
+     0.0,
+     0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.11441,
+     0.09341,
+     1.3879
+    ],
+    "r": [
+     -0.11441,
+     0.09341,
+     1.3879
+    ]
+   },
+   "surfaceDistance": 0.00179,
+   "depth": 0.01644,
+   "nearestSkin": "Scapular region.l",
+   "surfaceDistanceRight": 0.00179,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.85,
+     0.8
+    ],
+    "resolved": [
+     0.11709,
+     0.0957,
+     1.38513
+    ],
+    "surfaceDistance": 0.00496,
+    "movedBy": 0.00449,
+    "moved": [
+     -0.00269,
+     -0.00229,
+     0.00278
+    ]
+   }
+  },
+  {
+   "id": "lm-inferior-angle",
+   "name": "Inferior angle of scapula",
+   "region": "shoulder",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The most inferior point of the scapula",
+   "anchor": {
+    "object": "Scapula.l",
+    "uvw": [
+     0.2911,
+     0.8974,
+     0.0
+    ],
+    "offset": [
+     0.0,
+     0.00089,
+     -0.00179
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.0935,
+     0.102,
+     1.25249
+    ],
+    "r": [
+     -0.0935,
+     0.102,
+     1.25249
+    ]
+   },
+   "surfaceDistance": 0.00193,
+   "depth": 0.02262,
+   "nearestSkin": "Infrascapular region.l",
+   "surfaceDistanceRight": 0.00193,
+   "firstPass": {
+    "uvw": [
+     0.35,
+     0.8,
+     0.02
+    ],
+    "resolved": [
+     0.10015,
+     0.08999,
+     1.25755
+    ],
+    "surfaceDistance": 0.00705,
+    "movedBy": 0.01463,
+    "moved": [
+     -0.00665,
+     0.012,
+     -0.00506
+    ]
+   }
+  },
+  {
+   "id": "lm-scapular-medial-border",
+   "name": "Medial border of scapula",
+   "region": "shoulder",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "Mid-length of the medial (vertebral) border",
+   "anchor": {
+    "object": "Scapula.l",
+    "uvw": [
+     0.0029,
+     0.9141,
+     0.5133
+    ],
+    "offset": [
+     -0.00179,
+     0.00089,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.05915,
+     0.10391,
+     1.33823
+    ],
+    "r": [
+     -0.05915,
+     0.10391,
+     1.33823
+    ]
+   },
+   "surfaceDistance": 0.00193,
+   "depth": 0.02713,
+   "nearestSkin": "Interscapular region.l",
+   "surfaceDistanceRight": 0.00193,
+   "firstPass": {
+    "uvw": [
+     0.05,
+     0.8,
+     0.45
+    ],
+    "resolved": [
+     0.06626,
+     0.08999,
+     1.32788
+    ],
+    "surfaceDistance": 0.01171,
+    "movedBy": 0.01874,
+    "moved": [
+     -0.00711,
+     0.01391,
+     0.01035
+    ]
+   }
+  },
+  {
+   "id": "lm-greater-tubercle",
+   "name": "Greater tubercle",
+   "region": "shoulder",
+   "limb": false,
+   "hull": "upper",
+   "paired": true,
+   "target": "The lateral prominence on the proximal humerus, distal to the head",
+   "anchor": {
+    "object": "Humerus.l",
+    "uvw": [
+     0.4851,
+     0.3958,
+     0.9208
+    ],
+    "offset": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.19717,
+     0.02199,
+     1.37946
+    ],
+    "r": [
+     -0.19717,
+     0.02199,
+     1.37946
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.02286,
+   "nearestSkin": "Deltoid region.l",
+   "hullDepth": 0.02419,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": null
+  },
+  {
+   "id": "lm-bicipital-groove",
+   "name": "Bicipital groove",
+   "region": "shoulder",
+   "limb": false,
+   "hull": "upper",
+   "paired": true,
+   "target": "The anterior vertical channel between greater and lesser tubercles",
+   "anchor": {
+    "object": "Humerus.l",
+    "uvw": [
+     0.377,
+     0.2247,
+     0.8953
+    ],
+    "offset": [
+     0.0,
+     -0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.1839,
+     0.01103,
+     1.37135
+    ],
+    "r": [
+     -0.1839,
+     0.01103,
+     1.37135
+    ]
+   },
+   "surfaceDistance": 0.0019,
+   "depth": 0.02535,
+   "nearestSkin": "Deltoid region.l",
+   "hullDepth": 0.02559,
+   "surfaceDistanceRight": 0.0019,
+   "firstPass": null
+  },
+  {
+   "id": "lm-jugular-notch",
+   "name": "Jugular notch",
+   "region": "thorax",
+   "limb": false,
+   "hull": null,
+   "paired": false,
+   "target": "The midline hollow at the superior border",
+   "anchor": {
+    "object": "Manubrium of sternum",
+    "uvw": [
+     0.4539,
+     0.7254,
+     0.924
+    ],
+    "offset": [
+     0.0,
+     -0.00089,
+     0.00179
+    ]
+   },
+   "resolved": {
+    "m": [
+     -0.00276,
+     -0.04684,
+     1.40161
+    ]
+   },
+   "surfaceDistance": 0.00195,
+   "depth": 0.00597,
+   "nearestSkin": "Muscular triangle.r",
+   "surfaceDistanceRight": 0.00191,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.1,
+     0.95
+    ],
+    "resolved": [
+     -0.00013,
+     -0.07861,
+     1.40122
+    ],
+    "surfaceDistance": 0.01845,
+    "movedBy": 0.03188,
+    "moved": [
+     -0.00263,
+     0.03177,
+     0.00039
+    ]
+   }
+  },
+  {
+   "id": "lm-sternal-angle",
+   "name": "Sternal angle",
+   "region": "thorax",
+   "limb": false,
+   "hull": null,
+   "paired": false,
+   "target": "The inferior border of the manubrium, where it meets the sternal body",
+   "anchor": {
+    "object": "Manubrium of sternum",
+    "uvw": [
+     0.4559,
+     0.07,
+     0.0832
+    ],
+    "offset": [
+     0.0,
+     -0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "m": [
+     -0.00265,
+     -0.08218,
+     1.35443
+    ]
+   },
+   "surfaceDistance": 0.00111,
+   "depth": 0.00354,
+   "nearestSkin": "Presternal region.r",
+   "surfaceDistanceRight": 0.00102,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.1,
+     0.05
+    ],
+    "resolved": [
+     -0.00013,
+     -0.07861,
+     1.35264
+    ],
+    "surfaceDistance": 0.00107,
+    "movedBy": 0.00472,
+    "moved": [
+     -0.00252,
+     -0.00357,
+     0.00179
+    ]
+   }
+  },
+  {
+   "id": "lm-costal-margin",
+   "name": "Costal margin",
+   "region": "thorax",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The anterior inferior end of the seventh rib, on the costal arch",
+   "anchor": {
+    "object": "Seventh rib.l",
+    "uvw": [
+     0.7469,
+     0.0419,
+     0.0
+    ],
+    "offset": [
+     0.0,
+     -0.00089,
+     -0.00179
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.10996,
+     -0.07844,
+     1.16966
+    ],
+    "r": [
+     -0.10996,
+     -0.07844,
+     1.16966
+    ]
+   },
+   "surfaceDistance": 0.00198,
+   "depth": 0.01549,
+   "nearestSkin": "Lateral region of thorax.l",
+   "surfaceDistanceRight": 0.00198,
+   "firstPass": {
+    "uvw": [
+     0.2,
+     0.1,
+     0.1
+    ],
+    "resolved": [
+     0.04149,
+     -0.067,
+     1.18588
+    ],
+    "surfaceDistance": 0.06462,
+    "movedBy": 0.07129,
+    "moved": [
+     0.06847,
+     -0.01144,
+     -0.01622
+    ]
+   }
+  },
+  {
+   "id": "lm-medial-epicondyle",
+   "name": "Medial epicondyle",
+   "region": "elbow",
+   "limb": true,
+   "hull": "upper",
+   "paired": true,
+   "target": "The medial bony bump at the distal humerus. Ulnar nerve groove sits immediately posterior",
+   "anchor": {
+    "object": "Humerus.l",
+    "uvw": [
+     0.3732,
+     0.6549,
+     0.0629
+    ],
+    "offset": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.1815,
+     0.03555,
+     1.10699
+    ],
+    "r": [
+     -0.1815,
+     0.03555,
+     1.10699
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 1e-05,
+   "nearestSkin": "Anterior region of elbow.l",
+   "hullDepth": -0.00166,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": null
+  },
+  {
+   "id": "lm-lateral-epicondyle",
+   "name": "Lateral epicondyle",
+   "region": "elbow",
+   "limb": true,
+   "hull": "upper",
+   "paired": true,
+   "target": "The lateral bony bump at the distal humerus",
+   "anchor": {
+    "object": "Humerus.l",
+    "uvw": [
+     1.0,
+     0.8028,
+     0.0812
+    ],
+    "offset": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.25083,
+     0.0433,
+     1.1128
+    ],
+    "r": [
+     -0.25083,
+     0.0433,
+     1.1128
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00686,
+   "nearestSkin": "Posterior region of elbow.l",
+   "hullDepth": 0.0069,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": null
+  },
+  {
+   "id": "lm-olecranon",
+   "name": "Olecranon",
+   "region": "elbow",
+   "limb": true,
+   "hull": "upper",
+   "paired": true,
+   "target": "The most proximal and posterior point of the ulna - the point of the elbow",
+   "anchor": {
+    "object": "Ulna.l",
+    "uvw": [
+     0.2087,
+     1.0,
+     0.9435
+    ],
+    "offset": [
+     0.0,
+     0.00179,
+     0.00089
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.21417,
+     0.06218,
+     1.09748
+    ],
+    "r": [
+     -0.21417,
+     0.06218,
+     1.09748
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.01191,
+   "nearestSkin": "Posterior region of elbow.l",
+   "hullDepth": 0.00178,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": null
+  },
+  {
+   "id": "lm-radial-styloid",
+   "name": "Radial styloid",
+   "region": "wrist",
+   "limb": true,
+   "hull": "upper",
+   "paired": true,
+   "target": "The distal lateral projection of the radius, ~1 cm distal to the ulnar styloid",
+   "anchor": {
+    "object": "Radius.l",
+    "uvw": [
+     0.9518,
+     0.1422,
+     0.0
+    ],
+    "offset": [
+     0.00141,
+     0.0,
+     -0.00141
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.2871,
+     -0.01697,
+     0.85491
+    ],
+    "r": [
+     -0.2871,
+     -0.01697,
+     0.85491
+    ]
+   },
+   "surfaceDistance": 0.00181,
+   "depth": 0.00495,
+   "nearestSkin": "Radial foveola.l",
+   "hullDepth": 0.00677,
+   "surfaceDistanceRight": 0.00181,
+   "firstPass": null
+  },
+  {
+   "id": "lm-ulnar-styloid",
+   "name": "Ulnar styloid",
+   "region": "wrist",
+   "limb": true,
+   "hull": "upper",
+   "paired": true,
+   "target": "The distal medial projection of the ulna",
+   "anchor": {
+    "object": "Ulna.l",
+    "uvw": [
+     0.7674,
+     0.1418,
+     0.0
+    ],
+    "offset": [
+     -0.00138,
+     0.00042,
+     -0.00138
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.24206,
+     -0.01064,
+     0.8542
+    ],
+    "r": [
+     -0.24206,
+     -0.01064,
+     0.8542
+    ]
+   },
+   "surfaceDistance": 0.00196,
+   "depth": 0.00431,
+   "nearestSkin": "Posterior region of forearm.l",
+   "hullDepth": 0.00422,
+   "surfaceDistanceRight": 0.00196,
+   "firstPass": null
+  },
+  {
+   "id": "lm-anatomical-snuffbox",
+   "name": "Anatomical snuffbox",
+   "region": "wrist",
+   "limb": true,
+   "hull": "upper",
+   "paired": true,
+   "target": "Dorsal-lateral surface of the scaphoid - the floor of the hollow",
+   "anchor": {
+    "object": "Scaphoid bone.l",
+    "uvw": [
+     0.7995,
+     0.762,
+     0.472
+    ],
+    "offset": [
+     0.00141,
+     0.00141,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.27858,
+     -0.01249,
+     0.85415
+    ],
+    "r": [
+     -0.27858,
+     -0.01249,
+     0.85415
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00695,
+   "nearestSkin": "Posterior region of wrist.l",
+   "hullDepth": 0.01074,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": null
+  },
+  {
+   "id": "lm-pisiform",
+   "name": "Pisiform",
+   "region": "wrist",
+   "limb": true,
+   "hull": "upper",
+   "paired": true,
+   "target": "The pisiform itself, on its palmar surface",
+   "anchor": {
+    "object": "Pisiform bone.l",
+    "uvw": [
+     0.5568,
+     0.0,
+     0.3944
+    ],
+    "offset": [
+     0.0,
+     -0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.24434,
+     -0.0393,
+     0.84455
+    ],
+    "r": [
+     -0.24434,
+     -0.0393,
+     0.84455
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00042,
+   "nearestSkin": "Anterior region of wrist.l",
+   "hullDepth": 0.00318,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": null
+  },
+  {
+   "id": "lm-iliac-crest",
+   "name": "Iliac crest",
+   "region": "pelvis",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The highest point of the iliac crest",
+   "anchor": {
+    "object": "Hip bone.l",
+    "uvw": [
+     0.7051,
+     0.5858,
+     1.0
+    ],
+    "offset": [
+     0.00057,
+     0.0,
+     0.00192
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.09656,
+     0.02761,
+     1.01386
+    ],
+    "r": [
+     -0.09656,
+     0.02761,
+     1.01386
+    ]
+   },
+   "surfaceDistance": 0.00195,
+   "depth": 0.04137,
+   "nearestSkin": "Gluteal region.l",
+   "surfaceDistanceRight": 0.00195,
+   "firstPass": {
+    "uvw": [
+     0.45,
+     0.5,
+     1.0
+    ],
+    "resolved": [
+     0.06232,
+     0.01536,
+     1.01194
+    ],
+    "surfaceDistance": 0.02565,
+    "movedBy": 0.03642,
+    "moved": [
+     0.03424,
+     0.01226,
+     0.00192
+    ]
+   }
+  },
+  {
+   "id": "lm-asis",
+   "name": "ASIS",
+   "region": "pelvis",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The anterior-most superior projection of the ilium",
+   "anchor": {
+    "object": "Hip bone.l",
+    "uvw": [
+     0.8715,
+     0.0,
+     0.6887
+    ],
+    "offset": [
+     0.0,
+     -0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.11794,
+     -0.05807,
+     0.94513
+    ],
+    "r": [
+     -0.11794,
+     -0.05807,
+     0.94513
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.01098,
+   "nearestSkin": "Anterior region of thigh.l",
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.35,
+     0.05,
+     0.85
+    ],
+    "resolved": [
+     0.04912,
+     -0.04893,
+     0.97975
+    ],
+    "surfaceDistance": 0.07093,
+    "movedBy": 0.07757,
+    "moved": [
+     0.06881,
+     -0.00914,
+     -0.03462
+    ]
+   }
+  },
+  {
+   "id": "lm-psis",
+   "name": "PSIS",
+   "region": "pelvis",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The posterior-most superior projection of the ilium",
+   "anchor": {
+    "object": "Hip bone.l",
+    "uvw": [
+     0.3283,
+     1.0,
+     0.7555
+    ],
+    "offset": [
+     0.0,
+     0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.04627,
+     0.08878,
+     0.95946
+    ],
+    "r": [
+     -0.04627,
+     0.08878,
+     0.95946
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.01061,
+   "nearestSkin": "Sacral region.l",
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.15,
+     0.95,
+     0.8
+    ],
+    "resolved": [
+     0.02273,
+     0.07964,
+     0.96902
+    ],
+    "surfaceDistance": 0.01846,
+    "movedBy": 0.027,
+    "moved": [
+     0.02353,
+     0.00914,
+     -0.00956
+    ]
+   }
+  },
+  {
+   "id": "lm-ischial-tuberosity",
+   "name": "Ischial tuberosity",
+   "region": "pelvis",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "The most inferior posterior prominence - the sitting bone",
+   "anchor": {
+    "object": "Hip bone.l",
+    "uvw": [
+     0.3054,
+     0.6328,
+     0.0
+    ],
+    "offset": [
+     0.0,
+     0.00089,
+     -0.00179
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.04323,
+     0.03523,
+     0.79555
+    ],
+    "r": [
+     -0.04323,
+     0.03523,
+     0.79555
+    ]
+   },
+   "surfaceDistance": 0.00192,
+   "depth": 0.04513,
+   "nearestSkin": "Anal region.l",
+   "surfaceDistanceRight": 0.00192,
+   "firstPass": {
+    "uvw": [
+     0.35,
+     0.75,
+     0.02
+    ],
+    "resolved": [
+     0.04912,
+     0.05107,
+     0.80163
+    ],
+    "surfaceDistance": 0.00421,
+    "movedBy": 0.01796,
+    "moved": [
+     -0.00589,
+     -0.01584,
+     -0.00608
+    ]
+   }
+  },
+  {
+   "id": "lm-pubic-tubercle",
+   "name": "Pubic tubercle",
+   "region": "pelvis",
+   "limb": false,
+   "hull": null,
+   "paired": true,
+   "target": "Small anterior projection near the midline at the pubis",
+   "anchor": {
+    "object": "Hip bone.l",
+    "uvw": [
+     0.1546,
+     0.023,
+     0.2397
+    ],
+    "offset": [
+     0.0,
+     -0.00171,
+     0.00103
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.02334,
+     -0.0545,
+     0.8498
+    ],
+    "r": [
+     -0.02334,
+     -0.0545,
+     0.8498
+    ]
+   },
+   "surfaceDistance": 0.00186,
+   "depth": 0.0144,
+   "nearestSkin": "Hypogastric region.l",
+   "surfaceDistanceRight": 0.00186,
+   "firstPass": {
+    "uvw": [
+     0.15,
+     0.05,
+     0.2
+    ],
+    "resolved": [
+     0.02273,
+     -0.04893,
+     0.84026
+    ],
+    "surfaceDistance": 4e-05,
+    "movedBy": 0.01107,
+    "moved": [
+     0.00061,
+     -0.00558,
+     0.00954
+    ]
+   }
+  },
+  {
+   "id": "lm-greater-trochanter",
+   "name": "Greater trochanter",
+   "region": "hip",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The most lateral prominence at the proximal femur",
+   "anchor": {
+    "object": "Femur.l",
+    "uvw": [
+     1.0,
+     0.3896,
+     0.8911
+    ],
+    "offset": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.15053,
+     0.01167,
+     0.83484
+    ],
+    "r": [
+     -0.15053,
+     0.01167,
+     0.83484
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.02112,
+   "nearestSkin": "Hip region.l",
+   "hullDepth": 0.00269,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.95,
+     0.5,
+     0.97
+    ],
+    "resolved": [
+     0.1427,
+     0.0203,
+     0.87067
+    ],
+    "surfaceDistance": 0.0139,
+    "movedBy": 0.03768,
+    "moved": [
+     0.00783,
+     -0.00863,
+     -0.03583
+    ]
+   }
+  },
+  {
+   "id": "lm-sacral-base",
+   "name": "Sacral base",
+   "region": "pelvis",
+   "limb": false,
+   "hull": null,
+   "paired": false,
+   "target": "Midline, superior surface of S1",
+   "anchor": {
+    "object": "Sacrum",
+    "uvw": [
+     0.5,
+     0.3629,
+     0.7957
+    ],
+    "offset": [
+     0.0,
+     0.0,
+     0.002
+    ]
+   },
+   "resolved": {
+    "m": [
+     -4e-05,
+     0.03677,
+     0.95932
+    ]
+   },
+   "surfaceDistance": 0.0011,
+   "depth": 0.06087,
+   "nearestSkin": "Vertebral region.r",
+   "surfaceDistanceRight": 0.0011,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.3,
+     0.98
+    ],
+    "resolved": [
+     -4e-05,
+     0.03102,
+     0.97853
+    ],
+    "surfaceDistance": 0.0157,
+    "movedBy": 0.02005,
+    "moved": [
+     0.0,
+     0.00575,
+     -0.01921
+    ]
+   }
+  },
+  {
+   "id": "lm-tibial-tuberosity",
+   "name": "Tibial tuberosity",
+   "region": "knee",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The anterior bump on the proximal tibia",
+   "anchor": {
+    "object": "Tibia.l",
+    "uvw": [
+     0.5909,
+     0.0,
+     0.9057
+    ],
+    "offset": [
+     0.0,
+     -0.002,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.0837,
+     -0.00706,
+     0.39942
+    ],
+    "r": [
+     -0.0837,
+     -0.00706,
+     0.39942
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00708,
+   "nearestSkin": "Anterior region of knee.l",
+   "hullDepth": 0.00622,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.05,
+     0.95
+    ],
+    "resolved": [
+     0.07657,
+     -0.00166,
+     0.41528
+    ],
+    "surfaceDistance": 0.0036,
+    "movedBy": 0.01821,
+    "moved": [
+     0.00713,
+     -0.0054,
+     -0.01587
+    ]
+   }
+  },
+  {
+   "id": "lm-gerdys-tubercle",
+   "name": "Gerdy's tubercle",
+   "region": "knee",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "Anterolateral proximal tibia, level with and lateral to the tuberosity",
+   "anchor": {
+    "object": "Tibia.l",
+    "uvw": [
+     0.8938,
+     0.2457,
+     0.954
+    ],
+    "offset": [
+     0.00141,
+     -0.00141,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.10888,
+     0.01024,
+     0.41672
+    ],
+    "r": [
+     -0.10888,
+     0.01024,
+     0.41672
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.022,
+   "nearestSkin": "Anterior region of knee.l",
+   "hullDepth": 0.00374,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.9,
+     0.2,
+     0.93
+    ],
+    "resolved": [
+     0.10794,
+     0.00854,
+     0.40812
+    ],
+    "surfaceDistance": 0.004,
+    "movedBy": 0.00881,
+    "moved": [
+     0.00093,
+     0.0017,
+     0.0086
+    ]
+   }
+  },
+  {
+   "id": "lm-knee-joint-line",
+   "name": "Knee joint line",
+   "region": "knee",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The tibial plateau rim - the joint line itself, anteromedially",
+   "anchor": {
+    "object": "Tibia.l",
+    "uvw": [
+     0.079,
+     0.3664,
+     0.9681
+    ],
+    "offset": [
+     -0.00141,
+     -0.00141,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.04212,
+     0.01845,
+     0.42177
+    ],
+    "r": [
+     -0.04212,
+     0.01845,
+     0.42177
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.0054,
+   "nearestSkin": "Anterior region of knee.l",
+   "hullDepth": 0.00778,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.5,
+     1.0
+    ],
+    "resolved": [
+     0.07657,
+     0.02895,
+     0.43318
+    ],
+    "surfaceDistance": 0.00365,
+    "movedBy": 0.03777,
+    "moved": [
+     -0.03444,
+     -0.0105,
+     -0.01141
+    ]
+   }
+  },
+  {
+   "id": "lm-fibular-head",
+   "name": "Fibular head",
+   "region": "knee",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The proximal knob of the fibula",
+   "anchor": {
+    "object": "Fibula.l",
+    "uvw": [
+     1.0,
+     0.3875,
+     0.9523
+    ],
+    "offset": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.12685,
+     0.03952,
+     0.40041
+    ],
+    "r": [
+     -0.12685,
+     0.03952,
+     0.40041
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.01012,
+   "nearestSkin": "Posterior region of knee.l",
+   "hullDepth": -0.00065,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.5,
+     0.5,
+     0.98
+    ],
+    "resolved": [
+     0.10674,
+     0.04322,
+     0.41045
+    ],
+    "surfaceDistance": -0.00178,
+    "movedBy": 0.02278,
+    "moved": [
+     0.02011,
+     -0.0037,
+     -0.01004
+    ]
+   }
+  },
+  {
+   "id": "lm-adductor-tubercle",
+   "name": "Adductor tubercle",
+   "region": "knee",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "Small medial projection just proximal to the medial femoral condyle",
+   "anchor": {
+    "object": "Femur.l",
+    "uvw": [
+     0.0362,
+     0.6835,
+     0.105
+    ],
+    "offset": [
+     -0.00192,
+     0.0,
+     0.00057
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.03424,
+     0.03463,
+     0.47816
+    ],
+    "r": [
+     -0.03424,
+     0.03463,
+     0.47816
+    ]
+   },
+   "surfaceDistance": 0.00162,
+   "depth": 0.01096,
+   "nearestSkin": "Posterior region of knee.l",
+   "hullDepth": 0.01203,
+   "surfaceDistanceRight": 0.00162,
+   "firstPass": {
+    "uvw": [
+     0.1,
+     0.6,
+     0.06
+    ],
+    "resolved": [
+     0.0436,
+     0.02811,
+     0.45713
+    ],
+    "surfaceDistance": -0.01017,
+    "movedBy": 0.02392,
+    "moved": [
+     -0.00936,
+     0.00652,
+     0.02103
+    ]
+   }
+  },
+  {
+   "id": "lm-medial-malleolus",
+   "name": "Medial malleolus",
+   "region": "ankle",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The medial distal projection of the tibia - higher and more anterior than the lateral malleolus",
+   "anchor": {
+    "object": "Tibia.l",
+    "uvw": [
+     0.2141,
+     0.5419,
+     0.0
+    ],
+    "offset": [
+     -0.00141,
+     0.0,
+     -0.00141
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.05272,
+     0.0318,
+     0.0738
+    ],
+    "r": [
+     -0.05272,
+     0.0318,
+     0.0738
+    ]
+   },
+   "surfaceDistance": 0.0019,
+   "depth": 0.00687,
+   "nearestSkin": "Medial malleolus.l",
+   "hullDepth": 0.00587,
+   "surfaceDistanceRight": 0.0019,
+   "firstPass": null
+  },
+  {
+   "id": "lm-lateral-malleolus",
+   "name": "Lateral malleolus",
+   "region": "ankle",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The distal end of the fibula - lower and more posterior than the medial malleolus",
+   "anchor": {
+    "object": "Fibula.l",
+    "uvw": [
+     0.3589,
+     0.7683,
+     0.0
+    ],
+    "offset": [
+     0.00141,
+     0.0,
+     -0.00141
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.10304,
+     0.05206,
+     0.0538
+    ],
+    "r": [
+     -0.10304,
+     0.05206,
+     0.0538
+    ]
+   },
+   "surfaceDistance": 0.0015,
+   "depth": 0.00693,
+   "nearestSkin": "Lateral malleolus.l",
+   "hullDepth": 0.00625,
+   "surfaceDistanceRight": 0.0015,
+   "firstPass": null
+  },
+  {
+   "id": "lm-navicular-tuberosity",
+   "name": "Navicular tuberosity",
+   "region": "foot",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The medial prominence of the navicular",
+   "anchor": {
+    "object": "Navicular bone.l",
+    "uvw": [
+     0.0,
+     0.6084,
+     0.3345
+    ],
+    "offset": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.05069,
+     0.0057,
+     0.05766
+    ],
+    "r": [
+     -0.05069,
+     0.0057,
+     0.05766
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00247,
+   "nearestSkin": "Medial border of foot.l",
+   "hullDepth": -0.00127,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.2,
+     0.55,
+     0.4
+    ],
+    "resolved": [
+     0.06083,
+     0.00429,
+     0.05947
+    ],
+    "surfaceDistance": -0.00518,
+    "movedBy": 0.01039,
+    "moved": [
+     -0.01014,
+     0.0014,
+     -0.0018
+    ]
+   }
+  },
+  {
+   "id": "lm-fifth-metatarsal-base",
+   "name": "Fifth metatarsal base",
+   "region": "foot",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The proximal lateral tuberosity",
+   "anchor": {
+    "object": "Fifth metatarsal bone.l",
+    "uvw": [
+     0.5192,
+     0.8415,
+     0.5192
+    ],
+    "offset": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.12216,
+     0.00235,
+     0.02607
+    ],
+    "r": [
+     -0.12216,
+     0.00235,
+     0.02607
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00477,
+   "nearestSkin": "Lateral border of foot.l",
+   "hullDepth": -0.00129,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.85,
+     0.6,
+     0.55
+    ],
+    "resolved": [
+     0.13241,
+     -0.01545,
+     0.02703
+    ],
+    "surfaceDistance": 0.01064,
+    "movedBy": 0.02057,
+    "moved": [
+     -0.01025,
+     0.01781,
+     -0.00096
+    ]
+   }
+  },
+  {
+   "id": "lm-sustentaculum-tali",
+   "name": "Sustentaculum tali",
+   "region": "foot",
+   "limb": true,
+   "hull": "lower",
+   "paired": true,
+   "target": "The medial shelf, roughly a thumb's width below the medial malleolus",
+   "anchor": {
+    "object": "Calcaneus.l",
+    "uvw": [
+     0.0531,
+     0.3042,
+     0.864
+    ],
+    "offset": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "resolved": {
+    "l": [
+     0.05515,
+     0.0389,
+     0.05569
+    ],
+    "r": [
+     -0.05515,
+     0.0389,
+     0.05569
+    ]
+   },
+   "surfaceDistance": 0.002,
+   "depth": 0.00876,
+   "nearestSkin": "Medial retromalleolar region.l",
+   "hullDepth": 0.00685,
+   "surfaceDistanceRight": 0.002,
+   "firstPass": {
+    "uvw": [
+     0.1,
+     0.35,
+     0.75
+    ],
+    "resolved": [
+     0.05939,
+     0.04236,
+     0.04983
+    ],
+    "surfaceDistance": 0.00182,
+    "movedBy": 0.00802,
+    "moved": [
+     -0.00424,
+     -0.00346,
+     0.00586
+    ]
+   }
+  }
+ ]
+}

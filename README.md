@@ -77,11 +77,15 @@ they are kept separate from model-derived geometry at every stage. See
   join is clinical judgement, not automation: "Rotator Cuff" is four objects,
   "Scalenes" is three. It is authored separately, against the `objects` array
   in `manifest.json`, which is complete and exact by construction.
-- No viewer — and with it, **the schematic treatment for the authored nerves is
-  still owed**: a distinct material, and a visible "Schematic — indicative path
-  only" label whenever a nerve is selected or the nerve layer is on. The
-  exported `authored`/`source` flags are what that keys off, not a substitute
-  for it. See [CLAUDE.md](CLAUDE.md#open-debts).
+- No viewer here. The viewer lives in
+  [mvmt-program](https://github.com/calvinyu94-debug/mvmt-program), and the
+  schematic treatment for the authored nerves — a distinct unlit material, and
+  the non-dismissible "Schematic — indicative path only" label whenever a nerve
+  is selected or the nerve layer is on — is paid there, by
+  [#26](https://github.com/calvinyu94-debug/mvmt-program/pull/26) and
+  [#27](https://github.com/calvinyu94-debug/mvmt-program/pull/27). The
+  exported `authored`/`source` flags are what it keys off. See
+  [CLAUDE.md](CLAUDE.md#open-debts).
 
 ## Reproducing the inventory
 

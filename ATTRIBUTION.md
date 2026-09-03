@@ -65,11 +65,15 @@ The distinction is carried in the assets themselves, not only in this file:
   exported into the glTF as node `extras` — **done**
 - they export to **`nerves.glb`**, separately from every model-derived export,
   and are never merged into one — **done**
-- the viewer must render them visually distinct from model-derived geometry,
-  and must show **"Schematic — indicative path only"** whenever a nerve is
-  selected or the nerve layer is on — **owed, not done.** No viewer exists yet.
-  The two flags above are what it keys off; they are not a substitute for the
-  treatment. Tracked in [CLAUDE.md](CLAUDE.md#open-debts).
+- the viewer renders them visually distinct from model-derived geometry —
+  unlit and flat, an overlay rather than a part of the model — and shows
+  **"Schematic — indicative path only"** whenever a nerve is selected or the
+  nerve layer is on, with no close control — **done**, in
+  [mvmt-program](https://github.com/calvinyu94-debug/mvmt-program) by
+  [#26](https://github.com/calvinyu94-debug/mvmt-program/pull/26) and
+  [#27](https://github.com/calvinyu94-debug/mvmt-program/pull/27). The two
+  flags above are what it keys off; they were never a substitute for the
+  treatment. Recorded in [CLAUDE.md](CLAUDE.md#open-debts).
 
 ### Licensing
 

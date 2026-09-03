@@ -202,32 +202,35 @@ joins names to this model needs the same treatment.
 
 ## Open debts
 
-### The schematic honesty requirement is half done
+### The schematic honesty requirement — paid, in the viewer
 
 The authored peripheral nerves are **schematic approximations, not
 imaging-derived anatomy**, and rendered beside the model-derived muscles and
-bones they look equally authoritative. Four things were required to keep that
-distinction visible. Two exist; two do not.
+bones they would look equally authoritative. Four things were required to keep
+that distinction visible. All four now exist, two here and two in the viewer.
 
-**Done:**
+**Here:**
 
 - every authored object carries `authored = True` and `source = "schematic"`,
   exported into the glTF as node `extras` — verified on all 20 nodes
 - they export to `nerves.glb` alone, never merged with model-derived geometry,
   and [`ATTRIBUTION.md`](ATTRIBUTION.md) records them as original work
 
-**Owed — viewer work, does not exist yet:**
+**In the viewer — mvmt-program, paid by
+[#26](https://github.com/calvinyu94-debug/mvmt-program/pull/26) and reached
+from the index by
+[#27](https://github.com/calvinyu94-debug/mvmt-program/pull/27):**
 
-- a **distinct material** for authored geometry, so it does not read as
-  equivalent to the model-derived meshes
-- a visible label reading **"Schematic — indicative path only"** whenever a
-  nerve is selected or the nerve layer is on
+- a **distinct material**: the nerves are drawn unlit and flat, no shading and
+  no roughness, so they read as an overlay on the model rather than a part of it
+- the label **"Schematic — indicative path only"**, over the model whenever
+  the nerve layer is on or a nerve is selected, and again in the selection
+  panel beside the nerve's name. No close control; not a tooltip.
 
-This was called non-negotiable when the nerves were commissioned, and it is
-exactly the kind of requirement that gets quietly dropped for visual tidiness.
-It is **owed, not done.** Do not close it out on the strength of the exported
-flags alone — the flags are what the viewer keys off, not a substitute for the
-treatment.
+Both are recorded in mvmt-program's `CLAUDE.md` as things that have to stay,
+and that is where they are guarded now. The flags exported here are what the
+viewer keys off; they were never a substitute for the treatment, and they are
+not one now. If the viewer is ever rewritten, this section reopens.
 
 ## Conventions
 

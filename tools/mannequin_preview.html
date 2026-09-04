@@ -1,0 +1,158 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>mannequin preview</title>
+<!--
+  Loads mannequin.glb in three.js - the library the viewer uses - and poses it
+  through rig-manifest.json exactly as the manifest's composition rule says,
+  so the calibration can be checked in the consumer, not only in Blender.
+
+  Serve the repository root and open this file from it:
+
+      python -m http.server 8765
+      http://localhost:8765/tools/mannequin_preview.html?pose=calibration
+
+  ?pose=rest | calibration | neutral, ?angles={"hipR":{"flex":45}} for
+  anything else, &overview=1 to draw overview.glb beside it if it is built.
+  Nothing here is used by the viewer; it is a check on the export.
+-->
+<style>
+  body { margin: 0; background: #dfe1e5; font: 13px/1.4 system-ui, sans-serif; color: #222; }
+  #hud { position: fixed; top: 8px; left: 8px; background: rgba(255,255,255,.92); padding: 8px 10px;
+         border-radius: 4px; max-width: 46em; white-space: pre-wrap; }
+</style>
+<div id="hud">loading…</div>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+const hud = document.getElementById("hud");
+const params = new URLSearchParams(location.search);
+const say = (s) => { hud.textContent = s; };
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(35, innerWidth / innerHeight, 0.05, 50);
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8f99, 1.6));
+const key = new THREE.DirectionalLight(0xffffff, 2.2);
+key.position.set(2, 4, 3);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+scene.add(key);
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(8, 8), new THREE.MeshStandardMaterial({ color: 0xc9ccd2, roughness: 1 }));
+floor.rotation.x = -Math.PI / 2;
+floor.receiveShadow = true;
+scene.add(floor);
+scene.add(new THREE.AxesHelper(0.5));   // red +X (figure's left), green +Y (up), blue +Z (anterior)
+
+const controls = new OrbitControls(camera, renderer.domElement);
+camera.position.set(-1.6, 1.5, 2.8);
+controls.target.set(0, 0.9, 0);
+controls.update();
+
+const manifest = await (await fetch("../rig-manifest.json")).json();
+const loader = new GLTFLoader();
+const draco = new DRACOLoader();
+draco.setDecoderPath("https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/libs/draco/gltf/");
+loader.setDRACOLoader(draco);
+const gltf = await loader.loadAsync("../mannequin.glb");
+scene.add(gltf.scene);
+
+const bones = {};
+let skinned = null, tris = 0;
+gltf.scene.traverse((o) => {
+  if (o.isBone) {
+    if (bones[o.name]) throw new Error("duplicate bone " + o.name);
+    bones[o.name] = o;
+    o.userData.rest = o.quaternion.clone();
+  }
+  if (o.isSkinnedMesh) {
+    skinned = o;
+    tris += o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3;
+    o.material = new THREE.MeshStandardMaterial({ color: 0xb8ad9e, roughness: 0.85, metalness: 0 });
+    o.castShadow = true;
+    o.frustumCulled = false;
+  }
+});
+
+const qAA = (axis, deg) => new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(...axis).normalize(), deg * Math.PI / 180);
+
+// The manifest's composition rule: rest x neutral x Q(flex) x Q(abd) x ... per bone,
+// parameters in paramOrder, joints in the manifest's own order (elbow before forearm).
+function applyPose(angles) {
+  for (const b of Object.values(bones)) b.quaternion.copy(b.userData.rest);
+  for (const [name, n] of Object.entries(manifest.neutral)) bones[name].quaternion.multiply(qAA(n.axis, n.deg));
+  for (const joint of Object.keys(manifest.bones)) {
+    const p = angles[joint];
+    if (!p) continue;
+    let names = manifest.bones[joint];
+    if (typeof names === "string") names = [names];
+    for (const name of names) {
+      for (const param of manifest.paramOrder) {
+        if (!(param in p) || !p[param]) continue;
+        const e = manifest.axes[joint][param];
+        const axis = e.bones ? e.bones[name].axis : e.axis;
+        bones[name].quaternion.multiply(qAA(axis, p[param]));
+      }
+    }
+  }
+  gltf.scene.updateMatrixWorld(true);
+}
+
+const CALIBRATION = { hipR: { flex: 90 }, kneeR: { flex: 90 }, shoulderL: { abd: 90 }, elbowL: { flex: 90 },
+                      cervical: { rot: 45 }, wristR: { flex: -45 } };
+const NEUTRAL = {};
+let which = params.get("pose") || "calibration";
+let angles = which === "rest" ? null : which === "neutral" ? NEUTRAL : CALIBRATION;
+if (params.get("angles")) { angles = JSON.parse(params.get("angles")); which = "custom"; }
+if (angles) applyPose(angles); else gltf.scene.updateMatrixWorld(true);
+
+// what the pose did, measured on the bones three.js is holding
+const wp = (n) => bones[n].getWorldPosition(new THREE.Vector3());
+const seg = (a, b) => wp(b).sub(wp(a)).normalize();
+const degBetween = (u, v) => Math.acos(THREE.MathUtils.clamp(u.dot(v), -1, 1)) * 180 / Math.PI;
+const A = new THREE.Vector3(0, 0, 1), X = new THREE.Vector3(1, 0, 0);
+const thigh = seg("thigh_r", "calf_r"), shin = seg("calf_r", "foot_r");
+const ua = seg("upperarm_l", "lowerarm_l"), fa = seg("lowerarm_l", "hand_l");
+// the face direction: world anterior at rest, carried by the head's change of world rotation
+const restHead = new THREE.Quaternion(...manifest.restWorld.head.quaternion);
+const face = new THREE.Vector3(0, 0, 1).applyQuaternion(
+  bones.head.getWorldQuaternion(new THREE.Quaternion()).multiply(restHead.invert()));
+const turn = Math.atan2(-face.x, face.z) * 180 / Math.PI;
+const fr = seg("lowerarm_r", "hand_r"), hand = seg("hand_r", "middle_01_r");
+const box = new THREE.Box3().setFromObject(skinned);
+
+say([
+  `mannequin.glb in three.js r${THREE.REVISION} · pose: ${which}`,
+  `triangles ${tris} · bones ${Object.keys(bones).length} · bbox height ${(box.max.y - box.min.y).toFixed(3)} m, floor y ${box.min.y.toFixed(3)}`,
+  `right thigh ${degBetween(thigh, A).toFixed(1)}° from anterior-horizontal · thigh-shin ${degBetween(thigh, shin).toFixed(1)}°`,
+  `left upper arm ${degBetween(ua, X).toFixed(1)}° from lateral · forearm ${degBetween(ua, fa).toFixed(1)}° from it, ${degBetween(fa, A).toFixed(1)}° from anterior`,
+  `face turned ${turn.toFixed(1)}° toward the right · right hand ${degBetween(fr, hand).toFixed(1)}° off the forearm, x ${hand.x.toFixed(2)}`,
+  `axes: red +X = figure's left, green +Y up, blue +Z anterior`,
+].join("\n"));
+
+if (params.get("overview")) {
+  try {
+    const ov = await loader.loadAsync("../overview.glb");
+    ov.scene.position.x = -0.9;
+    ov.scene.traverse((o) => { if (o.isMesh) o.material = new THREE.MeshStandardMaterial({ color: 0xd9d4c4, roughness: 0.8 }); });
+    scene.add(ov.scene);
+    const ob = new THREE.Box3().setFromObject(ov.scene);
+    say(hud.textContent + `\noverview.glb beside it: height ${(ob.max.y - ob.min.y).toFixed(3)} m, floor y ${ob.min.y.toFixed(3)}`);
+  } catch (e) { say(hud.textContent + "\noverview.glb not loaded: " + e.message); }
+}
+
+renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
+addEventListener("resize", () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+window.mannequin = { bones, applyPose, manifest, scene, camera, THREE };
+</script>

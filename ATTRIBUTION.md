@@ -83,6 +83,37 @@ that a consumer of the combined work has one licence to satisfy rather than
 two. Attribution for them belongs to this project, not to Z-Anatomy or DBCLS,
 and neither upstream should be cited as their source.
 
+## The exercise-demo mannequin: MPFB2, CC0
+
+**`mannequin.glb` is not derived from Z-Anatomy, from BodyParts3D, or from
+anything else in the chain above.** It is a character built from the assets
+bundled with **MPFB2**, the MakeHuman extension for Blender, in an official,
+unmodified build:
+
+- MPFB **2.0.17** (build 20260722), installed from the Blender extensions
+  platform as `add-on-mpfb-v2.0.17.zip`,
+  sha256 `4f0a879d64a39bf646fbf5f53601ac678855da329d650617dca5737548239a87`
+- Blender **4.2.9 LTS** (hash `a10f621e649a`), glTF exporter 4.2.83
+- MPFB's bundled base mesh at its default macro settings, its `game_engine`
+  skeleton and weights, and its `t-pose.json` for that skeleton. No skin, eye
+  or clothing asset is used: the optional system-assets pack is not
+  installed, and the eyes, teeth, tongue, eyebrows, eyelashes and every other
+  helper mesh are deleted before export.
+
+**The mannequin is licensed CC0 1.0.** The assets MPFB2 bundles are CC0, and
+characters exported from an official, unmodified MPFB build are CC0 per the
+MakeHuman community's licensing statement
+(https://static.makehumancommunity.org/mpfb.html). MPFB's own code is
+GPL-3.0-or-later; that licence attaches to the add-on, not to the characters
+it produces, and none of its code is redistributed here. This is a separate
+licence line from the Z-Anatomy one: nothing about the CC BY-SA chain applies
+to the mannequin, and nothing about the mannequin's CC0 status extends to the
+anatomical exports.
+
+`tools/build_mannequin.py` records the MPFB and Blender versions it ran
+under into `rig-manifest.json`; the table above is what the current build
+used. Mixamo is not used for anything.
+
 ## Full third-party breakdown
 
 Every component named in Z-Anatomy's `License.txt`:

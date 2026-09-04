@@ -1,0 +1,1890 @@
+{
+ "version": 1,
+ "rig": "mpfb-game-engine",
+ "restPose": "T",
+ "units": "m",
+ "up": "Y",
+ "anterior": "+Z",
+ "sideConvention": {
+  "l": "+X",
+  "r": "-X"
+ },
+ "source": {
+  "figure": "MPFB2 bundled base mesh, default macro settings, game_engine skeleton, MPFB t-pose refined to an exact T",
+  "macro": {
+   "gender": 0.5,
+   "age": 0.5,
+   "muscle": 0.5,
+   "weight": 0.5,
+   "proportions": 0.5,
+   "height": 0.5,
+   "cupsize": 0.5,
+   "firmness": 0.5,
+   "race": {
+    "asian": 0.33,
+    "caucasian": 0.33,
+    "african": 0.33
+   }
+  },
+  "mpfb": "2.0.17",
+  "blender": "4.2.9 LTS",
+  "gltfExporter": "4.2.83",
+  "licence": "CC0 (MPFB2 bundled assets and characters exported from an unmodified official build)",
+  "excluded": "eyes, teeth, tongue, eyebrows, eyelashes, hair and every other helper mesh; no textures; no clothes (MPFB's system-assets pack is not installed and not bundled)"
+ },
+ "file": {
+  "name": "mannequin.glb",
+  "bytes": 767280,
+  "triangles": 26756,
+  "vertices": 13380,
+  "joints": 53,
+  "meshNodes": 1,
+  "influencesPerVertex": 4,
+  "draco": false,
+  "height_m": 1.6642,
+  "floor_y": -0.00474,
+  "extensionsUsed": []
+ },
+ "restPoseRefinement": {
+  "rule": "each arm segment - upper arm, forearm, hand, and every phalanx of the four fingers - turned onto the world X axis before the pose was applied as rest; legs left as MPFB's T-pose has them",
+  "residualBeforeDeg": {
+   "upperarm_l": 2.54,
+   "lowerarm_l": 8.07,
+   "hand_l": 6.04,
+   "index_01_l": 18.1,
+   "index_02_l": 12.5,
+   "index_03_l": 7.5,
+   "middle_01_l": 21.24,
+   "middle_02_l": 6.82,
+   "middle_03_l": 7.79,
+   "ring_01_l": 25.21,
+   "ring_02_l": 8.43,
+   "ring_03_l": 7.39,
+   "pinky_01_l": 33.61,
+   "pinky_02_l": 9.71,
+   "pinky_03_l": 1.64,
+   "upperarm_r": 2.54,
+   "lowerarm_r": 8.07,
+   "hand_r": 6.04,
+   "index_01_r": 18.1,
+   "index_02_r": 12.5,
+   "index_03_r": 7.5,
+   "middle_01_r": 21.24,
+   "middle_02_r": 6.82,
+   "middle_03_r": 7.79,
+   "ring_01_r": 25.21,
+   "ring_02_r": 8.43,
+   "ring_03_r": 7.39,
+   "pinky_01_r": 33.61,
+   "pinky_02_r": 9.71,
+   "pinky_03_r": 1.64
+  },
+  "inFile": {
+   "offAxisDeg": {
+    "upperarm_l": 0.0,
+    "lowerarm_l": 0.0,
+    "upperarm_r": 0.0,
+    "lowerarm_r": 0.0,
+    "thigh_l": 4.47,
+    "thigh_r": 4.47,
+    "calf_l": 2.47,
+    "calf_r": 2.47
+   },
+   "palm": {
+    "thumb_01_l_anteriorOfWrist_m": 0.0243,
+    "thumb_01_r_anteriorOfWrist_m": 0.0243
+   }
+  }
+ },
+ "bones": {
+  "cervical": "neck_01",
+  "thoracic": "spine_03",
+  "lumbar": "spine_01",
+  "pelvis": "pelvis",
+  "shoulderL": "upperarm_l",
+  "shoulderR": "upperarm_r",
+  "elbowL": "lowerarm_l",
+  "elbowR": "lowerarm_r",
+  "forearmL": "lowerarm_l",
+  "forearmR": "lowerarm_r",
+  "wristL": "hand_l",
+  "fingersL": [
+   "index_01_l",
+   "index_02_l",
+   "index_03_l",
+   "middle_01_l",
+   "middle_02_l",
+   "middle_03_l",
+   "ring_01_l",
+   "ring_02_l",
+   "ring_03_l",
+   "pinky_01_l",
+   "pinky_02_l",
+   "pinky_03_l"
+  ],
+  "wristR": "hand_r",
+  "fingersR": [
+   "index_01_r",
+   "index_02_r",
+   "index_03_r",
+   "middle_01_r",
+   "middle_02_r",
+   "middle_03_r",
+   "ring_01_r",
+   "ring_02_r",
+   "ring_03_r",
+   "pinky_01_r",
+   "pinky_02_r",
+   "pinky_03_r"
+  ],
+  "hipL": "thigh_l",
+  "hipR": "thigh_r",
+  "kneeL": "calf_l",
+  "kneeR": "calf_r",
+  "ankleL": "foot_l",
+  "ankleR": "foot_r"
+ },
+ "effectors": {
+  "handL": "hand_l",
+  "handR": "hand_r",
+  "footL": "foot_l",
+  "footR": "foot_r",
+  "kneeL": "calf_l",
+  "kneeR": "calf_r",
+  "thorax": "spine_03"
+ },
+ "sharedBones": {
+  "lowerarm_l": [
+   "elbowL",
+   "forearmL"
+  ],
+  "lowerarm_r": [
+   "elbowR",
+   "forearmR"
+  ]
+ },
+ "fingerGroups": "fingersL/R drive the twelve phalanges of index, middle, ring and little finger (the thumb is not in the vocabulary); the angle is applied at every phalanx, so 90 at each is a closed fist",
+ "composition": "bone.quaternion = rest x neutral x Q(axes[flex], flex) x Q(axes[abd], abd) x ... x Q(axes[rot], rot); quaternions post-multiplied in paramOrder, so each rotation is about the bone's own axis as it then stands. `rest` is the joint node's rotation in the file. `neutral` is the identity except on the two upper-arm bones. Angles in degrees, positive as the vocabulary defines them.",
+ "paramOrder": [
+  "flex",
+  "tilt",
+  "pitch",
+  "abd",
+  "sideBend",
+  "dev",
+  "hAdd",
+  "rot",
+  "sup"
+ ],
+ "hAddNote": "hAdd is measured with the arm at 90 abduction (the rest pose), about the vertical axis; at anatomical neutral that axis coincides with the humerus and hAdd is not distinguishable from rot",
+ "neutral": {
+  "upperarm_l": {
+   "axis": [
+    -0.034417,
+    -0.0,
+    -0.999408
+   ],
+   "deg": 90.0,
+   "note": "quarter turn about the anteroposterior axis that lowers the elbow; probe cosine 0.996"
+  },
+  "upperarm_r": {
+   "axis": [
+    -0.034417,
+    0.0,
+    0.999408
+   ],
+   "deg": 90.0,
+   "note": "quarter turn about the anteroposterior axis that lowers the elbow; probe cosine 0.996"
+  }
+ },
+ "axes": {
+  "cervical": {
+   "flex": {
+    "axis": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 0.0,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "head origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.878
+   },
+   "sideBend": {
+    "axis": [
+     0.0,
+     0.35938,
+     0.933191
+    ],
+    "nearestLocal": "+Z",
+    "offAxisDeg": 21.1,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "head origin",
+    "probeOffset": "on the segment",
+    "moves": "-the figure's left",
+    "cosine": 0.991
+   },
+   "rot": {
+    "axis": [
+     -0.0,
+     -0.933191,
+     0.35938
+    ],
+    "nearestLocal": "-Y",
+    "offAxisDeg": 21.1,
+    "worldAxis": "vertical (Y)",
+    "measuredIn": "anatomical neutral",
+    "probe": "head origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "-the figure's left",
+    "cosine": 0.991
+   }
+  },
+  "thoracic": {
+   "flex": {
+    "axis": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 0.0,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "neck_01 origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.985
+   },
+   "sideBend": {
+    "axis": [
+     0.0,
+     -0.073045,
+     0.997329
+    ],
+    "nearestLocal": "+Z",
+    "offAxisDeg": 4.2,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "neck_01 origin",
+    "probeOffset": "on the segment",
+    "moves": "-the figure's left",
+    "cosine": 0.991
+   },
+   "rot": {
+    "axis": [
+     -0.0,
+     -0.997329,
+     -0.073045
+    ],
+    "nearestLocal": "-Y",
+    "offAxisDeg": 4.2,
+    "worldAxis": "vertical (Y)",
+    "measuredIn": "anatomical neutral",
+    "probe": "neck_01 origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "-the figure's left",
+    "cosine": 0.991
+   }
+  },
+  "lumbar": {
+   "flex": {
+    "axis": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 0.0,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "spine_02 origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.936
+   },
+   "sideBend": {
+    "axis": [
+     0.0,
+     0.227838,
+     0.973699
+    ],
+    "nearestLocal": "+Z",
+    "offAxisDeg": 13.2,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "spine_02 origin",
+    "probeOffset": "on the segment",
+    "moves": "-the figure's left",
+    "cosine": 0.991
+   },
+   "rot": {
+    "axis": [
+     -0.0,
+     -0.973699,
+     0.227838
+    ],
+    "nearestLocal": "-Y",
+    "offAxisDeg": 13.2,
+    "worldAxis": "vertical (Y)",
+    "measuredIn": "anatomical neutral",
+    "probe": "spine_02 origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "-the figure's left",
+    "cosine": 0.991
+   }
+  },
+  "pelvis": {
+   "tilt": {
+    "axis": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 0.0,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "spine_01 origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.949
+   },
+   "pitch": {
+    "axis": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 0.0,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "spine_01 origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.949
+   }
+  },
+  "shoulderL": {
+   "flex": {
+    "axis": [
+     0.999408,
+     0.0,
+     -0.034417
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 2.0,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "lowerarm_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   },
+   "abd": {
+    "axis": [
+     0.034417,
+     -0.0,
+     0.999408
+    ],
+    "nearestLocal": "+Z",
+    "offAxisDeg": 2.0,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "lowerarm_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   },
+   "rot": {
+    "axis": [
+     -0.0,
+     -1.0,
+     0.0
+    ],
+    "nearestLocal": "-Y",
+    "offAxisDeg": 0.0,
+    "worldAxis": "the segment's own long axis",
+    "measuredIn": "anatomical neutral",
+    "probe": "lowerarm_l origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   },
+   "hAdd": {
+    "axis": [
+     0.999408,
+     0.0,
+     -0.034417
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 2.0,
+    "worldAxis": "vertical (Y)",
+    "measuredIn": "rest (T-pose)",
+    "probe": "lowerarm_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   }
+  },
+  "shoulderR": {
+   "flex": {
+    "axis": [
+     0.999408,
+     -0.0,
+     0.034417
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 2.0,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "lowerarm_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   },
+   "abd": {
+    "axis": [
+     0.034417,
+     0.0,
+     -0.999408
+    ],
+    "nearestLocal": "-Z",
+    "offAxisDeg": 2.0,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "lowerarm_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   },
+   "rot": {
+    "axis": [
+     -0.0,
+     1.0,
+     -0.0
+    ],
+    "nearestLocal": "+Y",
+    "offAxisDeg": 0.0,
+    "worldAxis": "the segment's own long axis",
+    "measuredIn": "anatomical neutral",
+    "probe": "lowerarm_r origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   },
+   "hAdd": {
+    "axis": [
+     0.999408,
+     -0.0,
+     0.034417
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 2.0,
+    "worldAxis": "vertical (Y)",
+    "measuredIn": "rest (T-pose)",
+    "probe": "lowerarm_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   }
+  },
+  "elbowL": {
+   "flex": {
+    "axis": [
+     0.999462,
+     0.0,
+     -0.032799
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 1.9,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "hand_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   }
+  },
+  "elbowR": {
+   "flex": {
+    "axis": [
+     0.999462,
+     -0.0,
+     0.032799
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 1.9,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "hand_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   }
+  },
+  "forearmL": {
+   "sup": {
+    "axis": [
+     -0.0,
+     -1.0,
+     0.0
+    ],
+    "nearestLocal": "-Y",
+    "offAxisDeg": 0.0,
+    "worldAxis": "the segment's own long axis",
+    "measuredIn": "anatomical neutral",
+    "probe": "hand_l origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   }
+  },
+  "forearmR": {
+   "sup": {
+    "axis": [
+     -0.0,
+     1.0,
+     -0.0
+    ],
+    "nearestLocal": "+Y",
+    "offAxisDeg": 0.0,
+    "worldAxis": "the segment's own long axis",
+    "measuredIn": "anatomical neutral",
+    "probe": "hand_r origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   }
+  },
+  "wristL": {
+   "flex": {
+    "axis": [
+     0.729479,
+     -0.0987,
+     -0.676845
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 43.2,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "middle_01_l origin",
+    "probeOffset": "on the segment",
+    "moves": "-LanteriorT",
+    "cosine": 0.991
+   },
+   "dev": {
+    "axis": [
+     0.683423,
+     0.064406,
+     0.727176
+    ],
+    "nearestLocal": "+Z",
+    "offAxisDeg": 43.3,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "middle_01_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   }
+  },
+  "fingersL": {
+   "flex": {
+    "bones": {
+     "index_01_l": {
+      "axis": [
+       0.965308,
+       0.0,
+       0.261115
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 15.1,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "index_02_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "index_02_l": {
+      "axis": [
+       0.963773,
+       0.0,
+       0.266725
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 15.5,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "index_03_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "index_03_l": {
+      "axis": [
+       0.963427,
+       0.0,
+       0.267971
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 15.5,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "middle_01_l": {
+      "axis": [
+       0.990558,
+       0.0,
+       0.137096
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 7.9,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "middle_02_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "middle_02_l": {
+      "axis": [
+       0.990414,
+       0.0,
+       0.138129
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 7.9,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "middle_03_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "middle_03_l": {
+      "axis": [
+       0.990158,
+       0.0,
+       0.139954
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 8.0,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "ring_01_l": {
+      "axis": [
+       0.995025,
+       1e-06,
+       0.099622
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.7,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "ring_02_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "ring_02_l": {
+      "axis": [
+       0.994957,
+       0.0,
+       0.1003
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.8,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "ring_03_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "ring_03_l": {
+      "axis": [
+       0.994819,
+       0.0,
+       0.101663
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.8,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "pinky_01_l": {
+      "axis": [
+       0.99573,
+       0.0,
+       -0.092309
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.3,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "pinky_02_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "pinky_02_l": {
+      "axis": [
+       0.995933,
+       0.0,
+       -0.090098
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.2,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "pinky_03_l origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "pinky_03_l": {
+      "axis": [
+       0.99589,
+       1e-06,
+       -0.090566
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.2,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     }
+    }
+   }
+  },
+  "wristR": {
+   "flex": {
+    "axis": [
+     0.729479,
+     0.0987,
+     0.676845
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 43.2,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "middle_01_r origin",
+    "probeOffset": "on the segment",
+    "moves": "-LanteriorT",
+    "cosine": 0.991
+   },
+   "dev": {
+    "axis": [
+     0.683423,
+     -0.064406,
+     -0.727176
+    ],
+    "nearestLocal": "-Z",
+    "offAxisDeg": 43.3,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "middle_01_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.991
+   }
+  },
+  "fingersR": {
+   "flex": {
+    "bones": {
+     "index_01_r": {
+      "axis": [
+       0.965308,
+       -0.0,
+       -0.261115
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 15.1,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "index_02_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "index_02_r": {
+      "axis": [
+       0.963773,
+       -0.0,
+       -0.266725
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 15.5,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "index_03_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "index_03_r": {
+      "axis": [
+       0.963427,
+       -0.0,
+       -0.267971
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 15.5,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "middle_01_r": {
+      "axis": [
+       0.990558,
+       -0.0,
+       -0.137096
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 7.9,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "middle_02_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "middle_02_r": {
+      "axis": [
+       0.990414,
+       -0.0,
+       -0.138129
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 7.9,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "middle_03_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "middle_03_r": {
+      "axis": [
+       0.990158,
+       -0.0,
+       -0.139954
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 8.0,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "ring_01_r": {
+      "axis": [
+       0.995025,
+       -1e-06,
+       -0.099622
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.7,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "ring_02_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "ring_02_r": {
+      "axis": [
+       0.994957,
+       -0.0,
+       -0.1003
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.8,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "ring_03_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "ring_03_r": {
+      "axis": [
+       0.994819,
+       -0.0,
+       -0.101663
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.8,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "pinky_01_r": {
+      "axis": [
+       0.99573,
+       -0.0,
+       0.092309
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.3,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "pinky_02_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "pinky_02_r": {
+      "axis": [
+       0.995933,
+       -0.0,
+       0.090098
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.2,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "pinky_03_r origin",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     },
+     "pinky_03_r": {
+      "axis": [
+       0.99589,
+       -1e-06,
+       0.090566
+      ],
+      "nearestLocal": "+X",
+      "offAxisDeg": 5.2,
+      "worldAxis": "anteroposterior (Z)",
+      "measuredIn": "anatomical neutral",
+      "probe": "extrapolated fingertip",
+      "probeOffset": "on the segment",
+      "moves": "-LanteriorT",
+      "cosine": 0.991
+     }
+    }
+   }
+  },
+  "hipL": {
+   "flex": {
+    "axis": [
+     -0.897549,
+     0.004721,
+     0.440888
+    ],
+    "nearestLocal": "-X",
+    "offAxisDeg": 26.2,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "calf_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.978
+   },
+   "abd": {
+    "axis": [
+     -0.439226,
+     0.077825,
+     -0.894999
+    ],
+    "nearestLocal": "-Z",
+    "offAxisDeg": 26.5,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "calf_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+LanteriorT",
+    "cosine": 0.992
+   },
+   "rot": {
+    "axis": [
+     0.0,
+     -1.0,
+     -0.0
+    ],
+    "nearestLocal": "-Y",
+    "offAxisDeg": 0.0,
+    "worldAxis": "the segment's own long axis",
+    "measuredIn": "anatomical neutral",
+    "probe": "calf_l origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   }
+  },
+  "hipR": {
+   "flex": {
+    "axis": [
+     -0.897549,
+     -0.004721,
+     -0.440888
+    ],
+    "nearestLocal": "-X",
+    "offAxisDeg": 26.2,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "calf_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+anterior",
+    "cosine": 0.978
+   },
+   "abd": {
+    "axis": [
+     -0.439226,
+     -0.077825,
+     0.894999
+    ],
+    "nearestLocal": "+Z",
+    "offAxisDeg": 26.5,
+    "worldAxis": "anteroposterior (Z)",
+    "measuredIn": "anatomical neutral",
+    "probe": "calf_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+LanteriorT",
+    "cosine": 0.992
+   },
+   "rot": {
+    "axis": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "nearestLocal": "+Y",
+    "offAxisDeg": 0.0,
+    "worldAxis": "the segment's own long axis",
+    "measuredIn": "anatomical neutral",
+    "probe": "calf_r origin",
+    "probeOffset": "midpoint of the segment, 8 cm anterior",
+    "moves": "+LanteriorT",
+    "cosine": 0.991
+   }
+  },
+  "kneeL": {
+   "flex": {
+    "axis": [
+     0.999805,
+     -0.013925,
+     0.013989
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 1.1,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "foot_l origin",
+    "probeOffset": "on the segment",
+    "moves": "-anterior",
+    "cosine": 0.985
+   }
+  },
+  "kneeR": {
+   "flex": {
+    "axis": [
+     0.999805,
+     0.013925,
+     -0.013989
+    ],
+    "nearestLocal": "+X",
+    "offAxisDeg": 1.1,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "foot_r origin",
+    "probeOffset": "on the segment",
+    "moves": "-anterior",
+    "cosine": 0.985
+   }
+  },
+  "ankleL": {
+   "df": {
+    "axis": [
+     -0.995677,
+     -0.033609,
+     -0.086593
+    ],
+    "nearestLocal": "-X",
+    "offAxisDeg": 5.3,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "ball_l origin",
+    "probeOffset": "on the segment",
+    "moves": "+superior",
+    "cosine": 0.939
+   }
+  },
+  "ankleR": {
+   "df": {
+    "axis": [
+     -0.995677,
+     0.033609,
+     0.086593
+    ],
+    "nearestLocal": "-X",
+    "offAxisDeg": 5.3,
+    "worldAxis": "mediolateral (X)",
+    "measuredIn": "anatomical neutral",
+    "probe": "ball_r origin",
+    "probeOffset": "on the segment",
+    "moves": "+superior",
+    "cosine": 0.939
+   }
+  }
+ },
+ "axesNote": "axis: unit vector in the bone's own frame; a positive rotation about it by the right-hand rule is the named motion. nearestLocal / offAxisDeg: the labelled bone axis it is closest to and by how much it misses - the rig's bones are rolled, so a snapped axis would mix motions. cosine: how closely the probe moved in the expected direction when the rotation was applied.",
+ "restWorld": {
+  "Root": {
+   "position": [
+    0.0,
+    -0.00056,
+    0.0
+   ],
+   "quaternion": [
+    -0.707107,
+    0.0,
+    0.0,
+    0.707107
+   ]
+  },
+  "pelvis": {
+   "position": [
+    0.0,
+    0.87389,
+    0.01322
+   ],
+   "quaternion": [
+    -0.22418,
+    0.0,
+    0.0,
+    0.974548
+   ]
+  },
+  "spine_01": {
+   "position": [
+    0.0,
+    0.95332,
+    -0.02537
+   ],
+   "quaternion": [
+    0.114676,
+    0.0,
+    0.0,
+    0.993403
+   ]
+  },
+  "spine_02": {
+   "position": [
+    0.0,
+    1.0196,
+    -0.00986
+   ],
+   "quaternion": [
+    0.012128,
+    0.0,
+    0.0,
+    0.999926
+   ]
+  },
+  "spine_03": {
+   "position": [
+    0.0,
+    1.09483,
+    -0.00804
+   ],
+   "quaternion": [
+    -0.036547,
+    0.0,
+    0.0,
+    0.999332
+   ]
+  },
+  "clavicle_l": {
+   "position": [
+    0.02277,
+    1.34249,
+    0.0221
+   ],
+   "quaternion": [
+    -0.032462,
+    -0.009862,
+    -0.66621,
+    0.744992
+   ]
+  },
+  "upperarm_l": {
+   "position": [
+    0.17073,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    -0.01217,
+    -0.01217,
+    -0.707002,
+    0.707002
+   ]
+  },
+  "lowerarm_l": {
+   "position": [
+    0.41274,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    -0.011598,
+    -0.011598,
+    -0.707012,
+    0.707012
+   ]
+  },
+  "hand_l": {
+   "position": [
+    0.65122,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.32239,
+    0.240088,
+    -0.654422,
+    0.640433
+   ]
+  },
+  "index_01_l": {
+   "position": [
+    0.75423,
+    1.35427,
+    0.04288
+   ],
+   "quaternion": [
+    0.561497,
+    0.561497,
+    -0.429792,
+    0.429792
+   ]
+  },
+  "index_02_l": {
+   "position": [
+    0.78005,
+    1.35427,
+    0.04288
+   ],
+   "quaternion": [
+    0.562744,
+    0.562744,
+    -0.428157,
+    0.428157
+   ]
+  },
+  "index_03_l": {
+   "position": [
+    0.80313,
+    1.35427,
+    0.04288
+   ],
+   "quaternion": [
+    0.563021,
+    0.563021,
+    -0.427794,
+    0.427793
+   ]
+  },
+  "middle_01_l": {
+   "position": [
+    0.75336,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.533174,
+    0.533173,
+    -0.464463,
+    0.464463
+   ]
+  },
+  "middle_02_l": {
+   "position": [
+    0.78717,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.533416,
+    0.533416,
+    -0.464185,
+    0.464185
+   ]
+  },
+  "middle_03_l": {
+   "position": [
+    0.81476,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.533843,
+    0.533843,
+    -0.463693,
+    0.463693
+   ]
+  },
+  "pinky_01_l": {
+   "position": [
+    0.73818,
+    1.35436,
+    -0.02088
+   ],
+   "quaternion": [
+    0.476364,
+    0.476364,
+    -0.522568,
+    0.522568
+   ]
+  },
+  "pinky_02_l": {
+   "position": [
+    0.75948,
+    1.35436,
+    -0.02088
+   ],
+   "quaternion": [
+    0.476944,
+    0.476944,
+    -0.522039,
+    0.522039
+   ]
+  },
+  "pinky_03_l": {
+   "position": [
+    0.77507,
+    1.35436,
+    -0.02088
+   ],
+   "quaternion": [
+    0.476821,
+    0.476821,
+    -0.522151,
+    0.522151
+   ]
+  },
+  "ring_01_l": {
+   "position": [
+    0.74766,
+    1.35923,
+    -0.0025
+   ],
+   "quaternion": [
+    0.524314,
+    0.524315,
+    -0.474441,
+    0.474441
+   ]
+  },
+  "ring_02_l": {
+   "position": [
+    0.77736,
+    1.35923,
+    -0.0025
+   ],
+   "quaternion": [
+    0.524476,
+    0.524476,
+    -0.474263,
+    0.474263
+   ]
+  },
+  "ring_03_l": {
+   "position": [
+    0.80214,
+    1.35923,
+    -0.0025
+   ],
+   "quaternion": [
+    0.524801,
+    0.524801,
+    -0.473903,
+    0.473903
+   ]
+  },
+  "thumb_01_l": {
+   "position": [
+    0.68828,
+    1.3553,
+    0.04117
+   ],
+   "quaternion": [
+    0.902981,
+    0.254609,
+    0.158468,
+    0.307713
+   ]
+  },
+  "thumb_02_l": {
+   "position": [
+    0.69944,
+    1.33433,
+    0.06076
+   ],
+   "quaternion": [
+    0.862798,
+    0.42048,
+    0.0661,
+    0.272776
+   ]
+  },
+  "thumb_03_l": {
+   "position": [
+    0.7244,
+    1.31631,
+    0.07982
+   ],
+   "quaternion": [
+    0.878968,
+    0.451788,
+    -0.009261,
+    0.152374
+   ]
+  },
+  "clavicle_r": {
+   "position": [
+    -0.02277,
+    1.34249,
+    0.0221
+   ],
+   "quaternion": [
+    -0.032462,
+    0.009862,
+    0.66621,
+    0.744992
+   ]
+  },
+  "upperarm_r": {
+   "position": [
+    -0.17073,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    -0.01217,
+    0.01217,
+    0.707002,
+    0.707002
+   ]
+  },
+  "lowerarm_r": {
+   "position": [
+    -0.41274,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    -0.011598,
+    0.011598,
+    0.707012,
+    0.707012
+   ]
+  },
+  "hand_r": {
+   "position": [
+    -0.65122,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.32239,
+    -0.240088,
+    0.654422,
+    0.640433
+   ]
+  },
+  "index_01_r": {
+   "position": [
+    -0.75423,
+    1.35427,
+    0.04288
+   ],
+   "quaternion": [
+    0.561497,
+    -0.561497,
+    0.429792,
+    0.429792
+   ]
+  },
+  "index_02_r": {
+   "position": [
+    -0.78005,
+    1.35427,
+    0.04288
+   ],
+   "quaternion": [
+    0.562744,
+    -0.562744,
+    0.428157,
+    0.428157
+   ]
+  },
+  "index_03_r": {
+   "position": [
+    -0.80313,
+    1.35427,
+    0.04288
+   ],
+   "quaternion": [
+    0.563021,
+    -0.563021,
+    0.427794,
+    0.427793
+   ]
+  },
+  "middle_01_r": {
+   "position": [
+    -0.75336,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.533174,
+    -0.533173,
+    0.464463,
+    0.464463
+   ]
+  },
+  "middle_02_r": {
+   "position": [
+    -0.78717,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.533416,
+    -0.533416,
+    0.464185,
+    0.464185
+   ]
+  },
+  "middle_03_r": {
+   "position": [
+    -0.81476,
+    1.35891,
+    0.01685
+   ],
+   "quaternion": [
+    0.533843,
+    -0.533843,
+    0.463693,
+    0.463693
+   ]
+  },
+  "pinky_01_r": {
+   "position": [
+    -0.73818,
+    1.35436,
+    -0.02088
+   ],
+   "quaternion": [
+    0.476364,
+    -0.476364,
+    0.522568,
+    0.522568
+   ]
+  },
+  "pinky_02_r": {
+   "position": [
+    -0.75948,
+    1.35436,
+    -0.02088
+   ],
+   "quaternion": [
+    0.476944,
+    -0.476944,
+    0.522039,
+    0.522039
+   ]
+  },
+  "pinky_03_r": {
+   "position": [
+    -0.77507,
+    1.35436,
+    -0.02088
+   ],
+   "quaternion": [
+    0.476821,
+    -0.476821,
+    0.522151,
+    0.522151
+   ]
+  },
+  "ring_01_r": {
+   "position": [
+    -0.74766,
+    1.35923,
+    -0.0025
+   ],
+   "quaternion": [
+    -0.524314,
+    0.524315,
+    -0.474441,
+    -0.474441
+   ]
+  },
+  "ring_02_r": {
+   "position": [
+    -0.77736,
+    1.35923,
+    -0.0025
+   ],
+   "quaternion": [
+    0.524476,
+    -0.524476,
+    0.474263,
+    0.474263
+   ]
+  },
+  "ring_03_r": {
+   "position": [
+    -0.80214,
+    1.35923,
+    -0.0025
+   ],
+   "quaternion": [
+    0.524801,
+    -0.524801,
+    0.473903,
+    0.473903
+   ]
+  },
+  "thumb_01_r": {
+   "position": [
+    -0.68828,
+    1.3553,
+    0.04117
+   ],
+   "quaternion": [
+    0.902981,
+    -0.254609,
+    -0.158468,
+    0.307713
+   ]
+  },
+  "thumb_02_r": {
+   "position": [
+    -0.69944,
+    1.33433,
+    0.06076
+   ],
+   "quaternion": [
+    0.862798,
+    -0.42048,
+    -0.0661,
+    0.272776
+   ]
+  },
+  "thumb_03_r": {
+   "position": [
+    -0.7244,
+    1.31631,
+    0.07982
+   ],
+   "quaternion": [
+    0.878968,
+    -0.451788,
+    0.009261,
+    0.152374
+   ]
+  },
+  "neck_01": {
+   "position": [
+    0.0,
+    1.41363,
+    0.00513
+   ],
+   "quaternion": [
+    0.182768,
+    0.0,
+    0.0,
+    0.983156
+   ]
+  },
+  "head": {
+   "position": [
+    0.0,
+    1.51458,
+    0.04401
+   ],
+   "quaternion": [
+    -0.023447,
+    0.0,
+    0.0,
+    0.999725
+   ]
+  },
+  "thigh_l": {
+   "position": [
+    0.10147,
+    0.86564,
+    0.005
+   ],
+   "quaternion": [
+    0.973333,
+    -0.011111,
+    -0.226057,
+    0.037398
+   ]
+  },
+  "calf_l": {
+   "position": [
+    0.09961,
+    0.47213,
+    0.03572
+   ],
+   "quaternion": [
+    0.999745,
+    -0.007103,
+    0.006852,
+    -0.020315
+   ]
+  },
+  "foot_l": {
+   "position": [
+    0.09394,
+    0.06518,
+    0.01914
+   ],
+   "quaternion": [
+    0.854912,
+    0.036816,
+    0.028394,
+    0.516686
+   ]
+  },
+  "ball_l": {
+   "position": [
+    0.09836,
+    0.00422,
+    0.13565
+   ],
+   "quaternion": [
+    0.689988,
+    0.006887,
+    0.058333,
+    0.721433
+   ]
+  },
+  "thigh_r": {
+   "position": [
+    -0.10147,
+    0.86564,
+    0.005
+   ],
+   "quaternion": [
+    0.973333,
+    0.011111,
+    0.226057,
+    0.037398
+   ]
+  },
+  "calf_r": {
+   "position": [
+    -0.09961,
+    0.47213,
+    0.03572
+   ],
+   "quaternion": [
+    0.999745,
+    0.007103,
+    -0.006852,
+    -0.020315
+   ]
+  },
+  "foot_r": {
+   "position": [
+    -0.09394,
+    0.06518,
+    0.01914
+   ],
+   "quaternion": [
+    0.854912,
+    -0.036816,
+    -0.028394,
+    0.516686
+   ]
+  },
+  "ball_r": {
+   "position": [
+    -0.09836,
+    0.00422,
+    0.13565
+   ],
+   "quaternion": [
+    0.689988,
+    -0.006887,
+    -0.058333,
+    0.721433
+   ]
+  }
+ },
+ "calibration": {
+  "pose": {
+   "hipR": {
+    "flex": 90
+   },
+   "kneeR": {
+    "flex": 90
+   },
+   "shoulderL": {
+    "abd": 90
+   },
+   "elbowL": {
+    "flex": 90
+   },
+   "cervical": {
+    "rot": 45
+   },
+   "wristR": {
+    "flex": -45
+   }
+  },
+  "prose": "right hip flexed 90, right knee flexed 90, left shoulder abducted 90 with elbow flexed 90, neck rotated 45 to the right, right wrist extended 45",
+  "renders": [
+   "verification/mannequin/rest-t-pose.png",
+   "verification/mannequin/calibration-anterior.png",
+   "verification/mannequin/calibration-right-lateral.png",
+   "verification/mannequin/calibration-left-lateral.png"
+  ],
+  "blenderAgreement": {
+   "max_mm": 0.000752768534161007,
+   "note": "max 0.001 mm, mean 0.000 mm over 13380 vertices"
+  }
+ }
+}

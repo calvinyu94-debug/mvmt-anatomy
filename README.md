@@ -44,6 +44,10 @@ they are kept separate from model-derived geometry at every stage. See
 | [`tools/build_landmarks.py`](tools/build_landmarks.py) | Resolves the rules against the model, measures each point and writes `landmarks.json` |
 | [`tools/verify_landmarks.py`](tools/verify_landmarks.py) | Checks every landmark for surface distance, depth and symmetry, asserts the named relationships with margins, and renders `verification/landmarks/` |
 | [`landmarks.json`](landmarks.json) | Every landmark's anchor (object, uvw, offset), resolved coordinates for both sides, signed surface distance, depth, nearest skin region, and where the first pass had landed |
+| [`tools/corrections.py`](tools/corrections.py) | Source meshes redrawn in the export by anchor rule - the calcaneofibular ligament - each as an anatomical description resolved on the bones' real vertices, with an asserted acceptance box |
+| [`tools/render_corrections.py`](tools/render_corrections.py) | Renders the corrected geometry for review from the exported files, before and after |
+| [`corrections.json`](corrections.json) | The result of every correction rule on the current build: both attachment points on both sides, acceptance measurements, clearance from the neighbouring bones |
+| [`verification/corrections/`](verification/corrections/) | Right-ankle lateral and posterior renders of the redrawn calcaneofibular ligament, and the same views of the source placeholder it replaced |
 | [`verification/landmarks/`](verification/landmarks/) | Four orthographic renders - anterior, posterior, both laterals - of the landmarks as labelled spheres on a semi-transparent skeleton |
 
 ## What has been done
@@ -70,6 +74,11 @@ they are kept separate from model-derived geometry at every stage. See
   full-resolution insertion layer per region. Every node carries the exact
   Z-Anatomy `sourceName`, verified by reading the files back. See
   [`verification/export-report.md`](verification/export-report.md).
+- The calcaneofibular ligament, a placeholder quad in the atlas, redrawn in
+  the export by anchor rule between the lateral malleolus and the lateral
+  wall of the calcaneus, flagged `corrected` in its extras and recorded in
+  [`corrections.json`](corrections.json) and
+  [`verification/corrections/`](verification/corrections/).
 
 ## What has not been done
 
@@ -179,6 +188,27 @@ the coracoid, C7 behind and below C2 - each with its margin. It also reports
 each landmark's distance to the nearest of the atlas's own skin-region
 patches, and that patch's name, as an independent reading.
 
+## Corrected geometry
+
+One source mesh is not exported as Z-Anatomy drew it. The calcaneofibular
+ligament is a two-triangle placeholder in the atlas, running medially under
+the lateral malleolus onto the top of the calcaneus; the export redraws it as
+a ribbon from the anterior-distal face of the malleolus down and back to the
+lateral wall of the calcaneus. It is redrawn by **rule**, in
+[`tools/corrections.py`](tools/corrections.py), resolved on the bones' real
+vertices every build - never by editing the `.blend` - and the exported node
+carries `corrected = True` and `source = "redrawn"` in its extras so a viewer
+can say so. `corrections.json` records where each end landed;
+[`CLAUDE.md`](CLAUDE.md#corrected-geometry) states the rule and lists every
+corrected object. The export stops if a rule misses its acceptance box.
+
+```bash
+blender --background --factory-startup --python tools/render_corrections.py -- --glb ankle-foot.glb --before <previous ankle-foot.glb>
+```
+
+Prints `RENDER_CORRECTIONS_OK renders=…` and writes the review images to
+`verification/corrections/`.
+
 ## Building the region exports
 
 All from the worktree root, against the same pinned Blender:
@@ -188,9 +218,10 @@ blender --background source/Z-Anatomy/Startup.blend --python tools/export_region
 ```
 
 Prints `EXPORT_OK meshes=2054 regions=9 files=19 …` and writes the nineteen
-`.glb` files (gitignored), `samples.glb` (gitignored), `manifest.json` and
-`region-assignment.csv`. It asserts the scope figures and the `EXPECTED`
-exclusion counts first and stops on any drift. Then:
+`.glb` files (gitignored), `samples.glb` (gitignored), `manifest.json`,
+`region-assignment.csv` and `corrections.json`. It asserts the scope figures
+and the `EXPECTED` exclusion counts first and stops on any drift, and
+resolves the correction rules before it renames anything. Then:
 
 ```bash
 blender --background --factory-startup --python tools/render_export.py -- --manifest manifest.json
@@ -207,8 +238,9 @@ python tools/export_report.py
 The renders and the verifier run in a fresh Blender and read the exported
 files, not the export process's memory: the verifier checks every node's
 `sourceName` and extras against `inventory.csv`, the triangle counts from the
-index accessors, the bytes on disk, region membership, and winding by signed
-volume on the Draco-decoded geometry. It prints `VERIFY_EXPORT_OK checks=…`
+index accessors, the bytes on disk, region membership, winding by signed
+volume on the Draco-decoded geometry, and that exactly the corrected objects
+carry the `corrected` / `source` extras. It prints `VERIFY_EXPORT_OK checks=…`
 and exits non-zero on any failure.
 
 The region assignment can be reviewed without Blender:

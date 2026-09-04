@@ -35,6 +35,7 @@ import sys
 from collections import Counter, defaultdict
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import corrections  # noqa: E402
 import regions  # noqa: E402
 import scope  # noqa: E402
 
@@ -162,6 +163,12 @@ def main():
 
     all_names_ok = True
     bad_names = []
+    bad_corrected = []                   # (file, name, extras) with the wrong corrected/source extras
+    corrected_seen = defaultdict(set)    # name -> files it appeared in
+    corrections_rec = None
+    cpath = os.path.join(base, "corrections.json")
+    if os.path.exists(cpath):
+        corrections_rec = {o["object"]: o for o in json.load(open(cpath, encoding="utf-8"))["objects"]}
     seen_in_file = defaultdict(set)      # region -> non-context sourceNames
     exported_tris = {}                   # (file, name) -> tris
     for label, fname, rec in files:
@@ -192,6 +199,14 @@ def main():
             if not ok:
                 all_names_ok = False
                 bad_names.append((fname, n, ex))
+            want = n in corrections.CORRECTED
+            has = ex.get("corrected") is True and ex.get("source") == "redrawn"
+            if want != has or (not want and ("corrected" in ex or "source" in ex)):
+                bad_corrected.append((fname, n, ex))
+            if want:
+                corrected_seen[n].add(fname)
+                if corrections_rec and n in corrections_rec and corrections_rec[n]["triangles"] != t:
+                    bad_corrected.append((fname, n, {"triangles": t, "corrections.json": corrections_rec[n]["triangles"]}))
         check("names-and-extras:" + fname, not dup and all(
             (n in inv_names and ex.get("sourceName") == n) for n, ex, _, _ in nodes),
             "%d nodes, %d duplicates" % (len(nodes), len(dup)))
@@ -235,6 +250,16 @@ def main():
         print("       BAD %s: %r extras=%r" % (f, n, ex))
     check("no-blender-suffixes", not any(BLENDER_SUFFIX.search(n) for (_, n) in exported_tris),
           "checked %d exported nodes" % len(exported_tris))
+    # Redrawn geometry: exactly the objects tools/corrections.py names carry
+    # corrected=True and source="redrawn", in every file they appear in, at
+    # the triangle count corrections.json records; nothing else carries either key.
+    check("corrected-extras",
+          not bad_corrected and set(corrected_seen) == set(corrections.CORRECTED)
+          and (corrections_rec is None or set(corrections_rec) == set(corrections.CORRECTED)),
+          "%d corrected objects flagged in %d node occurrences; %d wrong" % (
+              len(corrected_seen), sum(len(v) for v in corrected_seen.values()), len(bad_corrected)))
+    for f, n, ex in bad_corrected[:10]:
+        print("       BAD corrected %s: %r extras=%r" % (f, n, ex))
 
     if manifest.get("overview"):
         ov = manifest["overview"]

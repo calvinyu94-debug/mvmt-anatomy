@@ -32,6 +32,13 @@ What the model does that the inventory did not predict, and how it is handled:
   * A few closed meshes are wound inside-out in the source on both sides
     (the acetabular labrum, for one). Any closed mesh whose signed volume is
     negative after the bake is flipped, and named in the manifest.
+  * A source mesh whose attachment is demonstrably wrong is redrawn here by
+    anchor rule - tools/corrections.py - never hand-edited in the .blend.
+    The object keeps its name, material, collection and parent; only the
+    mesh data written for it is replaced, and its node carries
+    corrected = True and source = "redrawn" in its extras. The rules are
+    resolved against the live source objects before anything is renamed,
+    and the result is recorded in corrections.json beside the manifest.
 """
 
 import argparse
@@ -48,6 +55,7 @@ from mathutils import Matrix, Vector
 from mathutils.bvhtree import BVHTree
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import corrections  # noqa: E402
 import regions  # noqa: E402
 import scope  # noqa: E402
 
@@ -112,7 +120,7 @@ def inventory_rows():
 class Source:
     """One kept object: its source mesh, world matrix and metadata."""
 
-    def __init__(self, row, assignment, depsgraph):
+    def __init__(self, row, assignment, depsgraph, corrected=None):
         self.name = row["object_name"]
         self.ob = row["ob"]
         self.system = row["system"]
@@ -123,7 +131,15 @@ class Source:
         self.mirrored = self.matrix.determinant() < 0
         self.inventory_tris = int(row["triangles"])
         self.modifiers = [m.type for m in self.ob.modifiers if m.show_viewport]
-        if self.system == "insertion" or not self.modifiers:
+        self.corrected = bool(corrected) and self.name in corrected
+        if self.corrected:
+            # Redrawn by rule: the corrected geometry in this object's own
+            # frame, so the bake below treats it like any other source mesh.
+            # Its modifiers are not applied - the ribbon is finished geometry.
+            verts, tris, _rec = corrected[self.name]
+            self.mesh = corrections.local_mesh(self.name, self.ob, verts, tris)
+            self.modifiers = []
+        elif self.system == "insertion" or not self.modifiers:
             self.mesh = self.ob.data
             self.modifiers = [] if self.system == "insertion" else self.modifiers
         else:
@@ -305,6 +321,9 @@ def bake(src, mesh, context):
     ob["side"] = src.side
     ob["context"] = bool(context)
     ob["system"] = src.system
+    if src.corrected:
+        ob["corrected"] = True
+        ob["source"] = "redrawn"
     assert ob.name == src.name, "name collision on %r -> %r" % (src.name, ob.name)
     return ob
 
@@ -434,13 +453,24 @@ def main():
     print(regions.summary(kept, assignment))
     log("assignment written to %s" % csv_path)
 
+    # -- corrected geometry -------------------------------------------------
+    # Resolved by name against the live source objects, so this runs before
+    # the originals are renamed below. A rule that misses its acceptance box
+    # raises here and stops the export.
+    log("resolving corrected geometry")
+    corrected = corrections.resolve_all()
+    for name in corrected:
+        assert any(r["object_name"] == name for r in kept), "corrected object not in scope: %s" % name
+    corrections.write_record(os.path.join(outdir, "corrections.json"), corrected)
+    log("corrected geometry: %s" % ", ".join(corrected))
+
     # -- source meshes ------------------------------------------------------
     # Rename the originals out of the way so exported nodes can carry the
     # exact source names; Source objects keep hold of them.
     depsgraph = bpy.context.evaluated_depsgraph_get()
     for i, r in enumerate(kept):
         r["ob"].name = "src|%04d" % i
-    sources = [Source(r, assignment[r["object_name"]], depsgraph) for r in kept]
+    sources = [Source(r, assignment[r["object_name"]], depsgraph, corrected) for r in kept]
     by_name = {s.name: s for s in sources}
     shared = share_evaluated_twins(sources)
     mirror_stats = mirror_check(sources)

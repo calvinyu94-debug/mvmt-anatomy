@@ -130,6 +130,74 @@ pattern: derive the axis from the bone's own ends, then project.
   the point is misplaced. The limit stays asserted for the 18 limb landmarks
   it fits. Decided by CYU on PR #4.
 
+## Corrected geometry
+
+A source mesh whose attachment is demonstrably wrong is **redrawn in the
+export by anchor rule, never hand-edited in the `.blend`.** A correction that
+lives only in a saved file is one nobody can rebuild. A rule in
+[`tools/corrections.py`](tools/corrections.py) is reviewed as a description,
+resolves against the bone's real vertices on every build, and follows the
+model if it is ever updated. The mechanism is the landmarks': the attachment
+written anatomically, resolved to a vertex on a named bone, every target
+checked against a bone surface and never against a box corner (see
+"Bounding-box axes are not anatomical axes" above).
+
+What a correction keeps, and what it changes:
+
+- **The object keeps its name, material, collection and parent.** Only the
+  mesh data the export writes for it is replaced, so the object list in
+  `manifest.json` and the structure-mesh join are untouched. The manifest's
+  counts for that object move, and its modifiers are not applied - the
+  redrawn mesh is finished geometry - so `modifiersApplied` drops them.
+- **The exported node carries `corrected = True` and `source = "redrawn"`**
+  in its extras, the way the authored nerves carry `authored = True`.
+  `verify_export.py` demands both on exactly the objects
+  `corrections.CORRECTED` names, in every file they appear in, and on no
+  others. Saying so on screen is the viewer's job, as the schematic label
+  is; the flags are what it keys off.
+- **Every rule runs on each side's own bones.** The right is the rule
+  mirrored, never the left geometry mirrored, and the build stops if the two
+  results are not mirror images to 0.5 mm - an asymmetry would mean the rule
+  read something side-dependent.
+- **Every rule carries an acceptance box, asserted.** A result outside it
+  stops the build and prints the point. Do not move the box to admit the
+  point: a rule that misses its box is a wrong description, the failure class
+  the landmark job separated from a wrong coordinate.
+- `corrections.json` records the result of every build - both attachment
+  points, the acceptance measurements, clearance from the neighbouring bones
+  - and `verification/corrections/` holds the review renders, before and
+  after.
+- `ATTRIBUTION.md` does not change for a correction. The licence permits
+  derivatives, and the object is still Z-Anatomy's, redrawn.
+
+Corrected objects, each with its target rule - rules, not counts:
+
+| Object | Rule |
+|---|---|
+| `Calcaneofibular ligament.l` / `.r` | Fibular end: `lm-lateral-malleolus` as resolved, offset 2 mm anterior and 1 mm distal. Calcaneal end: the vertex on the lateral face of `Calcaneus` - outward normal pointing away from the midline, oriented by ray parity, and the first surface a lateral ray meets - nearest to the landmark + (0 lateral, 10 mm posterior, 13 mm distal). A flat ribbon 7 mm wide and 1.5 mm thick between them, 12 triangles, its face turned laterally. Accept: the calcaneal point within 3 mm of a calcaneus vertex, z in [0.032, 0.046], posterior to the fibular end in y; the ribbon clear of the talus. |
+
+What the CFL rule found, worth keeping:
+
+- **The source object is a two-triangle cage**, 18 x 6 x 13 mm once its
+  modifiers run, touching the fibula 1-10 mm above the malleolar tip and
+  resting on the top of the calcaneus directly beneath it. It ran medially
+  under the malleolus and never reached the lateral calcaneal wall. The
+  anterior and posterior talofibular ligaments are the same kind of cage;
+  both do span fibula to talus, and both were reported and left alone.
+- **The calcaneal target sits 9.2 mm lateral of the bone.** The malleolus
+  overhangs the calcaneal wall by about 8 mm, so "nearest vertex on the
+  lateral face" resolves 7.9 mm medial, 3.3 mm anterior and 3.8 mm distal of
+  the target, at z = 0.037. It happened also to be the nearest vertex
+  overall; that is the shape of this calcaneus, not a property of the rule,
+  which is why the face restriction stays.
+- **The fibular end as specified sits 3.0 mm off the fibula.** The landmark
+  is already stepped 2 mm out along (lateral, distal), and the malleolar tip
+  is the bone's lowest vertex, so a point 1 mm further distal is off the
+  bone by construction. Recorded and rendered as specified, not adjusted.
+- **A cross-product axis flips under mirroring.** The ribbon's width axis is
+  fixed to point posterior on both sides so the two builds order their
+  corners the same way; the mirror check compares point sets regardless.
+
 ## The model mirrors by negative scale and shares mesh data
 
 **971 of the 2,054 kept musculoskeletal objects are the `.l` side of a pair

@@ -23,12 +23,12 @@
   "licenceExcludedTriangles": 21712,
   "keptMeshes": 2054,
   "keptInventoryTriangles": 2938071,
-  "keptSourceTriangles": 3378184,
+  "keptSourceTriangles": 3378144,
   "perSystem": {
    "articular": {
     "meshes": 409,
     "inventoryTriangles": 159930,
-    "sourceTriangles": 325703
+    "sourceTriangles": 325663
    },
    "insertion": {
     "meshes": 705,
@@ -52,8 +52,8 @@
   "yUp": "exported with glTF Y-up: Blender +Z -> +Y, Blender -Y -> +Z; sides unchanged (.l at +X)",
   "modifiers": "viewport-evaluated for skeletal, muscular and articular; base mesh for insertions",
   "modifiersApplied": {
-   "articular/SOLIDIFY": 302,
-   "articular/SUBSURF": 240,
+   "articular/SOLIDIFY": 300,
+   "articular/SUBSURF": 238,
    "muscular/SOLIDIFY": 51,
    "muscular/SUBSURF": 99,
    "skeletal/BOOLEAN": 6,
@@ -61,9 +61,9 @@
    "skeletal/SUBSURF": 32
   },
   "mirrorPairs": {
-   "mirror-instance": 939,
+   "mirror-instance": 938,
    "shared-data-not-mirror": 14,
-   "separate-data": 7,
+   "separate-data": 8,
    "unpaired": 24
   },
   "windingCorrected": [
@@ -80,8 +80,8 @@
  },
  "overview": {
   "file": "overview.glb",
-  "triangles": 211971,
-  "bytes": 2155528,
+  "triangles": 211969,
+  "bytes": 2155300,
   "meshCount": 1349,
   "target": 200000,
   "ratio": 0.05893,
@@ -261,13 +261,13 @@
   {
    "id": "knee",
    "file": "knee.glb",
-   "triangles": 143352,
+   "triangles": 143328,
    "ownTriangles": 56490,
-   "contextTriangles": 86862,
+   "contextTriangles": 86838,
    "sourceTriangles": 112140,
    "inventoryTriangles": 68736,
    "targetTriangles": 56070,
-   "bytes": 1018308,
+   "bytes": 1018008,
    "meshCount": 88,
    "contextMeshCount": 354,
    "contextRegions": [
@@ -316,13 +316,13 @@
   {
    "id": "ankle-foot",
    "file": "ankle-foot.glb",
-   "triangles": 151100,
-   "ownTriangles": 136244,
+   "triangles": 151092,
+   "ownTriangles": 136236,
    "contextTriangles": 14856,
-   "sourceTriangles": 272500,
+   "sourceTriangles": 272460,
    "inventoryTriangles": 228666,
-   "targetTriangles": 136250,
-   "bytes": 921884,
+   "targetTriangles": 136230,
+   "bytes": 921664,
    "meshCount": 250,
    "contextMeshCount": 88,
    "contextRegions": [
@@ -2272,8 +2272,8 @@
    "region": "ankle-foot",
    "side": "l",
    "system": "articular",
-   "triangles": 16,
-   "sourceTriangles": 32,
+   "triangles": 12,
+   "sourceTriangles": 12,
    "inventoryTriangles": 2,
    "signal": "hierarchy"
   },
@@ -2282,8 +2282,8 @@
    "region": "ankle-foot",
    "side": "r",
    "system": "articular",
-   "triangles": 16,
-   "sourceTriangles": 32,
+   "triangles": 12,
+   "sourceTriangles": 12,
    "inventoryTriangles": 2,
    "signal": "hierarchy"
   },
@@ -21105,10 +21105,10 @@
   "deviation": {
    "overview": {
     "articular": {
-     "meshes": 345,
+     "meshes": 343,
      "meanOfMean_mm": 0.152,
-     "meanOfP95_mm": 0.359,
-     "meanOfMax_mm": 0.504,
+     "meanOfP95_mm": 0.36,
+     "meanOfMax_mm": 0.507,
      "worstMax_mm": 2.564,
      "worstRelative": [
       {
@@ -21224,7 +21224,7 @@
    },
    "region": {
     "articular": {
-     "meshes": 355,
+     "meshes": 353,
      "meanOfMean_mm": 0.021,
      "meanOfP95_mm": 0.067,
      "meanOfMax_mm": 0.128,
@@ -21343,10 +21343,10 @@
    },
    "context": {
     "articular": {
-     "meshes": 626,
-     "meanOfMean_mm": 0.091,
+     "meshes": 624,
+     "meanOfMean_mm": 0.092,
      "meanOfP95_mm": 0.218,
-     "meanOfMax_mm": 0.324,
+     "meanOfMax_mm": 0.325,
      "worstMax_mm": 1.43,
      "worstRelative": [
       {

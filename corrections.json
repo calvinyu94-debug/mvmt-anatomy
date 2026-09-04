@@ -1,0 +1,194 @@
+{
+ "version": 1,
+ "note": "Source meshes redrawn in the export by anchor rule (tools/corrections.py). Each record is the rule's result on the build that wrote this file: both attachment points, the acceptance measurements, and the ribbon's clearance from the neighbouring bones. Both sides are resolved on their own bones.",
+ "units": "metres",
+ "up": "Z",
+ "sideConvention": {
+  "l": "+X",
+  "r": "-X"
+ },
+ "objects": [
+  {
+   "object": "Calcaneofibular ligament.l",
+   "source": "redrawn",
+   "rule": "fibular end = lm-lateral-malleolus + (0, 2 mm anterior, 1 mm distal); calcaneal end = nearest lateral-face vertex of the calcaneus to lm-lateral-malleolus + (0, 10 mm posterior, 13 mm distal); flat ribbon between them",
+   "fibularEnd": {
+    "landmark": "lm-lateral-malleolus",
+    "landmarkVertex": [
+     0.10162,
+     0.05206,
+     0.05521
+    ],
+    "landmarkResolved": [
+     0.10304,
+     0.05206,
+     0.0538
+    ],
+    "offset": [
+     0.0,
+     -0.002,
+     -0.001
+    ],
+    "point": [
+     0.10304,
+     0.05006,
+     0.0528
+    ],
+    "surfaceDistance": {
+     "Fibula.l": 0.00298,
+     "Talus.l": 0.00813
+    }
+   },
+   "calcanealEnd": {
+    "target": [
+     0.10304,
+     0.06206,
+     0.0408
+    ],
+    "targetSurfaceDistance": 0.00924,
+    "point": [
+     0.09515,
+     0.05876,
+     0.03696
+    ],
+    "normal": [
+     0.9632,
+     0.2685,
+     -0.0125
+    ],
+    "lateralFaceVertices": 434,
+    "nearestVertexDistance": 0.0,
+    "nearestVertexOverall": [
+     0.09515,
+     0.05876,
+     0.03696
+    ],
+    "sameAsNearestOverall": true,
+    "offsetFromTarget": [
+     -0.00789,
+     -0.00329,
+     -0.00384
+    ],
+    "acceptance": {
+     "vertexWithin": 0.003,
+     "z": [
+      0.032,
+      0.046
+     ],
+     "posteriorToFibularEnd": true
+    }
+   },
+   "length": 0.01972,
+   "width": 0.007,
+   "thickness": 0.0015,
+   "axis": [
+    -0.4002,
+    0.4414,
+    -0.8031
+   ],
+   "triangles": 12,
+   "centrelineClearance": {
+    "Talus.l": 0.00812,
+    "Fibula.l": 0.00298,
+    "Calcaneus.l": -0.0
+   },
+   "overlapTrianglePairs": {
+    "Talus.l": 0,
+    "Fibula.l": 0,
+    "Calcaneus.l": 11
+   },
+   "mirrorAsymmetry": 0.0
+  },
+  {
+   "object": "Calcaneofibular ligament.r",
+   "source": "redrawn",
+   "rule": "fibular end = lm-lateral-malleolus + (0, 2 mm anterior, 1 mm distal); calcaneal end = nearest lateral-face vertex of the calcaneus to lm-lateral-malleolus + (0, 10 mm posterior, 13 mm distal); flat ribbon between them",
+   "fibularEnd": {
+    "landmark": "lm-lateral-malleolus",
+    "landmarkVertex": [
+     -0.10162,
+     0.05206,
+     0.05521
+    ],
+    "landmarkResolved": [
+     -0.10304,
+     0.05206,
+     0.0538
+    ],
+    "offset": [
+     -0.0,
+     -0.002,
+     -0.001
+    ],
+    "point": [
+     -0.10304,
+     0.05006,
+     0.0528
+    ],
+    "surfaceDistance": {
+     "Fibula.r": 0.00298,
+     "Talus.r": 0.00813
+    }
+   },
+   "calcanealEnd": {
+    "target": [
+     -0.10304,
+     0.06206,
+     0.0408
+    ],
+    "targetSurfaceDistance": 0.00924,
+    "point": [
+     -0.09515,
+     0.05876,
+     0.03696
+    ],
+    "normal": [
+     -0.9632,
+     0.2685,
+     -0.0125
+    ],
+    "lateralFaceVertices": 434,
+    "nearestVertexDistance": 0.0,
+    "nearestVertexOverall": [
+     -0.09515,
+     0.05876,
+     0.03696
+    ],
+    "sameAsNearestOverall": true,
+    "offsetFromTarget": [
+     0.00789,
+     -0.00329,
+     -0.00384
+    ],
+    "acceptance": {
+     "vertexWithin": 0.003,
+     "z": [
+      0.032,
+      0.046
+     ],
+     "posteriorToFibularEnd": true
+    }
+   },
+   "length": 0.01972,
+   "width": 0.007,
+   "thickness": 0.0015,
+   "axis": [
+    0.4002,
+    0.4414,
+    -0.8031
+   ],
+   "triangles": 12,
+   "centrelineClearance": {
+    "Talus.r": 0.00812,
+    "Fibula.r": 0.00298,
+    "Calcaneus.r": -0.0
+   },
+   "overlapTrianglePairs": {
+    "Talus.r": 0,
+    "Fibula.r": 0,
+    "Calcaneus.r": 11
+   },
+   "mirrorAsymmetry": 0.0
+  }
+ ]
+}

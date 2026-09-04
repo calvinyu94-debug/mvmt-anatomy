@@ -1,4 +1,5 @@
-# Source models — never commit, always fetched locally
+# Source models — never commit, always fetched locally.
+# Exports too: mannequin.glb (tools/build_mannequin.py) is built locally like the region files.
 *.blend
 *.blend1
 *.fbx

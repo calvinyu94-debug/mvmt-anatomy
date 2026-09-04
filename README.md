@@ -49,6 +49,12 @@ they are kept separate from model-derived geometry at every stage. See
 | [`corrections.json`](corrections.json) | The result of every correction rule on the current build: both attachment points on both sides, acceptance measurements, clearance from the neighbouring bones |
 | [`verification/corrections/`](verification/corrections/) | Right-ankle lateral and posterior renders of the redrawn calcaneofibular ligament, and the same views of the source placeholder it replaced |
 | [`verification/landmarks/`](verification/landmarks/) | Four orthographic renders - anterior, posterior, both laterals - of the landmarks as labelled spheres on a semi-transparent skeleton |
+| [`tools/build_mannequin.py`](tools/build_mannequin.py) | Builds the exercise-demo mannequin - an MPFB2 default human on the game-engine skeleton, T-pose rest, clay, one skinned mesh - exports `mannequin.glb`, calibrates it and writes `rig-manifest.json`. **Blender 4.2 with MPFB2, not the pinned 3.6** |
+| [`tools/mannequin_rig.py`](tools/mannequin_rig.py) | The rig as the exported file states it, pure Python: reads the GLB, skins the mesh as three.js does, resolves the app's joint vocabulary to bones and measures the anatomical axes in each bone's own frame |
+| [`tools/verify_mannequin.py`](tools/verify_mannequin.py) | Reads `mannequin.glb` back in a fresh Blender, re-derives the calibration and compares it with the manifest, measures the brief's calibration pose in numbers, and renders the figure beside `overview.glb` |
+| [`tools/mannequin_preview.html`](tools/mannequin_preview.html) | The same check in the consumer: loads the file in three.js, poses it through `rig-manifest.json` and prints what the pose did |
+| [`rig-manifest.json`](rig-manifest.json) | The resolution key the viewer reads: every joint resolved to exactly one bone, the pinned effectors, the neutral offsets, and for every anatomical motion the measured axis in the bone's frame with how far it is from the nearest labelled axis |
+| [`verification/mannequin/`](verification/mannequin/) | The rest pose, the calibration pose from three views - skinned from the exported file, not by Blender's armature - the figure beside the Z-Anatomy overview, and the three.js capture |
 
 ## What has been done
 
@@ -79,6 +85,14 @@ they are kept separate from model-derived geometry at every stage. See
   wall of the calcaneus, flagged `corrected` in its extras and recorded in
   [`corrections.json`](corrections.json) and
   [`verification/corrections/`](verification/corrections/).
+- The exercise-demo mannequin: a neutral clay figure from MPFB2 (CC0, not
+  derived from the atlas) on MPFB's game-engine skeleton, rest pose an exact
+  T, one skinned mesh, no Draco, in the region exports' conventions - and its
+  calibration table, measured on the exported file rather than read off the
+  bones' axis labels, because those are rolled by up to 43 degrees from the
+  anatomical axes. See [`rig-manifest.json`](rig-manifest.json) and
+  [`verification/mannequin/`](verification/mannequin/). The pose engine that
+  consumes it is a separate job in mvmt-program.
 
 ## What has not been done
 
@@ -249,6 +263,75 @@ The region assignment can be reviewed without Blender:
 python tools/regions.py
 ```
 
+## Building the mannequin
+
+The mannequin is the one export that does **not** come from the Z-Anatomy
+model and does **not** run in Blender 3.6. It is built with
+[MPFB2](https://static.makehumancommunity.org/mpfb.html), the MakeHuman
+extension for Blender 4.2 and later, from MPFB's bundled base mesh and rig -
+the optional system-assets pack (skins, eyes, clothes) is not needed and not
+used. Keep the two Blenders apart: never open `Startup.blend` in 4.x.
+
+Install once: a portable Blender 4.2 LTS, then MPFB from the Blender
+extensions platform into it (the `4.2/config` directory makes the install
+self-contained):
+
+```bash
+mkdir -p blender-4.2/4.2/config
+blender-4.2/blender -b --command extension install-file -r user_default -e add-on-mpfb-v2.0.17.zip
+```
+
+Then, from the worktree root:
+
+```bash
+blender-4.2 --background --python tools/build_mannequin.py -- --out . --render verification/mannequin
+```
+
+Prints `MANNEQUIN_OK triangles=… joints=… bytes=… height=…` and writes
+`mannequin.glb` (gitignored, like every export), `rig-manifest.json` and the
+renders. It stops if the figure does not face +Z with its left at +X, if the
+rest pose is not a T to half a degree, if any joint in the app's vocabulary
+fails to resolve to exactly one bone, or if Blender's own deformation of the
+calibration pose disagrees with the file's skinning by more than a
+millimetre. The calibration renders are the exported file skinned in numpy
+through the manifest's own table, so they show what a glTF viewer will do,
+not what Blender did.
+
+```bash
+blender-4.2 --background --factory-startup --python tools/verify_mannequin.py -- --overview overview.glb
+```
+
+Prints `VERIFY_MANNEQUIN_OK checks=…` and exits non-zero on any failure. It
+runs without MPFB and reads only the shipped file: structure (one mesh, one
+skin, four influences, no Draco), every manifest key resolving to one bone,
+stance and facing, the T, the palms; then it re-derives the whole
+calibration table from the file and compares it with the manifest, applies
+the brief's calibration pose through the manifest's composition rule and
+measures it - right thigh swept 90 from rest and level, knee bent 90 more
+than at rest, left arm lateral with the forearm forward, face turned 45 to
+the right, right hand bent 45 away from the palm; then it imports the file
+through Blender's own importer and renders it beside `overview.glb` if that
+has been built.
+
+To see the same thing in the library the viewer uses, serve the worktree
+root and open [`tools/mannequin_preview.html`](tools/mannequin_preview.html)
+with `?pose=calibration&overview=1`; it prints the same measurements from
+three.js's own bones.
+
+`mannequin.glb` and `rig-manifest.json` land in `mvmt-program/assets/` the
+way the region files do; `--copy-to ../mvmt-program/assets` on the build does
+the copy.
+
+## Provenance of the current mannequin
+
+| | |
+|---|---|
+| Blender | 4.2.9 LTS, hash `a10f621e649a`, built 2025-04-15; glTF exporter 4.2.83 |
+| MPFB | 2.0.17, build 20260722, `add-on-mpfb-v2.0.17.zip` from extensions.blender.org, sha256 `4f0a879d…239a87` |
+| Figure | MPFB default macro settings (every slider at 0.5), `game_engine` rig, MPFB's `t-pose.json` for it, refined so every arm segment lies on the world X axis |
+| Result | `MANNEQUIN_OK triangles=26756 vertices=13380 joints=53 bytes=767280 height=1.664 blenderAgreement_mm=0.001` |
+| Verified | `VERIFY_MANNEQUIN_OK checks=27 failed=0` |
+
 ## Provenance of the current inventory
 
 | | |
@@ -264,3 +347,7 @@ Derivative works distributed from this repository are **CC BY-SA 4.0**, with the
 exclusions in [`EXCLUSIONS.md`](EXCLUSIONS.md) applied. Read
 [`ATTRIBUTION.md`](ATTRIBUTION.md) before distributing anything built from this
 model — it is not uniformly CC BY-SA upstream.
+
+The mannequin is the exception: `mannequin.glb` derives from MPFB2's bundled
+assets, not from Z-Anatomy, and is **CC0**. See
+[`ATTRIBUTION.md`](ATTRIBUTION.md#the-exercise-demo-mannequin-mpfb2-cc0).

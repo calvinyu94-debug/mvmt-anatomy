@@ -253,6 +253,80 @@ sets so word order cannot matter. `tools/regions.py` already treats `colli`,
 `cervicis` and `capitis` as one class for region assignment; anything that
 joins names to this model needs the same treatment.
 
+## The mannequin: a second toolchain, and bone axes are not anatomical axes
+
+The exercise-demo figure is the one thing here that does not come from the
+atlas. It is an MPFB2 human (CC0, see `ATTRIBUTION.md`), built by
+[`tools/build_mannequin.py`](tools/build_mannequin.py) in **Blender 4.2 with
+the MPFB extension** - a second, separate Blender. `Startup.blend` never goes
+near it, and nothing from the mannequin job runs in 3.6. The viewer's pose
+engine (mvmt-program) consumes `rig-manifest.json`; the reference
+implementation of what it must do is `mannequin_rig.pose_from_angles` and
+`tools/mannequin_preview.html`, which does the same in three.js.
+
+**The rig's bone axes are rolled, so "flexion is +X" is the bounding-box
+trap in a new coat.** On MPFB's game-engine skeleton the wrist's flexion
+axis is 43 degrees from the nearest labelled bone axis, the hip's 26, the
+neck's 21, the fingers' 5 to 16; only the knee and the spine's flexion sit
+within a degree or two of a label. A snapped axis would not produce a wrong
+number, it would produce a *different motion* - a wrist "flexion" that is a
+third radial deviation. So the calibration table carries **measured unit
+vectors** in each bone's own frame, derived by applying the rotation to the
+exported file and watching where a probe goes (the knee for the hip, the
+knuckle for the wrist, an anterior point for anything about the long axis),
+and it records the nearest labelled axis and how far off it is so the reader
+sees the roll. Keep it that way: never snap, never author an axis, and
+regenerate the table from the file - `verify_mannequin.py` re-derives every
+axis and fails if the manifest disagrees.
+
+What the job established, worth keeping:
+
+- **The file is the reference, not Blender's armature.** The table is
+  computed from the GLB's own nodes and weights, and the calibration renders
+  are the GLB skinned in numpy through it. Blender's frames turned out to be
+  the file's frames - a pose-bone quaternion `(w, x, y, z)` in Blender is the
+  node's post-multiplied `(x, y, z, w)` in glTF, and the two deformations
+  agree to a thousandth of a millimetre - but that is a verified fact about
+  this exporter, not an assumption to build on.
+- **The exporter keeps four influences per vertex and says so only in a log
+  line.** Six hundred vertices had more, and the file's skinning disagreed
+  with Blender's by 6 mm at the worst of them. The build limits and
+  renormalises to four in Blender first, so what ships is exactly what was
+  checked. MPFB's volume-preserving second armature modifier is removed for
+  the same reason: glTF has no such thing.
+- **The rest is an exact T, refined from MPFB's T-pose.** MPFB's pose leaves
+  the upper arm 2.5 degrees off the X axis, the forearm 8, the hand 6 and the
+  fingers relaxed by up to 34; each arm segment is turned onto the world X
+  axis, most proximal first, before the pose is applied as rest, and the
+  residuals are in the manifest. Anatomical zero has to be exact or "abduction
+  90" is not.
+- **The legs are left as MPFB's straight leg, and its bone chain is not a
+  straight line**: the thigh bone leans 4.5 degrees anterior and the calf 2.5
+  posterior, so the knee joint sits in front of the hip-ankle line. Angles are
+  anatomical degrees *from rest*, so hip flexion 90 puts the thigh 4.5 above
+  horizontal and knee flexion 90 leaves the shin 2.5 from vertical. The
+  verifier measures change from rest, not absolute direction, for exactly
+  this reason. Turning the bones vertical would have deformed the leg.
+- **Anatomical neutral is a pose, not the rest.** The two upper arms carry a
+  `neutral` offset (a measured quarter turn about the anteroposterior axis
+  that lowers the elbow); every other bone's neutral is the rest. Motions are
+  measured in neutral, except `hAdd`, which is measured at 90 abduction
+  because at neutral its axis is the humerus itself and it is
+  indistinguishable from rotation. The manifest says so.
+- **The game-engine rig has no forearm twist bone**, so `elbowL/R` and
+  `forearmL/R` resolve to the same bone and compose - flexion, then
+  supination about the long axis. `fingersL/R` are twelve phalanges each,
+  the thumb excluded, the same angle at every joint. Both are stated in the
+  manifest under `sharedBones` and `fingerGroups`; the assertion that every
+  key resolves to exactly one bone still holds per key.
+- **Blender's glTF importer adds an unlinked `Icosphere`** as the bones'
+  display shape. Anything that counts imported meshes has to count skinned
+  ones, or it finds two figures, one of them a two-metre sphere.
+- Height, floor and facing were checked by loading, three ways: the file
+  skinned in Python, Blender's importer beside `overview.glb`, and three.js
+  through the preview page. The figure stands 1.664 m on the floor and faces
+  +Z with its left at +X; the atlas beside it is 1.70 m.
+
 ## Blender process notes
 
 - **Cycles crashes (`ccl::create_mesh` access violation) rendering meshes
@@ -307,7 +381,13 @@ not one now. If the viewer is ever rewritten, this section reopens.
   `verification/*.png`, `inventory.csv`) are committed.
 - Every headless script prints a machine-checkable line and exits non-zero on
   failure: `INVENTORY_OK`, `NERVES_OK`, `VERIFY_OK`, `LANDMARKS_OK`,
-  `VERIFY_LANDMARKS_OK`. A missing landmark is a hard error, never a silent
-  skip — a path must never quietly drift onto the wrong geometry.
+  `VERIFY_LANDMARKS_OK`, `MANNEQUIN_OK`, `VERIFY_MANNEQUIN_OK`. A missing
+  landmark is a hard error, never a silent skip — a path must never quietly
+  drift onto the wrong geometry. A vocabulary joint that does not resolve to
+  exactly one bone is the same kind of error.
+- Records hold measured numbers; rules hold no counts. `rig-manifest.json`
+  records the triangle count and the joint count of the build it describes,
+  and nothing asserts either - the brief's "roughly 20-40k triangles" is
+  reported, not enforced.
 - [`EXCLUSIONS.md`](EXCLUSIONS.md) is authoritative for licence exclusions and
   is meant to be enforced programmatically, not remembered.

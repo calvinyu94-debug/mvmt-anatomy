@@ -273,11 +273,12 @@ the optional system-assets pack (skins, eyes, clothes) is not needed and not
 used. Keep the two Blenders apart: never open `Startup.blend` in 4.x.
 
 Install once: a portable Blender 4.2 LTS, then MPFB from the Blender
-extensions platform into it (the `4.2/config` directory makes the install
-self-contained):
+extensions platform into it (the `portable` directory next to the executable
+is what makes a 4.2 install self-contained; the pre-4.2 `4.2/config` trick
+does nothing in 4.2 and leaves the extension in `%APPDATA%`):
 
 ```bash
-mkdir -p blender-4.2/4.2/config
+mkdir -p blender-4.2/portable
 blender-4.2/blender -b --command extension install-file -r user_default -e add-on-mpfb-v2.0.17.zip
 ```
 

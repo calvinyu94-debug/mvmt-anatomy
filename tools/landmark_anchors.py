@@ -218,9 +218,17 @@ def adductor_tubercle(V, lo, hi):
 
 
 def gerdys_tubercle(V, lo, hi):
-    """Anterolateral proximal tibia, at and just above the tuberosity's height."""
+    """Anterolateral proximal tibia, at and just above the tuberosity's height.
+
+    Lateral of the tuberosity by at least a centimetre and on the anterior
+    face (within 3 cm of the tuberosity's depth). Without those two bounds
+    "anterolateral" is decided by whichever of anterior and lateral the bone
+    makes more of: on BodyParts3D's tibia, whose tuberosity stands further
+    forward, the unbounded rule returned the tuberosity itself.
+    """
     tub = ext(V, ANT, z=(hi.z - 0.07, hi.z - 0.02))
-    return ext(V, unit(1, -1, 0), z=(tub.z, tub.z + 0.02))
+    return ext(V, unit(1, -1, 0), x=(tub.x + 0.010, None), y=(None, tub.y + 0.030),
+               z=(tub.z, tub.z + 0.02))
 
 
 def knee_joint_line(V, lo, hi):
@@ -324,9 +332,13 @@ lm("lm-coracoid", "Coracoid process", "Scapula.l",
    (ANT, {}), ANT, "shoulder",
    first_pass=(0.70, 0.10, 0.80))
 
+# The upper-half bound is what makes "the posterior ridge" the spine: on a
+# scapula whose body tilts so the inferior angle stands furthest back
+# (BodyParts3D's does, by a centimetre) the unbounded rule found the body 10 cm
+# below the spine. The Z-Anatomy point is in the upper half and is unchanged.
 lm("lm-scapular-spine", "Spine of scapula", "Scapula.l",
-   "Mid-length of the posterior ridge",
-   (POST, dict(x=("mid-0.003", "mid+0.003"))), POST, "shoulder",
+   "Mid-length of the posterior ridge, in the upper half of the bone",
+   (POST, dict(x=("mid-0.003", "mid+0.003"), z=("mid", None))), POST, "shoulder",
    first_pass=(0.50, 0.85, 0.80))
 
 lm("lm-inferior-angle", "Inferior angle of scapula", "Scapula.l",
@@ -474,9 +486,14 @@ lm("lm-fifth-metatarsal-base", "Fifth metatarsal base", "Fifth metatarsal bone.l
    (X, dict(y=("max-0.015", None))), X, "foot", limb=True,
    first_pass=(0.85, 0.60, 0.55))
 
+# The shelf carries the talus, so it is in the top 15 mm of the bone and in
+# its anterior half. "Upper half" alone admits the medial process of the
+# tuberosity, which on BodyParts3D's calcaneus is the more medial of the two
+# by 5 mm and 2 cm further back. The Z-Anatomy point satisfies both bounds
+# and is unchanged.
 lm("lm-sustentaculum-tali", "Sustentaculum tali", "Calcaneus.l",
-   "The medial shelf, roughly a thumb's width below the medial malleolus",
-   (MED, dict(z=("mid", None))), MED, "foot", limb=True,
+   "The medial shelf under the talus, roughly a thumb's width below the medial malleolus",
+   (MED, dict(z=("max-0.015", None), y=(None, "mid"))), MED, "foot", limb=True,
    first_pass=(0.10, 0.35, 0.75))
 
 LANDMARKS = L

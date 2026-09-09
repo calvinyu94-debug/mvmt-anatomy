@@ -216,6 +216,38 @@ class Fit:
         self.regions = regions          # id -> dict(kind, sim or t)
         self.anchors = anchors          # id -> (n,3) Z-Anatomy landmark points of that region
 
+    @classmethod
+    def from_record(cls, rec):
+        """Rebuild the transform from bp3d-fit.json, so the export applies
+        exactly what the record says and nothing recomputed."""
+        g = rec["globalFit"]
+        glob = (g["scale"], np.array(g["rotation"], dtype=np.float64), np.array(g["translation"], dtype=np.float64))
+        regions, anchors = {}, {}
+        for rid, r in rec["regions"].items():
+            if r["kind"] == "similarity":
+                regions[rid] = dict(kind="similarity", sim=(r["scale"], np.array(r["rotation"], dtype=np.float64),
+                                                            np.array(r["translation"], dtype=np.float64)))
+            elif r["kind"] == "translation":
+                regions[rid] = dict(kind="translation", t=np.array(r["translation"], dtype=np.float64))
+            else:
+                regions[rid] = dict(kind="none")
+            anchors[rid] = np.array(r["anchors"], dtype=np.float64).reshape(-1, 3)
+        fit = cls(glob, regions, anchors)
+        fit.sigma = rec["blend"]["sigma"]
+        fit.floor = rec["blend"]["floor"]
+        return fit
+
+    def weights(self, p):
+        """Blend weight of every region at p, plus the floor; the export's
+        region-of-a-point and the seam check both read these."""
+        p = np.asarray(p, dtype=np.float64).reshape(-1, 3)
+        sigma = getattr(self, "sigma", BLEND_SIGMA)
+        out = {}
+        for rid, pts in self.anchors.items():
+            d2 = ((p[:, None, :] - pts[None, :, :]) ** 2).sum(axis=2).min(axis=1)
+            out[rid] = np.exp(-d2 / (sigma ** 2))
+        return out
+
     def residual(self, rid, q):
         r = self.regions[rid]
         if r["kind"] == "similarity":
@@ -224,14 +256,22 @@ class Fit:
             return np.broadcast_to(r["t"], q.shape)
         return np.zeros_like(q)
 
-    def __call__(self, p):
+    def __call__(self, p, allowed=None):
+        """allowed: the regions whose residuals may act on these points. The
+        blend is by distance to landmarks, and the hand hangs beside the
+        abdomen in the A-pose, so without it the wrist's residual reaches the
+        abdominal fascia. A part is blended from its home region and that
+        region's neighbours only."""
         p = np.asarray(p, dtype=np.float64)
         q = apply_sim(self.glob, p)
         num = np.zeros_like(q)
-        den = np.full(q.shape[0], BLEND_FLOOR)
+        den = np.full(q.shape[0], getattr(self, "floor", BLEND_FLOOR))
+        sigma = getattr(self, "sigma", BLEND_SIGMA)
         for rid, pts in self.anchors.items():
+            if allowed is not None and rid not in allowed:
+                continue
             d2 = ((p[:, None, :] - pts[None, :, :]) ** 2).sum(axis=2).min(axis=1)
-            w = np.exp(-d2 / (BLEND_SIGMA ** 2))
+            w = np.exp(-d2 / (sigma ** 2))
             num += w[:, None] * self.residual(rid, q)
             den += w
         return q + num / den[:, None]

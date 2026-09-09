@@ -391,3 +391,57 @@ not one now. If the viewer is ever rewritten, this section reopens.
   reported, not enforced.
 - [`EXCLUSIONS.md`](EXCLUSIONS.md) is authoritative for licence exclusions and
   is meant to be enforced programmatically, not remembered.
+
+## Our layers on the BodyParts3D body
+
+MVMT Atlas (`calvinyu94-debug/mvmt-atlas`, a fork of ashemag/human-atlas)
+shows the BodyParts3D body, and our fascia, ligaments, insertions, nerves and
+landmarks are fitted onto it by [`tools/bp3d_fit.py`](tools/bp3d_fit.py) and
+carried across by [`tools/bp3d_export.py`](tools/bp3d_export.py), into Human
+Atlas's chunk format, one chunk per region. `bp3d-fit.json` and
+`bp3d-export.json` are the records; [`verification/bp3d-fit-report.md`](verification/bp3d-fit-report.md)
+reads them back and [`verification/bp3d/`](verification/bp3d/) holds the
+renders. What the job established:
+
+- **The correspondence is the landmark rules, run on the other body.** A rule
+  is a description on a bone's real vertices, and a description runs on
+  BodyParts3D's femur as it runs on ours, so the fit has 77 pairs from the
+  same 42 descriptions, not thirty hand-picked points. Three rules were
+  under-specified for a second body (scapular spine, sustentaculum tali,
+  Gerdy's tubercle) and were tightened as descriptions; no Z-Anatomy point
+  moved. When a rule misfires on another model, tighten the description,
+  regenerate `landmarks.json`, and confirm nothing moved - never special-case
+  the other model.
+- **Blender's glTF importer converts to Z-up.** A mesh read from our own
+  `.glb` files arrives in the Z-Anatomy frame, not the glTF Y-up frame the
+  file is written in. The first export treated it as glTF and projected the
+  temporalis onto the big toe. The frame check on the ACL's centroid in
+  `bp3d_export.py` is what catches it now.
+- **The blend is by distance to landmarks, and the hand hangs beside the
+  abdomen.** Unrestricted, the wrist's residual reached the abdominal fascia.
+  A part is blended from its home region and that region's neighbours only
+  (`regions.NEIGHBOURS`).
+- **An insertion stays on its bone.** A patch is projected onto the BP3D bone
+  of the same name as the Z-Anatomy bone it sits on, never onto the nearest
+  bone: nearest took an internal-oblique origin 37 mm to the eighth rib. The
+  side comes from the bone the patch sits on, not from the name - **25
+  insertion names end in `.l` while their geometry lies on the right bone**
+  (pronator quadratus, piriformis, the plantar interossei, the serrati and
+  others; listed in `bp3d-export.json`). That is a finding about
+  `export_regions.py`'s side field as much as about this job, and is not yet
+  fixed there. Patches on soft tissue in the source (rectus abdominis) and
+  on bones BodyParts3D lacks (costal cartilages 8 and 10) are left where the
+  fit puts them and flagged.
+- **A factory-startup Blender has a 2 m cube in it.** It hid everything below
+  1 m in the first renders. Delete the default objects before rendering.
+- **BodyParts3D has no spinal cord** (its concept resolves to a 160-triangle
+  central canal) and neither does Z-Anatomy (78 triangles of white matter in
+  collection 7, unchecked for licence). The cord and cauda equina are
+  authored schematically through the BP3D vertebral canal, found per
+  vertebra as the largest midline gap between body and lamina, and carry the
+  nerves' `authored` / `schematic` flags. Collection 7 (spinal dura, ganglia)
+  is a possible later addition once its licence scope is checked.
+- **FMA ids are sparse on the systems we add** (fascia 9 of 84 names,
+  ligaments 7 of 234, insertions none) because BodyParts3D's vocabulary
+  barely covers them; the match is by the normalised token set of
+  "Object names follow TA2 content" above and is not the limit.

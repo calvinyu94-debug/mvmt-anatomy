@@ -448,11 +448,42 @@ renders. What the job established:
   1 m in the first renders. Delete the default objects before rendering.
 - **BodyParts3D has no spinal cord** (its concept resolves to a 160-triangle
   central canal) and neither does Z-Anatomy (78 triangles of white matter in
-  collection 7, unchecked for licence). The cord and cauda equina are
-  authored schematically through the BP3D vertebral canal, found per
-  vertebra as the largest midline gap between body and lamina, and carry the
-  nerves' `authored` / `schematic` flags. Collection 7 (spinal dura, ganglia)
-  is a possible later addition once its licence scope is checked.
+  collection 7, unchecked for licence). The cord, roots, cauda equina and
+  dura are authored schematically through the BP3D vertebral canal and carry
+  the nerves' `authored` / `schematic` flags. Collection 7 (spinal dura,
+  ganglia) is a possible later addition once its licence scope is checked.
+- **"The largest midline gap between vertices" is the vertebral body, not the
+  canal.** That was Phase 4's canal finder, and from T1 down it put the cord
+  through bone: at mid-height the body's front and back walls leave few
+  vertices on the midline, so the widest gap between vertices is the body's
+  own thickness, and the record's "33 to 36 mm at L3 to L5" was the lumbar
+  bodies. A wrong description, not a wrong coordinate. The canal is now the
+  empty stretch immediately posterior to the body, read with the winding
+  number along the sagittal line, and its width is the interpedicular
+  distance, the narrowest empty stretch across seven heights. The rule that
+  caught it is the per-system fit confidence below. Foramina are found as
+  passages (a lateral line from inside the canal that meets no bone), never
+  as points, and every move from the interspace midpoint is in
+  `bp3d-export.json`.
+- **Ray parity is the wrong inside test on BodyParts3D.** Its skin is a
+  two-layer shell 2 mm thick (parity is even for every point in the body), and
+  its bones are open meshes (480 boundary edges on L3, 792 on the atlas), so a
+  ray through an open lamina crosses once and parity calls the canal bone. The
+  prescription above ("determine inside/outside by ray-cast parity") is for
+  the Z-Anatomy meshes, whose problem is winding, not holes. On BP3D: inside
+  bone is the generalised winding number against every bone whose box comes
+  within 2 cm (0 or 1 cleanly, because BP3D's faces are consistently
+  oriented, checked on eight bones and the skin); inside the body is being
+  enclosed by the skin, a ray in each of the six axis directions meeting it.
+- **Fit confidence is one rule per system**, named in every part's `fitRule`:
+  `surface` for ligaments and fascia (more than 20% of samples further than
+  6 mm from any BP3D bone or muscle surface), `canal` for central nerves
+  (more than 20% inside bone; clearance from the wall is recorded, not
+  judged), `envelope` for peripheral nerves (more than 20% outside the skin
+  or inside bone; no surface-distance test). One rule for everything judged
+  the nerves for being in soft tissue, which is where they belong. Counts
+  and the reasoning are in
+  [`verification/bp3d-fit-report.md`](verification/bp3d-fit-report.md).
 - **FMA ids are sparse on the systems we add** (fascia 9 of 84 names,
   ligaments 7 of 234, insertions none) because BodyParts3D's vocabulary
   barely covers them; the match is by the normalised token set of

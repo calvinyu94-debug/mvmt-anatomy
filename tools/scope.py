@@ -118,6 +118,90 @@ def side_of(name):
     return m.group(2) if m else ""
 
 
+# Forty-six objects whose suffix contradicts their geometry: the object sits on
+# the other side of the midline (+X is left). Found by the BodyParts3D
+# projection (bp3d-export.json sideMismatches), which reads the side off the
+# bone a patch sits on, and completed by a scan of every kept sided object in
+# the .blend. Twenty-three are lone insertions named .l with no .r twin at all -
+# the atlas modelled that footprint once, on the right, and named it left. The
+# rest are swapped pairs: eleven insertion pairs on the neck and the piriformis
+# origin, and one ligament, the lateral temporomandibular, whose .r is the
+# mirrored instance and sits at +X. The side is what the geometry says; this
+# table says which objects that changes, and side_of_object() stops the build
+# if the geometry disagrees with the table, so a model update that fixes or
+# moves one is noticed rather than absorbed.
+SIDE_CORRECTED = {
+    "Lateral temporomandibular ligament.l": "r",
+    "Lateral temporomandibular ligament.r": "l",
+    "Pectineus muscle.el": "r",
+    "Piriformis muscle.el": "r",
+    "Piriformis muscle.ol": "r",
+    "Piriformis muscle.or": "l",
+    "Plantar interossei muscles.e1l": "r",
+    "Plantar interossei muscles.e2l": "r",
+    "Plantar interossei muscles.el": "r",
+    "Plantar interossei muscles.o1l": "r",
+    "Plantar interossei muscles.o2l": "r",
+    "Plantar interossei muscles.ol": "r",
+    "Pronator quadratus.el": "r",
+    "Pronator quadratus.ol": "r",
+    "Rectus anterior capitis muscle.el": "r",
+    "Rectus anterior capitis muscle.er": "l",
+    "Rectus lateralis capitis muscle.ol": "r",
+    "Rectus lateralis capitis muscle.or": "l",
+    "Rectus posterior major capitis muscle.ol": "r",
+    "Rectus posterior major capitis muscle.or": "l",
+    "Scalenus anterior muscle.e1l": "r",
+    "Scalenus anterior muscle.e1r": "l",
+    "Scalenus anterior muscle.e2l": "r",
+    "Scalenus anterior muscle.e2r": "l",
+    "Scalenus anterior muscle.el": "r",
+    "Scalenus anterior muscle.er": "l",
+    "Scalenus medius muscle.e1l": "r",
+    "Scalenus medius muscle.e1r": "l",
+    "Scalenus medius muscle.el": "r",
+    "Scalenus medius muscle.er": "l",
+    "Scalenus posterior muscle.el": "r",
+    "Scalenus posterior muscle.er": "l",
+    "Serratus anterior muscle.e1l": "r",
+    "Serratus anterior muscle.e2l": "r",
+    "Serratus anterior muscle.e2r": "l",
+    "Serratus anterior muscle.e8l": "r",
+    "Serratus posterior inferior muscle.e1l": "r",
+    "Serratus posterior inferior muscle.e2l": "r",
+    "Serratus posterior inferior muscle.e3l": "r",
+    "Serratus posterior inferior muscle.el": "r",
+    "Serratus posterior superior muscle.e1l": "r",
+    "Serratus posterior superior muscle.e2l": "r",
+    "Serratus posterior superior muscle.e3l": "r",
+    "Serratus posterior superior muscle.el": "r",
+    "Short head of biceps brachii.ol": "r",
+    "Short head of biceps femoris.el": "r",
+}
+SIDE_MARGIN = 0.015     # metres from the midline before the geometry overrules the suffix
+
+
+def side_of_object(name, centroid_x):
+    """The side an object is on: its suffix, unless the object's world centroid
+    sits more than SIDE_MARGIN on the other side of the midline (+X is left),
+    in which case the geometry wins. Every such case must be in SIDE_CORRECTED,
+    and every SIDE_CORRECTED entry must be such a case."""
+    suffix = side_of(name)
+    geometric = suffix
+    if suffix == "l" and centroid_x < -SIDE_MARGIN:
+        geometric = "r"
+    elif suffix == "r" and centroid_x > SIDE_MARGIN:
+        geometric = "l"
+    expected = SIDE_CORRECTED.get(name)
+    if geometric != suffix and expected != geometric:
+        raise AssertionError("%s: suffix says %s, geometry (x=%.3f) says %s, SIDE_CORRECTED says %s"
+                             % (name, suffix, centroid_x, geometric, expected))
+    if expected is not None and geometric == suffix:
+        raise AssertionError("%s: SIDE_CORRECTED says %s but the geometry (x=%.3f) agrees with the suffix %s"
+                             % (name, expected, centroid_x, suffix))
+    return geometric
+
+
 def twin_of(name):
     """Name of the contralateral object, or None if the name has no side."""
     m = SIDE_SUFFIX.match(name)

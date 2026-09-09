@@ -866,33 +866,9 @@
     }
    ],
    "sideMismatches": {
-    "count": 25,
+    "count": 1,
     "names": [
-     "Pectineus muscle.el",
-     "Piriformis muscle.el",
-     "Plantar interossei muscles.e1l",
-     "Plantar interossei muscles.e2l",
-     "Plantar interossei muscles.el",
-     "Plantar interossei muscles.o1l",
-     "Plantar interossei muscles.o2l",
-     "Plantar interossei muscles.ol",
-     "Procerus muscle.el",
-     "Pronator quadratus.el",
-     "Pronator quadratus.ol",
-     "Serratus anterior muscle.e1l",
-     "Serratus anterior muscle.e2l",
-     "Serratus anterior muscle.e2r",
-     "Serratus anterior muscle.e8l",
-     "Serratus posterior inferior muscle.e1l",
-     "Serratus posterior inferior muscle.e2l",
-     "Serratus posterior inferior muscle.e3l",
-     "Serratus posterior inferior muscle.el",
-     "Serratus posterior superior muscle.e1l",
-     "Serratus posterior superior muscle.e2l",
-     "Serratus posterior superior muscle.e3l",
-     "Serratus posterior superior muscle.el",
-     "Short head of biceps brachii.ol",
-     "Short head of biceps femoris.el"
+     "Procerus muscle.el"
     ],
     "note": "insertion names whose .l/.r disagrees with the side of the Z-Anatomy bone the patch sits on; the geometry's side is used"
    },
@@ -1563,7 +1539,7 @@
    }
   },
   "seamMaxMm": 10.535,
-  "seconds": 17.5
+  "seconds": 17.3
  },
  "parts": 1385,
  "concepts": 1385

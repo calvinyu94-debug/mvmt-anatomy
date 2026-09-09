@@ -3,8 +3,8 @@ Articular capsule of temporomandibular joint.l,head-jaw,articular,l,hierarchy,Jo
 Articular capsule of temporomandibular joint.r,head-jaw,articular,r,hierarchy,Joints of skull,200
 Articular disc of temporomandibular joint.l,head-jaw,articular,l,hierarchy,Joints of skull,288
 Articular disc of temporomandibular joint.r,head-jaw,articular,r,hierarchy,Joints of skull,288
-Lateral temporomandibular ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,24
-Lateral temporomandibular ligament.r,head-jaw,articular,r,hierarchy,Joints of skull,24
+Lateral temporomandibular ligament.l,head-jaw,articular,r,hierarchy,Joints of skull,24
+Lateral temporomandibular ligament.r,head-jaw,articular,l,hierarchy,Joints of skull,24
 Pterygospinous ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,2
 Pterygospinous ligament.r,head-jaw,articular,r,hierarchy,Joints of skull,2
 Sphenomandibular ligament.l,head-jaw,articular,l,hierarchy,Joints of skull,26
@@ -272,36 +272,36 @@ Omohyoid muscle.el,cervical,insertion,l,parent,Omohyoid muscle.l,15
 Omohyoid muscle.er,cervical,insertion,r,parent,Omohyoid muscle.r,15
 Omohyoid muscle.ol,cervical,insertion,l,parent,Omohyoid muscle.l,73
 Omohyoid muscle.or,cervical,insertion,r,parent,Omohyoid muscle.r,73
-Rectus anterior capitis muscle.el,cervical,insertion,l,parent,Rectus anterior capitis muscle.l,21
-Rectus anterior capitis muscle.er,cervical,insertion,r,parent,Rectus anterior capitis muscle.r,21
+Rectus anterior capitis muscle.el,cervical,insertion,r,parent,Rectus anterior capitis muscle.l,21
+Rectus anterior capitis muscle.er,cervical,insertion,l,parent,Rectus anterior capitis muscle.r,21
 Rectus anterior capitis muscle.ol,cervical,insertion,l,parent,Rectus anterior capitis muscle.l,7
 Rectus anterior capitis muscle.or,cervical,insertion,r,parent,Rectus anterior capitis muscle.r,7
-Rectus lateralis capitis muscle.ol,cervical,insertion,l,parent,Rectus lateralis capitis muscle.l,31
-Rectus lateralis capitis muscle.or,cervical,insertion,r,parent,Rectus lateralis capitis muscle.r,31
+Rectus lateralis capitis muscle.ol,cervical,insertion,r,parent,Rectus lateralis capitis muscle.l,31
+Rectus lateralis capitis muscle.or,cervical,insertion,l,parent,Rectus lateralis capitis muscle.r,31
 Rectus posterior major capitis muscle.el,cervical,insertion,l,parent,Rectus posterior major capitis muscle.l,19
 Rectus posterior major capitis muscle.er,cervical,insertion,r,parent,Rectus posterior major capitis muscle.r,19
-Rectus posterior major capitis muscle.ol,cervical,insertion,l,parent,Rectus posterior major capitis muscle.l,17
-Rectus posterior major capitis muscle.or,cervical,insertion,r,parent,Rectus posterior major capitis muscle.r,17
+Rectus posterior major capitis muscle.ol,cervical,insertion,r,parent,Rectus posterior major capitis muscle.l,17
+Rectus posterior major capitis muscle.or,cervical,insertion,l,parent,Rectus posterior major capitis muscle.r,17
 Rectus posterior minor capitis muscle.el,cervical,insertion,l,parent,Rectus posterior minor capitis muscle.l,33
 Rectus posterior minor capitis muscle.er,cervical,insertion,r,parent,Rectus posterior minor capitis muscle.r,33
 Rectus posterior minor capitis muscle.ol,cervical,insertion,l,parent,Rectus posterior minor capitis muscle.l,17
 Rectus posterior minor capitis muscle.or,cervical,insertion,r,parent,Rectus posterior minor capitis muscle.r,17
-Scalenus anterior muscle.e1l,cervical,insertion,l,parent,Scalenus anterior muscle.l,18
-Scalenus anterior muscle.e1r,cervical,insertion,r,parent,Scalenus anterior muscle.r,18
-Scalenus anterior muscle.e2l,cervical,insertion,l,parent,Scalenus anterior muscle.l,10
-Scalenus anterior muscle.e2r,cervical,insertion,r,parent,Scalenus anterior muscle.r,10
-Scalenus anterior muscle.el,cervical,insertion,l,parent,Scalenus anterior muscle.l,24
-Scalenus anterior muscle.er,cervical,insertion,r,parent,Scalenus anterior muscle.r,24
+Scalenus anterior muscle.e1l,cervical,insertion,r,parent,Scalenus anterior muscle.l,18
+Scalenus anterior muscle.e1r,cervical,insertion,l,parent,Scalenus anterior muscle.r,18
+Scalenus anterior muscle.e2l,cervical,insertion,r,parent,Scalenus anterior muscle.l,10
+Scalenus anterior muscle.e2r,cervical,insertion,l,parent,Scalenus anterior muscle.r,10
+Scalenus anterior muscle.el,cervical,insertion,r,parent,Scalenus anterior muscle.l,24
+Scalenus anterior muscle.er,cervical,insertion,l,parent,Scalenus anterior muscle.r,24
 Scalenus anterior muscle.ol,cervical,insertion,l,parent,Scalenus anterior muscle.l,78
 Scalenus anterior muscle.or,cervical,insertion,r,parent,Scalenus anterior muscle.r,78
-Scalenus medius muscle.e1l,cervical,insertion,l,parent,Scalenus medius muscle.l,27
-Scalenus medius muscle.e1r,cervical,insertion,r,parent,Scalenus medius muscle.r,27
-Scalenus medius muscle.el,cervical,insertion,l,parent,Scalenus medius muscle.l,39
-Scalenus medius muscle.er,cervical,insertion,r,parent,Scalenus medius muscle.r,39
+Scalenus medius muscle.e1l,cervical,insertion,r,parent,Scalenus medius muscle.l,27
+Scalenus medius muscle.e1r,cervical,insertion,l,parent,Scalenus medius muscle.r,27
+Scalenus medius muscle.el,cervical,insertion,r,parent,Scalenus medius muscle.l,39
+Scalenus medius muscle.er,cervical,insertion,l,parent,Scalenus medius muscle.r,39
 Scalenus medius muscle.ol,cervical,insertion,l,parent,Scalenus medius muscle.l,102
 Scalenus medius muscle.or,cervical,insertion,r,parent,Scalenus medius muscle.r,102
-Scalenus posterior muscle.el,cervical,insertion,l,parent,Scalenus posterior muscle.l,40
-Scalenus posterior muscle.er,cervical,insertion,r,parent,Scalenus posterior muscle.r,40
+Scalenus posterior muscle.el,cervical,insertion,r,parent,Scalenus posterior muscle.l,40
+Scalenus posterior muscle.er,cervical,insertion,l,parent,Scalenus posterior muscle.r,40
 Spinalis capitis muscle.el,cervical,insertion,l,parent,Spinalis capitis muscle.l,25
 Spinalis capitis muscle.er,cervical,insertion,r,parent,Spinalis capitis muscle.r,25
 Splenius colli muscle.e1l,cervical,insertion,l,parent,Splenius colli muscle.l,46
@@ -517,9 +517,9 @@ Rhomboid minor muscle.el,shoulder,insertion,l,parent,Rhomboid minor muscle.l,354
 Rhomboid minor muscle.er,shoulder,insertion,r,parent,Rhomboid minor muscle.r,354
 Scapular spinal part of deltoid muscle.ol,shoulder,insertion,l,parent,Scapular spinal part of deltoid muscle.l,872
 Scapular spinal part of deltoid muscle.or,shoulder,insertion,r,parent,Scapular spinal part of deltoid muscle.r,872
-Serratus anterior muscle.e1l,shoulder,insertion,l,parent,Serratus anterior muscle.l,143
-Serratus anterior muscle.e2l,shoulder,insertion,l,parent,Serratus anterior muscle.l,194
-Serratus anterior muscle.e2r,shoulder,insertion,r,parent,Serratus anterior muscle.r,194
+Serratus anterior muscle.e1l,shoulder,insertion,r,parent,Serratus anterior muscle.l,143
+Serratus anterior muscle.e2l,shoulder,insertion,r,parent,Serratus anterior muscle.l,194
+Serratus anterior muscle.e2r,shoulder,insertion,l,parent,Serratus anterior muscle.r,194
 Serratus anterior muscle.e3l,shoulder,insertion,l,parent,Serratus anterior muscle.l,315
 Serratus anterior muscle.e3r,shoulder,insertion,r,parent,Serratus anterior muscle.r,315
 Serratus anterior muscle.e4l,shoulder,insertion,l,parent,Serratus anterior muscle.l,125
@@ -530,7 +530,7 @@ Serratus anterior muscle.e6l,shoulder,insertion,l,parent,Serratus anterior muscl
 Serratus anterior muscle.e6r,shoulder,insertion,r,parent,Serratus anterior muscle.r,210
 Serratus anterior muscle.e7l,shoulder,insertion,l,parent,Serratus anterior muscle.l,133
 Serratus anterior muscle.e7r,shoulder,insertion,r,parent,Serratus anterior muscle.r,133
-Serratus anterior muscle.e8l,shoulder,insertion,l,parent,Serratus anterior muscle.l,98
+Serratus anterior muscle.e8l,shoulder,insertion,r,parent,Serratus anterior muscle.l,98
 Serratus anterior muscle.el,shoulder,insertion,l,parent,Serratus anterior muscle.l,128
 Serratus anterior muscle.er,shoulder,insertion,r,parent,Serratus anterior muscle.r,128
 Serratus anterior muscle.ol,shoulder,insertion,l,parent,Serratus anterior muscle.l,306
@@ -754,14 +754,14 @@ Longissimus thoracis muscle.e9l,thoracic,insertion,l,parent,Longissimus thoracis
 Longissimus thoracis muscle.e9r,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,28
 Longissimus thoracis muscle.el,thoracic,insertion,l,parent,Longissimus thoracis muscle.l,24
 Longissimus thoracis muscle.er,thoracic,insertion,r,parent,Longissimus thoracis muscle.r,24
-Serratus posterior inferior muscle.e1l,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,101
-Serratus posterior inferior muscle.e2l,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,46
-Serratus posterior inferior muscle.e3l,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,60
-Serratus posterior inferior muscle.el,thoracic,insertion,l,parent,Serratus posterior inferior muscle.l,98
-Serratus posterior superior muscle.e1l,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,149
-Serratus posterior superior muscle.e2l,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,382
-Serratus posterior superior muscle.e3l,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,297
-Serratus posterior superior muscle.el,thoracic,insertion,l,parent,Serratus posterior superior muscle.l,155
+Serratus posterior inferior muscle.e1l,thoracic,insertion,r,parent,Serratus posterior inferior muscle.l,101
+Serratus posterior inferior muscle.e2l,thoracic,insertion,r,parent,Serratus posterior inferior muscle.l,46
+Serratus posterior inferior muscle.e3l,thoracic,insertion,r,parent,Serratus posterior inferior muscle.l,60
+Serratus posterior inferior muscle.el,thoracic,insertion,r,parent,Serratus posterior inferior muscle.l,98
+Serratus posterior superior muscle.e1l,thoracic,insertion,r,parent,Serratus posterior superior muscle.l,149
+Serratus posterior superior muscle.e2l,thoracic,insertion,r,parent,Serratus posterior superior muscle.l,382
+Serratus posterior superior muscle.e3l,thoracic,insertion,r,parent,Serratus posterior superior muscle.l,297
+Serratus posterior superior muscle.el,thoracic,insertion,r,parent,Serratus posterior superior muscle.l,155
 Transversus thoracis muscle.o1l,thoracic,insertion,l,parent,Transversus thoracis muscle.l,64
 Transversus thoracis muscle.o1r,thoracic,insertion,r,parent,Transversus thoracis muscle.r,64
 Transversus thoracis muscle.ol,thoracic,insertion,l,parent,Transversus thoracis muscle.l,264
@@ -1035,12 +1035,12 @@ Obturator externus.ol,hip,insertion,l,parent,Obturator externus.l,204
 Obturator externus.or,hip,insertion,r,parent,Obturator externus.r,204
 Obturator internus.ol,hip,insertion,l,parent,Obturator internus.l,121
 Obturator internus.or,hip,insertion,r,parent,Obturator internus.r,121
-Pectineus muscle.el,hip,insertion,l,parent,Pectineus muscle.l,17
+Pectineus muscle.el,hip,insertion,r,parent,Pectineus muscle.l,17
 Pectineus muscle.ol,hip,insertion,l,parent,Pectineus muscle.l,63
 Pectineus muscle.or,hip,insertion,r,parent,Pectineus muscle.r,63
-Piriformis muscle.el,hip,insertion,l,parent,Piriformis muscle.l,22
-Piriformis muscle.ol,hip,insertion,l,parent,Piriformis muscle.l,152
-Piriformis muscle.or,hip,insertion,r,parent,Piriformis muscle.r,152
+Piriformis muscle.el,hip,insertion,r,parent,Piriformis muscle.l,22
+Piriformis muscle.ol,hip,insertion,r,parent,Piriformis muscle.l,152
+Piriformis muscle.or,hip,insertion,l,parent,Piriformis muscle.r,152
 Quadratus femoris muscle.el,hip,insertion,l,parent,Quadratus femoris muscle.l,43
 Quadratus femoris muscle.er,hip,insertion,r,parent,Quadratus femoris muscle.r,43
 Quadratus femoris muscle.ol,hip,insertion,l,parent,Quadratus femoris muscle.l,27
@@ -1059,7 +1059,7 @@ Semitendinosus muscle.el,hip,insertion,l,parent,Semitendinosus muscle.l,28
 Semitendinosus muscle.er,hip,insertion,r,parent,Semitendinosus muscle.r,28
 Semitendinosus muscle.ol,hip,insertion,l,parent,Semitendinosus muscle.l,55
 Semitendinosus muscle.or,hip,insertion,r,parent,Semitendinosus muscle.r,55
-Short head of biceps femoris.el,hip,insertion,l,parent,Short head of biceps femoris.l,65
+Short head of biceps femoris.el,hip,insertion,r,parent,Short head of biceps femoris.l,65
 Superior gemellus muscle.ol,hip,insertion,l,parent,Superior gemellus muscle.l,39
 Superior gemellus muscle.or,hip,insertion,r,parent,Superior gemellus muscle.r,39
 Tensor fasciae latae.ol,hip,insertion,l,parent,Tensor fasciae latae.l,19
@@ -1490,13 +1490,13 @@ Medial head of triceps brachii.ol,elbow-wrist,insertion,l,parent,Medial head of 
 Medial head of triceps brachii.or,elbow-wrist,insertion,r,parent,Medial head of triceps brachii.r,97
 Opponens digiti minimi muscle of hand.ol,elbow-wrist,insertion,l,parent,Opponens digiti minimi muscle of hand.l,16
 Opponens digiti minimi muscle of hand.or,elbow-wrist,insertion,r,parent,Opponens digiti minimi muscle of hand.r,16
-Pronator quadratus.el,elbow-wrist,insertion,l,parent,Pronator quadratus.l,39
-Pronator quadratus.ol,elbow-wrist,insertion,l,parent,Pronator quadratus.l,13
+Pronator quadratus.el,elbow-wrist,insertion,r,parent,Pronator quadratus.l,39
+Pronator quadratus.ol,elbow-wrist,insertion,r,parent,Pronator quadratus.l,13
 Pronator teres.el,elbow-wrist,insertion,l,centroid,z=0.993 |x|=0.262 y=+0.016,16
 Pronator teres.er,elbow-wrist,insertion,r,centroid,z=0.993 |x|=0.262 y=+0.016,16
 Pronator teres.ol,elbow-wrist,insertion,l,centroid,z=1.119 |x|=0.198 y=+0.033,16
 Pronator teres.or,elbow-wrist,insertion,r,centroid,z=1.119 |x|=0.198 y=+0.033,16
-Short head of biceps brachii.ol,elbow-wrist,insertion,l,parent,Short head of biceps brachii.l,195
+Short head of biceps brachii.ol,elbow-wrist,insertion,r,parent,Short head of biceps brachii.l,195
 Supinator.el,elbow-wrist,insertion,l,parent,Supinator.l,90
 Supinator.er,elbow-wrist,insertion,r,parent,Supinator.r,90
 Supinator.ol,elbow-wrist,insertion,l,parent,Supinator.l,29
@@ -1867,12 +1867,12 @@ Oblique head of adductor hallucis.o1l,ankle-foot,insertion,l,parent,Oblique head
 Oblique head of adductor hallucis.o1r,ankle-foot,insertion,r,parent,Oblique head of adductor hallucis.r,76
 Oblique head of adductor hallucis.ol,ankle-foot,insertion,l,parent,Oblique head of adductor hallucis.l,31
 Oblique head of adductor hallucis.or,ankle-foot,insertion,r,parent,Oblique head of adductor hallucis.r,31
-Plantar interossei muscles.e1l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,18
-Plantar interossei muscles.e2l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,15
-Plantar interossei muscles.el,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,15
-Plantar interossei muscles.o1l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,27
-Plantar interossei muscles.o2l,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,42
-Plantar interossei muscles.ol,ankle-foot,insertion,l,parent,Plantar interossei muscles.l,25
+Plantar interossei muscles.e1l,ankle-foot,insertion,r,parent,Plantar interossei muscles.l,18
+Plantar interossei muscles.e2l,ankle-foot,insertion,r,parent,Plantar interossei muscles.l,15
+Plantar interossei muscles.el,ankle-foot,insertion,r,parent,Plantar interossei muscles.l,15
+Plantar interossei muscles.o1l,ankle-foot,insertion,r,parent,Plantar interossei muscles.l,27
+Plantar interossei muscles.o2l,ankle-foot,insertion,r,parent,Plantar interossei muscles.l,42
+Plantar interossei muscles.ol,ankle-foot,insertion,r,parent,Plantar interossei muscles.l,25
 Plantaris muscle.ol,ankle-foot,insertion,l,parent,Plantaris muscle.l,38
 Plantaris muscle.or,ankle-foot,insertion,r,parent,Plantaris muscle.r,38
 Soleus muscle.o1l,ankle-foot,insertion,l,parent,Soleus muscle.l,60

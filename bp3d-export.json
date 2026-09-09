@@ -16,65 +16,65 @@
  "chunks": [
   {
    "url": "/models/mvmt-head-jaw.bin",
-   "bytes": 223924,
+   "bytes": 213636,
    "region": "head-jaw",
-   "triangles": 9513,
+   "triangles": 9121,
    "parts": 88
   },
   {
    "url": "/models/mvmt-cervical.bin",
-   "bytes": 589772,
+   "bytes": 735464,
    "region": "cervical",
-   "triangles": 26567,
-   "parts": 110
+   "triangles": 33455,
+   "parts": 139
   },
   {
    "url": "/models/mvmt-shoulder.bin",
-   "bytes": 1343028,
+   "bytes": 1305956,
    "region": "shoulder",
-   "triangles": 59331,
+   "triangles": 57787,
    "parts": 161
   },
   {
    "url": "/models/mvmt-thoracic.bin",
-   "bytes": 1222388,
+   "bytes": 1466240,
    "region": "thoracic",
-   "triangles": 56067,
-   "parts": 145
+   "triangles": 67595,
+   "parts": 194
   },
   {
    "url": "/models/mvmt-lumbar.bin",
-   "bytes": 1093380,
+   "bytes": 1234568,
    "region": "lumbar",
-   "triangles": 49703,
-   "parts": 93
+   "triangles": 56495,
+   "parts": 122
   },
   {
    "url": "/models/mvmt-hip.bin",
-   "bytes": 2658548,
+   "bytes": 2606724,
    "region": "hip",
-   "triangles": 122236,
+   "triangles": 120108,
    "parts": 141
   },
   {
    "url": "/models/mvmt-knee.bin",
-   "bytes": 1054564,
+   "bytes": 1017492,
    "region": "knee",
-   "triangles": 47648,
+   "triangles": 46104,
    "parts": 102
   },
   {
    "url": "/models/mvmt-elbow-wrist.bin",
-   "bytes": 1339944,
+   "bytes": 1246584,
    "region": "elbow-wrist",
-   "triangles": 58685,
+   "triangles": 54821,
    "parts": 285
   },
   {
    "url": "/models/mvmt-ankle-foot.bin",
-   "bytes": 1199252,
+   "bytes": 1171108,
    "region": "ankle-foot",
-   "triangles": 52910,
+   "triangles": 51750,
    "parts": 260
   }
  ],
@@ -84,12 +84,12 @@
    "name": "Head & jaw",
    "chunk": 0,
    "parts": 88,
-   "triangles": 9513,
-   "bytes": 223924,
+   "triangles": 9121,
+   "bytes": 213636,
    "bounds": [
     [
      -0.07926956252348051,
-     1.4403724562762719,
+     1.440568459527561,
      -0.1177300001899898
     ],
     [
@@ -188,16 +188,41 @@
     "LM-lm-c1-transverse-l",
     "LM-lm-c1-transverse-r",
     "LM-lm-c2-spinous",
-    "SC-spinal-cord-schematic-cervical"
+    "SC-spinal-cord-schematic-cervical",
+    "SC-spinal-root-c1-dorsal-l",
+    "SC-spinal-root-c1-ventral-l",
+    "SC-spinal-root-c1-dorsal-r",
+    "SC-spinal-root-c1-ventral-r",
+    "SC-spinal-root-c2-dorsal-l",
+    "SC-spinal-root-c2-ventral-l",
+    "SC-spinal-root-c2-dorsal-r",
+    "SC-spinal-root-c2-ventral-r",
+    "SC-spinal-root-c3-dorsal-l",
+    "SC-spinal-root-c3-ventral-l",
+    "SC-spinal-root-c3-dorsal-r",
+    "SC-spinal-root-c3-ventral-r",
+    "SC-spinal-root-c4-dorsal-l",
+    "SC-spinal-root-c4-ventral-l",
+    "SC-spinal-root-c4-dorsal-r",
+    "SC-spinal-root-c4-ventral-r",
+    "SC-spinal-root-c5-dorsal-l",
+    "SC-spinal-root-c5-ventral-l",
+    "SC-spinal-root-c5-dorsal-r",
+    "SC-spinal-root-c5-ventral-r",
+    "SC-spinal-root-c6-dorsal-l",
+    "SC-spinal-root-c6-ventral-l",
+    "SC-spinal-root-c6-dorsal-r",
+    "SC-spinal-root-c6-ventral-r",
+    "SC-dura-mater-schematic-cervical"
    ]
   },
   {
    "id": "cervical",
    "name": "Cervical",
    "chunk": 1,
-   "parts": 110,
-   "triangles": 26567,
-   "bytes": 589772,
+   "parts": 139,
+   "triangles": 33455,
+   "bytes": 735464,
    "bounds": [
     [
      -0.17012295325829488,
@@ -315,7 +340,24 @@
     "ZA-longissimus-thoracis-muscle-e25r",
     "ZA-serratus-posterior-superior-muscle-el",
     "LM-lm-jugular-notch",
-    "SC-spinal-cord-schematic-thoracic"
+    "SC-spinal-cord-schematic-thoracic",
+    "SC-spinal-root-t1-dorsal-l",
+    "SC-spinal-root-t1-ventral-l",
+    "SC-spinal-root-t1-dorsal-r",
+    "SC-spinal-root-t1-ventral-r",
+    "SC-spinal-root-t2-dorsal-l",
+    "SC-spinal-root-t2-ventral-l",
+    "SC-spinal-root-t2-dorsal-r",
+    "SC-spinal-root-t2-ventral-r",
+    "SC-spinal-root-t3-dorsal-l",
+    "SC-spinal-root-t3-ventral-l",
+    "SC-spinal-root-t3-dorsal-r",
+    "SC-spinal-root-t3-ventral-r",
+    "SC-spinal-root-t4-dorsal-l",
+    "SC-spinal-root-t4-ventral-l",
+    "SC-spinal-root-t4-dorsal-r",
+    "SC-spinal-root-t4-ventral-r",
+    "SC-dura-mater-schematic-thoracic"
    ]
   },
   {
@@ -323,8 +365,8 @@
    "name": "Shoulder",
    "chunk": 2,
    "parts": 161,
-   "triangles": 59331,
-   "bytes": 1343028,
+   "triangles": 57787,
+   "bytes": 1305956,
    "bounds": [
     [
      -0.2282858625971483,
@@ -442,6 +484,43 @@
     "ZA-transversus-thoracis-muscle-or",
     "LM-lm-sternal-angle",
     "SC-spinal-cord-schematic-thoracic",
+    "SC-spinal-root-t4-dorsal-l",
+    "SC-spinal-root-t4-ventral-l",
+    "SC-spinal-root-t4-dorsal-r",
+    "SC-spinal-root-t4-ventral-r",
+    "SC-spinal-root-t5-dorsal-l",
+    "SC-spinal-root-t5-ventral-l",
+    "SC-spinal-root-t5-dorsal-r",
+    "SC-spinal-root-t5-ventral-r",
+    "SC-spinal-root-t6-dorsal-l",
+    "SC-spinal-root-t6-ventral-l",
+    "SC-spinal-root-t6-dorsal-r",
+    "SC-spinal-root-t6-ventral-r",
+    "SC-spinal-root-t7-dorsal-l",
+    "SC-spinal-root-t7-ventral-l",
+    "SC-spinal-root-t7-dorsal-r",
+    "SC-spinal-root-t7-ventral-r",
+    "SC-spinal-root-t8-dorsal-l",
+    "SC-spinal-root-t8-ventral-l",
+    "SC-spinal-root-t8-dorsal-r",
+    "SC-spinal-root-t8-ventral-r",
+    "SC-spinal-root-t9-dorsal-l",
+    "SC-spinal-root-t9-ventral-l",
+    "SC-spinal-root-t9-dorsal-r",
+    "SC-spinal-root-t9-ventral-r",
+    "SC-spinal-root-t10-dorsal-l",
+    "SC-spinal-root-t10-ventral-l",
+    "SC-spinal-root-t10-dorsal-r",
+    "SC-spinal-root-t10-ventral-r",
+    "SC-spinal-root-t11-dorsal-l",
+    "SC-spinal-root-t11-ventral-l",
+    "SC-spinal-root-t11-dorsal-r",
+    "SC-spinal-root-t11-ventral-r",
+    "SC-spinal-root-t12-dorsal-l",
+    "SC-spinal-root-t12-ventral-l",
+    "SC-spinal-root-t12-dorsal-r",
+    "SC-spinal-root-t12-ventral-r",
+    "SC-dura-mater-schematic-thoracic",
     "ZA-brachial-fascia-l",
     "ZA-brachial-fascia-r",
     "ZA-lateral-intermuscular-septum-of-arm-l",
@@ -461,19 +540,19 @@
     "ZA-short-head-of-biceps-brachii-ol",
     "NV-nerve-median-l",
     "NV-nerve-median-r",
-    "NV-nerve-radial-l",
-    "NV-nerve-radial-r",
     "NV-nerve-ulnar-l",
-    "NV-nerve-ulnar-r"
+    "NV-nerve-ulnar-r",
+    "NV-nerve-radial-l",
+    "NV-nerve-radial-r"
    ]
   },
   {
    "id": "thoracic",
    "name": "Thoracic",
    "chunk": 3,
-   "parts": 145,
-   "triangles": 56067,
-   "bytes": 1222388,
+   "parts": 194,
+   "triangles": 67595,
+   "bytes": 1466240,
    "bounds": [
     [
      -0.12792372527143114,
@@ -526,17 +605,20 @@
     "ZA-rectus-abdominis-muscle-ol",
     "ZA-rectus-abdominis-muscle-or",
     "SC-spinal-cord-schematic-lumbar",
-    "SC-cauda-equina-schematic-strand-5",
-    "SC-cauda-equina-schematic-strand-6"
+    "SC-spinal-root-l1-dorsal-l",
+    "SC-spinal-root-l1-ventral-l",
+    "SC-spinal-root-l1-dorsal-r",
+    "SC-spinal-root-l1-ventral-r",
+    "SC-dura-mater-schematic-lumbar"
    ]
   },
   {
    "id": "lumbar",
    "name": "Lumbar",
    "chunk": 4,
-   "parts": 93,
-   "triangles": 49703,
-   "bytes": 1093380,
+   "parts": 122,
+   "triangles": 56495,
+   "bytes": 1234568,
    "bounds": [
     [
      -0.1653609473273657,
@@ -604,10 +686,10 @@
     "ZA-sartorius-muscle-or",
     "ZA-tensor-fasciae-latae-ol",
     "ZA-tensor-fasciae-latae-or",
-    "NV-nerve-femoral-l",
-    "NV-nerve-femoral-r",
     "NV-nerve-sciatic-l",
     "NV-nerve-sciatic-r",
+    "NV-nerve-femoral-l",
+    "NV-nerve-femoral-r",
     "LM-lm-iliac-crest-l",
     "LM-lm-iliac-crest-r",
     "LM-lm-asis-l",
@@ -619,8 +701,8 @@
    "name": "Hip",
    "chunk": 5,
    "parts": 141,
-   "triangles": 122236,
-   "bytes": 2658548,
+   "triangles": 120108,
+   "bytes": 2606724,
    "bounds": [
     [
      -0.16252228196797036,
@@ -662,9 +744,7 @@
     "ZA-levator-ani-ol",
     "ZA-levator-ani-or",
     "ZA-rectus-abdominis-muscle-el",
-    "ZA-rectus-abdominis-muscle-er",
-    "NV-nerve-lumbosacral-plexus-l",
-    "NV-nerve-lumbosacral-plexus-r"
+    "ZA-rectus-abdominis-muscle-er"
    ]
   },
   {
@@ -672,18 +752,18 @@
    "name": "Knee",
    "chunk": 6,
    "parts": 102,
-   "triangles": 47648,
-   "bytes": 1054564,
+   "triangles": 46104,
+   "bytes": 1017492,
    "bounds": [
     [
-     -0.13545672930146085,
-     0.07421674871915783,
+     -0.13496740811322389,
+     0.0756857366255526,
      -0.07433846855531169
     ],
     [
-     0.13544470683025417,
+     0.13495616355719162,
      0.5828915375962523,
-     0.036411729295500024
+     0.03569251665276348
     ]
    ],
    "spanningParts": [
@@ -718,10 +798,10 @@
     "ZA-vastus-lateralis-muscle-or",
     "ZA-vastus-medialis-muscle-ol",
     "ZA-vastus-medialis-muscle-or",
-    "NV-nerve-femoral-l",
-    "NV-nerve-femoral-r",
     "NV-nerve-sciatic-l",
     "NV-nerve-sciatic-r",
+    "NV-nerve-femoral-l",
+    "NV-nerve-femoral-r",
     "ZA-anterior-intermuscular-septum-of-leg-l",
     "ZA-anterior-intermuscular-septum-of-leg-r",
     "ZA-crural-fascia-l",
@@ -763,8 +843,8 @@
    "name": "Elbow & wrist",
    "chunk": 7,
    "parts": 285,
-   "triangles": 58685,
-   "bytes": 1339944,
+   "triangles": 54821,
+   "bytes": 1246584,
    "bounds": [
     [
      -0.32518168174663376,
@@ -788,8 +868,8 @@
    "name": "Ankle & foot",
    "chunk": 8,
    "parts": 260,
-   "triangles": 52910,
-   "bytes": 1199252,
+   "triangles": 51750,
+   "bytes": 1171108,
    "bounds": [
     [
      -0.16539705065013238,
@@ -811,13 +891,13 @@
   }
  ],
  "report": {
-  "meshes": 1385,
-  "parts": 1385,
-  "concepts": 1385,
+  "meshes": 1492,
+  "parts": 1492,
+  "concepts": 1387,
   "bySystem": {
    "central-nerves": {
-    "parts": 13,
-    "triangles": 10840
+    "parts": 120,
+    "triangles": 35656
    },
    "fascia": {
     "parts": 165,
@@ -837,7 +917,7 @@
    },
    "peripheral-nerves": {
     "parts": 16,
-    "triangles": 41152
+    "triangles": 30912
    }
   },
   "insertions": {
@@ -866,10 +946,8 @@
     }
    ],
    "sideMismatches": {
-    "count": 1,
-    "names": [
-     "Procerus muscle.el"
-    ],
+    "count": 0,
+    "names": [],
     "note": "insertion names whose .l/.r disagrees with the side of the Z-Anatomy bone the patch sits on; the geometry's side is used"
    },
    "movedOver5mmMean": 148,
@@ -1106,6 +1184,803 @@
     }
    ]
   },
+  "fitConfidence": {
+   "rule": "low when more than 20% of sampled vertices lie further than 6 mm from any BP3D bone or muscle surface",
+   "bySystem": {
+    "ligaments": {
+     "parts": 409,
+     "low": 23
+    },
+    "fascia": {
+     "parts": 165,
+     "low": 52
+    },
+    "peripheral-nerves": {
+     "parts": 16,
+     "low": 10
+    },
+    "central-nerves": {
+     "parts": 120,
+     "low": 44
+    }
+   },
+   "low": [
+    {
+     "name": "Articular capsule of interphalangeal joint of great toe.l",
+     "system": "ligaments",
+     "farFraction": 1.0,
+     "medianMm": 24.0
+    },
+    {
+     "name": "Articular capsule of interphalangeal joint of great toe.r",
+     "system": "ligaments",
+     "farFraction": 1.0,
+     "medianMm": 23.8
+    },
+    {
+     "name": "Calcaneofibular ligament.l",
+     "system": "ligaments",
+     "farFraction": 1.0,
+     "medianMm": 10.1
+    },
+    {
+     "name": "Calcaneofibular ligament.r",
+     "system": "ligaments",
+     "farFraction": 1.0,
+     "medianMm": 9.8
+    },
+    {
+     "name": "Subcutaneous bursa of lateral malleolus.l",
+     "system": "fascia",
+     "farFraction": 1.0,
+     "medianMm": 9.8
+    },
+    {
+     "name": "Subcutaneous bursa of lateral malleolus.r",
+     "system": "fascia",
+     "farFraction": 1.0,
+     "medianMm": 8.7
+    },
+    {
+     "name": "Anterior tibiofibular ligament.l",
+     "system": "ligaments",
+     "farFraction": 0.938,
+     "medianMm": 9.7
+    },
+    {
+     "name": "Anterior tibiofibular ligament.r",
+     "system": "ligaments",
+     "farFraction": 0.938,
+     "medianMm": 9.3
+    },
+    {
+     "name": "Subtendinous calcaneal bursa.l",
+     "system": "fascia",
+     "farFraction": 0.904,
+     "medianMm": 13.9
+    },
+    {
+     "name": "Subtendinous calcaneal bursa.r",
+     "system": "fascia",
+     "farFraction": 0.904,
+     "medianMm": 14.3
+    },
+    {
+     "name": "Transversalis fascia",
+     "system": "fascia",
+     "farFraction": 0.846,
+     "medianMm": 16.2
+    },
+    {
+     "name": "nerve-lumbosacral-plexus.l",
+     "system": "central-nerves",
+     "farFraction": 0.787,
+     "medianMm": 14.8
+    },
+    {
+     "name": "nerve-lumbosacral-plexus.r",
+     "system": "central-nerves",
+     "farFraction": 0.78,
+     "medianMm": 14.7
+    },
+    {
+     "name": "Subcutaneous calcaneal bursa.l",
+     "system": "fascia",
+     "farFraction": 0.752,
+     "medianMm": 11.8
+    },
+    {
+     "name": "Subcutaneous calcaneal bursa.r",
+     "system": "fascia",
+     "farFraction": 0.752,
+     "medianMm": 11.5
+    },
+    {
+     "name": "Subtendinous bursa of tibialis anterior.r",
+     "system": "fascia",
+     "farFraction": 0.741,
+     "medianMm": 6.8
+    },
+    {
+     "name": "Subtendinous bursa of tibialis anterior.l",
+     "system": "fascia",
+     "farFraction": 0.677,
+     "medianMm": 6.6
+    },
+    {
+     "name": "Subcutaneous prepatellar bursa.l",
+     "system": "fascia",
+     "farFraction": 0.625,
+     "medianMm": 6.4
+    },
+    {
+     "name": "Spinal root C2 dorsal.r",
+     "system": "central-nerves",
+     "farFraction": 0.622,
+     "medianMm": 7.0
+    },
+    {
+     "name": "Subcutaneous prepatellar bursa.r",
+     "system": "fascia",
+     "farFraction": 0.615,
+     "medianMm": 6.4
+    },
+    {
+     "name": "nerve-femoral.r",
+     "system": "peripheral-nerves",
+     "farFraction": 0.57,
+     "medianMm": 6.6
+    },
+    {
+     "name": "nerve-femoral.l",
+     "system": "peripheral-nerves",
+     "farFraction": 0.556,
+     "medianMm": 6.5
+    },
+    {
+     "name": "Cauda equina strand 22 (S2 l)",
+     "system": "central-nerves",
+     "farFraction": 0.551,
+     "medianMm": 6.3
+    },
+    {
+     "name": "Popliteal fascia.l",
+     "system": "fascia",
+     "farFraction": 0.548,
+     "medianMm": 6.6
+    },
+    {
+     "name": "Popliteal fascia.r",
+     "system": "fascia",
+     "farFraction": 0.548,
+     "medianMm": 6.5
+    },
+    {
+     "name": "Crural fascia.l",
+     "system": "fascia",
+     "farFraction": 0.546,
+     "medianMm": 6.6
+    },
+    {
+     "name": "Crural fascia.r",
+     "system": "fascia",
+     "farFraction": 0.542,
+     "medianMm": 6.6
+    },
+    {
+     "name": "Cauda equina strand 6 (L3 l)",
+     "system": "central-nerves",
+     "farFraction": 0.537,
+     "medianMm": 7.2
+    },
+    {
+     "name": "Cauda equina strand 8 (L3 r)",
+     "system": "central-nerves",
+     "farFraction": 0.537,
+     "medianMm": 7.2
+    },
+    {
+     "name": "Subcutaneous infrapatellar bursa.l",
+     "system": "fascia",
+     "farFraction": 0.534,
+     "medianMm": 6.2
+    },
+    {
+     "name": "Cauda equina strand 24 (S2 r)",
+     "system": "central-nerves",
+     "farFraction": 0.534,
+     "medianMm": 6.4
+    },
+    {
+     "name": "Subcutaneous infrapatellar bursa.r",
+     "system": "fascia",
+     "farFraction": 0.53,
+     "medianMm": 6.3
+    },
+    {
+     "name": "Cauda equina strand 10 (L4 l)",
+     "system": "central-nerves",
+     "farFraction": 0.529,
+     "medianMm": 6.6
+    },
+    {
+     "name": "Cauda equina strand 12 (L4 r)",
+     "system": "central-nerves",
+     "farFraction": 0.529,
+     "medianMm": 6.3
+    },
+    {
+     "name": "Spinal root C2 dorsal.l",
+     "system": "central-nerves",
+     "farFraction": 0.522,
+     "medianMm": 6.2
+    },
+    {
+     "name": "Anterior layer of thoracolumbar fascia.l",
+     "system": "fascia",
+     "farFraction": 0.507,
+     "medianMm": 6.1
+    },
+    {
+     "name": "Anterior layer of thoracolumbar fascia.r",
+     "system": "fascia",
+     "farFraction": 0.507,
+     "medianMm": 6.6
+    },
+    {
+     "name": "nerve-common-fibular.l",
+     "system": "peripheral-nerves",
+     "farFraction": 0.507,
+     "medianMm": 6.1
+    },
+    {
+     "name": "Linea alba",
+     "system": "fascia",
+     "farFraction": 0.5,
+     "medianMm": 6.0
+    },
+    {
+     "name": "Anterior intermuscular septum of leg.l",
+     "system": "fascia",
+     "farFraction": 0.5,
+     "medianMm": 5.9
+    },
+    {
+     "name": "Lateral talocalcaneal ligament.l",
+     "system": "ligaments",
+     "farFraction": 0.5,
+     "medianMm": 6.1
+    },
+    {
+     "name": "Lateral talocalcaneal ligament.r",
+     "system": "ligaments",
+     "farFraction": 0.5,
+     "medianMm": 6.1
+    },
+    {
+     "name": "Cauda equina strand 28 (S4 r)",
+     "system": "central-nerves",
+     "farFraction": 0.5,
+     "medianMm": 6.0
+    },
+    {
+     "name": "Cauda equina strand 30 (Co r)",
+     "system": "central-nerves",
+     "farFraction": 0.5,
+     "medianMm": 6.0
+    },
+    {
+     "name": "Anterior intermuscular septum of leg.r",
+     "system": "fascia",
+     "farFraction": 0.489,
+     "medianMm": 5.7
+    },
+    {
+     "name": "Cauda equina strand 29 (Co l)",
+     "system": "central-nerves",
+     "farFraction": 0.487,
+     "medianMm": 5.9
+    },
+    {
+     "name": "nerve-sciatic.r",
+     "system": "peripheral-nerves",
+     "farFraction": 0.486,
+     "medianMm": 5.9
+    },
+    {
+     "name": "Superior fibular retinaculum.l",
+     "system": "fascia",
+     "farFraction": 0.485,
+     "medianMm": 6.0
+    },
+    {
+     "name": "nerve-common-fibular.r",
+     "system": "peripheral-nerves",
+     "farFraction": 0.483,
+     "medianMm": 5.9
+    },
+    {
+     "name": "Cauda equina strand 27 (S4 l)",
+     "system": "central-nerves",
+     "farFraction": 0.482,
+     "medianMm": 5.8
+    },
+    {
+     "name": "Cauda equina strand 11 (L4 r)",
+     "system": "central-nerves",
+     "farFraction": 0.481,
+     "medianMm": 5.9
+    },
+    {
+     "name": "nerve-sciatic.l",
+     "system": "peripheral-nerves",
+     "farFraction": 0.478,
+     "medianMm": 5.9
+    },
+    {
+     "name": "Cauda equina strand 23 (S2 r)",
+     "system": "central-nerves",
+     "farFraction": 0.477,
+     "medianMm": 5.9
+    },
+    {
+     "name": "Cauda equina strand 21 (S2 l)",
+     "system": "central-nerves",
+     "farFraction": 0.472,
+     "medianMm": 5.8
+    },
+    {
+     "name": "Cauda equina strand 9 (L4 l)",
+     "system": "central-nerves",
+     "farFraction": 0.471,
+     "medianMm": 5.5
+    },
+    {
+     "name": "Cauda equina strand 14 (L5 l)",
+     "system": "central-nerves",
+     "farFraction": 0.461,
+     "medianMm": 5.3
+    },
+    {
+     "name": "Cauda equina strand 16 (L5 r)",
+     "system": "central-nerves",
+     "farFraction": 0.453,
+     "medianMm": 5.4
+    },
+    {
+     "name": "Iliopsoas fascia.l",
+     "system": "fascia",
+     "farFraction": 0.452,
+     "medianMm": 4.9
+    },
+    {
+     "name": "Anterior sternoclavicular ligament.r",
+     "system": "ligaments",
+     "farFraction": 0.451,
+     "medianMm": 5.9
+    },
+    {
+     "name": "Cauda equina strand 2 (L2 l)",
+     "system": "central-nerves",
+     "farFraction": 0.446,
+     "medianMm": 4.5
+    },
+    {
+     "name": "Cauda equina strand 4 (L2 r)",
+     "system": "central-nerves",
+     "farFraction": 0.446,
+     "medianMm": 4.5
+    },
+    {
+     "name": "Cauda equina strand 13 (L5 l)",
+     "system": "central-nerves",
+     "farFraction": 0.445,
+     "medianMm": 5.0
+    },
+    {
+     "name": "Cauda equina strand 26 (S3 r)",
+     "system": "central-nerves",
+     "farFraction": 0.44,
+     "medianMm": 5.5
+    },
+    {
+     "name": "Inferior extensor retinaculum of ankle.l",
+     "system": "fascia",
+     "farFraction": 0.439,
+     "medianMm": 5.5
+    },
+    {
+     "name": "Intersesamoid ligament.l",
+     "system": "ligaments",
+     "farFraction": 0.438,
+     "medianMm": 5.5
+    },
+    {
+     "name": "Intersesamoid ligament.r",
+     "system": "ligaments",
+     "farFraction": 0.438,
+     "medianMm": 5.5
+    },
+    {
+     "name": "Cauda equina strand 15 (L5 r)",
+     "system": "central-nerves",
+     "farFraction": 0.438,
+     "medianMm": 5.0
+    },
+    {
+     "name": "Inguinal ligament.l",
+     "system": "fascia",
+     "farFraction": 0.429,
+     "medianMm": 5.3
+    },
+    {
+     "name": "Cauda equina strand 7 (L3 r)",
+     "system": "central-nerves",
+     "farFraction": 0.425,
+     "medianMm": 4.9
+    },
+    {
+     "name": "Superior fibular retinaculum.r",
+     "system": "fascia",
+     "farFraction": 0.419,
+     "medianMm": 5.6
+    },
+    {
+     "name": "Cauda equina strand 18 (S1 l)",
+     "system": "central-nerves",
+     "farFraction": 0.414,
+     "medianMm": 4.8
+    },
+    {
+     "name": "Spinal root C1 dorsal.r",
+     "system": "central-nerves",
+     "farFraction": 0.411,
+     "medianMm": 4.9
+    },
+    {
+     "name": "Cauda equina strand 25 (S3 l)",
+     "system": "central-nerves",
+     "farFraction": 0.41,
+     "medianMm": 5.3
+    },
+    {
+     "name": "Anterior sternoclavicular ligament.l",
+     "system": "ligaments",
+     "farFraction": 0.402,
+     "medianMm": 5.7
+    },
+    {
+     "name": "Calcaneal tendon.r",
+     "system": "fascia",
+     "farFraction": 0.401,
+     "medianMm": 5.0
+    },
+    {
+     "name": "Cauda equina strand 5 (L3 l)",
+     "system": "central-nerves",
+     "farFraction": 0.4,
+     "medianMm": 4.8
+    },
+    {
+     "name": "Cauda equina strand 20 (S1 r)",
+     "system": "central-nerves",
+     "farFraction": 0.395,
+     "medianMm": 4.9
+    },
+    {
+     "name": "Cauda equina strand 1 (L2 l)",
+     "system": "central-nerves",
+     "farFraction": 0.393,
+     "medianMm": 4.8
+    },
+    {
+     "name": "Cauda equina strand 3 (L2 r)",
+     "system": "central-nerves",
+     "farFraction": 0.393,
+     "medianMm": 4.7
+    },
+    {
+     "name": "Inferior extensor retinaculum of ankle.r",
+     "system": "fascia",
+     "farFraction": 0.388,
+     "medianMm": 5.0
+    },
+    {
+     "name": "Superior extensor retinaculum of ankle.l",
+     "system": "fascia",
+     "farFraction": 0.388,
+     "medianMm": 4.9
+    },
+    {
+     "name": "Subcutaneous bursa of tuberosity of tibia.l",
+     "system": "fascia",
+     "farFraction": 0.38,
+     "medianMm": 5.6
+    },
+    {
+     "name": "Calcaneal tendon.l",
+     "system": "fascia",
+     "farFraction": 0.38,
+     "medianMm": 4.5
+    },
+    {
+     "name": "Collateral interphalangeal ligaments of foot.l",
+     "system": "ligaments",
+     "farFraction": 0.366,
+     "medianMm": 3.9
+    },
+    {
+     "name": "Fascia lata.r",
+     "system": "fascia",
+     "farFraction": 0.364,
+     "medianMm": 4.4
+    },
+    {
+     "name": "Subcutaneous bursa of tuberosity of tibia.r",
+     "system": "fascia",
+     "farFraction": 0.364,
+     "medianMm": 5.4
+    },
+    {
+     "name": "Investing abdominal fascia.r",
+     "system": "fascia",
+     "farFraction": 0.359,
+     "medianMm": 3.1
+    },
+    {
+     "name": "Inguinal ligament.r",
+     "system": "fascia",
+     "farFraction": 0.353,
+     "medianMm": 4.8
+    },
+    {
+     "name": "Plantar interphalangeal ligaments.l",
+     "system": "ligaments",
+     "farFraction": 0.349,
+     "medianMm": 2.5
+    },
+    {
+     "name": "Cauda equina strand 17 (S1 l)",
+     "system": "central-nerves",
+     "farFraction": 0.349,
+     "medianMm": 4.7
+    },
+    {
+     "name": "Collateral interphalangeal ligaments of foot.r",
+     "system": "ligaments",
+     "farFraction": 0.347,
+     "medianMm": 3.9
+    },
+    {
+     "name": "Fascia lata.l",
+     "system": "fascia",
+     "farFraction": 0.344,
+     "medianMm": 4.4
+    },
+    {
+     "name": "Iliotibial tract.r",
+     "system": "fascia",
+     "farFraction": 0.337,
+     "medianMm": 4.4
+    },
+    {
+     "name": "Cauda equina strand 19 (S1 r)",
+     "system": "central-nerves",
+     "farFraction": 0.336,
+     "medianMm": 4.8
+    },
+    {
+     "name": "Investing abdominal fascia.l",
+     "system": "fascia",
+     "farFraction": 0.335,
+     "medianMm": 3.0
+    },
+    {
+     "name": "Spinal cord (schematic) cervical",
+     "system": "central-nerves",
+     "farFraction": 0.335,
+     "medianMm": 4.3
+    },
+    {
+     "name": "Iliotibial tract.l",
+     "system": "fascia",
+     "farFraction": 0.333,
+     "medianMm": 4.5
+    },
+    {
+     "name": "Spinal root C1 dorsal.l",
+     "system": "central-nerves",
+     "farFraction": 0.322,
+     "medianMm": 4.0
+    },
+    {
+     "name": "Anterior ligament of fibular head.l",
+     "system": "ligaments",
+     "farFraction": 0.321,
+     "medianMm": 4.9
+    },
+    {
+     "name": "Anterior ligament of fibular head.r",
+     "system": "ligaments",
+     "farFraction": 0.321,
+     "medianMm": 4.7
+    },
+    {
+     "name": "Dura mater (schematic) lumbar",
+     "system": "central-nerves",
+     "farFraction": 0.318,
+     "medianMm": 4.0
+    },
+    {
+     "name": "Inferior subtendinous bursa of biceps femoris muscle.l",
+     "system": "fascia",
+     "farFraction": 0.315,
+     "medianMm": 3.5
+    },
+    {
+     "name": "Inferior subtendinous bursa of biceps femoris muscle.r",
+     "system": "fascia",
+     "farFraction": 0.311,
+     "medianMm": 3.4
+    },
+    {
+     "name": "Spinal cord (schematic) lumbar",
+     "system": "central-nerves",
+     "farFraction": 0.31,
+     "medianMm": 4.0
+    },
+    {
+     "name": "Plantar interphalangeal ligaments.r",
+     "system": "ligaments",
+     "farFraction": 0.306,
+     "medianMm": 2.8
+    },
+    {
+     "name": "Superior extensor retinaculum of ankle.r",
+     "system": "fascia",
+     "farFraction": 0.296,
+     "medianMm": 4.4
+    },
+    {
+     "name": "Articular capsules of distal interphalangeal joints of foot.l",
+     "system": "ligaments",
+     "farFraction": 0.284,
+     "medianMm": 2.8
+    },
+    {
+     "name": "Posterior intermuscular septum of leg.r",
+     "system": "fascia",
+     "farFraction": 0.281,
+     "medianMm": 3.8
+    },
+    {
+     "name": "Spinal root T6 dorsal.l",
+     "system": "central-nerves",
+     "farFraction": 0.278,
+     "medianMm": 2.0
+    },
+    {
+     "name": "Posterior intermuscular septum of leg.l",
+     "system": "fascia",
+     "farFraction": 0.271,
+     "medianMm": 3.8
+    },
+    {
+     "name": "nerve-radial.l",
+     "system": "peripheral-nerves",
+     "farFraction": 0.27,
+     "medianMm": 3.6
+    },
+    {
+     "name": "Spinal root T6 dorsal.r",
+     "system": "central-nerves",
+     "farFraction": 0.267,
+     "medianMm": 2.4
+    },
+    {
+     "name": "Diaphragmatic fascia",
+     "system": "fascia",
+     "farFraction": 0.26,
+     "medianMm": 4.1
+    },
+    {
+     "name": "Articular capsules of distal interphalangeal joints of foot.r",
+     "system": "ligaments",
+     "farFraction": 0.258,
+     "medianMm": 2.8
+    },
+    {
+     "name": "Spinal root L1 dorsal.l",
+     "system": "central-nerves",
+     "farFraction": 0.256,
+     "medianMm": 3.1
+    },
+    {
+     "name": "Spinal root L1 dorsal.r",
+     "system": "central-nerves",
+     "farFraction": 0.256,
+     "medianMm": 3.4
+    },
+    {
+     "name": "nerve-radial.r",
+     "system": "peripheral-nerves",
+     "farFraction": 0.246,
+     "medianMm": 3.6
+    },
+    {
+     "name": "nerve-tibial.l",
+     "system": "peripheral-nerves",
+     "farFraction": 0.246,
+     "medianMm": 4.0
+    },
+    {
+     "name": "Spinal root T8 ventral.r",
+     "system": "central-nerves",
+     "farFraction": 0.244,
+     "medianMm": 3.4
+    },
+    {
+     "name": "Inferior pubic ligament",
+     "system": "ligaments",
+     "farFraction": 0.231,
+     "medianMm": 4.0
+    },
+    {
+     "name": "nerve-tibial.r",
+     "system": "peripheral-nerves",
+     "farFraction": 0.229,
+     "medianMm": 3.7
+    },
+    {
+     "name": "Plantar aponeurosis.r",
+     "system": "fascia",
+     "farFraction": 0.224,
+     "medianMm": 2.4
+    },
+    {
+     "name": "Masseteric fascia.l",
+     "system": "fascia",
+     "farFraction": 0.215,
+     "medianMm": 1.1
+    },
+    {
+     "name": "Iliopsoas fascia.r",
+     "system": "fascia",
+     "farFraction": 0.214,
+     "medianMm": 3.0
+    },
+    {
+     "name": "Articular capsules of metatarsophalangeal joints.l",
+     "system": "ligaments",
+     "farFraction": 0.214,
+     "medianMm": 2.1
+    },
+    {
+     "name": "Plantar aponeurosis.l",
+     "system": "fascia",
+     "farFraction": 0.209,
+     "medianMm": 2.3
+    },
+    {
+     "name": "Articular capsules of metatarsophalangeal joints.r",
+     "system": "ligaments",
+     "farFraction": 0.207,
+     "medianMm": 1.9
+    },
+    {
+     "name": "Masseteric fascia.r",
+     "system": "fascia",
+     "farFraction": 0.207,
+     "medianMm": 1.1
+    },
+    {
+     "name": "Flexor retinaculum of ankle.r",
+     "system": "fascia",
+     "farFraction": 0.204,
+     "medianMm": 2.6
+    }
+   ]
+  },
   "landmarks": {
    "count": 77,
    "low": [
@@ -1117,7 +1992,7 @@
     "lm-ulnar-styloid"
    ],
    "surfaceDistance": {
-    "min": 0.00017,
+    "min": 0.00084,
     "max": 0.00201
    }
   },
@@ -1345,15 +2220,34 @@
     1.5699,
     -0.0312
    ],
+   "roots": 80,
+   "caudaStrands": 30,
    "conus": [
     0.0,
-    1.1217,
+    1.1077,
     -0.0008
    ],
-   "s2": [
-    0.0,
-    0.9553,
-    -0.078
+   "sacral": [
+    [
+     0.0,
+     0.9903,
+     -0.0565
+    ],
+    [
+     0.0,
+     0.9703,
+     -0.0542
+    ],
+    [
+     0.0,
+     0.9503,
+     -0.0822
+    ],
+    [
+     0.0,
+     0.9303,
+     -0.0944
+    ]
    ]
   },
   "seams": {
@@ -1419,16 +2313,6 @@
      "edges": 496,
      "maxDeltaMm": 0.329,
      "maxDeltaMmPerCm": 0.327
-    },
-    "nerve-sciatic.l": {
-     "edges": 132,
-     "maxDeltaMm": 0.076,
-     "maxDeltaMmPerCm": 0.386
-    },
-    "nerve-sciatic.r": {
-     "edges": 124,
-     "maxDeltaMm": 0.098,
-     "maxDeltaMmPerCm": 0.399
     }
    },
    "hip|knee": {
@@ -1451,16 +2335,6 @@
      "edges": 364,
      "maxDeltaMm": 5.202,
      "maxDeltaMmPerCm": 1.751
-    },
-    "nerve-sciatic.l": {
-     "edges": 64,
-     "maxDeltaMm": 2.681,
-     "maxDeltaMmPerCm": 1.749
-    },
-    "nerve-sciatic.r": {
-     "edges": 64,
-     "maxDeltaMm": 2.805,
-     "maxDeltaMmPerCm": 1.823
     }
    },
    "elbow-wrist|shoulder": {
@@ -1473,36 +2347,6 @@
      "edges": 188,
      "maxDeltaMm": 2.019,
      "maxDeltaMmPerCm": 0.929
-    },
-    "nerve-median.l": {
-     "edges": 68,
-     "maxDeltaMm": 0.62,
-     "maxDeltaMmPerCm": 0.424
-    },
-    "nerve-median.r": {
-     "edges": 68,
-     "maxDeltaMm": 0.91,
-     "maxDeltaMmPerCm": 0.624
-    },
-    "nerve-radial.l": {
-     "edges": 68,
-     "maxDeltaMm": 0.242,
-     "maxDeltaMmPerCm": 0.465
-    },
-    "nerve-radial.r": {
-     "edges": 68,
-     "maxDeltaMm": 0.387,
-     "maxDeltaMmPerCm": 0.727
-    },
-    "nerve-ulnar.l": {
-     "edges": 64,
-     "maxDeltaMm": 0.494,
-     "maxDeltaMmPerCm": 0.42
-    },
-    "nerve-ulnar.r": {
-     "edges": 64,
-     "maxDeltaMm": 0.724,
-     "maxDeltaMmPerCm": 0.604
     }
    },
    "ankle-foot|knee": {
@@ -1515,32 +2359,12 @@
      "edges": 200,
      "maxDeltaMm": 3.606,
      "maxDeltaMmPerCm": 1.69
-    },
-    "nerve-common-fibular.l": {
-     "edges": 64,
-     "maxDeltaMm": 1.402,
-     "maxDeltaMmPerCm": 1.412
-    },
-    "nerve-common-fibular.r": {
-     "edges": 64,
-     "maxDeltaMm": 1.469,
-     "maxDeltaMmPerCm": 1.469
-    },
-    "nerve-tibial.l": {
-     "edges": 64,
-     "maxDeltaMm": 0.835,
-     "maxDeltaMmPerCm": 0.525
-    },
-    "nerve-tibial.r": {
-     "edges": 64,
-     "maxDeltaMm": 0.888,
-     "maxDeltaMmPerCm": 0.556
     }
    }
   },
   "seamMaxMm": 10.535,
-  "seconds": 17.3
+  "seconds": 20.4
  },
- "parts": 1385,
- "concepts": 1385
+ "parts": 1492,
+ "concepts": 1387
 }

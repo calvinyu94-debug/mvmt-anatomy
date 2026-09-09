@@ -98,10 +98,18 @@ def vertex_normals(V, F):
     return n / length[:, None]
 
 
-def tube(points, radius, segments=12):
-    """A closed tube along a polyline, parallel-transport frames, triangle faces."""
+def tube(points, radius, segments=12, ellipse=None):
+    """A closed tube along a polyline, parallel-transport frames, triangle faces.
+
+    radius may be one number or one per point (a taper). ellipse, if given, is
+    (transverse, anteroposterior) semi-axis pairs per point in place of radius:
+    the transverse axis follows the frame's normal, which the first point sets
+    along world X, so a cord stays wider side to side.
+    """
     P = np.asarray(points, dtype=np.float64)
     n = len(P)
+    radii = np.full(n, radius, dtype=np.float64) if np.isscalar(radius) else np.asarray(radius, dtype=np.float64)
+    ell = None if ellipse is None else np.asarray(ellipse, dtype=np.float64)
     T = np.zeros_like(P)
     T[:-1] = P[1:] - P[:-1]
     T[-1] = T[-2]
@@ -124,7 +132,9 @@ def tube(points, radius, segments=12):
             N -= T[i] * np.dot(N, T[i])
             N /= np.linalg.norm(N)
         B = np.cross(T[i], N)
-        ring = [P[i] + radius * (math.cos(2 * math.pi * k / segments) * N + math.sin(2 * math.pi * k / segments) * B)
+        a = ell[i][0] if ell is not None else radii[i]
+        b = ell[i][1] if ell is not None else radii[i]
+        ring = [P[i] + a * math.cos(2 * math.pi * k / segments) * N + b * math.sin(2 * math.pi * k / segments) * B
                 for k in range(segments)]
         rings.append(ring)
     V = np.array([v for ring in rings for v in ring])
@@ -368,18 +378,41 @@ def main():
         log("  %s insertions: %d" % (region, kept))
         clear_objects(objs)
 
-    objs = import_glb(args.nerves)
-    for ob in objs:
-        if ob.type != "MESH":
-            continue
-        name = ob.name if not ob.parent else ob.parent.name
-        name = re.sub(r"\.\d+$", "", name)
-        V, F = object_geometry(ob)
-        nid = re.sub(r"\.[lr]$", "", name)
-        add_mesh(name, V, F, "central-nerves" if nid in CENTRAL_NERVES else "peripheral-nerves",
-                 material="Nerve", authored=True, extras=dict(source="schematic"))
-    log("nerves: %d objects" % sum(1 for m in meshes if m["system"].endswith("nerves")))
-    clear_objects(objs)
+    # The nerves are rebuilt here from nerves.json's centrelines rather than read from nerves.glb:
+    # the centreline is the authored thing, and the tube around it is presentation - tapered from
+    # the recorded radius at the proximal end to half of it distally, and continuous with the
+    # parent trunk where a nerve leaves a plexus (the median, ulnar and radial from the brachial
+    # plexus, the tibial and common fibular from the sciatic, the sciatic and femoral from the
+    # lumbosacral plexus), which nerves.json already encodes by starting each child where its
+    # parent ends. The right side is the left mirrored, as nerves.json records it.
+    nerves_rec = json.load(open(os.path.join(ROOT, "nerves.json"), encoding="utf-8"))["nerves"]
+    NERVE_PARENT = {"nerve-median": "nerve-brachial-plexus", "nerve-ulnar": "nerve-brachial-plexus",
+                    "nerve-radial": "nerve-brachial-plexus", "nerve-sciatic": "nerve-lumbosacral-plexus",
+                    "nerve-femoral": "nerve-lumbosacral-plexus", "nerve-tibial": "nerve-sciatic",
+                    "nerve-common-fibular": "nerve-sciatic"}
+    for nid, spec in nerves_rec.items():
+        C = np.array(spec["centreline"], dtype=np.float64)          # Z-Anatomy frame
+        parent = NERVE_PARENT.get(nid)
+        if parent:                                                     # snap the first point onto the parent's centreline
+            PC = np.array(nerves_rec[parent]["centreline"], dtype=np.float64)
+            C[0] = PC[np.argmin(((PC - C[0]) ** 2).sum(axis=1))]
+        seg = np.linalg.norm(C[1:] - C[:-1], axis=1)
+        s = np.concatenate([[0.0], np.cumsum(seg)]) / max(seg.sum(), 1e-9)
+        r0 = spec["radius"]
+        if parent:                                                     # a branch starts at the parent's calibre where it leaves it
+            r0 = min(r0, nerves_rec[parent]["radius"] * 0.6)
+        radii = r0 * (1.0 - 0.5 * s)
+        for side, sign in (("l", 1.0), ("r", -1.0)):
+            Cs = C.copy()
+            Cs[:, 0] *= sign
+            home = region_of(Cs.mean(axis=0)[None, :])[0]
+            Cf = FIT.za_to_bp3d(fit(Cs, allowed=allowed_for(home)))    # the centreline through the fit, then the tube
+            V, F = tube(Cf, radii, segments=12)
+            meshes.append(dict(name="%s.%s" % (nid, side), side=side, system="central-nerves" if nid in CENTRAL_NERVES else "peripheral-nerves",
+                               material="Nerve", home=home, V=V, F=F, V0=FIT.bp3d_to_za(V), authored=True,
+                               extras=dict(source="schematic", radiusProximal=round(float(radii[0]), 4), radiusDistal=round(float(radii[-1]), 4),
+                                           parent=parent), prebuilt=True))
+    log("nerves: %d tubes rebuilt from centrelines" % sum(1 for m in meshes if m["system"].endswith("nerves")))
 
     ZV = np.vstack(zbone_verts)
     ZF = np.vstack(zbone_faces)
@@ -447,8 +480,10 @@ def main():
         log("frame check: ACL.l centroid in the Z-Anatomy frame = %s (expect x~0.09, y~0.02, z~0.43)"
             % np.round(probe["V"].mean(axis=0), 3).tolist())
     for m in meshes:
+        if m.get("prebuilt"):       # the nerves: already fitted, centreline first and tube after
+            continue
         m["V0"] = m["V"]            # Z-Anatomy frame, as imported
-        if not m["home"]:           # the nerves carry no region: the fit's weights at the centroid decide
+        if not m["home"]:
             m["home"] = region_of(m["V0"].mean(axis=0)[None, :])[0]
         m["V"] = T(m["V"], m["home"])   # BP3D frame, fitted
 
@@ -573,47 +608,181 @@ def main():
         canal.append(c)
         canal_report.append(dict(vertebra=name, centre=[round(float(x), 4) for x in c], gapWidth=round(gap, 4)))
     canal = np.array(canal)
-    # foramen magnum: above the atlas canal, curving forward into the brainstem
+    # The cord as published norms describe it, in the BP3D canal. Cross-section is an ellipse,
+    # transverse x anteroposterior: 8 x 6 mm in the thorax, swelling to 13 x 7 mm at the cervical
+    # enlargement (C5-C6) and 12 x 8 mm at the lumbar enlargement (T12), then tapering through the
+    # conus to a point in the body of L1. Dorsal and ventral roots leave the cord at every level and
+    # run to their foramen: cervical roots above their vertebra (C1 above the atlas), thoracic and
+    # lumbar below. Below the conus the roots of L2 to the coccyx run down the canal as the cauda
+    # equina, 30 fine strands, to their lumbar foramina and the anterior sacral foramina. A dura
+    # sheath 3.5 mm wider than the cord runs from the foramen magnum to S2, drawn translucent.
+    # Everything here carries the nerves' authored / schematic flags.
     fm = canal[0] + np.array([0.0, 0.020, 0.006])
-    # levels: cervical = fm..C7, thoracic = T1..T12, lumbar = L1 (conus at its mid-height)
-    cord_pts = np.vstack([fm[None, :], canal[:20]])          # fm, C1..C7 (7), T1..T12 (12) = 20 vertebrae -> L1 is index 19
-    cord = smooth_polyline(cord_pts, 8)
-    y_c7t1 = (canal[6][1] + canal[7][1]) / 2
-    y_t12l1 = (canal[18][1] + canal[19][1]) / 2
-    segments = {"cervical": cord[cord[:, 1] >= y_c7t1 - 1e-9], "thoracic": cord[(cord[:, 1] < y_c7t1) & (cord[:, 1] >= y_t12l1)],
-                "lumbar": cord[cord[:, 1] < y_t12l1]}
-    # overlap one sample so the segments meet
-    keys = ["cervical", "thoracic", "lumbar"]
-    for a, b in zip(keys, keys[1:]):
-        if len(segments[a]) and len(segments[b]):
-            segments[b] = np.vstack([segments[a][-1][None, :], segments[b]])
-    for rid, pts in segments.items():
-        if len(pts) < 2:
-            continue
-        V, F = tube(pts, 0.005)
-        meshes.append(dict(name="Spinal cord (schematic) %s" % rid, side="", system="central-nerves", material="Nerve",
-                           home=rid, V=V, F=F, authored=True, extras=dict(source="schematic", segment=rid),
-                           concept="nerve-spinal-cord", display="Spinal cord"))
-    # cauda equina: six strands from the conus, spreading across the canal, staggered ends L5 / S1 / S2
+    level_y = {i: canal[i][1] for i in range(len(canal))}            # 0..6 = C1..C7, 7..18 = T1..T12, 19..23 = L1..L5
     sac = bp_parts["sacrum"]
     SV = FIT.part_vertices(sac, chunks)
     s_top = SV[:, 1].max()
-    s1, _ = canal_centre("Sacrum", y=s_top - 0.020, min_gap=0.004)
-    s2, _ = canal_centre("Sacrum", y=s_top - 0.050, min_gap=0.003)
-    conus = canal[19]
-    lower = [canal[20], canal[21], canal[22], canal[23], s1, s2]       # L2..L5, S1, S2
-    offsets = [(-0.004, -0.002), (0.004, -0.002), (-0.002, 0.003), (0.002, 0.003), (-0.005, 0.001), (0.005, 0.001)]
-    ends = [5, 5, 4, 4, 3, 3]
-    for k, ((dx, dz), end) in enumerate(zip(offsets, ends)):
-        pts = [conus]
-        for i, c in enumerate(lower[:end + 1]):
-            f = min(1.0, (i + 1) / 2.0)
-            pts.append(c + np.array([dx * f, 0.0, dz * f]))
-        V, F = tube(smooth_polyline(np.array(pts), 6), 0.0012, segments=8)
-        meshes.append(dict(name="Cauda equina (schematic) strand %d" % (k + 1), side="", system="central-nerves",
-                           material="Nerve", home="lumbar", V=V, F=F, authored=True,
-                           extras=dict(source="schematic", strand=k + 1), concept="nerve-cauda-equina",
-                           display="Cauda equina"))
+    sacral = []
+    prev = canal[23]
+    for k, dy in enumerate((0.015, 0.035, 0.055, 0.075)):           # S1..S4 canal centres, falling back to the line of the canal
+        try:
+            c, _ = canal_centre("Sacrum", y=s_top - dy, min_gap=0.003)
+        except ValueError:
+            c = np.array([0.0, s_top - dy, prev[2] - 0.004])
+        sacral.append(c)
+        prev = c
+    conus_tip = canal[19] + np.array([0.0, -0.014, 0.0])              # a point in the body of L1
+
+    def half_axes(y):
+        """Transverse and anteroposterior semi-axes at height y, from the norms above."""
+        keys = [(fm[1] + 0.005, 6.5e-3, 4.5e-3), (level_y[0], 5.5e-3, 3.5e-3), (level_y[2], 5.5e-3, 3.5e-3),
+                (level_y[4], 6.5e-3, 3.5e-3), (level_y[5], 6.5e-3, 3.5e-3), (level_y[7], 4.5e-3, 3.2e-3),
+                (level_y[10], 4.0e-3, 3.0e-3), (level_y[16], 4.0e-3, 3.0e-3), (level_y[18], 6.0e-3, 4.0e-3),
+                (level_y[19], 3.5e-3, 2.5e-3), (conus_tip[1], 0.8e-3, 0.8e-3)]
+        for (y1, a1, b1), (y0, a0, b0) in zip(keys, keys[1:]):
+            if y0 <= y <= y1:
+                t = (y - y0) / max(y1 - y0, 1e-9)
+                return (a0 + (a1 - a0) * t, b0 + (b1 - b0) * t)
+        return keys[0][1:] if y > keys[0][0] else keys[-1][1:]
+
+    cord_pts = np.vstack([fm[None, :], canal[:20], conus_tip[None, :]])
+    cord = smooth_polyline(cord_pts, 8)
+    y_c7t1 = (level_y[6] + level_y[7]) / 2
+    y_t12l1 = (level_y[18] + level_y[19]) / 2
+    segs = {"cervical": cord[cord[:, 1] >= y_c7t1 - 1e-9], "thoracic": cord[(cord[:, 1] < y_c7t1) & (cord[:, 1] >= y_t12l1)],
+            "lumbar": cord[cord[:, 1] < y_t12l1]}
+    keys = ["cervical", "thoracic", "lumbar"]
+    for p_, q_ in zip(keys, keys[1:]):
+        if len(segs[p_]) and len(segs[q_]):
+            segs[q_] = np.vstack([segs[p_][-1][None, :], segs[q_]])
+    for rid, pts in segs.items():
+        if len(pts) < 2:
+            continue
+        V, F = tube(pts, 0.004, segments=16, ellipse=[half_axes(p[1]) for p in pts])
+        meshes.append(dict(name="Spinal cord (schematic) %s" % rid, side="", system="central-nerves", material="Nerve",
+                           home=rid, V=V, F=F, authored=True, extras=dict(source="schematic", segment=rid,
+                           norms="8x6 mm thoracic, 13x7 mm cervical enlargement, 12x8 mm lumbar enlargement, conus in L1"),
+                           concept="nerve-spinal-cord", display="Spinal cord"))
+
+    def cord_point(y):
+        """The cord centreline at height y."""
+        i = int(np.argmin(np.abs(cord[:, 1] - y)))
+        return cord[i]
+
+    def foramen(i, side):
+        """The intervertebral foramen of vertebra i on one side: lateral of the canal by half its width
+        plus 6 mm, between this vertebra and the one above (cervical) or below (thoracic, lumbar)."""
+        gap = canal_report[i]["gapWidth"]
+        if i < 7:
+            y = (level_y[i - 1] + level_y[i]) / 2 if i > 0 else level_y[0] + 0.010
+        else:
+            y = (level_y[i] + level_y[i + 1]) / 2 if i + 1 < len(canal) else level_y[i] - 0.012
+        return np.array([side * (gap / 2 + 0.006), y, canal[i][2]])
+
+    LEVEL_NAMES = (["C%d" % n for n in range(1, 8)] + ["T%d" % n for n in range(1, 13)] + ["L%d" % n for n in range(1, 6)])
+    root_count = 0
+    for i in range(20):                                                # roots attached to the cord: C1..L1
+        y = level_y[i] + (0.006 if i < 7 else 0.010)                    # the cord level sits a little above its vertebra
+        c = cord_point(y)
+        a, b = half_axes(c[1])
+        for side in (1.0, -1.0):
+            f = foramen(i, side)
+            for kind, dz in (("dorsal", -0.75 * b), ("ventral", 0.75 * b)):
+                start = c + np.array([side * 0.6 * a, 0.0, dz])
+                mid = (start + f) / 2 + np.array([0.0, -0.002, dz * 0.5])
+                pts = smooth_polyline(np.array([start, mid, f]), 5)
+                V, F = tube(pts, 0.0009, segments=8)
+                nm = "%s %s root (%s)" % (LEVEL_NAMES[i], kind, "left" if side > 0 else "right")
+                meshes.append(dict(name="Spinal root %s %s.%s" % (LEVEL_NAMES[i], kind, "l" if side > 0 else "r"), display=nm,
+                                   side="l" if side > 0 else "r", system="central-nerves", material="Nerve",
+                                   home="cervical" if i < 7 else "thoracic" if i < 19 else "lumbar", V=V, F=F, authored=True,
+                                   extras=dict(source="schematic", level=LEVEL_NAMES[i], root=kind), concept="nerve-spinal-roots",
+                                   ))
+                root_count += 1
+    # cauda equina: the roots of L2..L5 (to their foramina), S1..S4 (to the anterior sacral foramina) and the
+    # coccygeal roots, two strands per side per level down to S2 and one below, from the conus down the canal
+    lower_levels = [(20, "L2"), (21, "L3"), (22, "L4"), (23, "L5")]
+    strand = 0
+    cauda_targets = []
+    for i, nm in lower_levels:
+        for side in (1.0, -1.0):
+            cauda_targets.append((nm, side, foramen(i, side), [canal[j] for j in range(20, i + 1)], 2))
+    for k, nm in enumerate(("S1", "S2", "S3", "S4")):
+        for side in (1.0, -1.0):
+            tgt = sacral[k] + np.array([side * 0.018, 0.0, 0.012])
+            cauda_targets.append((nm, side, tgt, [canal[j] for j in range(20, 24)] + sacral[:k + 1], 2 if k < 2 else 1))
+    for side in (1.0, -1.0):
+        tgt = sacral[3] + np.array([side * 0.006, -0.012, 0.004])
+        cauda_targets.append(("Co", side, tgt, [canal[j] for j in range(20, 24)] + sacral, 1))
+    for nm, side, tgt, via, count in cauda_targets:
+        for k in range(count):
+            spread = np.array([side * (0.002 + 0.0015 * k), 0.0, 0.0025 * (1 if k == 0 else -1)])
+            pts = [conus_tip + spread * 0.5] + [v + spread for v in via[:-1]] + [via[-1] + spread * 0.5, tgt]
+            V, F = tube(smooth_polyline(np.array(pts), 4), 0.0008, segments=6)
+            strand += 1
+            meshes.append(dict(name="Cauda equina strand %d (%s %s)" % (strand, nm, "l" if side > 0 else "r"), display="Cauda equina",
+                               side="l" if side > 0 else "r", system="central-nerves", material="Nerve", home="lumbar", V=V, F=F,
+                               authored=True, extras=dict(source="schematic", strand=strand, level=nm, root="dorsal" if k == 0 else "ventral"),
+                               concept="nerve-cauda-equina"))
+    # the dura: a sheath 3.5 mm wider than the cord from the foramen magnum to S2, in the same three segments
+    dura_pts = smooth_polyline(np.vstack([fm[None, :], canal, sacral[0][None, :], sacral[1][None, :]]), 6)
+    dsegs = {"cervical": dura_pts[dura_pts[:, 1] >= y_c7t1 - 1e-9], "thoracic": dura_pts[(dura_pts[:, 1] < y_c7t1) & (dura_pts[:, 1] >= y_t12l1)],
+             "lumbar": dura_pts[dura_pts[:, 1] < y_t12l1]}
+    for p_, q_ in zip(keys, keys[1:]):
+        if len(dsegs[p_]) and len(dsegs[q_]):
+            dsegs[q_] = np.vstack([dsegs[p_][-1][None, :], dsegs[q_]])
+    for rid, pts in dsegs.items():
+        if len(pts) < 2:
+            continue
+        ell = []
+        for p in pts:
+            a, b = half_axes(p[1]) if p[1] >= conus_tip[1] else (0.006, 0.004)
+            ell.append((max(a, 0.006) + 0.0035, max(b, 0.004) + 0.0035))
+        V, F = tube(pts, 0.008, segments=16, ellipse=ell)
+        meshes.append(dict(name="Dura mater (schematic) %s" % rid, side="", system="central-nerves", material="Dura",
+                           home=rid, V=V, F=F, authored=True, extras=dict(source="schematic", segment=rid, translucent=True),
+                           concept="nerve-dura", display="Dura mater"))
+    log("spinal cord: 3 segments, %d roots, %d cauda strands, dura in 3 segments" % (root_count, strand))
+    cord_summary = dict(roots=root_count, caudaStrands=strand, conus=[round(float(x), 4) for x in conus_tip],
+                        sacral=[[round(float(x), 4) for x in c] for c in sacral])
+
+    # ---- fit confidence of every carried-over part: how far it sits from the BP3D body surface
+    # (bones and muscles). A part with more than 20% of its vertices further than 6 mm from any
+    # BP3D surface is fitConfidence: low, and patient view hides it. Insertions are on bone by
+    # construction and landmarks carry the fit's own residual; the rest are measured here.
+    log("measuring fit confidence against the BP3D bone and muscle surface")
+    body_verts, body_faces, bbase = [BV], [BF], len(BV)
+    for p in atlas["parts"]:
+        if p["system"] != "muscular":
+            continue
+        b = chunks[p["chunk"]]
+        pos = np.frombuffer(b, dtype=np.float32, count=p["vertexCount"] * 3, offset=p["positions"]).reshape(-1, 3)
+        idx = np.frombuffer(b, dtype=np.uint32, count=p["indexCount"], offset=p["indices"]).reshape(-1, 3)
+        body_verts.append(pos.astype(np.float64))
+        body_faces.append(idx.astype(np.int64) + bbase)
+        bbase += len(pos)
+    BODYV = np.vstack(body_verts)
+    BODYF = np.vstack(body_faces)
+    body_bvh = BVHTree.FromPolygons([tuple(v) for v in BODYV], [tuple(int(i) for i in f) for f in BODYF])
+    log("body surface: %d triangles" % len(BODYF))
+    FAR, FAR_FRACTION, SAMPLE = 0.006, 0.20, 240
+    confidence_rows = []
+    for m in meshes:
+        if m["system"] in ("insertions", "landmarks"):
+            continue
+        V = m["V"]
+        step = max(1, len(V) // SAMPLE)
+        d = np.array([body_bvh.find_nearest(Vector(v))[3] for v in V[::step]])
+        far = float((d > FAR).mean())
+        conf = "low" if far > FAR_FRACTION else "high"
+        m["extras"].update(fitConfidence=conf, fitFarFraction=round(far, 3), fitMedianDistance=round(float(np.median(d)), 5))
+        confidence_rows.append(dict(name=m["name"], system=m["system"], far=far, median=float(np.median(d)), confidence=conf))
+    conf_by_system = {}
+    for r in confidence_rows:
+        s = conf_by_system.setdefault(r["system"], dict(parts=0, low=0))
+        s["parts"] += 1
+        s["low"] += r["confidence"] == "low"
+    log("fit confidence: " + ", ".join("%s %d/%d low" % (k, v["low"], v["parts"]) for k, v in conf_by_system.items()))
 
     # ---- regions, spanning, seam check
     log("regions and seams")
@@ -631,7 +800,7 @@ def main():
             counts[m["home"]] = 0
         m["spans"] = [r for r in m["regions"] if r != m["home"] and counts[r] >= 0.05 * len(dom)]
         # seam: residual displacement per vertex, compared along edges that cross a region boundary
-        if any(k.lower() in m["name"].lower() for k in SEAM_STRUCTURES) and len(m["spans"]):
+        if any(k.lower() in m["name"].lower() for k in SEAM_STRUCTURES) and len(m["spans"]) and not m.get("prebuilt"):
             za0 = m["V0"]
             G = FIT.apply_sim(fit.glob, za0)
             D = fit(za0, allowed=allowed_for(m["home"])) - G
@@ -740,11 +909,14 @@ def main():
                         medianOfMeans=round(float(np.median([r["mean"] for r in projected])), 5) if projected else None,
                         worst=sorted(projected, key=lambda r: -r["mean"])[:15],
                         softTissue=sorted(soft, key=lambda r: -r["sourceBoneDistance"])),
+        fitConfidence=dict(rule="low when more than %d%% of sampled vertices lie further than %d mm from any BP3D bone or muscle surface" % (FAR_FRACTION * 100, FAR * 1000),
+                           bySystem=conf_by_system,
+                           low=[dict(name=r["name"], system=r["system"], farFraction=round(r["far"], 3), medianMm=round(r["median"] * 1000, 1))
+                                for r in sorted(confidence_rows, key=lambda r: -r["far"]) if r["confidence"] == "low"]),
         landmarks=dict(count=len(landmark_rows), low=sorted(set(r["id"] for r in landmark_rows if r["confidence"] == "low")),
                        surfaceDistance=dict(min=round(min(r["surfaceDistance"] for r in landmark_rows), 5),
                                             max=round(max(r["surfaceDistance"] for r in landmark_rows), 5))),
-        spinalCord=dict(canal=canal_report, foramenMagnum=[round(float(x), 4) for x in fm],
-                        conus=[round(float(x), 4) for x in conus], s2=[round(float(x), 4) for x in s2]),
+        spinalCord=dict(canal=canal_report, foramenMagnum=[round(float(x), 4) for x in fm], **cord_summary),
         seams={pair: {name: dict(edges=v["edges"], maxDeltaMm=round(v["maxDelta"] * 1000, 3),
                                  maxDeltaMmPerCm=round(v["maxDeltaPerCm"] * 1000, 3)) for name, v in names.items()}
                for pair, names in seam.items()},

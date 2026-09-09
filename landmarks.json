@@ -571,7 +571,7 @@
    "limb": false,
    "hull": null,
    "paired": true,
-   "target": "Mid-length of the posterior ridge",
+   "target": "Mid-length of the posterior ridge, in the upper half of the bone",
    "anchor": {
     "object": "Scapula.l",
     "uvw": [
@@ -2144,7 +2144,7 @@
    "limb": true,
    "hull": "lower",
    "paired": true,
-   "target": "The medial shelf, roughly a thumb's width below the medial malleolus",
+   "target": "The medial shelf under the talus, roughly a thumb's width below the medial malleolus",
    "anchor": {
     "object": "Calcaneus.l",
     "uvw": [

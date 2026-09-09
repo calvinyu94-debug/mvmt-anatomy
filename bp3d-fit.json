@@ -1,0 +1,3794 @@
+{
+ "version": 1,
+ "note": "Z-Anatomy -> BodyParts3D. The 42 landmark rules of landmark_anchors.py run on the BP3D bones (right bones with the left rule mirrored) against landmarks.json; global similarity by Umeyama, a residual similarity (or translation, under 6 points) per MVMT region, blended by a Gaussian of the distance to each region's landmarks (sigma 0.12 m, floor 0.02). Residuals are the blended transform at the landmark, in metres.",
+ "units": "metres",
+ "frames": {
+  "zanatomy": "Z up, +X left, -Y anterior (the fit's own frame)",
+  "bp3d": "Y up, +X left, +Z anterior (atlas.json and our glTF export)",
+  "zanatomyToBp3d": "(x, y, z) -> (x, z, -y)"
+ },
+ "source": {
+  "atlas": "BodyParts3D 4.0",
+  "landmarks": "landmarks.json",
+  "rules": "tools/landmark_anchors.py"
+ },
+ "boneMap": {
+  "Temporal bone.l": "Left temporal bone",
+  "Occipital bone": "Occipital bone",
+  "Atlas (C1)": "Atlas",
+  "Axis (C2)": "Axis",
+  "Vertebra C7": "Seventh cervical vertebra",
+  "Mandible": "Mandible",
+  "Zygomatic bone.l": "Left zygomatic bone",
+  "Scapula.l": "Left scapula",
+  "Humerus.l": "Left humerus",
+  "Manubrium of sternum": "Manubrium",
+  "Seventh rib.l": "Left seventh rib",
+  "Ulna.l": "Left ulna",
+  "Radius.l": "Left radius",
+  "Scaphoid bone.l": "Left scaphoid",
+  "Pisiform bone.l": "Left pisiform",
+  "Hip bone.l": "Left hip bone",
+  "Femur.l": "Left femur",
+  "Sacrum": "Sacrum",
+  "Tibia.l": "Left tibia",
+  "Fibula.l": "Left fibula",
+  "Navicular bone.l": "Navicular bone of left foot",
+  "Fifth metatarsal bone.l": "Left fifth metatarsal bone",
+  "Calcaneus.l": "Left calcaneus"
+ },
+ "blend": {
+  "sigma": 0.12,
+  "floor": 0.02,
+  "minSimilarityPoints": 6
+ },
+ "globalFit": {
+  "scale": 0.999463,
+  "rotation": [
+   [
+    0.999998,
+    0.001668,
+    -0.000596
+   ],
+   [
+    -0.00166,
+    0.999915,
+    0.012928
+   ],
+   [
+    0.000617,
+    -0.012927,
+    0.999916
+   ]
+  ],
+  "translation": [
+   0.000429,
+   -0.011789,
+   0.014421
+  ],
+  "inBp3dFrame": {
+   "scale": 0.999463,
+   "rotation": [
+    [
+     0.999998,
+     -0.000596,
+     -0.001668
+    ],
+    [
+     0.000617,
+     0.999916,
+     0.012927
+    ],
+    [
+     0.00166,
+     -0.012928,
+     0.999915
+    ]
+   ],
+   "translation": [
+    0.000429,
+    0.014421,
+    0.011789
+   ]
+  },
+  "rms": 0.01506,
+  "median": 0.01458,
+  "max": 0.0247
+ },
+ "regions": {
+  "head-jaw": {
+   "kind": "similarity",
+   "n": 12,
+   "landmarks": [
+    "lm-c1-transverse",
+    "lm-c2-spinous",
+    "lm-mandible-angle",
+    "lm-mastoid-process",
+    "lm-occipital-protuberance",
+    "lm-superior-nuchal-line",
+    "lm-zygomatic-arch"
+   ],
+   "rmsBefore": 0.01115,
+   "rmsAfter": 0.00517,
+   "scale": 1.05465,
+   "rotation": [
+    [
+     0.999991,
+     -0.003755,
+     0.001788
+    ],
+    [
+     0.003815,
+     0.999372,
+     -0.035218
+    ],
+    [
+     -0.001655,
+     0.035225,
+     0.999378
+    ]
+   ],
+   "translation": [
+    -0.002978,
+    0.061875,
+    -0.093056
+   ],
+   "anchors": [
+    [
+     0.06101,
+     0.01956,
+     1.56284
+    ],
+    [
+     -0.06101,
+     0.01956,
+     1.56284
+    ],
+    [
+     -0.0,
+     0.09761,
+     1.5868
+    ],
+    [
+     0.02431,
+     0.08926,
+     1.58287
+    ],
+    [
+     -0.02431,
+     0.08926,
+     1.58287
+    ],
+    [
+     0.04504,
+     0.01561,
+     1.54075
+    ],
+    [
+     -0.04504,
+     0.01561,
+     1.54075
+    ],
+    [
+     -0.00073,
+     0.05438,
+     1.51123
+    ],
+    [
+     0.04044,
+     -0.01263,
+     1.52519
+    ],
+    [
+     -0.04044,
+     -0.01263,
+     1.52519
+    ],
+    [
+     0.06432,
+     -0.03629,
+     1.57335
+    ],
+    [
+     -0.06432,
+     -0.03629,
+     1.57335
+    ]
+   ]
+  },
+  "cervical": {
+   "kind": "similarity",
+   "n": 10,
+   "landmarks": [
+    "lm-acromion",
+    "lm-c1-transverse",
+    "lm-c2-spinous",
+    "lm-c7-spinous",
+    "lm-jugular-notch",
+    "lm-mastoid-process",
+    "lm-occipital-protuberance"
+   ],
+   "rmsBefore": 0.01107,
+   "rmsAfter": 0.00697,
+   "scale": 0.986927,
+   "rotation": [
+    [
+     0.999984,
+     -0.005493,
+     -0.001309
+    ],
+    [
+     0.005556,
+     0.998535,
+     0.053816
+    ],
+    [
+     0.001012,
+     -0.053823,
+     0.99855
+    ]
+   ],
+   "translation": [
+    0.001961,
+    -0.079093,
+    0.016852
+   ],
+   "anchors": [
+    [
+     0.06101,
+     0.01956,
+     1.56284
+    ],
+    [
+     -0.06101,
+     0.01956,
+     1.56284
+    ],
+    [
+     -0.0,
+     0.09761,
+     1.5868
+    ],
+    [
+     0.04504,
+     0.01561,
+     1.54075
+    ],
+    [
+     -0.04504,
+     0.01561,
+     1.54075
+    ],
+    [
+     -0.00073,
+     0.05438,
+     1.51123
+    ],
+    [
+     -0.0,
+     0.07923,
+     1.44336
+    ],
+    [
+     0.17536,
+     0.04492,
+     1.41291
+    ],
+    [
+     -0.17536,
+     0.04492,
+     1.41291
+    ],
+    [
+     -0.00276,
+     -0.04684,
+     1.40161
+    ]
+   ]
+  },
+  "shoulder": {
+   "kind": "similarity",
+   "n": 16,
+   "landmarks": [
+    "lm-acromion",
+    "lm-bicipital-groove",
+    "lm-c7-spinous",
+    "lm-coracoid",
+    "lm-greater-tubercle",
+    "lm-inferior-angle",
+    "lm-jugular-notch",
+    "lm-scapular-medial-border",
+    "lm-scapular-spine",
+    "lm-sternal-angle"
+   ],
+   "rmsBefore": 0.01324,
+   "rmsAfter": 0.00542,
+   "scale": 0.966013,
+   "rotation": [
+    [
+     0.99993,
+     -0.003607,
+     -0.011265
+    ],
+    [
+     0.003604,
+     0.999993,
+     -0.000315
+    ],
+    [
+     0.011266,
+     0.000275,
+     0.999937
+    ]
+   ],
+   "translation": [
+    0.015543,
+    -0.007359,
+    0.041464
+   ],
+   "anchors": [
+    [
+     -0.0,
+     0.07923,
+     1.44336
+    ],
+    [
+     0.17536,
+     0.04492,
+     1.41291
+    ],
+    [
+     -0.17536,
+     0.04492,
+     1.41291
+    ],
+    [
+     0.13554,
+     -0.00326,
+     1.39112
+    ],
+    [
+     -0.13554,
+     -0.00326,
+     1.39112
+    ],
+    [
+     0.11441,
+     0.09341,
+     1.3879
+    ],
+    [
+     -0.11441,
+     0.09341,
+     1.3879
+    ],
+    [
+     0.0935,
+     0.102,
+     1.25249
+    ],
+    [
+     -0.0935,
+     0.102,
+     1.25249
+    ],
+    [
+     0.05915,
+     0.10391,
+     1.33823
+    ],
+    [
+     -0.05915,
+     0.10391,
+     1.33823
+    ],
+    [
+     0.19717,
+     0.02199,
+     1.37946
+    ],
+    [
+     -0.19717,
+     0.02199,
+     1.37946
+    ],
+    [
+     0.1839,
+     0.01103,
+     1.37135
+    ],
+    [
+     -0.00276,
+     -0.04684,
+     1.40161
+    ],
+    [
+     -0.00265,
+     -0.08218,
+     1.35443
+    ]
+   ]
+  },
+  "thoracic": {
+   "kind": "similarity",
+   "n": 11,
+   "landmarks": [
+    "lm-c7-spinous",
+    "lm-costal-margin",
+    "lm-inferior-angle",
+    "lm-jugular-notch",
+    "lm-scapular-medial-border",
+    "lm-scapular-spine",
+    "lm-sternal-angle"
+   ],
+   "rmsBefore": 0.01277,
+   "rmsAfter": 0.00531,
+   "scale": 0.95986,
+   "rotation": [
+    [
+     0.999966,
+     -0.007656,
+     0.002939
+    ],
+    [
+     0.007714,
+     0.999767,
+     -0.020183
+    ],
+    [
+     -0.002784,
+     0.020205,
+     0.999792
+    ]
+   ],
+   "translation": [
+    -0.002922,
+    0.019464,
+    0.047411
+   ],
+   "anchors": [
+    [
+     -0.0,
+     0.07923,
+     1.44336
+    ],
+    [
+     0.11441,
+     0.09341,
+     1.3879
+    ],
+    [
+     -0.11441,
+     0.09341,
+     1.3879
+    ],
+    [
+     0.0935,
+     0.102,
+     1.25249
+    ],
+    [
+     -0.0935,
+     0.102,
+     1.25249
+    ],
+    [
+     0.05915,
+     0.10391,
+     1.33823
+    ],
+    [
+     -0.05915,
+     0.10391,
+     1.33823
+    ],
+    [
+     -0.00276,
+     -0.04684,
+     1.40161
+    ],
+    [
+     -0.00265,
+     -0.08218,
+     1.35443
+    ],
+    [
+     0.10996,
+     -0.07844,
+     1.16966
+    ],
+    [
+     -0.10996,
+     -0.07844,
+     1.16966
+    ]
+   ]
+  },
+  "lumbar": {
+   "kind": "similarity",
+   "n": 9,
+   "landmarks": [
+    "lm-asis",
+    "lm-costal-margin",
+    "lm-iliac-crest",
+    "lm-psis",
+    "lm-sacral-base"
+   ],
+   "rmsBefore": 0.01833,
+   "rmsAfter": 0.00836,
+   "scale": 0.992645,
+   "rotation": [
+    [
+     0.999983,
+     0.00516,
+     0.002585
+    ],
+    [
+     -0.004976,
+     0.997776,
+     -0.066471
+    ],
+    [
+     -0.002922,
+     0.066457,
+     0.997785
+    ]
+   ],
+   "translation": [
+    -0.002643,
+    0.079109,
+    0.019226
+   ],
+   "anchors": [
+    [
+     0.10996,
+     -0.07844,
+     1.16966
+    ],
+    [
+     -0.10996,
+     -0.07844,
+     1.16966
+    ],
+    [
+     0.09656,
+     0.02761,
+     1.01386
+    ],
+    [
+     -0.09656,
+     0.02761,
+     1.01386
+    ],
+    [
+     0.11794,
+     -0.05807,
+     0.94513
+    ],
+    [
+     -0.11794,
+     -0.05807,
+     0.94513
+    ],
+    [
+     0.04627,
+     0.08878,
+     0.95946
+    ],
+    [
+     -0.04627,
+     0.08878,
+     0.95946
+    ],
+    [
+     -4e-05,
+     0.03677,
+     0.95932
+    ]
+   ]
+  },
+  "hip": {
+   "kind": "similarity",
+   "n": 13,
+   "landmarks": [
+    "lm-asis",
+    "lm-greater-trochanter",
+    "lm-iliac-crest",
+    "lm-ischial-tuberosity",
+    "lm-psis",
+    "lm-pubic-tubercle",
+    "lm-sacral-base"
+   ],
+   "rmsBefore": 0.02089,
+   "rmsAfter": 0.00613,
+   "scale": 1.005781,
+   "rotation": [
+    [
+     0.999995,
+     0.002966,
+     -0.000785
+    ],
+    [
+     -0.002971,
+     0.999977,
+     -0.006115
+    ],
+    [
+     0.000766,
+     0.006118,
+     0.999981
+    ]
+   ],
+   "translation": [
+    0.000873,
+    0.01973,
+    0.008711
+   ],
+   "anchors": [
+    [
+     0.09656,
+     0.02761,
+     1.01386
+    ],
+    [
+     -0.09656,
+     0.02761,
+     1.01386
+    ],
+    [
+     0.11794,
+     -0.05807,
+     0.94513
+    ],
+    [
+     -0.11794,
+     -0.05807,
+     0.94513
+    ],
+    [
+     0.04627,
+     0.08878,
+     0.95946
+    ],
+    [
+     -0.04627,
+     0.08878,
+     0.95946
+    ],
+    [
+     0.04323,
+     0.03523,
+     0.79555
+    ],
+    [
+     -0.04323,
+     0.03523,
+     0.79555
+    ],
+    [
+     0.02334,
+     -0.0545,
+     0.8498
+    ],
+    [
+     -0.02334,
+     -0.0545,
+     0.8498
+    ],
+    [
+     0.15053,
+     0.01167,
+     0.83484
+    ],
+    [
+     -0.15053,
+     0.01167,
+     0.83484
+    ],
+    [
+     -4e-05,
+     0.03677,
+     0.95932
+    ]
+   ]
+  },
+  "knee": {
+   "kind": "similarity",
+   "n": 12,
+   "landmarks": [
+    "lm-adductor-tubercle",
+    "lm-fibular-head",
+    "lm-gerdys-tubercle",
+    "lm-greater-trochanter",
+    "lm-knee-joint-line",
+    "lm-tibial-tuberosity"
+   ],
+   "rmsBefore": 0.01321,
+   "rmsAfter": 0.01051,
+   "scale": 1.014307,
+   "rotation": [
+    [
+     0.999997,
+     -0.002536,
+     0.000614
+    ],
+    [
+     0.002509,
+     0.99917,
+     0.040658
+    ],
+    [
+     -0.000716,
+     -0.040657,
+     0.999173
+    ]
+   ],
+   "translation": [
+    -0.000606,
+    -0.023334,
+    -0.003164
+   ],
+   "anchors": [
+    [
+     0.15053,
+     0.01167,
+     0.83484
+    ],
+    [
+     -0.15053,
+     0.01167,
+     0.83484
+    ],
+    [
+     0.0837,
+     -0.00706,
+     0.39942
+    ],
+    [
+     -0.0837,
+     -0.00706,
+     0.39942
+    ],
+    [
+     0.10888,
+     0.01024,
+     0.41672
+    ],
+    [
+     -0.10888,
+     0.01024,
+     0.41672
+    ],
+    [
+     0.04212,
+     0.01845,
+     0.42177
+    ],
+    [
+     -0.04212,
+     0.01845,
+     0.42177
+    ],
+    [
+     0.12685,
+     0.03952,
+     0.40041
+    ],
+    [
+     -0.12685,
+     0.03952,
+     0.40041
+    ],
+    [
+     0.03424,
+     0.03463,
+     0.47816
+    ],
+    [
+     -0.03424,
+     0.03463,
+     0.47816
+    ]
+   ]
+  },
+  "elbow-wrist": {
+   "kind": "similarity",
+   "n": 14,
+   "landmarks": [
+    "lm-anatomical-snuffbox",
+    "lm-lateral-epicondyle",
+    "lm-medial-epicondyle",
+    "lm-olecranon",
+    "lm-pisiform",
+    "lm-radial-styloid",
+    "lm-ulnar-styloid"
+   ],
+   "rmsBefore": 0.0142,
+   "rmsAfter": 0.00093,
+   "scale": 0.969754,
+   "rotation": [
+    [
+     0.999999,
+     -0.001123,
+     0.000171
+    ],
+    [
+     0.001125,
+     0.999883,
+     -0.015277
+    ],
+    [
+     -0.000154,
+     0.015278,
+     0.999883
+    ]
+   ],
+   "translation": [
+    0.000295,
+    0.011628,
+    0.040239
+   ],
+   "anchors": [
+    [
+     0.1815,
+     0.03555,
+     1.10699
+    ],
+    [
+     -0.1815,
+     0.03555,
+     1.10699
+    ],
+    [
+     0.25083,
+     0.0433,
+     1.1128
+    ],
+    [
+     -0.25083,
+     0.0433,
+     1.1128
+    ],
+    [
+     0.21417,
+     0.06218,
+     1.09748
+    ],
+    [
+     -0.21417,
+     0.06218,
+     1.09748
+    ],
+    [
+     0.2871,
+     -0.01697,
+     0.85491
+    ],
+    [
+     -0.2871,
+     -0.01697,
+     0.85491
+    ],
+    [
+     0.24206,
+     -0.01064,
+     0.8542
+    ],
+    [
+     -0.24206,
+     -0.01064,
+     0.8542
+    ],
+    [
+     0.27858,
+     -0.01249,
+     0.85415
+    ],
+    [
+     -0.27858,
+     -0.01249,
+     0.85415
+    ],
+    [
+     0.24434,
+     -0.0393,
+     0.84455
+    ],
+    [
+     -0.24434,
+     -0.0393,
+     0.84455
+    ]
+   ]
+  },
+  "ankle-foot": {
+   "kind": "similarity",
+   "n": 12,
+   "landmarks": [
+    "lm-fibular-head",
+    "lm-fifth-metatarsal-base",
+    "lm-lateral-malleolus",
+    "lm-medial-malleolus",
+    "lm-navicular-tuberosity",
+    "lm-sustentaculum-tali"
+   ],
+   "rmsBefore": 0.01662,
+   "rmsAfter": 0.00807,
+   "scale": 1.041527,
+   "rotation": [
+    [
+     1.0,
+     0.000618,
+     0.000183
+    ],
+    [
+     -0.000619,
+     0.999992,
+     0.003965
+    ],
+    [
+     -0.000181,
+     -0.003965,
+     0.999992
+    ]
+   ],
+   "translation": [
+    -0.000227,
+    -0.001101,
+    -0.018038
+   ],
+   "anchors": [
+    [
+     0.12685,
+     0.03952,
+     0.40041
+    ],
+    [
+     -0.12685,
+     0.03952,
+     0.40041
+    ],
+    [
+     0.05272,
+     0.0318,
+     0.0738
+    ],
+    [
+     -0.05272,
+     0.0318,
+     0.0738
+    ],
+    [
+     0.10304,
+     0.05206,
+     0.0538
+    ],
+    [
+     -0.10304,
+     0.05206,
+     0.0538
+    ],
+    [
+     0.05069,
+     0.0057,
+     0.05766
+    ],
+    [
+     -0.05069,
+     0.0057,
+     0.05766
+    ],
+    [
+     0.12216,
+     0.00235,
+     0.02607
+    ],
+    [
+     -0.12216,
+     0.00235,
+     0.02607
+    ],
+    [
+     0.05515,
+     0.0389,
+     0.05569
+    ],
+    [
+     -0.05515,
+     0.0389,
+     0.05569
+    ]
+   ]
+  }
+ },
+ "summary": {
+  "pairs": 77,
+  "failed": [
+   {
+    "id": "lm-bicipital-groove",
+    "side": "r",
+    "why": "rule selected no vertices with bounds {'x': (0.17449299651384353, 0.17849299651384354)}"
+   }
+  ],
+  "blended": {
+   "rms": 0.00767,
+   "median": 0.00606,
+   "max": 0.0206,
+   "over20mm": 2
+  }
+ },
+ "landmarks": [
+  {
+   "id": "lm-mastoid-process",
+   "name": "Mastoid process",
+   "side": "l",
+   "bone": "Temporal bone.l",
+   "bp3dPart": "Left temporal bone",
+   "bp3dPartId": "FJ3281",
+   "bp3dVertices": 1835,
+   "zanatomy": [
+    0.06101,
+    0.01956,
+    1.56284
+   ],
+   "bp3d": [
+    0.06147,
+    0.03293,
+    1.56802
+   ],
+   "bp3dVertex": [
+    0.06006,
+    0.03293,
+    1.56943
+   ],
+   "afterGlobal": [
+    0.06051,
+    0.02785,
+    1.57608
+   ],
+   "afterBlend": [
+    0.06095,
+    0.02991,
+    1.56774
+   ],
+   "residualGlobal": 0.00958,
+   "residualBlended": 0.00308
+  },
+  {
+   "id": "lm-mastoid-process",
+   "name": "Mastoid process",
+   "side": "r",
+   "bone": "Temporal bone.l",
+   "bp3dPart": "Right temporal bone",
+   "bp3dPartId": "FJ3386",
+   "bp3dVertices": 1976,
+   "zanatomy": [
+    -0.06101,
+    0.01956,
+    1.56284
+   ],
+   "bp3d": [
+    -0.06243,
+    0.03297,
+    1.5676
+   ],
+   "bp3dVertex": [
+    -0.06101,
+    0.03297,
+    1.56901
+   ],
+   "afterGlobal": [
+    -0.06145,
+    0.02805,
+    1.576
+   ],
+   "afterBlend": [
+    -0.06224,
+    0.02952,
+    1.56761
+   ],
+   "residualGlobal": 0.00978,
+   "residualBlended": 0.00345
+  },
+  {
+   "id": "lm-occipital-protuberance",
+   "name": "External occipital protuberance",
+   "side": "m",
+   "bone": "Occipital bone",
+   "bp3dPart": "Occipital bone",
+   "bp3dPartId": "FJ3309",
+   "bp3dVertices": 2938,
+   "zanatomy": [
+    -0.0,
+    0.09761,
+    1.5868
+   ],
+   "bp3d": [
+    -0.00034,
+    0.11373,
+    1.59557
+   ],
+   "bp3dVertex": [
+    -0.00034,
+    0.11173,
+    1.59557
+   ],
+   "afterGlobal": [
+    -0.00035,
+    0.10626,
+    1.59897
+   ],
+   "afterBlend": [
+    -0.00092,
+    0.10873,
+    1.59041
+   ],
+   "residualGlobal": 0.00821,
+   "residualBlended": 0.00721
+  },
+  {
+   "id": "lm-superior-nuchal-line",
+   "name": "Superior nuchal line",
+   "side": "l",
+   "bone": "Occipital bone",
+   "bp3dPart": "Occipital bone",
+   "bp3dPartId": "FJ3309",
+   "bp3dVertices": 2938,
+   "zanatomy": [
+    0.02431,
+    0.08926,
+    1.58287
+   ],
+   "bp3d": [
+    0.02199,
+    0.11197,
+    1.59814
+   ],
+   "bp3dVertex": [
+    0.02199,
+    0.10997,
+    1.59814
+   ],
+   "afterGlobal": [
+    0.02393,
+    0.09783,
+    1.59517
+   ],
+   "afterBlend": [
+    0.02365,
+    0.10012,
+    1.58662
+   ],
+   "residualGlobal": 0.01458,
+   "residualBlended": 0.01661
+  },
+  {
+   "id": "lm-superior-nuchal-line",
+   "name": "Superior nuchal line",
+   "side": "r",
+   "bone": "Occipital bone",
+   "bp3dPart": "Occipital bone",
+   "bp3dPartId": "FJ3309",
+   "bp3dVertices": 2938,
+   "zanatomy": [
+    -0.02431,
+    0.08926,
+    1.58287
+   ],
+   "bp3d": [
+    -0.02231,
+    0.111,
+    1.59497
+   ],
+   "bp3dVertex": [
+    -0.02231,
+    0.109,
+    1.59497
+   ],
+   "afterGlobal": [
+    -0.02466,
+    0.09791,
+    1.59514
+   ],
+   "afterBlend": [
+    -0.02542,
+    0.09997,
+    1.58657
+   ],
+   "residualGlobal": 0.0133,
+   "residualBlended": 0.01421
+  },
+  {
+   "id": "lm-c1-transverse",
+   "name": "C1 transverse process",
+   "side": "l",
+   "bone": "Atlas (C1)",
+   "bp3dPart": "Atlas",
+   "bp3dPartId": "FJ3176",
+   "bp3dVertices": 1114,
+   "zanatomy": [
+    0.04504,
+    0.01561,
+    1.54075
+   ],
+   "bp3d": [
+    0.04223,
+    0.03052,
+    1.54691
+   ],
+   "bp3dVertex": [
+    0.04023,
+    0.03052,
+    1.54691
+   ],
+   "afterGlobal": [
+    0.04455,
+    0.02364,
+    1.55404
+   ],
+   "afterBlend": [
+    0.04469,
+    0.02448,
+    1.54513
+   ],
+   "residualGlobal": 0.01017,
+   "residualBlended": 0.00676
+  },
+  {
+   "id": "lm-c1-transverse",
+   "name": "C1 transverse process",
+   "side": "r",
+   "bone": "Atlas (C1)",
+   "bp3dPart": "Atlas",
+   "bp3dPartId": "FJ3176",
+   "bp3dVertices": 1114,
+   "zanatomy": [
+    -0.04504,
+    0.01561,
+    1.54075
+   ],
+   "bp3d": [
+    -0.04336,
+    0.03003,
+    1.54793
+   ],
+   "bp3dVertex": [
+    -0.04136,
+    0.03003,
+    1.54793
+   ],
+   "afterGlobal": [
+    -0.04548,
+    0.02379,
+    1.55398
+   ],
+   "afterBlend": [
+    -0.04589,
+    0.02419,
+    1.54501
+   ],
+   "residualGlobal": 0.00894,
+   "residualBlended": 0.007
+  },
+  {
+   "id": "lm-c2-spinous",
+   "name": "C2 spinous process",
+   "side": "m",
+   "bone": "Axis (C2)",
+   "bp3dPart": "Axis",
+   "bp3dPartId": "FJ3177",
+   "bp3dVertices": 1408,
+   "zanatomy": [
+    -0.00073,
+    0.05438,
+    1.51123
+   ],
+   "bp3d": [
+    -0.00272,
+    0.06533,
+    1.51416
+   ],
+   "bp3dVertex": [
+    -0.00272,
+    0.06333,
+    1.51416
+   ],
+   "afterGlobal": [
+    -0.00111,
+    0.06209,
+    1.52401
+   ],
+   "afterBlend": [
+    -0.00138,
+    0.0603,
+    1.51427
+   ],
+   "residualGlobal": 0.01049,
+   "residualBlended": 0.00521
+  },
+  {
+   "id": "lm-c7-spinous",
+   "name": "C7 spinous process",
+   "side": "m",
+   "bone": "Vertebra C7",
+   "bp3dPart": "Seventh cervical vertebra",
+   "bp3dPartId": "FJ3172",
+   "bp3dVertices": 1162,
+   "zanatomy": [
+    -0.0,
+    0.07923,
+    1.44336
+   ],
+   "bp3d": [
+    -0.00352,
+    0.08073,
+    1.4465
+   ],
+   "bp3dVertex": [
+    -0.00352,
+    0.07873,
+    1.4465
+   ],
+   "afterGlobal": [
+    -0.0003,
+    0.08604,
+    1.45586
+   ],
+   "afterBlend": [
+    -0.00052,
+    0.08138,
+    1.44661
+   ],
+   "residualGlobal": 0.01123,
+   "residualBlended": 0.00307
+  },
+  {
+   "id": "lm-mandible-angle",
+   "name": "Angle of mandible",
+   "side": "l",
+   "bone": "Mandible",
+   "bp3dPart": "Mandible",
+   "bp3dPartId": "FJ3289",
+   "bp3dVertices": 1207,
+   "zanatomy": [
+    0.04044,
+    -0.01263,
+    1.52519
+   ],
+   "bp3d": [
+    0.04102,
+    -0.00381,
+    1.52575
+   ],
+   "bp3dVertex": [
+    0.04035,
+    -0.00514,
+    1.52708
+   ],
+   "afterGlobal": [
+    0.03992,
+    -0.00477,
+    1.53885
+   ],
+   "afterBlend": [
+    0.04023,
+    -0.00403,
+    1.52994
+   ],
+   "residualGlobal": 0.01319,
+   "residualBlended": 0.00427
+  },
+  {
+   "id": "lm-mandible-angle",
+   "name": "Angle of mandible",
+   "side": "r",
+   "bone": "Mandible",
+   "bp3dPart": "Mandible",
+   "bp3dPartId": "FJ3289",
+   "bp3dVertices": 1207,
+   "zanatomy": [
+    -0.04044,
+    -0.01263,
+    1.52519
+   ],
+   "bp3d": [
+    -0.04256,
+    -0.00592,
+    1.52451
+   ],
+   "bp3dVertex": [
+    -0.04189,
+    -0.00726,
+    1.52584
+   ],
+   "afterGlobal": [
+    -0.04092,
+    -0.00464,
+    1.5388
+   ],
+   "afterBlend": [
+    -0.04122,
+    -0.00429,
+    1.52983
+   ],
+   "residualGlobal": 0.01445,
+   "residualBlended": 0.00573
+  },
+  {
+   "id": "lm-zygomatic-arch",
+   "name": "Zygomatic arch",
+   "side": "l",
+   "bone": "Zygomatic bone.l",
+   "bp3dPart": "Left zygomatic bone",
+   "bp3dPartId": "FJ3287",
+   "bp3dVertices": 721,
+   "zanatomy": [
+    0.06432,
+    -0.03629,
+    1.57335
+   ],
+   "bp3d": [
+    0.06524,
+    -0.02544,
+    1.57816
+   ],
+   "bp3dVertex": [
+    0.06324,
+    -0.02544,
+    1.57816
+   ],
+   "afterGlobal": [
+    0.06372,
+    -0.02783,
+    1.5873
+   ],
+   "afterBlend": [
+    0.06499,
+    -0.02539,
+    1.57986
+   ],
+   "residualGlobal": 0.00957,
+   "residualBlended": 0.00172
+  },
+  {
+   "id": "lm-zygomatic-arch",
+   "name": "Zygomatic arch",
+   "side": "r",
+   "bone": "Zygomatic bone.l",
+   "bp3dPart": "Right zygomatic bone",
+   "bp3dPartId": "FJ3392",
+   "bp3dVertices": 717,
+   "zanatomy": [
+    -0.06432,
+    -0.03629,
+    1.57335
+   ],
+   "bp3d": [
+    -0.06658,
+    -0.02577,
+    1.57861
+   ],
+   "bp3dVertex": [
+    -0.06458,
+    -0.02577,
+    1.57861
+   ],
+   "afterGlobal": [
+    -0.06485,
+    -0.02762,
+    1.58722
+   ],
+   "afterBlend": [
+    -0.06595,
+    -0.02583,
+    1.57975
+   ],
+   "residualGlobal": 0.00898,
+   "residualBlended": 0.00131
+  },
+  {
+   "id": "lm-acromion",
+   "name": "Acromion",
+   "side": "l",
+   "bone": "Scapula.l",
+   "bp3dPart": "Left scapula",
+   "bp3dPartId": "FJ3279",
+   "bp3dVertices": 3097,
+   "zanatomy": [
+    0.17536,
+    0.04492,
+    1.41291
+   ],
+   "bp3d": [
+    0.16825,
+    0.04322,
+    1.42382
+   ],
+   "bp3dVertex": [
+    0.16646,
+    0.04322,
+    1.42292
+   ],
+   "afterGlobal": [
+    0.17493,
+    0.05107,
+    1.42598
+   ],
+   "afterBlend": [
+    0.17068,
+    0.04503,
+    1.41911
+   ],
+   "residualGlobal": 0.01053,
+   "residualBlended": 0.0056
+  },
+  {
+   "id": "lm-acromion",
+   "name": "Acromion",
+   "side": "r",
+   "bone": "Scapula.l",
+   "bp3dPart": "Right scapula",
+   "bp3dPartId": "FJ3384",
+   "bp3dVertices": 2896,
+   "zanatomy": [
+    -0.17536,
+    0.04492,
+    1.41291
+   ],
+   "bp3d": [
+    -0.16824,
+    0.04328,
+    1.42329
+   ],
+   "bp3dVertex": [
+    -0.16646,
+    0.04328,
+    1.42239
+   ],
+   "afterGlobal": [
+    -0.1756,
+    0.05165,
+    1.42576
+   ],
+   "afterBlend": [
+    -0.17126,
+    0.04381,
+    1.41761
+   ],
+   "residualGlobal": 0.01142,
+   "residualBlended": 0.00645
+  },
+  {
+   "id": "lm-coracoid",
+   "name": "Coracoid process",
+   "side": "l",
+   "bone": "Scapula.l",
+   "bp3dPart": "Left scapula",
+   "bp3dPartId": "FJ3279",
+   "bp3dVertices": 3097,
+   "zanatomy": [
+    0.13554,
+    -0.00326,
+    1.39112
+   ],
+   "bp3d": [
+    0.13248,
+    -0.00484,
+    1.40147
+   ],
+   "bp3dVertex": [
+    0.13248,
+    -0.00283,
+    1.40147
+   ],
+   "afterGlobal": [
+    0.13506,
+    0.0027,
+    1.4048
+   ],
+   "afterBlend": [
+    0.13231,
+    -0.00239,
+    1.39871
+   ],
+   "residualGlobal": 0.00864,
+   "residualBlended": 0.0037
+  },
+  {
+   "id": "lm-coracoid",
+   "name": "Coracoid process",
+   "side": "r",
+   "bone": "Scapula.l",
+   "bp3dPart": "Right scapula",
+   "bp3dPartId": "FJ3384",
+   "bp3dVertices": 2896,
+   "zanatomy": [
+    -0.13554,
+    -0.00326,
+    1.39112
+   ],
+   "bp3d": [
+    -0.13267,
+    -0.00485,
+    1.40146
+   ],
+   "bp3dVertex": [
+    -0.13267,
+    -0.00285,
+    1.40146
+   ],
+   "afterGlobal": [
+    -0.13587,
+    0.00315,
+    1.40464
+   ],
+   "afterBlend": [
+    -0.13242,
+    -0.00326,
+    1.39744
+   ],
+   "residualGlobal": 0.00918,
+   "residualBlended": 0.00433
+  },
+  {
+   "id": "lm-scapular-spine",
+   "name": "Spine of scapula",
+   "side": "l",
+   "bone": "Scapula.l",
+   "bp3dPart": "Left scapula",
+   "bp3dPartId": "FJ3279",
+   "bp3dVertices": 3097,
+   "zanatomy": [
+    0.11441,
+    0.09341,
+    1.3879
+   ],
+   "bp3d": [
+    0.1091,
+    0.08764,
+    1.39435
+   ],
+   "bp3dVertex": [
+    0.1091,
+    0.08564,
+    1.39435
+   ],
+   "afterGlobal": [
+    0.11411,
+    0.09931,
+    1.40032
+   ],
+   "afterBlend": [
+    0.11097,
+    0.09096,
+    1.39331
+   ],
+   "residualGlobal": 0.01403,
+   "residualBlended": 0.00395
+  },
+  {
+   "id": "lm-scapular-spine",
+   "name": "Spine of scapula",
+   "side": "r",
+   "bone": "Scapula.l",
+   "bp3dPart": "Right scapula",
+   "bp3dPartId": "FJ3384",
+   "bp3dVertices": 2896,
+   "zanatomy": [
+    -0.11441,
+    0.09341,
+    1.3879
+   ],
+   "bp3d": [
+    -0.10925,
+    0.08742,
+    1.39726
+   ],
+   "bp3dVertex": [
+    -0.10925,
+    0.08542,
+    1.39726
+   ],
+   "afterGlobal": [
+    -0.11459,
+    0.09969,
+    1.40018
+   ],
+   "afterBlend": [
+    -0.1115,
+    0.09013,
+    1.39245
+   ],
+   "residualGlobal": 0.01369,
+   "residualBlended": 0.00596
+  },
+  {
+   "id": "lm-inferior-angle",
+   "name": "Inferior angle of scapula",
+   "side": "l",
+   "bone": "Scapula.l",
+   "bp3dPart": "Left scapula",
+   "bp3dPartId": "FJ3279",
+   "bp3dVertices": 3097,
+   "zanatomy": [
+    0.0935,
+    0.102,
+    1.25249
+   ],
+   "bp3d": [
+    0.09443,
+    0.09564,
+    1.26027
+   ],
+   "bp3dVertex": [
+    0.09443,
+    0.09474,
+    1.26206
+   ],
+   "afterGlobal": [
+    0.0933,
+    0.10618,
+    1.26487
+   ],
+   "afterBlend": [
+    0.09069,
+    0.0966,
+    1.26417
+   ],
+   "residualGlobal": 0.01155,
+   "residualBlended": 0.00548
+  },
+  {
+   "id": "lm-inferior-angle",
+   "name": "Inferior angle of scapula",
+   "side": "r",
+   "bone": "Scapula.l",
+   "bp3dPart": "Right scapula",
+   "bp3dPartId": "FJ3384",
+   "bp3dVertices": 2896,
+   "zanatomy": [
+    -0.0935,
+    0.102,
+    1.25249
+   ],
+   "bp3d": [
+    -0.094,
+    0.09552,
+    1.26036
+   ],
+   "bp3dVertex": [
+    -0.094,
+    0.09463,
+    1.26215
+   ],
+   "afterGlobal": [
+    -0.0936,
+    0.10649,
+    1.26476
+   ],
+   "afterBlend": [
+    -0.08978,
+    0.09599,
+    1.2634
+   ],
+   "residualGlobal": 0.01182,
+   "residualBlended": 0.00521
+  },
+  {
+   "id": "lm-scapular-medial-border",
+   "name": "Medial border of scapula",
+   "side": "l",
+   "bone": "Scapula.l",
+   "bp3dPart": "Left scapula",
+   "bp3dPartId": "FJ3279",
+   "bp3dVertices": 3097,
+   "zanatomy": [
+    0.05915,
+    0.10391,
+    1.33823
+   ],
+   "bp3d": [
+    0.05666,
+    0.0928,
+    1.34869
+   ],
+   "bp3dVertex": [
+    0.05845,
+    0.09191,
+    1.34869
+   ],
+   "afterGlobal": [
+    0.05892,
+    0.10925,
+    1.35051
+   ],
+   "afterBlend": [
+    0.05729,
+    0.09965,
+    1.34522
+   ],
+   "residualGlobal": 0.0167,
+   "residualBlended": 0.00771
+  },
+  {
+   "id": "lm-scapular-medial-border",
+   "name": "Medial border of scapula",
+   "side": "r",
+   "bone": "Scapula.l",
+   "bp3dPart": "Right scapula",
+   "bp3dPartId": "FJ3384",
+   "bp3dVertices": 2896,
+   "zanatomy": [
+    -0.05915,
+    0.10391,
+    1.33823
+   ],
+   "bp3d": [
+    -0.0568,
+    0.09327,
+    1.34561
+   ],
+   "bp3dVertex": [
+    -0.05859,
+    0.09237,
+    1.34561
+   ],
+   "afterGlobal": [
+    -0.05931,
+    0.10945,
+    1.35044
+   ],
+   "afterBlend": [
+    -0.05738,
+    0.09923,
+    1.34474
+   ],
+   "residualGlobal": 0.01707,
+   "residualBlended": 0.00606
+  },
+  {
+   "id": "lm-greater-tubercle",
+   "name": "Greater tubercle",
+   "side": "l",
+   "bone": "Humerus.l",
+   "bp3dPart": "Left humerus",
+   "bp3dPartId": "FJ3262",
+   "bp3dVertices": 586,
+   "zanatomy": [
+    0.19717,
+    0.02199,
+    1.37946
+   ],
+   "bp3d": [
+    0.19069,
+    0.01789,
+    1.39048
+   ],
+   "bp3dVertex": [
+    0.18869,
+    0.01789,
+    1.39048
+   ],
+   "afterGlobal": [
+    0.19671,
+    0.02768,
+    1.39286
+   ],
+   "afterBlend": [
+    0.19193,
+    0.02147,
+    1.38774
+   ],
+   "residualGlobal": 0.01173,
+   "residualBlended": 0.00468
+  },
+  {
+   "id": "lm-greater-tubercle",
+   "name": "Greater tubercle",
+   "side": "r",
+   "bone": "Humerus.l",
+   "bp3dPart": "Right humerus",
+   "bp3dPartId": "FJ3368",
+   "bp3dVertices": 794,
+   "zanatomy": [
+    -0.19717,
+    0.02199,
+    1.37946
+   ],
+   "bp3d": [
+    -0.19091,
+    0.01923,
+    1.37691
+   ],
+   "bp3dVertex": [
+    -0.18891,
+    0.01923,
+    1.37691
+   ],
+   "afterGlobal": [
+    -0.19742,
+    0.02834,
+    1.39262
+   ],
+   "afterBlend": [
+    -0.19208,
+    0.02019,
+    1.38575
+   ],
+   "residualGlobal": 0.01929,
+   "residualBlended": 0.00897
+  },
+  {
+   "id": "lm-bicipital-groove",
+   "name": "Bicipital groove",
+   "side": "l",
+   "bone": "Humerus.l",
+   "bp3dPart": "Left humerus",
+   "bp3dPartId": "FJ3262",
+   "bp3dVertices": 586,
+   "zanatomy": [
+    0.1839,
+    0.01103,
+    1.37135
+   ],
+   "bp3d": [
+    0.17471,
+    0.00756,
+    1.3817
+   ],
+   "bp3dVertex": [
+    0.17471,
+    0.00956,
+    1.3817
+   ],
+   "afterGlobal": [
+    0.18343,
+    0.01665,
+    1.38489
+   ],
+   "afterBlend": [
+    0.17909,
+    0.01053,
+    1.38006
+   ],
+   "residualGlobal": 0.01299,
+   "residualBlended": 0.00554
+  },
+  {
+   "id": "lm-jugular-notch",
+   "name": "Jugular notch",
+   "side": "m",
+   "bone": "Manubrium of sternum",
+   "bp3dPart": "Manubrium",
+   "bp3dPartId": "FJ3290",
+   "bp3dVertices": 1094,
+   "zanatomy": [
+    -0.00276,
+    -0.04684,
+    1.40161
+   ],
+   "bp3d": [
+    -0.00096,
+    -0.0475,
+    1.39976
+   ],
+   "bp3dVertex": [
+    -0.00096,
+    -0.04661,
+    1.39797
+   ],
+   "afterGlobal": [
+    -0.00324,
+    -0.04049,
+    1.41576
+   ],
+   "afterBlend": [
+    -0.00258,
+    -0.04476,
+    1.40853
+   ],
+   "residualGlobal": 0.01762,
+   "residualBlended": 0.00933
+  },
+  {
+   "id": "lm-sternal-angle",
+   "name": "Sternal angle",
+   "side": "m",
+   "bone": "Manubrium of sternum",
+   "bp3dPart": "Manubrium",
+   "bp3dPartId": "FJ3290",
+   "bp3dVertices": 1094,
+   "zanatomy": [
+    -0.00265,
+    -0.08218,
+    1.35443
+   ],
+   "bp3d": [
+    0.00295,
+    -0.0767,
+    1.36433
+   ],
+   "bp3dVertex": [
+    0.00295,
+    -0.0747,
+    1.36433
+   ],
+   "afterGlobal": [
+    -0.00316,
+    -0.07641,
+    1.36907
+   ],
+   "afterBlend": [
+    -0.00209,
+    -0.08091,
+    1.36379
+   ],
+   "residualGlobal": 0.00774,
+   "residualBlended": 0.00659
+  },
+  {
+   "id": "lm-costal-margin",
+   "name": "Costal margin",
+   "side": "l",
+   "bone": "Seventh rib.l",
+   "bp3dPart": "Left seventh rib",
+   "bp3dPartId": "FJ3234",
+   "bp3dVertices": 1122,
+   "zanatomy": [
+    0.10996,
+    -0.07844,
+    1.16966
+   ],
+   "bp3d": [
+    0.10442,
+    -0.0737,
+    1.18151
+   ],
+   "bp3dVertex": [
+    0.10442,
+    -0.07281,
+    1.1833
+   ],
+   "afterGlobal": [
+    0.1095,
+    -0.07525,
+    1.18444
+   ],
+   "afterBlend": [
+    0.10748,
+    -0.07471,
+    1.18554
+   ],
+   "residualGlobal": 0.00607,
+   "residualBlended": 0.00516
+  },
+  {
+   "id": "lm-costal-margin",
+   "name": "Costal margin",
+   "side": "r",
+   "bone": "Seventh rib.l",
+   "bp3dPart": "Right seventh rib",
+   "bp3dPartId": "FJ3346",
+   "bp3dVertices": 1122,
+   "zanatomy": [
+    -0.10996,
+    -0.07844,
+    1.16966
+   ],
+   "bp3d": [
+    -0.10548,
+    -0.07349,
+    1.18153
+   ],
+   "bp3dVertex": [
+    -0.10548,
+    -0.0726,
+    1.18332
+   ],
+   "afterGlobal": [
+    -0.1103,
+    -0.07488,
+    1.1843
+   ],
+   "afterBlend": [
+    -0.10719,
+    -0.0746,
+    1.18587
+   ],
+   "residualGlobal": 0.00573,
+   "residualBlended": 0.00479
+  },
+  {
+   "id": "lm-medial-epicondyle",
+   "name": "Medial epicondyle",
+   "side": "l",
+   "bone": "Humerus.l",
+   "bp3dPart": "Left humerus",
+   "bp3dPartId": "FJ3262",
+   "bp3dVertices": 586,
+   "zanatomy": [
+    0.1815,
+    0.03555,
+    1.10699
+   ],
+   "bp3d": [
+    0.17588,
+    0.0338,
+    1.12701
+   ],
+   "bp3dVertex": [
+    0.17788,
+    0.0338,
+    1.12701
+   ],
+   "afterGlobal": [
+    0.18123,
+    0.03774,
+    1.12038
+   ],
+   "afterBlend": [
+    0.17782,
+    0.03687,
+    1.1286
+   ],
+   "residualGlobal": 0.00939,
+   "residualBlended": 0.00396
+  },
+  {
+   "id": "lm-medial-epicondyle",
+   "name": "Medial epicondyle",
+   "side": "r",
+   "bone": "Humerus.l",
+   "bp3dPart": "Right humerus",
+   "bp3dPartId": "FJ3368",
+   "bp3dVertices": 794,
+   "zanatomy": [
+    -0.1815,
+    0.03555,
+    1.10699
+   ],
+   "bp3d": [
+    -0.17572,
+    0.03155,
+    1.12661
+   ],
+   "bp3dVertex": [
+    -0.17772,
+    0.03155,
+    1.12661
+   ],
+   "afterGlobal": [
+    -0.18157,
+    0.03834,
+    1.12015
+   ],
+   "afterBlend": [
+    -0.17723,
+    0.03739,
+    1.12846
+   ],
+   "residualGlobal": 0.01105,
+   "residualBlended": 0.0063
+  },
+  {
+   "id": "lm-lateral-epicondyle",
+   "name": "Lateral epicondyle",
+   "side": "l",
+   "bone": "Humerus.l",
+   "bp3dPart": "Left humerus",
+   "bp3dPartId": "FJ3262",
+   "bp3dVertices": 586,
+   "zanatomy": [
+    0.25083,
+    0.0433,
+    1.1128
+   ],
+   "bp3d": [
+    0.24276,
+    0.03929,
+    1.1324
+   ],
+   "bp3dVertex": [
+    0.24076,
+    0.03929,
+    1.1324
+   ],
+   "afterGlobal": [
+    0.25053,
+    0.04545,
+    1.12613
+   ],
+   "afterBlend": [
+    0.24445,
+    0.04157,
+    1.13338
+   ],
+   "residualGlobal": 0.01174,
+   "residualBlended": 0.003
+  },
+  {
+   "id": "lm-lateral-epicondyle",
+   "name": "Lateral epicondyle",
+   "side": "r",
+   "bone": "Humerus.l",
+   "bp3dPart": "Right humerus",
+   "bp3dPartId": "FJ3368",
+   "bp3dVertices": 794,
+   "zanatomy": [
+    -0.25083,
+    0.0433,
+    1.1128
+   ],
+   "bp3d": [
+    -0.24274,
+    0.03957,
+    1.13219
+   ],
+   "bp3dVertex": [
+    -0.24074,
+    0.03957,
+    1.13219
+   ],
+   "afterGlobal": [
+    -0.25086,
+    0.04628,
+    1.12582
+   ],
+   "afterBlend": [
+    -0.24386,
+    0.042,
+    1.13315
+   ],
+   "residualGlobal": 0.01231,
+   "residualBlended": 0.00284
+  },
+  {
+   "id": "lm-olecranon",
+   "name": "Olecranon",
+   "side": "l",
+   "bone": "Ulna.l",
+   "bp3dPart": "Left ulna",
+   "bp3dPartId": "FJ3286",
+   "bp3dVertices": 283,
+   "zanatomy": [
+    0.21417,
+    0.06218,
+    1.09748
+   ],
+   "bp3d": [
+    0.20861,
+    0.05687,
+    1.11863
+   ],
+   "bp3dVertex": [
+    0.20861,
+    0.05508,
+    1.11773
+   ],
+   "afterGlobal": [
+    0.21393,
+    0.06418,
+    1.11055
+   ],
+   "afterBlend": [
+    0.2096,
+    0.06193,
+    1.11939
+   ],
+   "residualGlobal": 0.01213,
+   "residualBlended": 0.00521
+  },
+  {
+   "id": "lm-olecranon",
+   "name": "Olecranon",
+   "side": "r",
+   "bone": "Ulna.l",
+   "bp3dPart": "Right ulna",
+   "bp3dPartId": "FJ3391",
+   "bp3dVertices": 305,
+   "zanatomy": [
+    -0.21417,
+    0.06218,
+    1.09748
+   ],
+   "bp3d": [
+    -0.20769,
+    0.05699,
+    1.11787
+   ],
+   "bp3dVertex": [
+    -0.20769,
+    0.0552,
+    1.11697
+   ],
+   "afterGlobal": [
+    -0.21418,
+    0.06489,
+    1.11028
+   ],
+   "afterBlend": [
+    -0.20891,
+    0.06257,
+    1.11919
+   ],
+   "residualGlobal": 0.01273,
+   "residualBlended": 0.00586
+  },
+  {
+   "id": "lm-radial-styloid",
+   "name": "Radial styloid",
+   "side": "l",
+   "bone": "Radius.l",
+   "bp3dPart": "Left radius",
+   "bp3dPartId": "FJ3277",
+   "bp3dVertices": 250,
+   "zanatomy": [
+    0.2871,
+    -0.01697,
+    0.85491
+   ],
+   "bp3d": [
+    0.27887,
+    -0.01832,
+    0.88286
+   ],
+   "bp3dVertex": [
+    0.27745,
+    -0.01832,
+    0.88427
+   ],
+   "afterGlobal": [
+    0.28684,
+    -0.01818,
+    0.8692
+   ],
+   "afterBlend": [
+    0.28249,
+    -0.01335,
+    0.8817
+   ],
+   "residualGlobal": 0.01582,
+   "residualBlended": 0.00626
+  },
+  {
+   "id": "lm-radial-styloid",
+   "name": "Radial styloid",
+   "side": "r",
+   "bone": "Radius.l",
+   "bp3dPart": "Right radius",
+   "bp3dPartId": "FJ3349",
+   "bp3dVertices": 249,
+   "zanatomy": [
+    -0.2871,
+    -0.01697,
+    0.85491
+   ],
+   "bp3d": [
+    -0.27806,
+    -0.01795,
+    0.88253
+   ],
+   "bp3dVertex": [
+    -0.27664,
+    -0.01795,
+    0.88395
+   ],
+   "afterGlobal": [
+    -0.28705,
+    -0.01723,
+    0.86884
+   ],
+   "afterBlend": [
+    -0.28214,
+    -0.01264,
+    0.88148
+   ],
+   "residualGlobal": 0.0164,
+   "residualBlended": 0.00677
+  },
+  {
+   "id": "lm-ulnar-styloid",
+   "name": "Ulnar styloid",
+   "side": "l",
+   "bone": "Ulna.l",
+   "bp3dPart": "Left ulna",
+   "bp3dPartId": "FJ3286",
+   "bp3dVertices": 283,
+   "zanatomy": [
+    0.24206,
+    -0.01064,
+    0.8542
+   ],
+   "bp3d": [
+    0.23439,
+    -0.01281,
+    0.88195
+   ],
+   "bp3dVertex": [
+    0.23578,
+    -0.01322,
+    0.88333
+   ],
+   "afterGlobal": [
+    0.24183,
+    -0.01179,
+    0.86838
+   ],
+   "afterBlend": [
+    0.23977,
+    -0.00429,
+    0.88051
+   ],
+   "residualGlobal": 0.01551,
+   "residualBlended": 0.01017
+  },
+  {
+   "id": "lm-ulnar-styloid",
+   "name": "Ulnar styloid",
+   "side": "r",
+   "bone": "Ulna.l",
+   "bp3dPart": "Right ulna",
+   "bp3dPartId": "FJ3391",
+   "bp3dVertices": 305,
+   "zanatomy": [
+    -0.24206,
+    -0.01064,
+    0.8542
+   ],
+   "bp3d": [
+    -0.23431,
+    -0.01176,
+    0.8819
+   ],
+   "bp3dVertex": [
+    -0.2357,
+    -0.01217,
+    0.88328
+   ],
+   "afterGlobal": [
+    -0.24203,
+    -0.01098,
+    0.86808
+   ],
+   "afterBlend": [
+    -0.23957,
+    -0.00351,
+    0.88035
+   ],
+   "residualGlobal": 0.01585,
+   "residualBlended": 0.00991
+  },
+  {
+   "id": "lm-anatomical-snuffbox",
+   "name": "Anatomical snuffbox",
+   "side": "l",
+   "bone": "Scaphoid bone.l",
+   "bp3dPart": "Left scaphoid",
+   "bp3dPartId": "FJ3278",
+   "bp3dVertices": 172,
+   "zanatomy": [
+    0.27858,
+    -0.01249,
+    0.85415
+   ],
+   "bp3d": [
+    0.27129,
+    -0.0155,
+    0.88212
+   ],
+   "bp3dVertex": [
+    0.26987,
+    -0.01691,
+    0.88212
+   ],
+   "afterGlobal": [
+    0.27833,
+    -0.0137,
+    0.86837
+   ],
+   "afterBlend": [
+    0.27453,
+    -0.00835,
+    0.88084
+   ],
+   "residualGlobal": 0.01555,
+   "residualBlended": 0.00795
+  },
+  {
+   "id": "lm-anatomical-snuffbox",
+   "name": "Anatomical snuffbox",
+   "side": "r",
+   "bone": "Scaphoid bone.l",
+   "bp3dPart": "Right scaphoid",
+   "bp3dPartId": "FJ3383",
+   "bp3dVertices": 185,
+   "zanatomy": [
+    -0.27858,
+    -0.01249,
+    0.85415
+   ],
+   "bp3d": [
+    -0.26986,
+    -0.0139,
+    0.88217
+   ],
+   "bp3dVertex": [
+    -0.26845,
+    -0.01531,
+    0.88217
+   ],
+   "afterGlobal": [
+    -0.27853,
+    -0.01277,
+    0.86803
+   ],
+   "afterBlend": [
+    -0.2742,
+    -0.00762,
+    0.88063
+   ],
+   "residualGlobal": 0.01663,
+   "residualBlended": 0.00778
+  },
+  {
+   "id": "lm-pisiform",
+   "name": "Pisiform",
+   "side": "l",
+   "bone": "Pisiform bone.l",
+   "bp3dPart": "Left pisiform",
+   "bp3dPartId": "FJ3276",
+   "bp3dVertices": 116,
+   "zanatomy": [
+    0.24434,
+    -0.0393,
+    0.84455
+   ],
+   "bp3d": [
+    0.2372,
+    -0.03959,
+    0.87214
+   ],
+   "bp3dVertex": [
+    0.2372,
+    -0.03759,
+    0.87214
+   ],
+   "afterGlobal": [
+    0.24407,
+    -0.04056,
+    0.8591
+   ],
+   "afterBlend": [
+    0.24165,
+    -0.03316,
+    0.87128
+   ],
+   "residualGlobal": 0.01476,
+   "residualBlended": 0.00787
+  },
+  {
+   "id": "lm-pisiform",
+   "name": "Pisiform",
+   "side": "r",
+   "bone": "Pisiform bone.l",
+   "bp3dPart": "Right pisiform",
+   "bp3dPartId": "FJ3382",
+   "bp3dVertices": 110,
+   "zanatomy": [
+    -0.24434,
+    -0.0393,
+    0.84455
+   ],
+   "bp3d": [
+    -0.23611,
+    -0.03966,
+    0.87287
+   ],
+   "bp3dVertex": [
+    -0.23611,
+    -0.03766,
+    0.87287
+   ],
+   "afterGlobal": [
+    -0.24435,
+    -0.03975,
+    0.8588
+   ],
+   "afterBlend": [
+    -0.24151,
+    -0.03238,
+    0.87112
+   ],
+   "residualGlobal": 0.0163,
+   "residualBlended": 0.00923
+  },
+  {
+   "id": "lm-iliac-crest",
+   "name": "Iliac crest",
+   "side": "l",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Left hip bone",
+   "bp3dPartId": "FJ3288",
+   "bp3dVertices": 986,
+   "zanatomy": [
+    0.09656,
+    0.02761,
+    1.01386
+   ],
+   "bp3d": [
+    0.10448,
+    0.03852,
+    1.03784
+   ],
+   "bp3dVertex": [
+    0.10391,
+    0.03852,
+    1.03593
+   ],
+   "afterGlobal": [
+    0.09638,
+    0.02874,
+    1.02735
+   ],
+   "afterBlend": [
+    0.09602,
+    0.03819,
+    1.03938
+   ],
+   "residualGlobal": 0.01647,
+   "residualBlended": 0.00861
+  },
+  {
+   "id": "lm-iliac-crest",
+   "name": "Iliac crest",
+   "side": "r",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Right hip bone",
+   "bp3dPartId": "FJ3152",
+   "bp3dVertices": 1036,
+   "zanatomy": [
+    -0.09656,
+    0.02761,
+    1.01386
+   ],
+   "bp3d": [
+    -0.10186,
+    0.04127,
+    1.0379
+   ],
+   "bp3dVertex": [
+    -0.10128,
+    0.04127,
+    1.03598
+   ],
+   "afterGlobal": [
+    -0.09664,
+    0.02906,
+    1.02723
+   ],
+   "afterBlend": [
+    -0.09591,
+    0.03902,
+    1.03945
+   ],
+   "residualGlobal": 0.01702,
+   "residualBlended": 0.00654
+  },
+  {
+   "id": "lm-asis",
+   "name": "ASIS",
+   "side": "l",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Left hip bone",
+   "bp3dPartId": "FJ3288",
+   "bp3dVertices": 986,
+   "zanatomy": [
+    0.11794,
+    -0.05807,
+    0.94513
+   ],
+   "bp3d": [
+    0.12621,
+    -0.04075,
+    0.9735
+   ],
+   "bp3dVertex": [
+    0.12621,
+    -0.03875,
+    0.9735
+   ],
+   "afterGlobal": [
+    0.11765,
+    -0.05781,
+    0.95979
+   ],
+   "afterBlend": [
+    0.11731,
+    -0.04445,
+    0.96988
+   ],
+   "residualGlobal": 0.0235,
+   "residualBlended": 0.0103
+  },
+  {
+   "id": "lm-asis",
+   "name": "ASIS",
+   "side": "r",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Right hip bone",
+   "bp3dPartId": "FJ3152",
+   "bp3dVertices": 1036,
+   "zanatomy": [
+    -0.11794,
+    -0.05807,
+    0.94513
+   ],
+   "bp3d": [
+    -0.12979,
+    -0.04102,
+    0.97396
+   ],
+   "bp3dVertex": [
+    -0.12979,
+    -0.03902,
+    0.97396
+   ],
+   "afterGlobal": [
+    -0.11811,
+    -0.05742,
+    0.95964
+   ],
+   "afterBlend": [
+    -0.11809,
+    -0.04341,
+    0.96997
+   ],
+   "residualGlobal": 0.0247,
+   "residualBlended": 0.01259
+  },
+  {
+   "id": "lm-psis",
+   "name": "PSIS",
+   "side": "l",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Left hip bone",
+   "bp3dPartId": "FJ3288",
+   "bp3dVertices": 986,
+   "zanatomy": [
+    0.04627,
+    0.08878,
+    0.95946
+   ],
+   "bp3d": [
+    0.04597,
+    0.10069,
+    0.98658
+   ],
+   "bp3dVertex": [
+    0.04597,
+    0.09869,
+    0.98658
+   ],
+   "afterGlobal": [
+    0.04625,
+    0.08926,
+    0.97217
+   ],
+   "afterBlend": [
+    0.04652,
+    0.10281,
+    0.98679
+   ],
+   "residualGlobal": 0.0184,
+   "residualBlended": 0.00221
+  },
+  {
+   "id": "lm-psis",
+   "name": "PSIS",
+   "side": "r",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Right hip bone",
+   "bp3dPartId": "FJ3152",
+   "bp3dVertices": 1036,
+   "zanatomy": [
+    -0.04627,
+    0.08878,
+    0.95946
+   ],
+   "bp3d": [
+    -0.04459,
+    0.10088,
+    0.98648
+   ],
+   "bp3dVertex": [
+    -0.04459,
+    0.09888,
+    0.98648
+   ],
+   "afterGlobal": [
+    -0.04624,
+    0.08941,
+    0.97211
+   ],
+   "afterBlend": [
+    -0.04589,
+    0.10329,
+    0.98683
+   ],
+   "residualGlobal": 0.01846,
+   "residualBlended": 0.00275
+  },
+  {
+   "id": "lm-ischial-tuberosity",
+   "name": "Ischial tuberosity",
+   "side": "l",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Left hip bone",
+   "bp3dPartId": "FJ3288",
+   "bp3dVertices": 986,
+   "zanatomy": [
+    0.04323,
+    0.03523,
+    0.79555
+   ],
+   "bp3d": [
+    0.04363,
+    0.04804,
+    0.82827
+   ],
+   "bp3dVertex": [
+    0.04363,
+    0.04714,
+    0.83006
+   ],
+   "afterGlobal": [
+    0.04322,
+    0.03363,
+    0.80905
+   ],
+   "afterBlend": [
+    0.04361,
+    0.04767,
+    0.82077
+   ],
+   "residualGlobal": 0.02403,
+   "residualBlended": 0.00751
+  },
+  {
+   "id": "lm-ischial-tuberosity",
+   "name": "Ischial tuberosity",
+   "side": "r",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Right hip bone",
+   "bp3dPartId": "FJ3152",
+   "bp3dVertices": 1036,
+   "zanatomy": [
+    -0.04323,
+    0.03523,
+    0.79555
+   ],
+   "bp3d": [
+    -0.04123,
+    0.04771,
+    0.82848
+   ],
+   "bp3dVertex": [
+    -0.04123,
+    0.04681,
+    0.83026
+   ],
+   "afterGlobal": [
+    -0.04319,
+    0.03377,
+    0.80899
+   ],
+   "afterBlend": [
+    -0.0433,
+    0.04796,
+    0.82071
+   ],
+   "residualGlobal": 0.02403,
+   "residualBlended": 0.00803
+  },
+  {
+   "id": "lm-pubic-tubercle",
+   "name": "Pubic tubercle",
+   "side": "l",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Left hip bone",
+   "bp3dPartId": "FJ3288",
+   "bp3dVertices": 986,
+   "zanatomy": [
+    0.02334,
+    -0.0545,
+    0.8498
+   ],
+   "bp3d": [
+    0.02109,
+    -0.03953,
+    0.87776
+   ],
+   "bp3dVertex": [
+    0.02109,
+    -0.03782,
+    0.87673
+   ],
+   "afterGlobal": [
+    0.02316,
+    -0.05531,
+    0.86441
+   ],
+   "afterBlend": [
+    0.02316,
+    -0.04058,
+    0.8761
+   ],
+   "residualGlobal": 0.02077,
+   "residualBlended": 0.00285
+  },
+  {
+   "id": "lm-pubic-tubercle",
+   "name": "Pubic tubercle",
+   "side": "r",
+   "bone": "Hip bone.l",
+   "bp3dPart": "Right hip bone",
+   "bp3dPartId": "FJ3152",
+   "bp3dVertices": 1036,
+   "zanatomy": [
+    -0.02334,
+    -0.0545,
+    0.8498
+   ],
+   "bp3d": [
+    -0.02213,
+    -0.0392,
+    0.87884
+   ],
+   "bp3dVertex": [
+    -0.02213,
+    -0.03749,
+    0.87781
+   ],
+   "afterGlobal": [
+    -0.0235,
+    -0.05524,
+    0.86438
+   ],
+   "afterBlend": [
+    -0.02368,
+    -0.04039,
+    0.87608
+   ],
+   "residualGlobal": 0.02163,
+   "residualBlended": 0.00337
+  },
+  {
+   "id": "lm-greater-trochanter",
+   "name": "Greater trochanter",
+   "side": "l",
+   "bone": "Femur.l",
+   "bp3dPart": "Left femur",
+   "bp3dPartId": "FJ3259",
+   "bp3dVertices": 459,
+   "zanatomy": [
+    0.15053,
+    0.01167,
+    0.83484
+   ],
+   "bp3d": [
+    0.15224,
+    0.02391,
+    0.86211
+   ],
+   "bp3dVertex": [
+    0.15024,
+    0.02391,
+    0.86211
+   ],
+   "afterGlobal": [
+    0.1504,
+    0.01041,
+    0.84868
+   ],
+   "afterBlend": [
+    0.15059,
+    0.02174,
+    0.86014
+   ],
+   "residualGlobal": 0.01913,
+   "residualBlended": 0.00336
+  },
+  {
+   "id": "lm-greater-trochanter",
+   "name": "Greater trochanter",
+   "side": "r",
+   "bone": "Femur.l",
+   "bp3dPart": "Right femur",
+   "bp3dPartId": "FJ3365",
+   "bp3dVertices": 480,
+   "zanatomy": [
+    -0.15053,
+    0.01167,
+    0.83484
+   ],
+   "bp3d": [
+    -0.15196,
+    0.02313,
+    0.8606
+   ],
+   "bp3dVertex": [
+    -0.14996,
+    0.02313,
+    0.8606
+   ],
+   "afterGlobal": [
+    -0.1505,
+    0.01091,
+    0.8485
+   ],
+   "afterBlend": [
+    -0.15052,
+    0.02237,
+    0.86004
+   ],
+   "residualGlobal": 0.01726,
+   "residualBlended": 0.00172
+  },
+  {
+   "id": "lm-sacral-base",
+   "name": "Sacral base",
+   "side": "m",
+   "bone": "Sacrum",
+   "bp3dPart": "Sacrum",
+   "bp3dPartId": "FJ3393",
+   "bp3dVertices": 2771,
+   "zanatomy": [
+    -4e-05,
+    0.03677,
+    0.95932
+   ],
+   "bp3d": [
+    -0.00096,
+    0.057,
+    0.98552
+   ],
+   "bp3dVertex": [
+    -0.00096,
+    0.057,
+    0.98352
+   ],
+   "afterGlobal": [
+    -0.00012,
+    0.03735,
+    0.97267
+   ],
+   "afterBlend": [
+    0.0,
+    0.05132,
+    0.98581
+   ],
+   "residualGlobal": 0.0235,
+   "residualBlended": 0.00577
+  },
+  {
+   "id": "lm-tibial-tuberosity",
+   "name": "Tibial tuberosity",
+   "side": "l",
+   "bone": "Tibia.l",
+   "bp3dPart": "Left tibia",
+   "bp3dPartId": "FJ3282",
+   "bp3dVertices": 331,
+   "zanatomy": [
+    0.0837,
+    -0.00706,
+    0.39942
+   ],
+   "bp3d": [
+    0.08679,
+    -0.01651,
+    0.41743
+   ],
+   "bp3dVertex": [
+    0.08679,
+    -0.01452,
+    0.41743
+   ],
+   "afterGlobal": [
+    0.08383,
+    -0.01382,
+    0.41374
+   ],
+   "afterBlend": [
+    0.08575,
+    -0.01735,
+    0.41503
+   ],
+   "residualGlobal": 0.00544,
+   "residualBlended": 0.00275
+  },
+  {
+   "id": "lm-tibial-tuberosity",
+   "name": "Tibial tuberosity",
+   "side": "r",
+   "bone": "Tibia.l",
+   "bp3dPart": "Right tibia",
+   "bp3dPartId": "FJ3387",
+   "bp3dVertices": 334,
+   "zanatomy": [
+    -0.0837,
+    -0.00706,
+    0.39942
+   ],
+   "bp3d": [
+    -0.08724,
+    -0.01684,
+    0.41856
+   ],
+   "bp3dVertex": [
+    -0.08724,
+    -0.01484,
+    0.41856
+   ],
+   "afterGlobal": [
+    -0.08348,
+    -0.01354,
+    0.41363
+   ],
+   "afterBlend": [
+    -0.08587,
+    -0.01726,
+    0.415
+   ],
+   "residualGlobal": 0.00702,
+   "residualBlended": 0.00384
+  },
+  {
+   "id": "lm-gerdys-tubercle",
+   "name": "Gerdy's tubercle",
+   "side": "l",
+   "bone": "Tibia.l",
+   "bp3dPart": "Left tibia",
+   "bp3dPartId": "FJ3282",
+   "bp3dVertices": 331,
+   "zanatomy": [
+    0.10888,
+    0.01024,
+    0.41672
+   ],
+   "bp3d": [
+    0.09894,
+    -0.00843,
+    0.41959
+   ],
+   "bp3dVertex": [
+    0.09753,
+    -0.00701,
+    0.41959
+   ],
+   "afterGlobal": [
+    0.10902,
+    0.00365,
+    0.43082
+   ],
+   "afterBlend": [
+    0.11171,
+    0.00128,
+    0.43198
+   ],
+   "residualGlobal": 0.01932,
+   "residualBlended": 0.02027
+  },
+  {
+   "id": "lm-gerdys-tubercle",
+   "name": "Gerdy's tubercle",
+   "side": "r",
+   "bone": "Tibia.l",
+   "bp3dPart": "Right tibia",
+   "bp3dPartId": "FJ3387",
+   "bp3dVertices": 334,
+   "zanatomy": [
+    -0.10888,
+    0.01024,
+    0.41672
+   ],
+   "bp3d": [
+    -0.09921,
+    -0.00824,
+    0.4188
+   ],
+   "bp3dVertex": [
+    -0.0978,
+    -0.00683,
+    0.4188
+   ],
+   "afterGlobal": [
+    -0.10862,
+    0.00401,
+    0.43068
+   ],
+   "afterBlend": [
+    -0.1118,
+    0.00143,
+    0.43194
+   ],
+   "residualGlobal": 0.01949,
+   "residualBlended": 0.0206
+  },
+  {
+   "id": "lm-knee-joint-line",
+   "name": "Knee joint line",
+   "side": "l",
+   "bone": "Tibia.l",
+   "bp3dPart": "Left tibia",
+   "bp3dPartId": "FJ3282",
+   "bp3dVertices": 331,
+   "zanatomy": [
+    0.04212,
+    0.01845,
+    0.42177
+   ],
+   "bp3d": [
+    0.04276,
+    -0.00029,
+    0.44313
+   ],
+   "bp3dVertex": [
+    0.04417,
+    0.00113,
+    0.44313
+   ],
+   "afterGlobal": [
+    0.04231,
+    0.01203,
+    0.43572
+   ],
+   "afterBlend": [
+    0.04304,
+    0.00925,
+    0.43708
+   ],
+   "residualGlobal": 0.01438,
+   "residualBlended": 0.01129
+  },
+  {
+   "id": "lm-knee-joint-line",
+   "name": "Knee joint line",
+   "side": "r",
+   "bone": "Tibia.l",
+   "bp3dPart": "Right tibia",
+   "bp3dPartId": "FJ3387",
+   "bp3dVertices": 334,
+   "zanatomy": [
+    -0.04212,
+    0.01845,
+    0.42177
+   ],
+   "bp3d": [
+    -0.04324,
+    -0.00058,
+    0.44351
+   ],
+   "bp3dVertex": [
+    -0.04465,
+    0.00083,
+    0.44351
+   ],
+   "afterGlobal": [
+    -0.04189,
+    0.01217,
+    0.43566
+   ],
+   "afterBlend": [
+    -0.04317,
+    0.00927,
+    0.43707
+   ],
+   "residualGlobal": 0.01503,
+   "residualBlended": 0.01177
+  },
+  {
+   "id": "lm-fibular-head",
+   "name": "Fibular head",
+   "side": "l",
+   "bone": "Fibula.l",
+   "bp3dPart": "Left fibula",
+   "bp3dPartId": "FJ3260",
+   "bp3dVertices": 149,
+   "zanatomy": [
+    0.12685,
+    0.03952,
+    0.40041
+   ],
+   "bp3d": [
+    0.12211,
+    0.03616,
+    0.4207
+   ],
+   "bp3dVertex": [
+    0.12011,
+    0.03616,
+    0.4207
+   ],
+   "afterGlobal": [
+    0.12704,
+    0.03267,
+    0.41415
+   ],
+   "afterBlend": [
+    0.13027,
+    0.03088,
+    0.41414
+   ],
+   "residualGlobal": 0.00891,
+   "residualBlended": 0.01173
+  },
+  {
+   "id": "lm-fibular-head",
+   "name": "Fibular head",
+   "side": "r",
+   "bone": "Fibula.l",
+   "bp3dPart": "Right fibula",
+   "bp3dPartId": "FJ3366",
+   "bp3dVertices": 162,
+   "zanatomy": [
+    -0.12685,
+    0.03952,
+    0.40041
+   ],
+   "bp3d": [
+    -0.12216,
+    0.0362,
+    0.42056
+   ],
+   "bp3dVertex": [
+    -0.12016,
+    0.0362,
+    0.42056
+   ],
+   "afterGlobal": [
+    -0.12653,
+    0.03309,
+    0.41399
+   ],
+   "afterBlend": [
+    -0.1303,
+    0.03107,
+    0.41408
+   ],
+   "residualGlobal": 0.00847,
+   "residualBlended": 0.01159
+  },
+  {
+   "id": "lm-adductor-tubercle",
+   "name": "Adductor tubercle",
+   "side": "l",
+   "bone": "Femur.l",
+   "bp3dPart": "Left femur",
+   "bp3dPartId": "FJ3259",
+   "bp3dVertices": 459,
+   "zanatomy": [
+    0.03424,
+    0.03463,
+    0.47816
+   ],
+   "bp3d": [
+    0.03388,
+    0.02641,
+    0.49067
+   ],
+   "bp3dVertex": [
+    0.03579,
+    0.02641,
+    0.4901
+   ],
+   "afterGlobal": [
+    0.03442,
+    0.02894,
+    0.49186
+   ],
+   "afterBlend": [
+    0.03485,
+    0.02764,
+    0.49408
+   ],
+   "residualGlobal": 0.00284,
+   "residualBlended": 0.00375
+  },
+  {
+   "id": "lm-adductor-tubercle",
+   "name": "Adductor tubercle",
+   "side": "r",
+   "bone": "Femur.l",
+   "bp3dPart": "Right femur",
+   "bp3dPartId": "FJ3365",
+   "bp3dVertices": 480,
+   "zanatomy": [
+    -0.03424,
+    0.03463,
+    0.47816
+   ],
+   "bp3d": [
+    -0.03475,
+    0.02694,
+    0.49118
+   ],
+   "bp3dVertex": [
+    -0.03667,
+    0.02694,
+    0.49061
+   ],
+   "afterGlobal": [
+    -0.03402,
+    0.02905,
+    0.49182
+   ],
+   "afterBlend": [
+    -0.03504,
+    0.02764,
+    0.49407
+   ],
+   "residualGlobal": 0.00233,
+   "residualBlended": 0.00299
+  },
+  {
+   "id": "lm-medial-malleolus",
+   "name": "Medial malleolus",
+   "side": "l",
+   "bone": "Tibia.l",
+   "bp3dPart": "Left tibia",
+   "bp3dPartId": "FJ3282",
+   "bp3dVertices": 331,
+   "zanatomy": [
+    0.05272,
+    0.0318,
+    0.0738
+   ],
+   "bp3d": [
+    0.05379,
+    0.01443,
+    0.0706
+   ],
+   "bp3dVertex": [
+    0.05521,
+    0.01443,
+    0.07202
+   ],
+   "afterGlobal": [
+    0.05313,
+    0.02086,
+    0.0878
+   ],
+   "afterBlend": [
+    0.0551,
+    0.02094,
+    0.0736
+   ],
+   "residualGlobal": 0.01837,
+   "residualBlended": 0.00728
+  },
+  {
+   "id": "lm-medial-malleolus",
+   "name": "Medial malleolus",
+   "side": "r",
+   "bone": "Tibia.l",
+   "bp3dPart": "Right tibia",
+   "bp3dPartId": "FJ3387",
+   "bp3dVertices": 334,
+   "zanatomy": [
+    -0.05272,
+    0.0318,
+    0.0738
+   ],
+   "bp3d": [
+    -0.05177,
+    0.01501,
+    0.07067
+   ],
+   "bp3dVertex": [
+    -0.05318,
+    0.01501,
+    0.07209
+   ],
+   "afterGlobal": [
+    -0.05225,
+    0.02103,
+    0.08773
+   ],
+   "afterBlend": [
+    -0.05457,
+    0.02119,
+    0.07355
+   ],
+   "residualGlobal": 0.0181,
+   "residualBlended": 0.00737
+  },
+  {
+   "id": "lm-lateral-malleolus",
+   "name": "Lateral malleolus",
+   "side": "l",
+   "bone": "Fibula.l",
+   "bp3dPart": "Left fibula",
+   "bp3dPartId": "FJ3260",
+   "bp3dVertices": 149,
+   "zanatomy": [
+    0.10304,
+    0.05206,
+    0.0538
+   ],
+   "bp3d": [
+    0.1002,
+    0.04468,
+    0.05172
+   ],
+   "bp3dVertex": [
+    0.09878,
+    0.04468,
+    0.05313
+   ],
+   "afterGlobal": [
+    0.10347,
+    0.04076,
+    0.06758
+   ],
+   "afterBlend": [
+    0.1075,
+    0.04155,
+    0.05246
+   ],
+   "residualGlobal": 0.01666,
+   "residualBlended": 0.00798
+  },
+  {
+   "id": "lm-lateral-malleolus",
+   "name": "Lateral malleolus",
+   "side": "r",
+   "bone": "Fibula.l",
+   "bp3dPart": "Right fibula",
+   "bp3dPartId": "FJ3366",
+   "bp3dVertices": 162,
+   "zanatomy": [
+    -0.10304,
+    0.05206,
+    0.0538
+   ],
+   "bp3d": [
+    -0.0988,
+    0.04577,
+    0.05142
+   ],
+   "bp3dVertex": [
+    -0.09739,
+    0.04577,
+    0.05283
+   ],
+   "afterGlobal": [
+    -0.1025,
+    0.0411,
+    0.06745
+   ],
+   "afterBlend": [
+    -0.10686,
+    0.04203,
+    0.05237
+   ],
+   "residualGlobal": 0.0171,
+   "residualBlended": 0.00893
+  },
+  {
+   "id": "lm-navicular-tuberosity",
+   "name": "Navicular tuberosity",
+   "side": "l",
+   "bone": "Navicular bone.l",
+   "bp3dPart": "Navicular bone of left foot",
+   "bp3dPartId": "FJ3307",
+   "bp3dVertices": 396,
+   "zanatomy": [
+    0.05069,
+    0.0057,
+    0.05766
+   ],
+   "bp3d": [
+    0.05593,
+    -0.00803,
+    0.05357
+   ],
+   "bp3dVertex": [
+    0.05793,
+    -0.00803,
+    0.05357
+   ],
+   "afterGlobal": [
+    0.05107,
+    -0.00543,
+    0.072
+   ],
+   "afterBlend": [
+    0.05293,
+    -0.00648,
+    0.05727
+   ],
+   "residualGlobal": 0.01924,
+   "residualBlended": 0.005
+  },
+  {
+   "id": "lm-navicular-tuberosity",
+   "name": "Navicular tuberosity",
+   "side": "r",
+   "bone": "Navicular bone.l",
+   "bp3dPart": "Navicular bone of right foot",
+   "bp3dPartId": "FJ3308",
+   "bp3dVertices": 404,
+   "zanatomy": [
+    -0.05069,
+    0.0057,
+    0.05766
+   ],
+   "bp3d": [
+    -0.05619,
+    -0.00785,
+    0.05363
+   ],
+   "bp3dVertex": [
+    -0.05819,
+    -0.00785,
+    0.05363
+   ],
+   "afterGlobal": [
+    -0.05026,
+    -0.00526,
+    0.07194
+   ],
+   "afterBlend": [
+    -0.05252,
+    -0.00624,
+    0.05722
+   ],
+   "residualGlobal": 0.01942,
+   "residualBlended": 0.00538
+  },
+  {
+   "id": "lm-fifth-metatarsal-base",
+   "name": "Fifth metatarsal base",
+   "side": "l",
+   "bone": "Fifth metatarsal bone.l",
+   "bp3dPart": "Left fifth metatarsal bone",
+   "bp3dPartId": "FJ3253",
+   "bp3dVertices": 366,
+   "zanatomy": [
+    0.12216,
+    0.00235,
+    0.02607
+   ],
+   "bp3d": [
+    0.12582,
+    -0.00386,
+    0.02512
+   ],
+   "bp3dVertex": [
+    0.12382,
+    -0.00386,
+    0.02512
+   ],
+   "afterGlobal": [
+    0.12251,
+    -0.00931,
+    0.04052
+   ],
+   "afterBlend": [
+    0.12728,
+    -0.01068,
+    0.0245
+   ],
+   "residualGlobal": 0.01666,
+   "residualBlended": 0.007
+  },
+  {
+   "id": "lm-fifth-metatarsal-base",
+   "name": "Fifth metatarsal base",
+   "side": "r",
+   "bone": "Fifth metatarsal bone.l",
+   "bp3dPart": "Right fifth metatarsal bone",
+   "bp3dPartId": "FJ3359",
+   "bp3dVertices": 371,
+   "zanatomy": [
+    -0.12216,
+    0.00235,
+    0.02607
+   ],
+   "bp3d": [
+    -0.12576,
+    -0.00354,
+    0.02502
+   ],
+   "bp3dVertex": [
+    -0.12376,
+    -0.00354,
+    0.02502
+   ],
+   "afterGlobal": [
+    -0.12168,
+    -0.0089,
+    0.04037
+   ],
+   "afterBlend": [
+    -0.12685,
+    -0.0101,
+    0.02439
+   ],
+   "residualGlobal": 0.01676,
+   "residualBlended": 0.00669
+  },
+  {
+   "id": "lm-sustentaculum-tali",
+   "name": "Sustentaculum tali",
+   "side": "l",
+   "bone": "Calcaneus.l",
+   "bp3dPart": "Left calcaneus",
+   "bp3dPartId": "FJ3256",
+   "bp3dVertices": 632,
+   "zanatomy": [
+    0.05515,
+    0.0389,
+    0.05569
+   ],
+   "bp3d": [
+    0.0528,
+    0.02465,
+    0.05154
+   ],
+   "bp3dVertex": [
+    0.0548,
+    0.02465,
+    0.05154
+   ],
+   "afterGlobal": [
+    0.05558,
+    0.02771,
+    0.06961
+   ],
+   "afterBlend": [
+    0.05765,
+    0.02801,
+    0.05464
+   ],
+   "residualGlobal": 0.01853,
+   "residualBlended": 0.00666
+  },
+  {
+   "id": "lm-sustentaculum-tali",
+   "name": "Sustentaculum tali",
+   "side": "r",
+   "bone": "Calcaneus.l",
+   "bp3dPart": "Right calcaneus",
+   "bp3dPartId": "FJ3360",
+   "bp3dVertices": 641,
+   "zanatomy": [
+    -0.05515,
+    0.0389,
+    0.05569
+   ],
+   "bp3d": [
+    -0.05314,
+    0.02457,
+    0.05317
+   ],
+   "bp3dVertex": [
+    -0.05514,
+    0.02457,
+    0.05317
+   ],
+   "afterGlobal": [
+    -0.05466,
+    0.0279,
+    0.06954
+   ],
+   "afterBlend": [
+    -0.05708,
+    0.02827,
+    0.05459
+   ],
+   "residualGlobal": 0.01677,
+   "residualBlended": 0.00558
+  }
+ ]
+}

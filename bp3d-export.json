@@ -1,0 +1,1570 @@
+{
+ "version": 1,
+ "generatedFrom": "mvmt-anatomy tools/bp3d_export.py",
+ "fit": "bp3d-fit.json",
+ "units": "metres",
+ "up": "Y",
+ "frame": "+X left, +Z anterior (BodyParts3D)",
+ "systems": {
+  "fascia": "Fascia",
+  "ligaments": "Joints & ligaments",
+  "insertions": "Insertions",
+  "peripheral-nerves": "Peripheral nerves",
+  "central-nerves": "Central nerves",
+  "landmarks": "Landmarks"
+ },
+ "chunks": [
+  {
+   "url": "/models/mvmt-head-jaw.bin",
+   "bytes": 223924,
+   "region": "head-jaw",
+   "triangles": 9513,
+   "parts": 88
+  },
+  {
+   "url": "/models/mvmt-cervical.bin",
+   "bytes": 589772,
+   "region": "cervical",
+   "triangles": 26567,
+   "parts": 110
+  },
+  {
+   "url": "/models/mvmt-shoulder.bin",
+   "bytes": 1343028,
+   "region": "shoulder",
+   "triangles": 59331,
+   "parts": 161
+  },
+  {
+   "url": "/models/mvmt-thoracic.bin",
+   "bytes": 1222388,
+   "region": "thoracic",
+   "triangles": 56067,
+   "parts": 145
+  },
+  {
+   "url": "/models/mvmt-lumbar.bin",
+   "bytes": 1093380,
+   "region": "lumbar",
+   "triangles": 49703,
+   "parts": 93
+  },
+  {
+   "url": "/models/mvmt-hip.bin",
+   "bytes": 2658548,
+   "region": "hip",
+   "triangles": 122236,
+   "parts": 141
+  },
+  {
+   "url": "/models/mvmt-knee.bin",
+   "bytes": 1054564,
+   "region": "knee",
+   "triangles": 47648,
+   "parts": 102
+  },
+  {
+   "url": "/models/mvmt-elbow-wrist.bin",
+   "bytes": 1339944,
+   "region": "elbow-wrist",
+   "triangles": 58685,
+   "parts": 285
+  },
+  {
+   "url": "/models/mvmt-ankle-foot.bin",
+   "bytes": 1199252,
+   "region": "ankle-foot",
+   "triangles": 52910,
+   "parts": 260
+  }
+ ],
+ "regions": [
+  {
+   "id": "head-jaw",
+   "name": "Head & jaw",
+   "chunk": 0,
+   "parts": 88,
+   "triangles": 9513,
+   "bytes": 223924,
+   "bounds": [
+    [
+     -0.07926956252348051,
+     1.4403724562762719,
+     -0.1177300001899898
+    ],
+    [
+     0.0779211583377619,
+     1.6719480799170878,
+     0.09066256606539928
+    ]
+   ],
+   "spanningParts": [
+    "ZA-cricopharyngeal-ligament-l",
+    "ZA-cricopharyngeal-ligament-r",
+    "ZA-intervertebral-disc-c2-c3",
+    "ZA-intervertebral-disc-c3-c4",
+    "ZA-intervertebral-disc-c4-c5",
+    "ZA-intervertebral-disc-c5-c6",
+    "ZA-intervertebral-disc-c6-c7",
+    "ZA-lateral-thyrohyoid-ligament-l",
+    "ZA-lateral-thyrohyoid-ligament-r",
+    "ZA-median-cricothyroid-ligament",
+    "ZA-median-thyrohyoid-ligament",
+    "ZA-nuchal-ligament",
+    "ZA-nucleus-pulposus-c2-c3",
+    "ZA-nucleus-pulposus-c3-c4",
+    "ZA-nucleus-pulposus-c4-c5",
+    "ZA-nucleus-pulposus-c5-c6",
+    "ZA-quadrangular-membrane-l",
+    "ZA-quadrangular-membrane-r",
+    "ZA-superficial-investing-cervical-fascia-l",
+    "ZA-superficial-investing-cervical-fascia-r",
+    "ZA-anterior-belly-of-digastric-muscle-el",
+    "ZA-anterior-belly-of-digastric-muscle-er",
+    "ZA-geniohyoid-muscle-el",
+    "ZA-geniohyoid-muscle-er",
+    "ZA-geniohyoid-muscle-ol",
+    "ZA-geniohyoid-muscle-or",
+    "ZA-iliocostalis-colli-muscle-el",
+    "ZA-iliocostalis-colli-muscle-er",
+    "ZA-levator-scapulae-o1l",
+    "ZA-levator-scapulae-o1r",
+    "ZA-levator-scapulae-o2l",
+    "ZA-levator-scapulae-o2r",
+    "ZA-levator-scapulae-o3l",
+    "ZA-levator-scapulae-o3r",
+    "ZA-levator-scapulae-ol",
+    "ZA-levator-scapulae-or",
+    "ZA-longus-capitis-muscle-ol",
+    "ZA-longus-capitis-muscle-or",
+    "ZA-mylohyoid-muscle-ol",
+    "ZA-mylohyoid-muscle-or",
+    "ZA-obliquus-inferior-capitis-muscle-el",
+    "ZA-obliquus-inferior-capitis-muscle-er",
+    "ZA-obliquus-inferior-capitis-muscle-ol",
+    "ZA-obliquus-inferior-capitis-muscle-or",
+    "ZA-obliquus-superior-capitis-muscle-ol",
+    "ZA-obliquus-superior-capitis-muscle-or",
+    "ZA-omohyoid-muscle-el",
+    "ZA-omohyoid-muscle-er",
+    "ZA-rectus-anterior-capitis-muscle-el",
+    "ZA-rectus-anterior-capitis-muscle-er",
+    "ZA-rectus-anterior-capitis-muscle-ol",
+    "ZA-rectus-anterior-capitis-muscle-or",
+    "ZA-rectus-lateralis-capitis-muscle-ol",
+    "ZA-rectus-lateralis-capitis-muscle-or",
+    "ZA-rectus-posterior-major-capitis-muscle-el",
+    "ZA-rectus-posterior-major-capitis-muscle-er",
+    "ZA-rectus-posterior-major-capitis-muscle-ol",
+    "ZA-rectus-posterior-major-capitis-muscle-or",
+    "ZA-rectus-posterior-minor-capitis-muscle-el",
+    "ZA-rectus-posterior-minor-capitis-muscle-er",
+    "ZA-rectus-posterior-minor-capitis-muscle-ol",
+    "ZA-rectus-posterior-minor-capitis-muscle-or",
+    "ZA-scalenus-anterior-muscle-e1l",
+    "ZA-scalenus-anterior-muscle-e1r",
+    "ZA-scalenus-anterior-muscle-e2l",
+    "ZA-scalenus-anterior-muscle-e2r",
+    "ZA-scalenus-anterior-muscle-el",
+    "ZA-scalenus-anterior-muscle-er",
+    "ZA-scalenus-medius-muscle-el",
+    "ZA-scalenus-medius-muscle-er",
+    "ZA-scalenus-posterior-muscle-el",
+    "ZA-scalenus-posterior-muscle-er",
+    "ZA-spinalis-capitis-muscle-el",
+    "ZA-spinalis-capitis-muscle-er",
+    "ZA-splenius-colli-muscle-e1l",
+    "ZA-splenius-colli-muscle-e1r",
+    "ZA-splenius-colli-muscle-el",
+    "ZA-splenius-colli-muscle-er",
+    "ZA-sternocleidomastoid-muscle-el",
+    "ZA-sternocleidomastoid-muscle-er",
+    "ZA-sternohyoid-muscle-el",
+    "ZA-sternohyoid-muscle-er",
+    "ZA-thyrohyoid-muscle-el",
+    "ZA-thyrohyoid-muscle-er",
+    "ZA-thyrohyoid-muscle-ol",
+    "ZA-thyrohyoid-muscle-or",
+    "LM-lm-c1-transverse-l",
+    "LM-lm-c1-transverse-r",
+    "LM-lm-c2-spinous",
+    "SC-spinal-cord-schematic-cervical"
+   ]
+  },
+  {
+   "id": "cervical",
+   "name": "Cervical",
+   "chunk": 1,
+   "parts": 110,
+   "triangles": 26567,
+   "bytes": 589772,
+   "bounds": [
+    [
+     -0.17012295325829488,
+     1.375671176470667,
+     -0.11640837783887258
+    ],
+    [
+     0.16949305099951573,
+     1.5909373836859353,
+     0.068423161472188
+    ]
+   ],
+   "spanningParts": [
+    "NV-nerve-cervical-roots-l",
+    "NV-nerve-cervical-roots-r",
+    "ZA-acromioclavicular-ligament-l",
+    "ZA-acromioclavicular-ligament-r",
+    "ZA-anterior-sternoclavicular-ligament-l",
+    "ZA-anterior-sternoclavicular-ligament-r",
+    "ZA-articular-capsule-of-acromioclavicular-joint-l",
+    "ZA-articular-capsule-of-acromioclavicular-joint-r",
+    "ZA-articular-capsule-of-glenohumeral-joint-l",
+    "ZA-articular-capsule-of-glenohumeral-joint-r",
+    "ZA-articular-capsule-of-sternoclavicular-joint-l",
+    "ZA-articular-capsule-of-sternoclavicular-joint-r",
+    "ZA-articular-disc-of-acromioclavicular-joint-l",
+    "ZA-articular-disc-of-acromioclavicular-joint-r",
+    "ZA-articular-disc-of-sternoclavicular-joint-l",
+    "ZA-articular-disc-of-sternoclavicular-joint-r",
+    "ZA-clavipectoral-fascia-l",
+    "ZA-clavipectoral-fascia-r",
+    "ZA-coraco-acromial-ligament-l",
+    "ZA-coraco-acromial-ligament-r",
+    "ZA-coracohumeral-ligament-l",
+    "ZA-coracohumeral-ligament-r",
+    "ZA-costoclavicular-ligament-l",
+    "ZA-costoclavicular-ligament-r",
+    "ZA-deltoid-fascia-l",
+    "ZA-deltoid-fascia-r",
+    "ZA-glenoid-labrum-l",
+    "ZA-glenoid-labrum-r",
+    "ZA-inferior-transverse-scapular-ligament-l",
+    "ZA-inferior-transverse-scapular-ligament-r",
+    "ZA-interclavicular-ligament-l",
+    "ZA-interclavicular-ligament-r",
+    "ZA-pectoral-fascia-l",
+    "ZA-pectoral-fascia-r",
+    "ZA-posterior-sternoclavicular-ligament-l",
+    "ZA-posterior-sternoclavicular-ligament-r",
+    "ZA-subacromial-bursa-l",
+    "ZA-subacromial-bursa-r",
+    "ZA-subcutaneous-acromial-bursa-l",
+    "ZA-subcutaneous-acromial-bursa-r",
+    "ZA-subdeltoid-bursa-l",
+    "ZA-subdeltoid-bursa-r",
+    "ZA-subtendinous-bursa-of-infraspinatus-muscle-l",
+    "ZA-subtendinous-bursa-of-infraspinatus-muscle-r",
+    "ZA-acromial-part-of-deltoid-muscle-ol",
+    "ZA-acromial-part-of-deltoid-muscle-or",
+    "ZA-ascending-part-of-trapezius-muscle-el",
+    "ZA-ascending-part-of-trapezius-muscle-er",
+    "ZA-ascending-part-of-trapezius-muscle-ol",
+    "ZA-ascending-part-of-trapezius-muscle-or",
+    "ZA-clavicular-part-of-deltoid-muscle-ol",
+    "ZA-clavicular-part-of-deltoid-muscle-or",
+    "ZA-infraspinatus-muscle-el",
+    "ZA-infraspinatus-muscle-er",
+    "ZA-pectoralis-major-muscle-ol",
+    "ZA-pectoralis-major-muscle-or",
+    "ZA-scapular-spinal-part-of-deltoid-muscle-ol",
+    "ZA-scapular-spinal-part-of-deltoid-muscle-or",
+    "ZA-sternocostal-head-of-pectoralis-major-muscle-e2l",
+    "ZA-sternocostal-head-of-pectoralis-major-muscle-e2r",
+    "ZA-subclavius-muscle-or",
+    "ZA-transverse-part-of-trapezius-muscle-ol",
+    "ZA-transverse-part-of-trapezius-muscle-or",
+    "NV-nerve-brachial-plexus-l",
+    "NV-nerve-brachial-plexus-r",
+    "LM-lm-acromion-l",
+    "LM-lm-acromion-r",
+    "ZA-anterior-longitudinal-ligament",
+    "ZA-costotransverse-ligament-l",
+    "ZA-costotransverse-ligament-r",
+    "ZA-internal-intercostal-membrane-l",
+    "ZA-internal-intercostal-membrane-r",
+    "ZA-interspinous-ligaments",
+    "ZA-intervertebral-disc-t1-t2",
+    "ZA-intervertebral-disc-t2-t3",
+    "ZA-intervertebral-disc-t3-t4",
+    "ZA-intra-articular-ligament-of-head-of-rib",
+    "ZA-intra-articular-ligament-of-head-of-rib-r",
+    "ZA-ligamenta-flava",
+    "ZA-nucleus-pulposus-t1-t2",
+    "ZA-nucleus-pulposus-t2-t3",
+    "ZA-nucleus-pulposus-t3-t4",
+    "ZA-posterior-longitudinal-ligament",
+    "ZA-radiate-ligament-of-head-of-rib-l",
+    "ZA-radiate-ligament-of-head-of-rib-r",
+    "ZA-supraspinous-ligament",
+    "ZA-levatores-longi-costarum-e1l",
+    "ZA-levatores-longi-costarum-e1r",
+    "ZA-levatores-longi-costarum-el",
+    "ZA-levatores-longi-costarum-er",
+    "ZA-longissimus-thoracis-muscle-e20l",
+    "ZA-longissimus-thoracis-muscle-e20r",
+    "ZA-longissimus-thoracis-muscle-e21l",
+    "ZA-longissimus-thoracis-muscle-e21r",
+    "ZA-longissimus-thoracis-muscle-e22l",
+    "ZA-longissimus-thoracis-muscle-e22r",
+    "ZA-longissimus-thoracis-muscle-e23l",
+    "ZA-longissimus-thoracis-muscle-e23r",
+    "ZA-longissimus-thoracis-muscle-e24l",
+    "ZA-longissimus-thoracis-muscle-e24r",
+    "ZA-longissimus-thoracis-muscle-e25l",
+    "ZA-longissimus-thoracis-muscle-e25r",
+    "ZA-serratus-posterior-superior-muscle-el",
+    "LM-lm-jugular-notch",
+    "SC-spinal-cord-schematic-thoracic"
+   ]
+  },
+  {
+   "id": "shoulder",
+   "name": "Shoulder",
+   "chunk": 2,
+   "parts": 161,
+   "triangles": 59331,
+   "bytes": 1343028,
+   "bounds": [
+    [
+     -0.2282858625971483,
+     0.9731574767921849,
+     -0.10583300049066144
+    ],
+    [
+     0.2285849588384985,
+     1.5761547096055941,
+     0.12551119463757507
+    ]
+   ],
+   "spanningParts": [
+    "ZA-superficial-investing-cervical-fascia-l",
+    "ZA-superficial-investing-cervical-fascia-r",
+    "ZA-levator-scapulae-el",
+    "ZA-levator-scapulae-er",
+    "ZA-omohyoid-muscle-ol",
+    "ZA-omohyoid-muscle-or",
+    "ZA-anterior-longitudinal-ligament",
+    "ZA-costotransverse-ligament-l",
+    "ZA-costotransverse-ligament-r",
+    "ZA-diaphragmatic-fascia",
+    "ZA-external-intercostal-membrane-l",
+    "ZA-external-intercostal-membrane-r",
+    "ZA-internal-intercostal-membrane-l",
+    "ZA-internal-intercostal-membrane-r",
+    "ZA-interspinous-ligaments",
+    "ZA-intervertebral-disc-t10-t11",
+    "ZA-intervertebral-disc-t11-t12",
+    "ZA-intervertebral-disc-t4-t5",
+    "ZA-intervertebral-disc-t5-t6",
+    "ZA-intervertebral-disc-t6-t7",
+    "ZA-intervertebral-disc-t7-t8",
+    "ZA-intervertebral-disc-t8-t9",
+    "ZA-intervertebral-disc-t9-t10",
+    "ZA-intra-articular-ligament-of-head-of-rib",
+    "ZA-intra-articular-ligament-of-head-of-rib-r",
+    "ZA-ligamenta-flava",
+    "ZA-nucleus-pulposus-t10-t11",
+    "ZA-nucleus-pulposus-t11-t12",
+    "ZA-nucleus-pulposus-t4-t5",
+    "ZA-nucleus-pulposus-t5-t6",
+    "ZA-nucleus-pulposus-t6-t7",
+    "ZA-nucleus-pulposus-t7-t8",
+    "ZA-nucleus-pulposus-t8-t9",
+    "ZA-nucleus-pulposus-t9-t10",
+    "ZA-posterior-longitudinal-ligament",
+    "ZA-radiate-ligament-of-head-of-rib-l",
+    "ZA-radiate-ligament-of-head-of-rib-r",
+    "ZA-supraspinous-ligament",
+    "ZA-diaphragm-o4l",
+    "ZA-diaphragm-o4r",
+    "ZA-levatores-longi-costarum-e1l",
+    "ZA-levatores-longi-costarum-e1r",
+    "ZA-levatores-longi-costarum-e2l",
+    "ZA-levatores-longi-costarum-e2r",
+    "ZA-levatores-longi-costarum-e3l",
+    "ZA-levatores-longi-costarum-e3r",
+    "ZA-levatores-longi-costarum-e4l",
+    "ZA-levatores-longi-costarum-e4r",
+    "ZA-levatores-longi-costarum-e5l",
+    "ZA-levatores-longi-costarum-e5r",
+    "ZA-levatores-longi-costarum-e6l",
+    "ZA-levatores-longi-costarum-e6r",
+    "ZA-levatores-longi-costarum-e7l",
+    "ZA-levatores-longi-costarum-e7r",
+    "ZA-levatores-longi-costarum-e8l",
+    "ZA-levatores-longi-costarum-e8r",
+    "ZA-levatores-longi-costarum-e9l",
+    "ZA-levatores-longi-costarum-e9r",
+    "ZA-longissimus-thoracis-muscle-e10l",
+    "ZA-longissimus-thoracis-muscle-e10r",
+    "ZA-longissimus-thoracis-muscle-e11l",
+    "ZA-longissimus-thoracis-muscle-e11r",
+    "ZA-longissimus-thoracis-muscle-e12l",
+    "ZA-longissimus-thoracis-muscle-e12r",
+    "ZA-longissimus-thoracis-muscle-e13l",
+    "ZA-longissimus-thoracis-muscle-e13r",
+    "ZA-longissimus-thoracis-muscle-e14l",
+    "ZA-longissimus-thoracis-muscle-e14r",
+    "ZA-longissimus-thoracis-muscle-e15l",
+    "ZA-longissimus-thoracis-muscle-e15r",
+    "ZA-longissimus-thoracis-muscle-e16l",
+    "ZA-longissimus-thoracis-muscle-e16r",
+    "ZA-longissimus-thoracis-muscle-e17l",
+    "ZA-longissimus-thoracis-muscle-e17r",
+    "ZA-longissimus-thoracis-muscle-e18l",
+    "ZA-longissimus-thoracis-muscle-e18r",
+    "ZA-longissimus-thoracis-muscle-e19l",
+    "ZA-longissimus-thoracis-muscle-e19r",
+    "ZA-longissimus-thoracis-muscle-e3l",
+    "ZA-longissimus-thoracis-muscle-e3r",
+    "ZA-longissimus-thoracis-muscle-e4l",
+    "ZA-longissimus-thoracis-muscle-e4r",
+    "ZA-longissimus-thoracis-muscle-e5l",
+    "ZA-longissimus-thoracis-muscle-e5r",
+    "ZA-longissimus-thoracis-muscle-e6l",
+    "ZA-longissimus-thoracis-muscle-e6r",
+    "ZA-longissimus-thoracis-muscle-e7l",
+    "ZA-longissimus-thoracis-muscle-e7r",
+    "ZA-longissimus-thoracis-muscle-e8l",
+    "ZA-longissimus-thoracis-muscle-e8r",
+    "ZA-longissimus-thoracis-muscle-e9l",
+    "ZA-longissimus-thoracis-muscle-e9r",
+    "ZA-serratus-posterior-inferior-muscle-e1l",
+    "ZA-serratus-posterior-inferior-muscle-el",
+    "ZA-serratus-posterior-superior-muscle-e1l",
+    "ZA-serratus-posterior-superior-muscle-e2l",
+    "ZA-serratus-posterior-superior-muscle-e3l",
+    "ZA-serratus-posterior-superior-muscle-el",
+    "ZA-transversus-thoracis-muscle-o1l",
+    "ZA-transversus-thoracis-muscle-o1r",
+    "ZA-transversus-thoracis-muscle-ol",
+    "ZA-transversus-thoracis-muscle-or",
+    "LM-lm-sternal-angle",
+    "SC-spinal-cord-schematic-thoracic",
+    "ZA-brachial-fascia-l",
+    "ZA-brachial-fascia-r",
+    "ZA-lateral-intermuscular-septum-of-arm-l",
+    "ZA-lateral-intermuscular-septum-of-arm-r",
+    "ZA-medial-intermuscular-septum-of-arm-l",
+    "ZA-medial-intermuscular-septum-of-arm-r",
+    "ZA-brachialis-muscle-ol",
+    "ZA-brachialis-muscle-or",
+    "ZA-lateral-head-of-triceps-brachii-ol",
+    "ZA-lateral-head-of-triceps-brachii-or",
+    "ZA-long-head-of-biceps-brachii-ol",
+    "ZA-long-head-of-biceps-brachii-or",
+    "ZA-long-head-of-triceps-brachii-ol",
+    "ZA-long-head-of-triceps-brachii-or",
+    "ZA-medial-head-of-triceps-brachii-ol",
+    "ZA-medial-head-of-triceps-brachii-or",
+    "ZA-short-head-of-biceps-brachii-ol",
+    "NV-nerve-median-l",
+    "NV-nerve-median-r",
+    "NV-nerve-radial-l",
+    "NV-nerve-radial-r",
+    "NV-nerve-ulnar-l",
+    "NV-nerve-ulnar-r"
+   ]
+  },
+  {
+   "id": "thoracic",
+   "name": "Thoracic",
+   "chunk": 3,
+   "parts": 145,
+   "triangles": 56067,
+   "bytes": 1222388,
+   "bounds": [
+    [
+     -0.12792372527143114,
+     0.95477483400105,
+     -0.09783786722690656
+    ],
+    [
+     0.12837008404649478,
+     1.5450552744589412,
+     0.11080295189625296
+    ]
+   ],
+   "spanningParts": [
+    "ZA-clavipectoral-fascia-l",
+    "ZA-clavipectoral-fascia-r",
+    "ZA-pectoral-fascia-l",
+    "ZA-pectoral-fascia-r",
+    "ZA-abdominal-part-of-pectoralis-major-muscle-ol",
+    "ZA-abdominal-part-of-pectoralis-major-muscle-or",
+    "ZA-pectoralis-minor-muscle-e2l",
+    "ZA-pectoralis-minor-muscle-e2r",
+    "ZA-serratus-anterior-muscle-e4l",
+    "ZA-serratus-anterior-muscle-e4r",
+    "ZA-serratus-anterior-muscle-e5l",
+    "ZA-serratus-anterior-muscle-e5r",
+    "ZA-serratus-anterior-muscle-e6l",
+    "ZA-serratus-anterior-muscle-e6r",
+    "ZA-serratus-anterior-muscle-e7l",
+    "ZA-serratus-anterior-muscle-e7r",
+    "ZA-sternocostal-head-of-pectoralis-major-muscle-el",
+    "ZA-sternocostal-head-of-pectoralis-major-muscle-er",
+    "ZA-investing-abdominal-fascia-l",
+    "ZA-investing-abdominal-fascia-r",
+    "ZA-linea-alba",
+    "ZA-posterior-layer-of-thoracolumbar-fascia-l",
+    "ZA-posterior-layer-of-thoracolumbar-fascia-r",
+    "ZA-transversalis-fascia",
+    "ZA-external-abdominal-oblique-muscle-o1l",
+    "ZA-external-abdominal-oblique-muscle-o1r",
+    "ZA-external-abdominal-oblique-muscle-o2l",
+    "ZA-external-abdominal-oblique-muscle-o2r",
+    "ZA-external-abdominal-oblique-muscle-o3l",
+    "ZA-external-abdominal-oblique-muscle-o3r",
+    "ZA-external-abdominal-oblique-muscle-ol",
+    "ZA-external-abdominal-oblique-muscle-or",
+    "ZA-internal-abdominal-oblique-muscle-o1l",
+    "ZA-internal-abdominal-oblique-muscle-o1r",
+    "ZA-rectus-abdominis-muscle-el",
+    "ZA-rectus-abdominis-muscle-er",
+    "ZA-rectus-abdominis-muscle-ol",
+    "ZA-rectus-abdominis-muscle-or",
+    "SC-spinal-cord-schematic-lumbar",
+    "SC-cauda-equina-schematic-strand-5",
+    "SC-cauda-equina-schematic-strand-6"
+   ]
+  },
+  {
+   "id": "lumbar",
+   "name": "Lumbar",
+   "chunk": 4,
+   "parts": 93,
+   "triangles": 49703,
+   "bytes": 1093380,
+   "bounds": [
+    [
+     -0.1653609473273657,
+     0.8086213861737486,
+     -0.12536116231567937
+    ],
+    [
+     0.1658873595573799,
+     1.4025696525362779,
+     0.12055941839734918
+    ]
+   ],
+   "spanningParts": [
+    "ZA-anterior-longitudinal-ligament",
+    "ZA-diaphragmatic-fascia",
+    "ZA-interspinous-ligaments",
+    "ZA-intervertebral-disc-t12-l1",
+    "ZA-ligamenta-flava",
+    "ZA-nucleus-pulposus-t12-l1",
+    "ZA-posterior-longitudinal-ligament",
+    "ZA-supraspinous-ligament",
+    "ZA-diaphragm-o1l",
+    "ZA-diaphragm-o1r",
+    "ZA-diaphragm-o2l",
+    "ZA-diaphragm-o2r",
+    "ZA-diaphragm-o3l",
+    "ZA-diaphragm-o3r",
+    "ZA-diaphragm-o4l",
+    "ZA-diaphragm-o4r",
+    "ZA-diaphragm-o5l",
+    "ZA-diaphragm-o5r",
+    "ZA-diaphragm-ol",
+    "ZA-diaphragm-or",
+    "ZA-levatores-longi-costarum-e10l",
+    "ZA-levatores-longi-costarum-e10r",
+    "ZA-longissimus-thoracis-muscle-e1l",
+    "ZA-longissimus-thoracis-muscle-e1r",
+    "ZA-longissimus-thoracis-muscle-e26l",
+    "ZA-longissimus-thoracis-muscle-e26r",
+    "ZA-longissimus-thoracis-muscle-e2l",
+    "ZA-longissimus-thoracis-muscle-e2r",
+    "ZA-longissimus-thoracis-muscle-el",
+    "ZA-longissimus-thoracis-muscle-er",
+    "ZA-serratus-posterior-inferior-muscle-e2l",
+    "ZA-serratus-posterior-inferior-muscle-e3l",
+    "ZA-fascia-lata-l",
+    "ZA-fascia-lata-r",
+    "ZA-iliotibial-tract-l",
+    "ZA-iliotibial-tract-r",
+    "ZA-sartorius-muscle-l",
+    "ZA-sartorius-muscle-r",
+    "ZA-gluteus-maximus-muscle-ol",
+    "ZA-gluteus-maximus-muscle-or",
+    "ZA-gluteus-medius-muscle-ol",
+    "ZA-gluteus-medius-muscle-or",
+    "ZA-gluteus-minimus-muscle-ol",
+    "ZA-gluteus-minimus-muscle-or",
+    "ZA-iliacus-muscle-ol",
+    "ZA-iliacus-muscle-or",
+    "ZA-piriformis-muscle-ol",
+    "ZA-piriformis-muscle-or",
+    "ZA-rectus-femoris-muscle-ol",
+    "ZA-rectus-femoris-muscle-or",
+    "ZA-sartorius-muscle-ol",
+    "ZA-sartorius-muscle-or",
+    "ZA-tensor-fasciae-latae-ol",
+    "ZA-tensor-fasciae-latae-or",
+    "NV-nerve-femoral-l",
+    "NV-nerve-femoral-r",
+    "NV-nerve-sciatic-l",
+    "NV-nerve-sciatic-r",
+    "LM-lm-iliac-crest-l",
+    "LM-lm-iliac-crest-r",
+    "LM-lm-asis-l",
+    "LM-lm-asis-r"
+   ]
+  },
+  {
+   "id": "hip",
+   "name": "Hip",
+   "chunk": 5,
+   "parts": 141,
+   "triangles": 122236,
+   "bytes": 2658548,
+   "bounds": [
+    [
+     -0.16252228196797036,
+     0.35888446304246696,
+     -0.13059152743566868
+    ],
+    [
+     0.16264612481914878,
+     1.0413025602508337,
+     0.05430084251443672
+    ]
+   ],
+   "spanningParts": [
+    "ZA-iliopsoas-fascia-l",
+    "ZA-iliopsoas-fascia-r",
+    "ZA-inferior-pubic-ligament",
+    "ZA-inguinal-ligament-l",
+    "ZA-inguinal-ligament-r",
+    "ZA-intercornual-ligament-l",
+    "ZA-intercornual-ligament-r",
+    "ZA-interpubic-disc",
+    "ZA-linea-alba",
+    "ZA-obturator-membrane-l",
+    "ZA-obturator-membrane-r",
+    "ZA-piriformis-fascia-l",
+    "ZA-piriformis-fascia-r",
+    "ZA-pubic-symphysis",
+    "ZA-sacrococcygeal-symphysis",
+    "ZA-sacrospinous-ligament-l",
+    "ZA-sacrospinous-ligament-r",
+    "ZA-sacrotuberous-ligament-l",
+    "ZA-sacrotuberous-ligament-r",
+    "ZA-superior-pubic-ligament",
+    "ZA-transversalis-fascia",
+    "ZA-triradiate-cartilage-l",
+    "ZA-triradiate-cartilage-r",
+    "ZA-external-abdominal-oblique-muscle-o5l",
+    "ZA-external-abdominal-oblique-muscle-o5r",
+    "ZA-levator-ani-ol",
+    "ZA-levator-ani-or",
+    "ZA-rectus-abdominis-muscle-el",
+    "ZA-rectus-abdominis-muscle-er",
+    "NV-nerve-lumbosacral-plexus-l",
+    "NV-nerve-lumbosacral-plexus-r"
+   ]
+  },
+  {
+   "id": "knee",
+   "name": "Knee",
+   "chunk": 6,
+   "parts": 102,
+   "triangles": 47648,
+   "bytes": 1054564,
+   "bounds": [
+    [
+     -0.13545672930146085,
+     0.07421674871915783,
+     -0.07433846855531169
+    ],
+    [
+     0.13544470683025417,
+     0.5828915375962523,
+     0.036411729295500024
+    ]
+   ],
+   "spanningParts": [
+    "ZA-fascia-lata-l",
+    "ZA-fascia-lata-r",
+    "ZA-gracilis-muscle-l",
+    "ZA-gracilis-muscle-r",
+    "ZA-iliotibial-tract-l",
+    "ZA-iliotibial-tract-r",
+    "ZA-lateral-femoral-intermuscular-septum-l",
+    "ZA-lateral-femoral-intermuscular-septum-r",
+    "ZA-medial-femoral-intermuscular-septum-l",
+    "ZA-medial-femoral-intermuscular-septum-r",
+    "ZA-sartorius-muscle-l",
+    "ZA-sartorius-muscle-r",
+    "ZA-semitendinosus-muscle-l",
+    "ZA-semitendinosus-muscle-r",
+    "ZA-adductor-magnus-el",
+    "ZA-adductor-magnus-er",
+    "ZA-gracilis-muscle-el",
+    "ZA-gracilis-muscle-er",
+    "ZA-sartorius-muscle-el",
+    "ZA-sartorius-muscle-er",
+    "ZA-semimembranosus-muscle-el",
+    "ZA-semimembranosus-muscle-er",
+    "ZA-semitendinosus-muscle-el",
+    "ZA-semitendinosus-muscle-er",
+    "ZA-short-head-of-biceps-femoris-el",
+    "ZA-vastus-intermedius-muscle-ol",
+    "ZA-vastus-intermedius-muscle-or",
+    "ZA-vastus-lateralis-muscle-ol",
+    "ZA-vastus-lateralis-muscle-or",
+    "ZA-vastus-medialis-muscle-ol",
+    "ZA-vastus-medialis-muscle-or",
+    "NV-nerve-femoral-l",
+    "NV-nerve-femoral-r",
+    "NV-nerve-sciatic-l",
+    "NV-nerve-sciatic-r",
+    "ZA-anterior-intermuscular-septum-of-leg-l",
+    "ZA-anterior-intermuscular-septum-of-leg-r",
+    "ZA-crural-fascia-l",
+    "ZA-crural-fascia-r",
+    "ZA-posterior-intermuscular-septum-of-leg-l",
+    "ZA-posterior-intermuscular-septum-of-leg-r",
+    "ZA-transverse-intermuscular-septum-of-leg-l",
+    "ZA-transverse-intermuscular-septum-of-leg-r",
+    "ZA-extensor-digitorum-longus-o1l",
+    "ZA-extensor-digitorum-longus-o1r",
+    "ZA-extensor-digitorum-longus-ol",
+    "ZA-extensor-digitorum-longus-or",
+    "ZA-extensor-hallucis-longus-ol",
+    "ZA-extensor-hallucis-longus-or",
+    "ZA-fibularis-brevis-muscle-ol",
+    "ZA-fibularis-brevis-muscle-or",
+    "ZA-fibularis-longus-muscle-ol",
+    "ZA-fibularis-longus-muscle-or",
+    "ZA-flexor-digitorum-longus-ol",
+    "ZA-flexor-digitorum-longus-or",
+    "ZA-flexor-hallucis-longus-ol",
+    "ZA-flexor-hallucis-longus-or",
+    "ZA-plantaris-muscle-ol",
+    "ZA-plantaris-muscle-or",
+    "ZA-soleus-muscle-o1l",
+    "ZA-soleus-muscle-o1r",
+    "ZA-soleus-muscle-ol",
+    "ZA-soleus-muscle-or",
+    "ZA-tibialis-anterior-muscle-ol",
+    "ZA-tibialis-anterior-muscle-or",
+    "ZA-tibialis-posterior-muscle-ol",
+    "ZA-tibialis-posterior-muscle-or",
+    "NV-nerve-tibial-l",
+    "NV-nerve-tibial-r"
+   ]
+  },
+  {
+   "id": "elbow-wrist",
+   "name": "Elbow & wrist",
+   "chunk": 7,
+   "parts": 285,
+   "triangles": 58685,
+   "bytes": 1339944,
+   "bounds": [
+    [
+     -0.32518168174663376,
+     0.730050195158301,
+     -0.08567184098418927
+    ],
+    [
+     0.3258539923227551,
+     1.4066288143303387,
+     0.09653963590400721
+    ]
+   ],
+   "spanningParts": [
+    "ZA-latissimus-dorsi-muscle-ol",
+    "ZA-latissimus-dorsi-muscle-or",
+    "ZA-serratus-anterior-muscle-e8l"
+   ]
+  },
+  {
+   "id": "ankle-foot",
+   "name": "Ankle & foot",
+   "chunk": 8,
+   "parts": 260,
+   "triangles": 52910,
+   "bytes": 1199252,
+   "bounds": [
+    [
+     -0.16539705065013238,
+     0.00539589188608762,
+     -0.0981115176272611
+    ],
+    [
+     0.1655533368814968,
+     0.5130642267382031,
+     0.15584886957734195
+    ]
+   ],
+   "spanningParts": [
+    "ZA-interosseous-membrane-of-leg-l",
+    "ZA-interosseous-membrane-of-leg-r",
+    "NV-nerve-common-fibular-l",
+    "NV-nerve-common-fibular-r"
+   ]
+  }
+ ],
+ "report": {
+  "meshes": 1385,
+  "parts": 1385,
+  "concepts": 1385,
+  "bySystem": {
+   "central-nerves": {
+    "parts": 13,
+    "triangles": 10840
+   },
+   "fascia": {
+    "parts": 165,
+    "triangles": 201678
+   },
+   "insertions": {
+    "parts": 705,
+    "triangles": 63843
+   },
+   "landmarks": {
+    "parts": 77,
+    "triangles": 1540
+   },
+   "ligaments": {
+    "parts": 409,
+    "triangles": 163607
+   },
+   "peripheral-nerves": {
+    "parts": 16,
+    "triangles": 41152
+   }
+  },
+  "insertions": {
+   "patches": 705,
+   "onBoneInSource": 697,
+   "softTissueInSource": 4,
+   "projectedOntoSameBone": 697,
+   "projectedOntoNearestBone": 0,
+   "sourceBonesWithoutBp3dMatch": [],
+   "boneAbsentInBp3d": [
+    {
+     "name": "Diaphragm.ol",
+     "sourceBone": "Costal cartilage of eighth rib.l"
+    },
+    {
+     "name": "Diaphragm.or",
+     "sourceBone": "Costal cartilage of eighth rib.r"
+    },
+    {
+     "name": "Internal abdominal oblique muscle.o1l",
+     "sourceBone": "Costal cartilage of tenth rib.l"
+    },
+    {
+     "name": "Internal abdominal oblique muscle.o1r",
+     "sourceBone": "Costal cartilage of tenth rib.r"
+    }
+   ],
+   "sideMismatches": {
+    "count": 25,
+    "names": [
+     "Pectineus muscle.el",
+     "Piriformis muscle.el",
+     "Plantar interossei muscles.e1l",
+     "Plantar interossei muscles.e2l",
+     "Plantar interossei muscles.el",
+     "Plantar interossei muscles.o1l",
+     "Plantar interossei muscles.o2l",
+     "Plantar interossei muscles.ol",
+     "Procerus muscle.el",
+     "Pronator quadratus.el",
+     "Pronator quadratus.ol",
+     "Serratus anterior muscle.e1l",
+     "Serratus anterior muscle.e2l",
+     "Serratus anterior muscle.e2r",
+     "Serratus anterior muscle.e8l",
+     "Serratus posterior inferior muscle.e1l",
+     "Serratus posterior inferior muscle.e2l",
+     "Serratus posterior inferior muscle.e3l",
+     "Serratus posterior inferior muscle.el",
+     "Serratus posterior superior muscle.e1l",
+     "Serratus posterior superior muscle.e2l",
+     "Serratus posterior superior muscle.e3l",
+     "Serratus posterior superior muscle.el",
+     "Short head of biceps brachii.ol",
+     "Short head of biceps femoris.el"
+    ],
+    "note": "insertion names whose .l/.r disagrees with the side of the Z-Anatomy bone the patch sits on; the geometry's side is used"
+   },
+   "movedOver5mmMean": 148,
+   "movedOver5mmMax": 303,
+   "spanningTwoBones": 0,
+   "meanOfMeans": 0.00421,
+   "medianOfMeans": 0.00209,
+   "worst": [
+    {
+     "name": "Extensor digitorum longus.e1l",
+     "projected": true,
+     "sourceBone": "Distal phalanx of third finger of foot.l",
+     "sourceBoneDistance": 8.709690932663858e-06,
+     "mean": 0.03227955621800253,
+     "max": 0.034476183354854584,
+     "bone": "Distal phalanx of left third toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Extensor digitorum longus.el",
+     "projected": true,
+     "sourceBone": "Distal phalanx of second finger of foot.l",
+     "sourceBoneDistance": 4.3832070893756736e-05,
+     "mean": 0.03226329133446727,
+     "max": 0.03374957665801048,
+     "bone": "Distal phalanx of left second toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Extensor digitorum longus.er",
+     "projected": true,
+     "sourceBone": "Distal phalanx of second finger of foot.r",
+     "sourceBoneDistance": 4.381373373872423e-05,
+     "mean": 0.03189890658749001,
+     "max": 0.033393409103155136,
+     "bone": "Distal phalanx of right second toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Extensor digitorum longus.e1r",
+     "projected": true,
+     "sourceBone": "Distal phalanx of third finger of foot.r",
+     "sourceBoneDistance": 8.724126340643932e-06,
+     "mean": 0.031699587990130694,
+     "max": 0.03389307111501694,
+     "bone": "Distal phalanx of right third toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Flexor digitorum longus.e1l",
+     "projected": true,
+     "sourceBone": "Distal phalanx of third finger of foot.l",
+     "sourceBoneDistance": 1.1224556154295041e-05,
+     "mean": 0.030389742049224237,
+     "max": 0.031838998198509216,
+     "bone": "Distal phalanx of left third toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Extensor digitorum longus.e2l",
+     "projected": true,
+     "sourceBone": "Distal phalanx of fourth finger of foot.l",
+     "sourceBoneDistance": 4.622960781830443e-05,
+     "mean": 0.03030451131053269,
+     "max": 0.0320499911904335,
+     "bone": "Distal phalanx of left fourth toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Flexor digitorum longus.el",
+     "projected": true,
+     "sourceBone": "Distal phalanx of second finger of foot.l",
+     "sourceBoneDistance": 4.0305185263989074e-05,
+     "mean": 0.030242378590628505,
+     "max": 0.032354794442653656,
+     "bone": "Distal phalanx of left second toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Flexor digitorum longus.er",
+     "projected": true,
+     "sourceBone": "Distal phalanx of second finger of foot.r",
+     "sourceBoneDistance": 4.033536710235097e-05,
+     "mean": 0.03003292204812169,
+     "max": 0.032156702131032944,
+     "bone": "Distal phalanx of right second toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Flexor digitorum longus.e2l",
+     "projected": true,
+     "sourceBone": "Distal phalanx of fourth finger of foot.l",
+     "sourceBoneDistance": 5.2853132533993055e-06,
+     "mean": 0.029882155697454105,
+     "max": 0.0314214751124382,
+     "bone": "Distal phalanx of left fourth toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Flexor digitorum longus.e1r",
+     "projected": true,
+     "sourceBone": "Distal phalanx of third finger of foot.r",
+     "sourceBoneDistance": 1.1212600934422145e-05,
+     "mean": 0.029859577250831267,
+     "max": 0.03131856769323349,
+     "bone": "Distal phalanx of right third toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Extensor digitorum longus.e2r",
+     "projected": true,
+     "sourceBone": "Distal phalanx of fourth finger of foot.r",
+     "sourceBoneDistance": 4.625247362888274e-05,
+     "mean": 0.029687663656659424,
+     "max": 0.03136206418275833,
+     "bone": "Distal phalanx of right fourth toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Flexor digitorum longus.e2r",
+     "projected": true,
+     "sourceBone": "Distal phalanx of fourth finger of foot.r",
+     "sourceBoneDistance": 5.40333371710424e-06,
+     "mean": 0.029283185574141415,
+     "max": 0.0307441595941782,
+     "bone": "Distal phalanx of right fourth toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Extensor digitorum brevis.e1l",
+     "projected": true,
+     "sourceBone": "Middle phalanx of third finger of foot.l",
+     "sourceBoneDistance": 2.7031422310266235e-06,
+     "mean": 0.028803972172595206,
+     "max": 0.030668705701828003,
+     "bone": "Middle phalanx of left third toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Flexor digitorum brevis.el",
+     "projected": true,
+     "sourceBone": "Middle phalanx of second finger of foot.l",
+     "sourceBoneDistance": 2.1307829822908867e-06,
+     "mean": 0.02844678512529323,
+     "max": 0.03246157988905907,
+     "bone": "Middle phalanx of left second toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    },
+    {
+     "name": "Extensor digitorum brevis.e1r",
+     "projected": true,
+     "sourceBone": "Middle phalanx of third finger of foot.r",
+     "sourceBoneDistance": 2.7089064732741635e-06,
+     "mean": 0.0284460543521813,
+     "max": 0.03028826415538788,
+     "bone": "Middle phalanx of right third toe",
+     "matched": true,
+     "bones": 1,
+     "sideMismatch": false
+    }
+   ],
+   "softTissue": [
+    {
+     "name": "Rectus abdominis muscle.er",
+     "projected": false,
+     "sourceBone": "Hip bone.r",
+     "sourceBoneDistance": 0.03496551296499698,
+     "mean": 0.0,
+     "max": 0.0,
+     "bone": null,
+     "matched": false,
+     "bones": 0
+    },
+    {
+     "name": "Rectus abdominis muscle.el",
+     "projected": false,
+     "sourceBone": "Hip bone.l",
+     "sourceBoneDistance": 0.03495694837132154,
+     "mean": 0.0,
+     "max": 0.0,
+     "bone": null,
+     "matched": false,
+     "bones": 0
+    },
+    {
+     "name": "External abdominal oblique muscle.o5l",
+     "projected": false,
+     "sourceBone": "Hip bone.l",
+     "sourceBoneDistance": 0.01577641827922586,
+     "mean": 0.0,
+     "max": 0.0,
+     "bone": null,
+     "matched": false,
+     "bones": 0
+    },
+    {
+     "name": "External abdominal oblique muscle.o5r",
+     "projected": false,
+     "sourceBone": "Hip bone.r",
+     "sourceBoneDistance": 0.015775603356208496,
+     "mean": 0.0,
+     "max": 0.0,
+     "bone": null,
+     "matched": false,
+     "bones": 0
+    }
+   ]
+  },
+  "landmarks": {
+   "count": 77,
+   "low": [
+    "lm-asis",
+    "lm-fibular-head",
+    "lm-gerdys-tubercle",
+    "lm-knee-joint-line",
+    "lm-superior-nuchal-line",
+    "lm-ulnar-styloid"
+   ],
+   "surfaceDistance": {
+    "min": 0.00017,
+    "max": 0.00201
+   }
+  },
+  "spinalCord": {
+   "canal": [
+    {
+     "vertebra": "Atlas",
+     "centre": [
+      0.0,
+      1.5499,
+      -0.0372
+     ],
+     "gapWidth": 0.0224
+    },
+    {
+     "vertebra": "Axis",
+     "centre": [
+      0.0,
+      1.5339,
+      -0.0372
+     ],
+     "gapWidth": 0.0152
+    },
+    {
+     "vertebra": "Third cervical vertebra",
+     "centre": [
+      0.0,
+      1.5095,
+      -0.0342
+     ],
+     "gapWidth": 0.0146
+    },
+    {
+     "vertebra": "Fourth cervical vertebra",
+     "centre": [
+      0.0,
+      1.4965,
+      -0.0319
+     ],
+     "gapWidth": 0.0118
+    },
+    {
+     "vertebra": "Fifth cervical vertebra",
+     "centre": [
+      0.0,
+      1.484,
+      -0.018
+     ],
+     "gapWidth": 0.0105
+    },
+    {
+     "vertebra": "Sixth cervical vertebra",
+     "centre": [
+      0.0,
+      1.4713,
+      -0.0287
+     ],
+     "gapWidth": 0.0098
+    },
+    {
+     "vertebra": "Seventh cervical vertebra",
+     "centre": [
+      0.0,
+      1.4564,
+      -0.0324
+     ],
+     "gapWidth": 0.0105
+    },
+    {
+     "vertebra": "First thoracic vertebra",
+     "centre": [
+      0.0,
+      1.4402,
+      -0.0228
+     ],
+     "gapWidth": 0.0143
+    },
+    {
+     "vertebra": "Second thoracic vertebra",
+     "centre": [
+      0.0,
+      1.4216,
+      -0.0277
+     ],
+     "gapWidth": 0.0142
+    },
+    {
+     "vertebra": "Third thoracic vertebra",
+     "centre": [
+      0.0,
+      1.4002,
+      -0.0402
+     ],
+     "gapWidth": 0.0101
+    },
+    {
+     "vertebra": "Fourth thoracic vertebra",
+     "centre": [
+      0.0,
+      1.3777,
+      -0.0481
+     ],
+     "gapWidth": 0.0125
+    },
+    {
+     "vertebra": "Fifth thoracic vertebra",
+     "centre": [
+      0.0,
+      1.3466,
+      -0.0507
+     ],
+     "gapWidth": 0.0188
+    },
+    {
+     "vertebra": "Sixth thoracic vertebra",
+     "centre": [
+      0.0,
+      1.3173,
+      -0.0483
+     ],
+     "gapWidth": 0.0154
+    },
+    {
+     "vertebra": "Seventh thoracic vertebra",
+     "centre": [
+      0.0,
+      1.2887,
+      -0.0732
+     ],
+     "gapWidth": 0.0129
+    },
+    {
+     "vertebra": "Eighth thoracic vertebra",
+     "centre": [
+      0.0,
+      1.2615,
+      -0.0691
+     ],
+     "gapWidth": 0.0149
+    },
+    {
+     "vertebra": "Ninth thoracic vertebra",
+     "centre": [
+      0.0,
+      1.2339,
+      -0.0645
+     ],
+     "gapWidth": 0.0158
+    },
+    {
+     "vertebra": "Tenth thoracic vertebra",
+     "centre": [
+      0.0,
+      1.2066,
+      -0.0591
+     ],
+     "gapWidth": 0.0127
+    },
+    {
+     "vertebra": "Eleventh thoracic vertebra",
+     "centre": [
+      0.0,
+      1.1806,
+      -0.0506
+     ],
+     "gapWidth": 0.0123
+    },
+    {
+     "vertebra": "Twelfth thoracic vertebra",
+     "centre": [
+      0.0,
+      1.1539,
+      -0.0253
+     ],
+     "gapWidth": 0.0155
+    },
+    {
+     "vertebra": "First lumbar vertebra",
+     "centre": [
+      0.0,
+      1.1217,
+      -0.0008
+     ],
+     "gapWidth": 0.0152
+    },
+    {
+     "vertebra": "Second lumbar vertebra",
+     "centre": [
+      0.0,
+      1.0941,
+      0.0053
+     ],
+     "gapWidth": 0.0167
+    },
+    {
+     "vertebra": "Third lumbar vertebra",
+     "centre": [
+      0.0,
+      1.0668,
+      -0.004
+     ],
+     "gapWidth": 0.0325
+    },
+    {
+     "vertebra": "Fourth lumbar vertebra",
+     "centre": [
+      0.0,
+      1.0391,
+      -0.0091
+     ],
+     "gapWidth": 0.0333
+    },
+    {
+     "vertebra": "Fifth lumbar vertebra",
+     "centre": [
+      0.0,
+      1.0078,
+      -0.0228
+     ],
+     "gapWidth": 0.0362
+    }
+   ],
+   "foramenMagnum": [
+    0.0,
+    1.5699,
+    -0.0312
+   ],
+   "conus": [
+    0.0,
+    1.1217,
+    -0.0008
+   ],
+   "s2": [
+    0.0,
+    0.9553,
+    -0.078
+   ]
+  },
+  "seams": {
+   "lumbar|thoracic": {
+    "Investing abdominal fascia.l": {
+     "edges": 290,
+     "maxDeltaMm": 3.905,
+     "maxDeltaMmPerCm": 1.769
+    },
+    "Investing abdominal fascia.r": {
+     "edges": 290,
+     "maxDeltaMm": 3.99,
+     "maxDeltaMmPerCm": 1.859
+    },
+    "Linea alba": {
+     "edges": 26,
+     "maxDeltaMm": 6.148,
+     "maxDeltaMmPerCm": 0.988
+    },
+    "Posterior layer of thoracolumbar fascia.l": {
+     "edges": 20,
+     "maxDeltaMm": 10.43,
+     "maxDeltaMmPerCm": 1.561
+    },
+    "Posterior layer of thoracolumbar fascia.r": {
+     "edges": 20,
+     "maxDeltaMm": 10.535,
+     "maxDeltaMmPerCm": 1.587
+    }
+   },
+   "hip|lumbar": {
+    "Investing abdominal fascia.l": {
+     "edges": 66,
+     "maxDeltaMm": 0.808,
+     "maxDeltaMmPerCm": 0.523
+    },
+    "Investing abdominal fascia.r": {
+     "edges": 66,
+     "maxDeltaMm": 0.79,
+     "maxDeltaMmPerCm": 0.523
+    },
+    "Linea alba": {
+     "edges": 22,
+     "maxDeltaMm": 7.352,
+     "maxDeltaMmPerCm": 0.56
+    },
+    "Fascia lata.l": {
+     "edges": 216,
+     "maxDeltaMm": 0.84,
+     "maxDeltaMmPerCm": 0.656
+    },
+    "Fascia lata.r": {
+     "edges": 216,
+     "maxDeltaMm": 0.859,
+     "maxDeltaMmPerCm": 0.671
+    },
+    "Iliotibial tract.l": {
+     "edges": 496,
+     "maxDeltaMm": 0.339,
+     "maxDeltaMmPerCm": 0.351
+    },
+    "Iliotibial tract.r": {
+     "edges": 496,
+     "maxDeltaMm": 0.329,
+     "maxDeltaMmPerCm": 0.327
+    },
+    "nerve-sciatic.l": {
+     "edges": 132,
+     "maxDeltaMm": 0.076,
+     "maxDeltaMmPerCm": 0.386
+    },
+    "nerve-sciatic.r": {
+     "edges": 124,
+     "maxDeltaMm": 0.098,
+     "maxDeltaMmPerCm": 0.399
+    }
+   },
+   "hip|knee": {
+    "Fascia lata.l": {
+     "edges": 262,
+     "maxDeltaMm": 5.732,
+     "maxDeltaMmPerCm": 1.797
+    },
+    "Fascia lata.r": {
+     "edges": 262,
+     "maxDeltaMm": 5.856,
+     "maxDeltaMmPerCm": 1.846
+    },
+    "Iliotibial tract.l": {
+     "edges": 364,
+     "maxDeltaMm": 4.865,
+     "maxDeltaMmPerCm": 1.633
+    },
+    "Iliotibial tract.r": {
+     "edges": 364,
+     "maxDeltaMm": 5.202,
+     "maxDeltaMmPerCm": 1.751
+    },
+    "nerve-sciatic.l": {
+     "edges": 64,
+     "maxDeltaMm": 2.681,
+     "maxDeltaMmPerCm": 1.749
+    },
+    "nerve-sciatic.r": {
+     "edges": 64,
+     "maxDeltaMm": 2.805,
+     "maxDeltaMmPerCm": 1.823
+    }
+   },
+   "elbow-wrist|shoulder": {
+    "Brachial fascia.l": {
+     "edges": 190,
+     "maxDeltaMm": 1.116,
+     "maxDeltaMmPerCm": 0.496
+    },
+    "Brachial fascia.r": {
+     "edges": 188,
+     "maxDeltaMm": 2.019,
+     "maxDeltaMmPerCm": 0.929
+    },
+    "nerve-median.l": {
+     "edges": 68,
+     "maxDeltaMm": 0.62,
+     "maxDeltaMmPerCm": 0.424
+    },
+    "nerve-median.r": {
+     "edges": 68,
+     "maxDeltaMm": 0.91,
+     "maxDeltaMmPerCm": 0.624
+    },
+    "nerve-radial.l": {
+     "edges": 68,
+     "maxDeltaMm": 0.242,
+     "maxDeltaMmPerCm": 0.465
+    },
+    "nerve-radial.r": {
+     "edges": 68,
+     "maxDeltaMm": 0.387,
+     "maxDeltaMmPerCm": 0.727
+    },
+    "nerve-ulnar.l": {
+     "edges": 64,
+     "maxDeltaMm": 0.494,
+     "maxDeltaMmPerCm": 0.42
+    },
+    "nerve-ulnar.r": {
+     "edges": 64,
+     "maxDeltaMm": 0.724,
+     "maxDeltaMmPerCm": 0.604
+    }
+   },
+   "ankle-foot|knee": {
+    "Crural fascia.l": {
+     "edges": 200,
+     "maxDeltaMm": 3.51,
+     "maxDeltaMmPerCm": 1.653
+    },
+    "Crural fascia.r": {
+     "edges": 200,
+     "maxDeltaMm": 3.606,
+     "maxDeltaMmPerCm": 1.69
+    },
+    "nerve-common-fibular.l": {
+     "edges": 64,
+     "maxDeltaMm": 1.402,
+     "maxDeltaMmPerCm": 1.412
+    },
+    "nerve-common-fibular.r": {
+     "edges": 64,
+     "maxDeltaMm": 1.469,
+     "maxDeltaMmPerCm": 1.469
+    },
+    "nerve-tibial.l": {
+     "edges": 64,
+     "maxDeltaMm": 0.835,
+     "maxDeltaMmPerCm": 0.525
+    },
+    "nerve-tibial.r": {
+     "edges": 64,
+     "maxDeltaMm": 0.888,
+     "maxDeltaMmPerCm": 0.556
+    }
+   }
+  },
+  "seamMaxMm": 10.535,
+  "seconds": 17.5
+ },
+ "parts": 1385,
+ "concepts": 1385
+}

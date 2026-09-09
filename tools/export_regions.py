@@ -126,7 +126,8 @@ class Source:
         self.system = row["system"]
         self.region = assignment["region"]
         self.signal = assignment["signal"]
-        self.side = scope.side_of(self.name)
+        # the geometry's side, not the suffix's: 25 insertions are named for the wrong side (scope.SIDE_CORRECTED)
+        self.side = scope.side_of_object(self.name, float(row["centroid_x"]))
         self.matrix = self.ob.matrix_world.copy()
         self.mirrored = self.matrix.determinant() < 0
         self.inventory_tris = int(row["triangles"])

@@ -423,15 +423,27 @@ renders. What the job established:
   (`regions.NEIGHBOURS`).
 - **An insertion stays on its bone.** A patch is projected onto the BP3D bone
   of the same name as the Z-Anatomy bone it sits on, never onto the nearest
-  bone: nearest took an internal-oblique origin 37 mm to the eighth rib. The
-  side comes from the bone the patch sits on, not from the name - **25
-  insertion names end in `.l` while their geometry lies on the right bone**
-  (pronator quadratus, piriformis, the plantar interossei, the serrati and
-  others; listed in `bp3d-export.json`). That is a finding about
-  `export_regions.py`'s side field as much as about this job, and is not yet
-  fixed there. Patches on soft tissue in the source (rectus abdominis) and
-  on bones BodyParts3D lacks (costal cartilages 8 and 10) are left where the
-  fit puts them and flagged.
+  bone: nearest took an internal-oblique origin 37 mm to the eighth rib.
+  Patches on soft tissue in the source (rectus abdominis) and on bones
+  BodyParts3D lacks (costal cartilages 8 and 10) are left where the fit puts
+  them and flagged.
+- **Forty-six objects are named for the wrong side.** The BodyParts3D
+  projection, reading the side off the bone a patch sits on, found 25
+  insertions whose `.l` geometry lay on the right; a scan of every kept
+  sided object in the .blend found 46: 23 lone insertions named `.l` with
+  no `.r` twin at all (the atlas modelled that footprint once, on the right),
+  eleven swapped insertion pairs on the neck plus the piriformis origin, and
+  one ligament, the lateral temporomandibular, whose `.r` is the mirrored
+  instance and sits at +X. The side is now the geometry's:
+  `scope.side_of_object()` overrules the suffix when the world centroid is
+  more than 15 mm across the midline, `scope.SIDE_CORRECTED` lists every
+  object that changes, and the build stops if the two disagree, so a model
+  update that fixes or moves one is noticed. The suffix is still the name;
+  only the `side` extra and the side counts changed. The neck pairs were
+  invisible to the BP3D check because their bones (vertebrae, occiput) are
+  unsided. `ob.bound_box` is stale in a freshly loaded background Blender
+  until a depsgraph has been evaluated; a scan that skips that step sees
+  every object at the origin.
 - **A factory-startup Blender has a 2 m cube in it.** It hid everything below
   1 m in the first renders. Delete the default objects before rendering.
 - **BodyParts3D has no spinal cord** (its concept resolves to a 160-triangle

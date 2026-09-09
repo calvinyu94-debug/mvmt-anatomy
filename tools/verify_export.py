@@ -143,7 +143,7 @@ def main():
         l = sum(1 for n, a in assignment.items() if a["region"] == rg and a["side"] == "l")
         r = sum(1 for n, a in assignment.items() if a["region"] == rg and a["side"] == "r")
         u = [n for n in unpaired if assignment[n]["region"] == rg]
-        ul = sum(1 for n in u if scope.side_of(n) == "l")
+        ul = sum(1 for n in u if assignment[n]["side"] == "l")   # the assignment's side: geometry, not suffix
         ur = len(u) - ul
         if l - ul != r - ur:
             side_msgs.append("%s l=%d r=%d unexplained" % (rg, l, r))
@@ -193,7 +193,7 @@ def main():
             exported_tris[(fname, n)] = t
             ok = (n in inv_names and ex.get("sourceName") == n and not BLENDER_SUFFIX.search(n)
                   and ex.get("system") == inv_system.get(n)
-                  and ex.get("side") == scope.side_of(n)
+                  and ex.get("side") == assignment.get(n, {}).get("side")   # the geometry's side, not the suffix (scope.SIDE_CORRECTED)
                   and ex.get("region") == assignment.get(n, {}).get("region")
                   and isinstance(ex.get("context"), bool))
             if not ok:

@@ -346,7 +346,7 @@ def csv_rows(rows, result):
             "sourceName": r["object_name"],
             "region": a["region"],
             "system": r["system"],
-            "side": scope.side_of(r["object_name"]),
+            "side": scope.side_of_object(r["object_name"], float(r["centroid_x"])),
             "signal": a["signal"],
             "detail": a["detail"],
             "triangles": int(r["triangles"]),

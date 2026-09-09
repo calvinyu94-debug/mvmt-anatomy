@@ -55,7 +55,7 @@ Orbicularis oris muscle.ol,head-jaw,insertion,l,parent,Orbicularis oris muscle.l
 Orbicularis oris muscle.or,head-jaw,insertion,r,parent,Orbicularis oris muscle.r,10
 Orbital part of orbicularis oculi.ol,head-jaw,insertion,l,parent,Orbital part of orbicularis oculi.l,16
 Orbital part of orbicularis oculi.or,head-jaw,insertion,r,parent,Orbital part of orbicularis oculi.r,16
-Procerus muscle.el,head-jaw,insertion,l,parent,Procerus muscle.l,17
+Procerus muscle.el,head-jaw,insertion,,parent,Procerus muscle.l,17
 Procerus muscle.ol,head-jaw,insertion,l,parent,Procerus muscle.l,18
 Procerus muscle.or,head-jaw,insertion,r,parent,Procerus muscle.r,18
 Temporalis muscle.el,head-jaw,insertion,l,parent,Temporalis muscle.l,135

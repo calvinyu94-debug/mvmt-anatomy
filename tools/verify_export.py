@@ -144,7 +144,7 @@ def main():
         r = sum(1 for n, a in assignment.items() if a["region"] == rg and a["side"] == "r")
         u = [n for n in unpaired if assignment[n]["region"] == rg]
         ul = sum(1 for n in u if assignment[n]["side"] == "l")   # the assignment's side: geometry, not suffix
-        ur = len(u) - ul
+        ur = sum(1 for n in u if assignment[n]["side"] == "r")   # an unpaired midline object counts on neither side
         if l - ul != r - ur:
             side_msgs.append("%s l=%d r=%d unexplained" % (rg, l, r))
     check("sides-match-per-region-after-unpaired", not side_msgs,

@@ -64,7 +64,7 @@
    "mirror-instance": 938,
    "shared-data-not-mirror": 14,
    "separate-data": 8,
-   "unpaired": 2
+   "unpaired": 1
   },
   "windingCorrected": [
    "Acetabular labrum.l",
@@ -104,9 +104,9 @@
     "cervical"
    ],
    "sides": {
-    "l": 106,
+    "l": 105,
     "r": 105,
-    "": 9
+    "": 10
    },
    "insertionLayer": {
     "file": "head-jaw-insertions.glb",
@@ -118,13 +118,13 @@
   {
    "id": "cervical",
    "file": "cervical.glb",
-   "triangles": 341318,
+   "triangles": 341319,
    "ownTriangles": 156525,
-   "contextTriangles": 184793,
+   "contextTriangles": 184794,
    "sourceTriangles": 313169,
    "inventoryTriangles": 306304,
    "targetTriangles": 156584,
-   "bytes": 1742652,
+   "bytes": 1742656,
    "meshCount": 132,
    "contextMeshCount": 399,
    "contextRegions": [
@@ -147,13 +147,13 @@
   {
    "id": "shoulder",
    "file": "shoulder.glb",
-   "triangles": 345402,
+   "triangles": 345403,
    "ownTriangles": 159730,
-   "contextTriangles": 185672,
+   "contextTriangles": 185673,
    "sourceTriangles": 319428,
    "inventoryTriangles": 283108,
    "targetTriangles": 159714,
-   "bytes": 1880420,
+   "bytes": 1880424,
    "meshCount": 110,
    "contextMeshCount": 540,
    "contextRegions": [
@@ -182,7 +182,7 @@
    "sourceTriangles": 782174,
    "inventoryTriangles": 628597,
    "targetTriangles": 391087,
-   "bytes": 2221932,
+   "bytes": 2221924,
    "meshCount": 128,
    "contextMeshCount": 338,
    "contextRegions": [
@@ -205,13 +205,13 @@
   {
    "id": "lumbar",
    "file": "lumbar.glb",
-   "triangles": 358495,
+   "triangles": 358496,
    "ownTriangles": 205026,
-   "contextTriangles": 153469,
+   "contextTriangles": 153470,
    "sourceTriangles": 406947,
    "inventoryTriangles": 386987,
    "targetTriangles": 203474,
-   "bytes": 1557028,
+   "bytes": 1557032,
    "meshCount": 96,
    "contextMeshCount": 232,
    "contextRegions": [
@@ -14290,7 +14290,7 @@
   {
    "sourceName": "Procerus muscle.el",
    "region": "head-jaw",
-   "side": "l",
+   "side": "",
    "system": "insertion",
    "triangles": 17,
    "sourceTriangles": 17,

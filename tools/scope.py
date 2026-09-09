@@ -180,6 +180,14 @@ SIDE_CORRECTED = {
 }
 SIDE_MARGIN = 0.015     # metres from the midline before the geometry overrules the suffix
 
+# Objects that carry a side suffix but straddle the midline and have no twin:
+# treated as unsided, like the other midline structures. The procerus
+# insertion sits 2 mm off the midline on the nasal bones; its origin is a
+# proper .ol/.or pair. Asserted within SIDE_MARGIN of the midline.
+SIDE_MIDLINE = {
+    "Procerus muscle.el",
+}
+
 
 def side_of_object(name, centroid_x):
     """The side an object is on: its suffix, unless the object's world centroid
@@ -187,6 +195,10 @@ def side_of_object(name, centroid_x):
     in which case the geometry wins. Every such case must be in SIDE_CORRECTED,
     and every SIDE_CORRECTED entry must be such a case."""
     suffix = side_of(name)
+    if name in SIDE_MIDLINE:
+        if abs(centroid_x) >= SIDE_MARGIN:
+            raise AssertionError("%s: SIDE_MIDLINE, but the geometry (x=%.3f) is not on the midline" % (name, centroid_x))
+        return ""
     geometric = suffix
     if suffix == "l" and centroid_x < -SIDE_MARGIN:
         geometric = "r"

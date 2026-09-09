@@ -13,6 +13,11 @@ nerves.glb - never from the .blend:
                      vertebral canal - all schematic, all labelled so
     landmarks        the 42 landmarks as resolved on the BP3D bones by the fit,
                      as small spheres, with the fit's confidence
+    muscular         the muscles BodyParts3D does not model (CARRIED_MUSCLES: masseter,
+                     temporalis, pterygoids, occipitofrontalis, latissimus dorsi, multifidus,
+                     quadratus lumborum, transversus abdominis, internal oblique, rectus
+                     abdominis, spinalis capitis, extensor digitorum brevis), transformed
+                     as geometry beside BP3D's own muscles
 
 Fascia, ligaments and nerves are transformed through bp3d-fit.json and left
 where the fit puts them. Insertion patches are then projected onto the nearest
@@ -60,6 +65,30 @@ REGION_NAMES = {"head-jaw": "Head & jaw", "cervical": "Cervical", "shoulder": "S
                 "elbow-wrist": "Elbow & wrist", "thoracic": "Thoracic", "lumbar": "Lumbar",
                 "hip": "Hip", "knee": "Knee", "ankle-foot": "Ankle & foot"}
 FASCIA_MATERIALS = ("Fascia", "Bursa", "Fat")
+# Muscles BodyParts3D (as Human Atlas selected it) does not model, carried across from Z-Anatomy as
+# muscular parts: every mesh the MVMT structure claims that is a muscular object in the region
+# files, with a fascial one (an aponeurosis) going to fascia. A carried mesh whose normalised name
+# is a BodyParts3D concept stops the build: that would be BP3D's muscle drawn twice. This is why
+# "Obliques" is not listed (its external oblique is BP3D's, only the internal is carried, under its
+# own structure) and why the semispinalis and rotatores the transversospinalis group claims are
+# not (BP3D has both; the rotatores were a name mismatch, "rotator", matched in mvmt-atlas's
+# CONCEPT_MATCHES, as the rhomboids and the hamstring origin were). Reviewed as descriptions
+# against the section 3 search of BP3D's part names; the record lists what came across.
+CARRIED_MUSCLES = {
+    "head-jaw-masseter": "no masseter in BodyParts3D (both parts)",
+    "head-jaw-temporalis": "no temporalis",
+    "head-jaw-medial-pterygoid": "no pterygoids",
+    "head-jaw-lateral-pterygoid": "no pterygoids (both heads)",
+    "head-jaw-occipitofrontalis": "no occipitofrontalis, epicranial aponeurosis or galea; the aponeurosis goes to fascia",
+    "shoulder-lats": "no latissimus dorsi",
+    "spine-multifidus": "no multifidus at any level",
+    "lumbar-ql": "no quadratus lumborum",
+    "lumbar-tva": "no transversus abdominis",
+    "lumbar-internal-oblique": "no internal oblique; the external is BodyParts3D's",
+    "lumbar-rectus-abdominis": "no rectus abdominis",
+    "spine-spinalis-capitis": "no spinalis capitis; BodyParts3D's 'spinalis' is the thoracic part",
+    "ankle-edb": "no extensor digitorum brevis; BodyParts3D has the extensor hallucis brevis",
+}
 CENTRAL_NERVES = ("nerve-cervical-roots", "nerve-lumbosacral-plexus")
 INSERTION_LIFT = 0.0005        # metres off the bone after projection, so the patch is not in the surface
 LANDMARK_RADIUS = 0.004
@@ -68,7 +97,8 @@ PROJECTION_FLAG = 0.005        # an insertion patch that moved more than this is
 SEAM_STRUCTURES = ("Iliotibial tract", "nerve-sciatic", "thoracolumbar fascia", "Fascia lata",
                    "nerve-tibial", "nerve-common-fibular", "nerve-median", "nerve-ulnar", "nerve-radial",
                    "Plantar aponeurosis", "Crural fascia", "Brachial fascia", "Antebrachial fascia",
-                   "Epicranial aponeurosis", "Linea alba", "Investing abdominal fascia")
+                   "Epicranial aponeurosis", "Linea alba", "Investing abdominal fascia",
+                   "Latissimus dorsi", "Rectus abdominis", "Internal abdominal oblique", "Transversus abdominis")
 
 LANDMARK_REGION = {  # landmark_anchors region tag -> MVMT region, with the exceptions named
     "head-neck": "head-jaw", "shoulder": "shoulder", "thorax": "thoracic", "elbow": "elbow-wrist",
@@ -311,11 +341,22 @@ def main():
     anatomy = {s["id"]: s for s in json.load(open(args.anatomy, encoding="utf-8"))}
     claims = {}          # sourceName -> [structure ids]
     fascial_claim = set()
+    carried = {}         # sourceName -> the structure it is carried for, from CARRIED_MUSCLES
     for s in join["structures"]:
         for name in s.get("meshes", []) + s.get("insertions", []):
             claims.setdefault(name, []).append(s["id"])
             if anatomy.get(s["id"], {}).get("system") == "fascial":
                 fascial_claim.add(name)
+        if s["id"] in CARRIED_MUSCLES:
+            for name in s.get("meshes", []):
+                carried.setdefault(name, s["id"])
+    missing = [sid for sid in CARRIED_MUSCLES if sid not in {s["id"] for s in join["structures"]}]
+    if missing:
+        raise ValueError("CARRIED_MUSCLES names structures the join does not have: %s" % ", ".join(missing))
+    bp3d_names = {FIT_norm(c["name"]) for c in atlas["concepts"] if not c.get("source")}
+    duplicates = sorted(n for n in carried if FIT_norm(re.sub(r"\.[lr]$", "", n)) in bp3d_names)
+    if duplicates:
+        raise ValueError("carried muscles BodyParts3D already has: %s" % ", ".join(duplicates))
 
     # Blender's glTF importer converts to Z-up on import, so every mesh read
     # from our .glb files arrives in the Z-Anatomy frame the fit is written
@@ -339,7 +380,7 @@ def main():
     bone_verts, bone_faces, bone_face_part = [], [], []
     base = 0
     for p in atlas["parts"]:
-        if p["system"] != "skeletal":
+        if p["system"] != "skeletal" or p.get("source"):
             continue
         b = chunks[p["chunk"]]
         pos = np.frombuffer(b, dtype=np.float32, count=p["vertexCount"] * 3, offset=p["positions"]).reshape(-1, 3)
@@ -359,7 +400,7 @@ def main():
 
     # inside bone, by winding number against every bone whose box comes within 2 cm of the points
     bone_geom = {}
-    bone_parts_list = [p for p in atlas["parts"] if p["system"] == "skeletal"]
+    bone_parts_list = [p for p in atlas["parts"] if p["system"] == "skeletal" and not p.get("source")]
 
     def bone_geometry(p):
         if p["name"] not in bone_geom:
@@ -399,6 +440,7 @@ def main():
 
     zbone_verts, zbone_faces, zbase = [], [], 0      # Z-Anatomy's own bones: which bone a patch sits on, and whether it sits on one
     zbone_face_name = []
+    carried_found = set()
     for region in REGIONS:
         path = os.path.join(args.glb, region + ".glb")
         log("importing " + path)
@@ -419,14 +461,19 @@ def main():
                 zbone_face_name.extend([name] * len(F))
                 zbase += len(V)
                 continue
+            extras = None
             if system == "articular":
                 target = "ligaments"
             elif system == "muscular" and (mat in FASCIA_MATERIALS or name in fascial_claim):
                 target = "fascia"
+            elif system == "muscular" and name in carried:
+                target = "fascia" if "aponeurosis" in name.lower() else "muscular"
+                extras = dict(carried=True, carriedFor=carried[name])
+                carried_found.add(name)
             else:
                 continue
             V, F = object_geometry(ob)
-            add_mesh(name, V, F, target, material=mat, home=extra(ob, "region"), side=extra(ob, "side"))
+            add_mesh(name, V, F, target, material=mat, home=extra(ob, "region"), side=extra(ob, "side"), extras=extras)
             kept += 1
         log("  %s: kept %d of %d objects" % (region, kept, len(objs)))
         clear_objects(objs)
@@ -444,6 +491,11 @@ def main():
             kept += 1
         log("  %s insertions: %d" % (region, kept))
         clear_objects(objs)
+
+    not_found = sorted(set(carried) - carried_found)
+    if not_found:
+        raise ValueError("CARRIED_MUSCLES names meshes the region files do not hold as muscular objects: %s" % ", ".join(not_found))
+    log("carried muscles: %d meshes for %d structures BodyParts3D lacks" % (len(carried_found), len(CARRIED_MUSCLES)))
 
     # The nerves are rebuilt here from nerves.json's centrelines rather than read from nerves.glb:
     # the centreline is the authored thing, and the tube around it is presentation - tapered from
@@ -946,9 +998,11 @@ def main():
     def enclosed(p):
         o = Vector(p)
         return all(skin_bvh.ray_cast(o, Vector(d))[0] is not None for d in RAYS)
+    # BP3D's own muscles only: the atlas on disk carries the previous export's parts, and a reference
+    # surface that included our carried muscles would measure them against themselves
     body_verts, body_faces, bbase = [BV], [BF], len(BV)
     for p in atlas["parts"]:
-        if p["system"] != "muscular":
+        if p["system"] != "muscular" or p.get("source"):
             continue
         b = chunks[p["chunk"]]
         pos = np.frombuffer(b, dtype=np.float32, count=p["vertexCount"] * 3, offset=p["positions"]).reshape(-1, 3)
@@ -961,12 +1015,17 @@ def main():
     body_bvh = BVHTree.FromPolygons([tuple(v) for v in BODYV], [tuple(int(i) for i in f) for f in BODYF])
     log("body surface: %d triangles" % len(BODYF))
     FAR, FAR_FRACTION, SAMPLE = 0.006, 0.20, 240
+    # A carried muscle takes the envelope rule, not the surface one: the surface set is BP3D's bones
+    # and muscles, and where these muscles live BP3D has no neighbours to measure against (no
+    # abdominal wall but the external oblique, no scalp, no back sheet), so the rectus abdominis
+    # reads 59% "far" for sitting exactly where BP3D has nothing. Its surface distance is recorded
+    # beside the verdict, not judged.
     FIT_RULES = {
-        "ligaments": "surface", "fascia": "surface", "central-nerves": "canal", "peripheral-nerves": "envelope"}
+        "ligaments": "surface", "fascia": "surface", "muscular": "envelope", "central-nerves": "canal", "peripheral-nerves": "envelope"}
     FIT_RULE_TEXT = {
         "surface": "low when more than %d%% of sampled vertices lie further than %d mm from any BP3D bone or muscle surface" % (FAR_FRACTION * 100, FAR * 1000),
         "canal": "low when more than %d%% of sampled vertices lie inside bone (the vertebral canal wall); clearance from the wall is recorded, not judged" % (FAR_FRACTION * 100),
-        "envelope": "low when more than %d%% of sampled vertices lie outside the body envelope (BP3D's skin) or inside bone; no surface-distance test" % (FAR_FRACTION * 100)}
+        "envelope": "low when more than %d%% of sampled vertices lie outside the body envelope (BP3D's skin) or inside bone; the surface distance is recorded, not judged" % (FAR_FRACTION * 100)}
     confidence_rows = []
     for m in meshes:
         if m["system"] in ("insertions", "landmarks"):
@@ -991,9 +1050,12 @@ def main():
         else:
             in_bone = float(in_bone_of(S).mean())
             outside = float(np.mean([not enclosed(v) for v in S]))
+            d = np.array([body_bvh.find_nearest(Vector(v))[3] for v in S])
+            far = float((d > FAR).mean())
             conf = "low" if in_bone > FAR_FRACTION or outside > FAR_FRACTION else "high"
-            m["extras"].update(fitConfidence=conf, fitRule=rule, fitInBoneFraction=round(in_bone, 3), fitOutsideFraction=round(outside, 3))
-            row.update(inBone=in_bone, outside=outside)
+            m["extras"].update(fitConfidence=conf, fitRule=rule, fitInBoneFraction=round(in_bone, 3), fitOutsideFraction=round(outside, 3),
+                               fitFarFraction=round(far, 3), fitMedianDistance=round(float(np.median(d)), 5))
+            row.update(inBone=in_bone, outside=outside, far=far, median=float(np.median(d)))
         row["confidence"] = conf
         confidence_rows.append(row)
     conf_by_system = {}
@@ -1049,7 +1111,8 @@ def main():
     concept_names = {}
     fma_by_name = {}
     for c in atlas["concepts"]:
-        fma_by_name.setdefault(FIT_norm(c["name"]), c["id"])
+        if not c.get("source"):                      # BP3D's concepts, not the previous export's
+            fma_by_name.setdefault(FIT_norm(c["name"]), c["id"])
     counters = {}
     for ri, rid in enumerate(REGIONS):
         ch = Chunk()
@@ -1128,6 +1191,12 @@ def main():
                         medianOfMeans=round(float(np.median([r["mean"] for r in projected])), 5) if projected else None,
                         worst=sorted(projected, key=lambda r: -r["mean"])[:15],
                         softTissue=sorted(soft, key=lambda r: -r["sourceBoneDistance"])),
+        carriedMuscles=dict(why=CARRIED_MUSCLES,
+                            parts=[dict(name=p["name"], structure=p["carriedFor"], system=p["system"], region=p["region"],
+                                        triangles=p["indexCount"] // 3, fitConfidence=p["fitConfidence"], fitRule=p["fitRule"],
+                                        fitOutsideFraction=p.get("fitOutsideFraction"), fitInBoneFraction=p.get("fitInBoneFraction"),
+                                        fitFarFraction=p["fitFarFraction"], fitMedianMm=round(p["fitMedianDistance"] * 1000, 1))
+                                   for p in out_parts if p.get("carried")]),
         fitConfidence=dict(rules=FIT_RULE_TEXT, bySystem=conf_by_system,
                            low=[dict(name=r["name"], system=r["system"], rule=r["rule"],
                                      **{k: round(v, 3) for k, v in r.items() if k in ("far", "median", "inBone", "clearance", "outside")})
@@ -1151,7 +1220,7 @@ def main():
                   units="metres", up="Y", frame="+X left, +Z anterior (BodyParts3D)",
                   systems=dict(fascia="Fascia", ligaments="Joints & ligaments", insertions="Insertions",
                                **{"peripheral-nerves": "Peripheral nerves", "central-nerves": "Central nerves"},
-                               landmarks="Landmarks"),
+                               landmarks="Landmarks", muscular="Muscles (the ones BodyParts3D lacks)"),
                   chunks=out_chunks, parts=out_parts, concepts=concepts, regions=[region_table[r] for r in REGIONS],
                   report=report)
     with open(os.path.join(args.out, "mvmt-layers.json"), "w", encoding="utf-8") as f:
@@ -1186,7 +1255,7 @@ def FIT_norm(s):
 
 COLOURS = {"bone": (0.93, 0.90, 0.83, 1), "ligaments": (0.71, 0.76, 0.80, 1), "insertions": (0.56, 0.23, 0.18, 1),
            "fascia": (0.85, 0.81, 0.76, 1), "peripheral-nerves": (0.88, 0.64, 0.15, 1), "central-nerves": (0.88, 0.64, 0.15, 1),
-           "landmarks": (0.17, 0.37, 0.62, 1)}
+           "landmarks": (0.17, 0.37, 0.62, 1), "muscular": (0.72, 0.40, 0.31, 1)}
 
 
 def make_object(name, V, F, colour, coll):
@@ -1219,7 +1288,7 @@ def render(outdir, meshes, atlas, chunks, region_table):
     scene.world.color = (0.96, 0.94, 0.91)
     bones = []
     for p in atlas["parts"]:
-        if p["system"] != "skeletal":
+        if p["system"] != "skeletal" or p.get("source"):
             continue
         b = chunks[p["chunk"]]
         pos = np.frombuffer(b, dtype=np.float32, count=p["vertexCount"] * 3, offset=p["positions"]).reshape(-1, 3)
@@ -1275,6 +1344,10 @@ def render(outdir, meshes, atlas, chunks, region_table):
     shoot("body-fascia-nerves-lateral", (0, 0.87, 0), 1.85, "lateral")
     show({"landmarks", "ligaments"})
     shoot("body-landmarks-anterior", (0, 0.87, 0), 1.85, "anterior")
+    # the muscles carried from Z-Anatomy because BodyParts3D lacks them, on the BP3D skeleton
+    show({"muscular"})
+    shoot("body-carried-muscles-anterior", (0, 0.87, 0), 1.85, "anterior")
+    shoot("body-carried-muscles-posterior", (0, 0.87, 0), 1.85, "posterior")
     # the schematic cord in the canal: a mid-sagittal section, the bones cut at the midline so the
     # canal is open to the camera, from the skull base to the sacrum
     show({"central-nerves"})

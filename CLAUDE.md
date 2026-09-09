@@ -484,6 +484,28 @@ renders. What the job established:
   the nerves for being in soft tissue, which is where they belong. Counts
   and the reasoning are in
   [`verification/bp3d-fit-report.md`](verification/bp3d-fit-report.md).
+- **"Missing from BP3D" is three different things, and a substring search
+  tells them apart.** Of the 29 MVMT muscle structures the depth match could
+  not place, three were BP3D's names (rhomboids as sided concepts, rotatores
+  as "rotator", the hamstring origin as a group of present muscles), four
+  have no belly in Z-Anatomy either (the common extensor and flexor origins
+  and articularis genus are attachment sites; psoas minor is absent), and
+  thirteen are genuinely not in BodyParts3D as Human Atlas selected it:
+  masseter, temporalis, both pterygoids, occipitofrontalis, latissimus dorsi,
+  multifidus at every level, quadratus lumborum, transversus abdominis, the
+  internal oblique, rectus abdominis, spinalis capitis, extensor digitorum
+  brevis. Those thirteen are carried from Z-Anatomy by `CARRIED_MUSCLES` in
+  `bp3d_export.py`, as muscular parts beside BP3D's own (the epicranial
+  aponeurosis as fascia), and the build stops if a carried name is a BP3D
+  concept. A carried muscle's fit rule is the envelope, not the surface: BP3D
+  has no abdominal wall but the external oblique, so the rectus abdominis
+  reads 59% "far" for sitting exactly where BP3D has nothing.
+- **The export reads the atlas the previous export was merged into.** Every
+  reference set in `bp3d_export.py` (the bone and body surfaces, the bones
+  for the winding number, the concept table) must take BP3D's own parts
+  only, `not p.get("source")`; the first carried-muscle run measured the
+  carried muscles against themselves and reported them at distance zero,
+  and moved the ligament and fascia counts with them.
 - **FMA ids are sparse on the systems we add** (fascia 9 of 84 names,
   ligaments 7 of 234, insertions none) because BodyParts3D's vocabulary
   barely covers them; the match is by the normalised token set of

@@ -11,43 +11,44 @@
   "insertions": "Insertions",
   "peripheral-nerves": "Peripheral nerves",
   "central-nerves": "Central nerves",
-  "landmarks": "Landmarks"
+  "landmarks": "Landmarks",
+  "muscular": "Muscles (the ones BodyParts3D lacks)"
  },
  "chunks": [
   {
    "url": "/models/mvmt-head-jaw.bin",
-   "bytes": 213636,
+   "bytes": 1101340,
    "region": "head-jaw",
-   "triangles": 9121,
-   "parts": 88
+   "triangles": 51409,
+   "parts": 106
   },
   {
    "url": "/models/mvmt-cervical.bin",
-   "bytes": 735464,
+   "bytes": 818304,
    "region": "cervical",
-   "triangles": 33455,
-   "parts": 139
+   "triangles": 37403,
+   "parts": 143
   },
   {
    "url": "/models/mvmt-shoulder.bin",
-   "bytes": 1305956,
+   "bytes": 1759356,
    "region": "shoulder",
-   "triangles": 57787,
-   "parts": 161
+   "triangles": 79367,
+   "parts": 163
   },
   {
    "url": "/models/mvmt-thoracic.bin",
-   "bytes": 1466240,
+   "bytes": 1549440,
    "region": "thoracic",
-   "triangles": 67595,
-   "parts": 194
+   "triangles": 71495,
+   "parts": 196
   },
   {
    "url": "/models/mvmt-lumbar.bin",
-   "bytes": 1234568,
+   "bytes": 3112904,
    "region": "lumbar",
-   "triangles": 56495,
-   "parts": 122
+   "triangles": 145945,
+   "parts": 132
   },
   {
    "url": "/models/mvmt-hip.bin",
@@ -72,10 +73,10 @@
   },
   {
    "url": "/models/mvmt-ankle-foot.bin",
-   "bytes": 1171108,
+   "bytes": 1238116,
    "region": "ankle-foot",
-   "triangles": 51750,
-   "parts": 260
+   "triangles": 54934,
+   "parts": 262
   }
  ],
  "regions": [
@@ -83,18 +84,18 @@
    "id": "head-jaw",
    "name": "Head & jaw",
    "chunk": 0,
-   "parts": 88,
-   "triangles": 9121,
-   "bytes": 213636,
+   "parts": 106,
+   "triangles": 51409,
+   "bytes": 1101340,
    "bounds": [
     [
      -0.07926956252348051,
      1.440568459527561,
-     -0.1177300001899898
+     -0.12105013798245132
     ],
     [
      0.0779211583377619,
-     1.6719480799170878,
+     1.7166967047808444,
      0.09066256606539928
     ]
    ],
@@ -110,6 +111,8 @@
     "ZA-lateral-thyrohyoid-ligament-r",
     "ZA-median-cricothyroid-ligament",
     "ZA-median-thyrohyoid-ligament",
+    "ZA-multifidus-colli-muscle-l",
+    "ZA-multifidus-colli-muscle-r",
     "ZA-nuchal-ligament",
     "ZA-nucleus-pulposus-c2-c3",
     "ZA-nucleus-pulposus-c3-c4",
@@ -117,6 +120,8 @@
     "ZA-nucleus-pulposus-c5-c6",
     "ZA-quadrangular-membrane-l",
     "ZA-quadrangular-membrane-r",
+    "ZA-spinalis-capitis-muscle-l",
+    "ZA-spinalis-capitis-muscle-r",
     "ZA-superficial-investing-cervical-fascia-l",
     "ZA-superficial-investing-cervical-fascia-r",
     "ZA-anterior-belly-of-digastric-muscle-el",
@@ -224,9 +229,9 @@
    "id": "cervical",
    "name": "Cervical",
    "chunk": 1,
-   "parts": 139,
-   "triangles": 33455,
-   "bytes": 735464,
+   "parts": 143,
+   "triangles": 37403,
+   "bytes": 818304,
    "bounds": [
     [
      -0.17012295325829488,
@@ -319,6 +324,8 @@
     "ZA-intra-articular-ligament-of-head-of-rib",
     "ZA-intra-articular-ligament-of-head-of-rib-r",
     "ZA-ligamenta-flava",
+    "ZA-multifidus-thoracis-muscle-l",
+    "ZA-multifidus-thoracis-muscle-r",
     "ZA-nucleus-pulposus-t1-t2",
     "ZA-nucleus-pulposus-t2-t3",
     "ZA-nucleus-pulposus-t3-t4",
@@ -368,14 +375,14 @@
    "id": "shoulder",
    "name": "Shoulder",
    "chunk": 2,
-   "parts": 161,
-   "triangles": 57787,
-   "bytes": 1305956,
+   "parts": 163,
+   "triangles": 79367,
+   "bytes": 1759356,
    "bounds": [
     [
      -0.2282858625971483,
-     0.9731574767921849,
-     -0.10583300049066144
+     0.9493998727295181,
+     -0.1137430694973994
     ],
     [
      0.2285849588384985,
@@ -410,6 +417,8 @@
     "ZA-intra-articular-ligament-of-head-of-rib",
     "ZA-intra-articular-ligament-of-head-of-rib-r",
     "ZA-ligamenta-flava",
+    "ZA-multifidus-thoracis-muscle-l",
+    "ZA-multifidus-thoracis-muscle-r",
     "ZA-nucleus-pulposus-t10-t11",
     "ZA-nucleus-pulposus-t11-t12",
     "ZA-nucleus-pulposus-t4-t5",
@@ -554,9 +563,9 @@
    "id": "thoracic",
    "name": "Thoracic",
    "chunk": 3,
-   "parts": 194,
-   "triangles": 67595,
-   "bytes": 1466240,
+   "parts": 196,
+   "triangles": 71495,
+   "bytes": 1549440,
    "bounds": [
     [
      -0.12792372527143114,
@@ -588,12 +597,18 @@
     "ZA-serratus-anterior-muscle-e7r",
     "ZA-sternocostal-head-of-pectoralis-major-muscle-el",
     "ZA-sternocostal-head-of-pectoralis-major-muscle-er",
+    "ZA-internal-abdominal-oblique-muscle-l",
+    "ZA-internal-abdominal-oblique-muscle-r",
     "ZA-investing-abdominal-fascia-l",
     "ZA-investing-abdominal-fascia-r",
     "ZA-linea-alba",
     "ZA-posterior-layer-of-thoracolumbar-fascia-l",
     "ZA-posterior-layer-of-thoracolumbar-fascia-r",
+    "ZA-rectus-abdominis-muscle-l",
+    "ZA-rectus-abdominis-muscle-r",
     "ZA-transversalis-fascia",
+    "ZA-transversus-abdominis-muscle-l",
+    "ZA-transversus-abdominis-muscle-r",
     "ZA-external-abdominal-oblique-muscle-o1l",
     "ZA-external-abdominal-oblique-muscle-o1r",
     "ZA-external-abdominal-oblique-muscle-o2l",
@@ -615,9 +630,9 @@
    "id": "lumbar",
    "name": "Lumbar",
    "chunk": 4,
-   "parts": 122,
-   "triangles": 56495,
-   "bytes": 1234568,
+   "parts": 132,
+   "triangles": 145945,
+   "bytes": 3112904,
    "bounds": [
     [
      -0.1653609473273657,
@@ -726,6 +741,8 @@
     "ZA-inguinal-ligament-r",
     "ZA-intercornual-ligament-l",
     "ZA-intercornual-ligament-r",
+    "ZA-internal-abdominal-oblique-muscle-l",
+    "ZA-internal-abdominal-oblique-muscle-r",
     "ZA-interpubic-disc",
     "ZA-linea-alba",
     "ZA-obturator-membrane-l",
@@ -733,6 +750,8 @@
     "ZA-piriformis-fascia-l",
     "ZA-piriformis-fascia-r",
     "ZA-pubic-symphysis",
+    "ZA-rectus-abdominis-muscle-l",
+    "ZA-rectus-abdominis-muscle-r",
     "ZA-sacrococcygeal-symphysis",
     "ZA-sacrospinous-ligament-l",
     "ZA-sacrospinous-ligament-r",
@@ -740,6 +759,8 @@
     "ZA-sacrotuberous-ligament-r",
     "ZA-superior-pubic-ligament",
     "ZA-transversalis-fascia",
+    "ZA-transversus-abdominis-muscle-l",
+    "ZA-transversus-abdominis-muscle-r",
     "ZA-triradiate-cartilage-l",
     "ZA-triradiate-cartilage-r",
     "ZA-external-abdominal-oblique-muscle-o5l",
@@ -861,6 +882,8 @@
     ]
    ],
    "spanningParts": [
+    "ZA-latissimus-dorsi-muscle-l",
+    "ZA-latissimus-dorsi-muscle-r",
     "ZA-latissimus-dorsi-muscle-ol",
     "ZA-latissimus-dorsi-muscle-or",
     "ZA-serratus-anterior-muscle-e8l"
@@ -870,9 +893,9 @@
    "id": "ankle-foot",
    "name": "Ankle & foot",
    "chunk": 8,
-   "parts": 260,
-   "triangles": 51750,
-   "bytes": 1171108,
+   "parts": 262,
+   "triangles": 54934,
+   "bytes": 1238116,
    "bounds": [
     [
      -0.16539705065013238,
@@ -894,17 +917,17 @@
   }
  ],
  "report": {
-  "meshes": 1492,
-  "parts": 1492,
-  "concepts": 1387,
+  "meshes": 1530,
+  "parts": 1530,
+  "concepts": 1416,
   "bySystem": {
    "central-nerves": {
     "parts": 120,
     "triangles": 35656
    },
    "fascia": {
-    "parts": 165,
-    "triangles": 201678
+    "parts": 167,
+    "triangles": 221794
    },
    "insertions": {
     "parts": 705,
@@ -917,6 +940,10 @@
    "ligaments": {
     "parts": 409,
     "triangles": 163607
+   },
+   "muscular": {
+    "parts": 36,
+    "triangles": 144234
    },
    "peripheral-nerves": {
     "parts": 16,
@@ -1213,11 +1240,524 @@
     }
    ]
   },
+  "carriedMuscles": {
+   "why": {
+    "head-jaw-masseter": "no masseter in BodyParts3D (both parts)",
+    "head-jaw-temporalis": "no temporalis",
+    "head-jaw-medial-pterygoid": "no pterygoids",
+    "head-jaw-lateral-pterygoid": "no pterygoids (both heads)",
+    "head-jaw-occipitofrontalis": "no occipitofrontalis, epicranial aponeurosis or galea; the aponeurosis goes to fascia",
+    "shoulder-lats": "no latissimus dorsi",
+    "spine-multifidus": "no multifidus at any level",
+    "lumbar-ql": "no quadratus lumborum",
+    "lumbar-tva": "no transversus abdominis",
+    "lumbar-internal-oblique": "no internal oblique; the external is BodyParts3D's",
+    "lumbar-rectus-abdominis": "no rectus abdominis",
+    "spine-spinalis-capitis": "no spinalis capitis; BodyParts3D's 'spinalis' is the thoracic part",
+    "ankle-edb": "no extensor digitorum brevis; BodyParts3D has the extensor hallucis brevis"
+   },
+   "parts": [
+    {
+     "name": "Deep part of masseter (left)",
+     "structure": "head-jaw-masseter",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 496,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.359,
+     "fitFarFraction": 0.097,
+     "fitMedianMm": 1.0
+    },
+    {
+     "name": "Deep part of masseter (right)",
+     "structure": "head-jaw-masseter",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 496,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.375,
+     "fitFarFraction": 0.097,
+     "fitMedianMm": 1.0
+    },
+    {
+     "name": "Epicranial aponeurosis (left)",
+     "structure": "head-jaw-occipitofrontalis",
+     "system": "fascia",
+     "region": "head-jaw",
+     "triangles": 10058,
+     "fitConfidence": "high",
+     "fitRule": "surface",
+     "fitOutsideFraction": null,
+     "fitInBoneFraction": null,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 3.0
+    },
+    {
+     "name": "Epicranial aponeurosis (right)",
+     "structure": "head-jaw-occipitofrontalis",
+     "system": "fascia",
+     "region": "head-jaw",
+     "triangles": 10058,
+     "fitConfidence": "high",
+     "fitRule": "surface",
+     "fitOutsideFraction": null,
+     "fitInBoneFraction": null,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 3.0
+    },
+    {
+     "name": "Frontalis muscle (left)",
+     "structure": "head-jaw-occipitofrontalis",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 2936,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.102,
+     "fitInBoneFraction": 0.164,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 1.9
+    },
+    {
+     "name": "Frontalis muscle (right)",
+     "structure": "head-jaw-occipitofrontalis",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 2936,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.078,
+     "fitInBoneFraction": 0.139,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 1.9
+    },
+    {
+     "name": "Inferior head of lateral pterygoid muscle (left)",
+     "structure": "head-jaw-lateral-pterygoid",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 162,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.253,
+     "fitFarFraction": 0.012,
+     "fitMedianMm": 0.8
+    },
+    {
+     "name": "Inferior head of lateral pterygoid muscle (right)",
+     "structure": "head-jaw-lateral-pterygoid",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 162,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.289,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 0.6
+    },
+    {
+     "name": "Medial pterygoid muscle (left)",
+     "structure": "head-jaw-medial-pterygoid",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 248,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.214,
+     "fitFarFraction": 0.103,
+     "fitMedianMm": 1.3
+    },
+    {
+     "name": "Medial pterygoid muscle (right)",
+     "structure": "head-jaw-medial-pterygoid",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 248,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.159,
+     "fitFarFraction": 0.111,
+     "fitMedianMm": 1.6
+    },
+    {
+     "name": "Occipitalis muscle (left)",
+     "structure": "head-jaw-occipitofrontalis",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 1300,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.149,
+     "fitInBoneFraction": 0.0,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 1.5
+    },
+    {
+     "name": "Occipitalis muscle (right)",
+     "structure": "head-jaw-occipitofrontalis",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 1300,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.111,
+     "fitInBoneFraction": 0.0,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 1.7
+    },
+    {
+     "name": "Superficial part of masseter (left)",
+     "structure": "head-jaw-masseter",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 702,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.199,
+     "fitFarFraction": 0.234,
+     "fitMedianMm": 1.3
+    },
+    {
+     "name": "Superficial part of masseter (right)",
+     "structure": "head-jaw-masseter",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 702,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.239,
+     "fitFarFraction": 0.225,
+     "fitMedianMm": 1.3
+    },
+    {
+     "name": "Superior head of lateral pterygoid muscle (left)",
+     "structure": "head-jaw-lateral-pterygoid",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 112,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.552,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 1.4
+    },
+    {
+     "name": "Superior head of lateral pterygoid muscle (right)",
+     "structure": "head-jaw-lateral-pterygoid",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 112,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.483,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 1.4
+    },
+    {
+     "name": "Temporalis muscle (left)",
+     "structure": "head-jaw-temporalis",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 5130,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.023,
+     "fitInBoneFraction": 0.156,
+     "fitFarFraction": 0.062,
+     "fitMedianMm": 1.7
+    },
+    {
+     "name": "Temporalis muscle (right)",
+     "structure": "head-jaw-temporalis",
+     "system": "muscular",
+     "region": "head-jaw",
+     "triangles": 5130,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.004,
+     "fitInBoneFraction": 0.121,
+     "fitFarFraction": 0.074,
+     "fitMedianMm": 1.8
+    },
+    {
+     "name": "Multifidus colli muscle (left)",
+     "structure": "spine-multifidus",
+     "system": "muscular",
+     "region": "cervical",
+     "triangles": 694,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.269,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 0.8
+    },
+    {
+     "name": "Multifidus colli muscle (right)",
+     "structure": "spine-multifidus",
+     "system": "muscular",
+     "region": "cervical",
+     "triangles": 694,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.281,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 0.9
+    },
+    {
+     "name": "Spinalis capitis muscle (left)",
+     "structure": "spine-spinalis-capitis",
+     "system": "muscular",
+     "region": "cervical",
+     "triangles": 1280,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.258,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 0.4
+    },
+    {
+     "name": "Spinalis capitis muscle (right)",
+     "structure": "spine-spinalis-capitis",
+     "system": "muscular",
+     "region": "cervical",
+     "triangles": 1280,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.255,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 0.6
+    },
+    {
+     "name": "Latissimus dorsi muscle (left)",
+     "structure": "shoulder-lats",
+     "system": "muscular",
+     "region": "shoulder",
+     "triangles": 10790,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.081,
+     "fitFarFraction": 0.244,
+     "fitMedianMm": 2.8
+    },
+    {
+     "name": "Latissimus dorsi muscle (right)",
+     "structure": "shoulder-lats",
+     "system": "muscular",
+     "region": "shoulder",
+     "triangles": 10790,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.11,
+     "fitFarFraction": 0.248,
+     "fitMedianMm": 2.2
+    },
+    {
+     "name": "Multifidus thoracis muscle (left)",
+     "structure": "spine-multifidus",
+     "system": "muscular",
+     "region": "thoracic",
+     "triangles": 1950,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.217,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 0.7
+    },
+    {
+     "name": "Multifidus thoracis muscle (right)",
+     "structure": "spine-multifidus",
+     "system": "muscular",
+     "region": "thoracic",
+     "triangles": 1950,
+     "fitConfidence": "low",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.34,
+     "fitFarFraction": 0.0,
+     "fitMedianMm": 0.7
+    },
+    {
+     "name": "Internal abdominal oblique muscle (left)",
+     "structure": "lumbar-internal-oblique",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 14433,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.0,
+     "fitFarFraction": 0.593,
+     "fitMedianMm": 8.4
+    },
+    {
+     "name": "Internal abdominal oblique muscle (right)",
+     "structure": "lumbar-internal-oblique",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 14433,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.008,
+     "fitFarFraction": 0.581,
+     "fitMedianMm": 8.0
+    },
+    {
+     "name": "Multifidus lumborum muscle (left)",
+     "structure": "spine-multifidus",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 1410,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.006,
+     "fitFarFraction": 0.175,
+     "fitMedianMm": 3.1
+    },
+    {
+     "name": "Multifidus lumborum muscle (right)",
+     "structure": "spine-multifidus",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 1410,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.006,
+     "fitFarFraction": 0.166,
+     "fitMedianMm": 3.3
+    },
+    {
+     "name": "Quadratus lumborum muscle (left)",
+     "structure": "lumbar-ql",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 1416,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.093,
+     "fitFarFraction": 0.271,
+     "fitMedianMm": 3.0
+    },
+    {
+     "name": "Quadratus lumborum muscle (right)",
+     "structure": "lumbar-ql",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 1416,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.093,
+     "fitFarFraction": 0.288,
+     "fitMedianMm": 2.9
+    },
+    {
+     "name": "Rectus abdominis muscle (left)",
+     "structure": "lumbar-rectus-abdominis",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 10302,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.154,
+     "fitFarFraction": 0.593,
+     "fitMedianMm": 8.9
+    },
+    {
+     "name": "Rectus abdominis muscle (right)",
+     "structure": "lumbar-rectus-abdominis",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 10302,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.118,
+     "fitFarFraction": 0.589,
+     "fitMedianMm": 9.2
+    },
+    {
+     "name": "Transversus abdominis muscle (left)",
+     "structure": "lumbar-tva",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 17164,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.053,
+     "fitFarFraction": 0.528,
+     "fitMedianMm": 7.3
+    },
+    {
+     "name": "Transversus abdominis muscle (right)",
+     "structure": "lumbar-tva",
+     "system": "muscular",
+     "region": "lumbar",
+     "triangles": 17164,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.061,
+     "fitFarFraction": 0.484,
+     "fitMedianMm": 5.8
+    },
+    {
+     "name": "Extensor digitorum brevis (left)",
+     "structure": "ankle-edb",
+     "system": "muscular",
+     "region": "ankle-foot",
+     "triangles": 1592,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.0,
+     "fitInBoneFraction": 0.049,
+     "fitFarFraction": 0.12,
+     "fitMedianMm": 2.7
+    },
+    {
+     "name": "Extensor digitorum brevis (right)",
+     "structure": "ankle-edb",
+     "system": "muscular",
+     "region": "ankle-foot",
+     "triangles": 1592,
+     "fitConfidence": "high",
+     "fitRule": "envelope",
+     "fitOutsideFraction": 0.004,
+     "fitInBoneFraction": 0.037,
+     "fitFarFraction": 0.109,
+     "fitMedianMm": 2.6
+    }
+   ]
+  },
   "fitConfidence": {
    "rules": {
     "surface": "low when more than 20% of sampled vertices lie further than 6 mm from any BP3D bone or muscle surface",
     "canal": "low when more than 20% of sampled vertices lie inside bone (the vertebral canal wall); clearance from the wall is recorded, not judged",
-    "envelope": "low when more than 20% of sampled vertices lie outside the body envelope (BP3D's skin) or inside bone; no surface-distance test"
+    "envelope": "low when more than 20% of sampled vertices lie outside the body envelope (BP3D's skin) or inside bone; the surface distance is recorded, not judged"
    },
    "bySystem": {
     "ligaments": {
@@ -1225,9 +1765,14 @@
      "parts": 409,
      "low": 23
     },
+    "muscular": {
+     "rule": "envelope",
+     "parts": 36,
+     "low": 14
+    },
     "fascia": {
      "rule": "surface",
-     "parts": 165,
+     "parts": 167,
      "low": 52
     },
     "peripheral-nerves": {
@@ -1362,6 +1907,15 @@
      "median": 0.006
     },
     {
+     "name": "Superior head of lateral pterygoid muscle.l",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.552,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
+    },
+    {
      "name": "Popliteal fascia.l",
      "system": "fascia",
      "rule": "surface",
@@ -1460,6 +2014,15 @@
      "median": 0.006
     },
     {
+     "name": "Superior head of lateral pterygoid muscle.r",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.483,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
+    },
+    {
      "name": "Iliopsoas fascia.l",
      "system": "fascia",
      "rule": "surface",
@@ -1551,6 +2114,15 @@
      "median": 0.005
     },
     {
+     "name": "Deep part of masseter.r",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.375,
+     "outside": 0.0,
+     "far": 0.097,
+     "median": 0.001
+    },
+    {
      "name": "Collateral interphalangeal ligaments of foot.l",
      "system": "ligaments",
      "rule": "surface",
@@ -1579,6 +2151,15 @@
      "median": 0.003
     },
     {
+     "name": "Deep part of masseter.l",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.359,
+     "outside": 0.0,
+     "far": 0.097,
+     "median": 0.001
+    },
+    {
      "name": "Inguinal ligament.r",
      "system": "fascia",
      "rule": "surface",
@@ -1605,6 +2186,15 @@
      "rule": "surface",
      "far": 0.344,
      "median": 0.004
+    },
+    {
+     "name": "Multifidus thoracis muscle.r",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.34,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
     },
     {
      "name": "Iliotibial tract.r",
@@ -1670,6 +2260,15 @@
      "median": 0.004
     },
     {
+     "name": "Inferior head of lateral pterygoid muscle.r",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.289,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
+    },
+    {
      "name": "Articular capsules of distal interphalangeal joints of foot.l",
      "system": "ligaments",
      "rule": "surface",
@@ -1684,11 +2283,29 @@
      "median": 0.004
     },
     {
+     "name": "Multifidus colli muscle.r",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.281,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
+    },
+    {
      "name": "Posterior intermuscular septum of leg.l",
      "system": "fascia",
      "rule": "surface",
      "far": 0.271,
      "median": 0.004
+    },
+    {
+     "name": "Multifidus colli muscle.l",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.269,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
     },
     {
      "name": "Diaphragmatic fascia",
@@ -1703,6 +2320,42 @@
      "rule": "surface",
      "far": 0.258,
      "median": 0.003
+    },
+    {
+     "name": "Spinalis capitis muscle.l",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.258,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.0
+    },
+    {
+     "name": "Spinalis capitis muscle.r",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.255,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
+    },
+    {
+     "name": "Inferior head of lateral pterygoid muscle.l",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.253,
+     "outside": 0.0,
+     "far": 0.012,
+     "median": 0.001
+    },
+    {
+     "name": "Superficial part of masseter.r",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.239,
+     "outside": 0.0,
+     "far": 0.225,
+     "median": 0.001
     },
     {
      "name": "Spinal root T10 dorsal.l",
@@ -1754,6 +2407,15 @@
      "clearance": 0.005
     },
     {
+     "name": "Multifidus thoracis muscle.l",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.217,
+     "outside": 0.0,
+     "far": 0.0,
+     "median": 0.001
+    },
+    {
      "name": "Cauda equina strand 23 (S2 r)",
      "system": "central-nerves",
      "rule": "canal",
@@ -1765,6 +2427,15 @@
      "system": "fascia",
      "rule": "surface",
      "far": 0.215,
+     "median": 0.001
+    },
+    {
+     "name": "Medial pterygoid muscle.l",
+     "system": "muscular",
+     "rule": "envelope",
+     "inBone": 0.214,
+     "outside": 0.0,
+     "far": 0.103,
      "median": 0.001
     },
     {
@@ -3378,7 +4049,39 @@
    ]
   },
   "seams": {
+   "elbow-wrist|shoulder": {
+    "Latissimus dorsi muscle.l": {
+     "edges": 552,
+     "maxDeltaMm": 2.384,
+     "maxDeltaMmPerCm": 0.552
+    },
+    "Latissimus dorsi muscle.r": {
+     "edges": 552,
+     "maxDeltaMm": 2.752,
+     "maxDeltaMmPerCm": 0.613
+    },
+    "Brachial fascia.l": {
+     "edges": 190,
+     "maxDeltaMm": 1.116,
+     "maxDeltaMmPerCm": 0.496
+    },
+    "Brachial fascia.r": {
+     "edges": 188,
+     "maxDeltaMm": 2.019,
+     "maxDeltaMmPerCm": 0.929
+    }
+   },
    "lumbar|thoracic": {
+    "Internal abdominal oblique muscle.l": {
+     "edges": 506,
+     "maxDeltaMm": 1.965,
+     "maxDeltaMmPerCm": 1.176
+    },
+    "Internal abdominal oblique muscle.r": {
+     "edges": 506,
+     "maxDeltaMm": 2.002,
+     "maxDeltaMmPerCm": 1.184
+    },
     "Investing abdominal fascia.l": {
      "edges": 290,
      "maxDeltaMm": 3.905,
@@ -3403,9 +4106,59 @@
      "edges": 20,
      "maxDeltaMm": 10.535,
      "maxDeltaMmPerCm": 1.587
+    },
+    "Rectus abdominis muscle.l": {
+     "edges": 344,
+     "maxDeltaMm": 1.994,
+     "maxDeltaMmPerCm": 1.184
+    },
+    "Rectus abdominis muscle.r": {
+     "edges": 344,
+     "maxDeltaMm": 2.071,
+     "maxDeltaMmPerCm": 1.19
+    },
+    "Transversus abdominis muscle.l": {
+     "edges": 402,
+     "maxDeltaMm": 2.129,
+     "maxDeltaMmPerCm": 1.6
+    },
+    "Transversus abdominis muscle.r": {
+     "edges": 402,
+     "maxDeltaMm": 2.147,
+     "maxDeltaMmPerCm": 1.701
+    },
+    "Internal abdominal oblique muscle.o1l": {
+     "edges": 8,
+     "maxDeltaMm": 0.771,
+     "maxDeltaMmPerCm": 1.02
+    },
+    "Internal abdominal oblique muscle.o1r": {
+     "edges": 8,
+     "maxDeltaMm": 0.808,
+     "maxDeltaMmPerCm": 1.021
+    },
+    "Rectus abdominis muscle.el": {
+     "edges": 4,
+     "maxDeltaMm": 3.124,
+     "maxDeltaMmPerCm": 1.055
+    },
+    "Rectus abdominis muscle.er": {
+     "edges": 4,
+     "maxDeltaMm": 3.136,
+     "maxDeltaMmPerCm": 1.061
     }
    },
    "hip|lumbar": {
+    "Internal abdominal oblique muscle.l": {
+     "edges": 356,
+     "maxDeltaMm": 0.732,
+     "maxDeltaMmPerCm": 0.53
+    },
+    "Internal abdominal oblique muscle.r": {
+     "edges": 356,
+     "maxDeltaMm": 0.72,
+     "maxDeltaMmPerCm": 0.502
+    },
     "Investing abdominal fascia.l": {
      "edges": 66,
      "maxDeltaMm": 0.808,
@@ -3420,6 +4173,36 @@
      "edges": 22,
      "maxDeltaMm": 7.352,
      "maxDeltaMmPerCm": 0.56
+    },
+    "Rectus abdominis muscle.l": {
+     "edges": 278,
+     "maxDeltaMm": 2.356,
+     "maxDeltaMmPerCm": 0.526
+    },
+    "Rectus abdominis muscle.r": {
+     "edges": 278,
+     "maxDeltaMm": 2.345,
+     "maxDeltaMmPerCm": 0.521
+    },
+    "Transversus abdominis muscle.l": {
+     "edges": 298,
+     "maxDeltaMm": 0.817,
+     "maxDeltaMmPerCm": 0.535
+    },
+    "Transversus abdominis muscle.r": {
+     "edges": 298,
+     "maxDeltaMm": 0.785,
+     "maxDeltaMmPerCm": 0.537
+    },
+    "Rectus abdominis muscle.el": {
+     "edges": 6,
+     "maxDeltaMm": 3.567,
+     "maxDeltaMmPerCm": 0.512
+    },
+    "Rectus abdominis muscle.er": {
+     "edges": 6,
+     "maxDeltaMm": 3.555,
+     "maxDeltaMmPerCm": 0.51
     },
     "Fascia lata.l": {
      "edges": 216,
@@ -3464,18 +4247,6 @@
      "maxDeltaMmPerCm": 1.751
     }
    },
-   "elbow-wrist|shoulder": {
-    "Brachial fascia.l": {
-     "edges": 190,
-     "maxDeltaMm": 1.116,
-     "maxDeltaMmPerCm": 0.496
-    },
-    "Brachial fascia.r": {
-     "edges": 188,
-     "maxDeltaMm": 2.019,
-     "maxDeltaMmPerCm": 0.929
-    }
-   },
    "ankle-foot|knee": {
     "Crural fascia.l": {
      "edges": 200,
@@ -3490,8 +4261,8 @@
    }
   },
   "seamMaxMm": 10.535,
-  "seconds": 133.0
+  "seconds": 188.2
  },
- "parts": 1492,
- "concepts": 1387
+ "parts": 1530,
+ "concepts": 1416
 }

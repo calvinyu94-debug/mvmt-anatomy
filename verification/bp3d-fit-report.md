@@ -49,11 +49,13 @@ in the exported landmark parts, with the residual beside it: Gerdy's tubercle
 | peripheral-nerves | 16 | 30,912 | tubes rebuilt from the authored centrelines through the fit, tapered; schematic |
 | central-nerves | 120 | 35,656 | cervical roots and lumbosacral plexus through the fit; spinal cord, 80 roots, 30 cauda strands and dura authored here through the BP3D canal; schematic |
 | landmarks | 77 | 1,540 | the BP3D rule results, as 4 mm spheres |
+| muscular | 36 | 144,234 | the muscles BodyParts3D lacks, transformed as geometry (see "Muscles BodyParts3D lacks" below); the epicranial aponeurosis with them, as fascia |
 
 Every part carries `source` (`zanatomy` or `schematic`), `sourceName`, `region`,
 the regions it spans, the MVMT structures that claim it, and its FMA concept
-where BP3D has one. Skeletal and muscular meshes are BP3D's own and did not
-come across. Collection 7 (spinal dura, spinal ganglia) was not exported: its
+where BP3D has one. Skeletal meshes are BP3D's own and did not come across;
+muscular meshes are BP3D's own except the thirteen structures it does not
+model. Collection 7 (spinal dura, spinal ganglia) was not exported: its
 licence scope is unchecked, and it is a possible later addition.
 
 ## Insertions: projection onto BP3D bone
@@ -164,6 +166,7 @@ thigh. Each system now has its own rule, named in every part's `fitRule`, and
 | fascia | `surface`, the same | 52 / 165 | 52 / 165 |
 | central nerves | `canal`: inside bone, the vertebral canal wall; the median clearance from the wall is recorded (`fitWallClearance`), not judged | 44 / 120 | 9 / 120 |
 | peripheral nerves | `envelope`: outside the body envelope (BP3D's skin) or inside bone; no surface-distance test | 10 / 16 | 0 / 16 |
+| muscles carried from Z-Anatomy | `envelope`, the same; the surface distance is recorded, not judged | - | 14 / 36 |
 
 Two things about the BodyParts3D meshes decided how "inside" is measured.
 Its skin is a two-layer shell about 2 mm thick, so ray parity is even for
@@ -187,21 +190,67 @@ peripheral nerve is under 6% in bone (the tibial behind the tibia) and under
 5% outside the skin (the median and common fibular at the wrist and knee); the
 record holds every nerve's fractions, low or not.
 
+## Muscles BodyParts3D lacks
+
+The depth match in mvmt-atlas reported 29 MVMT muscle structures with no
+BodyParts3D concept. A substring search of BP3D's part names (latissimus,
+rectus abdom, obliq, masseter, temporal, rhomb, multifid, quadratus lumb,
+transvers, pterygoid, occipit, frontal, epicran, psoas, spinalis, rotator,
+digitorum brevis, articularis) and renders of the muscle layer
+(`verification/carried-muscles/` in mvmt-atlas: the back with no latissimus,
+the abdomen with the external oblique alone) sort them three ways:
+
+| | Structures | What |
+|---|---|---|
+| BP3D's names, not absences | rhomboids, rotatores, hamstring origin | sided concepts ("right rhomboid major"), "rotator" for rotatores, a group of present muscles; matched in `CONCEPT_MATCHES` |
+| nothing to carry | common extensor origin, common flexor origin, articularis genus, psoas minor | attachment sites with no belly in Z-Anatomy either; psoas minor absent from both |
+| genuinely absent, carried | masseter (both parts), temporalis, medial and lateral pterygoid (both heads), occipitofrontalis (frontalis, occipitalis, epicranial aponeurosis), latissimus dorsi, multifidus (cervical, thoracic, lumbar), quadratus lumborum, transversus abdominis, internal oblique, rectus abdominis, spinalis capitis, extensor digitorum brevis | 13 structures, 38 Z-Anatomy meshes: 36 muscular parts (144,234 triangles) and the two aponeuroses as fascia |
+
+`CARRIED_MUSCLES` in `tools/bp3d_export.py` names the structures; the meshes
+come from the join, and the build stops if a carried name is a BP3D concept
+(the external oblique is BP3D's, so "Obliques" is not listed and only the
+internal is carried) or a listed mesh is not in the region files. They are
+transformed through the fit like the fascia, land in their home region's
+chunk, and reach the viewer as Muscles with `source: zanatomy` and `carried`
+set, take their depth from the structure that claims them (367 of 452 muscle
+parts classified now, 20 carried structures), and light as full stations on
+the fascial lines: the SBL's occipitofrontalis and the SFL's rectus abdominis
+flipped from "attachments only" to full with nothing changed in the viewer,
+as did the internal oblique, temporalis, medial pterygoid and latissimus
+dorsi; only the patellar tendon and the common extensor origin remain
+attachments only. Renders:
+[`bp3d/body-carried-muscles-anterior.png`](bp3d/body-carried-muscles-anterior.png),
+[`bp3d/body-carried-muscles-posterior.png`](bp3d/body-carried-muscles-posterior.png).
+
+Their fit is judged by the envelope rule, not the surface one: the surface
+set is BP3D's bones and muscles, and where these muscles live BP3D has no
+neighbours to measure against, so the rectus abdominis, internal oblique and
+transversus read 48 to 59% of their surface further than 6 mm from anything
+for sitting exactly where BP3D has nothing (median 7 to 9 mm; recorded as
+`fitFarFraction`, not judged). 14 of the 36 are low, all for bone: the deep
+part of the masseter (36%), the pterygoids (21 to 55%), the multifidus in the
+neck and thorax (22 to 27%) and spinalis capitis (26%) intersect the ramus,
+the pterygoid plates and the laminae they lie on by the fit's own error; the
+rest are under 20%, and every one is inside the skin (frontalis 10% and
+occipitalis 15% outside it, the scalp being thinner here than on the fit's
+source). The abdominal wall's seams (lumbar / thoracic, hip / lumbar) are
+under 2.2 mm on the bellies and 3.6 mm on the rectus patches.
+
 ## Chunks
 
 One chunk per region, holding only that region's parts (gzipped): head-jaw
-0.13 MB, cervical 0.34, shoulder 0.79, thoracic 0.69, lumbar 0.62, hip 1.52,
-knee 0.60, elbow-wrist 0.78, ankle-foot 0.70 (6.2 MB in all). A part lives in
+0.63 MB, cervical 0.44, shoulder 1.03, thoracic 0.83, lumbar 1.70, hip 1.49,
+knee 0.58, elbow-wrist 0.74, ankle-foot 0.73 (8.2 MB in all; the head-jaw
+and lumbar chunks grew with the muscles carried into them). A part lives in
 its home region's chunk; the parts that span into a neighbouring region are
-listed under that region's `spanningParts` in `atlas.json` (head-jaw 90,
-cervical 105, shoulder 127, thoracic 41, lumbar 62, hip 31, knee 69,
-elbow-wrist 3, ankle-foot 4). BP3D's own 15 chunks are untouched.
+listed under that region's `spanningParts` in `atlas.json`. BP3D's own 15
+chunks are untouched.
 
 The whole-body overview (`atlas.overview`) simplifies every part, BP3D's and
-ours: 582,102 triangles from 2,770,928 (21%), 8.4 MB gzipped against 39.1 MB
-for the full set, in 4 chunks. Quadric simplification at a 3% relative error
-bound stops early on thin vessels and flat patches, so 229 parts fell back to
-the topology-free sloppy simplifier.
+ours: 635,612 triangles from 2,949,854 (22%), 9.1 MB gzipped, in 4 chunks.
+Quadric simplification at a 3% relative error bound stops early on thin
+vessels and flat patches, so some parts fall back to the topology-free sloppy
+simplifier.
 
 ## Names, ids and fascial lines
 

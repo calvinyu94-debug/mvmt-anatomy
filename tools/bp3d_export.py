@@ -54,6 +54,7 @@ import bmesh
 import numpy as np
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
+from mathutils.kdtree import KDTree
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -89,6 +90,65 @@ CARRIED_MUSCLES = {
     "spine-spinalis-capitis": "no spinalis capitis; BodyParts3D's 'spinalis' is the thoracic part",
     "ankle-edb": "no extensor digitorum brevis; BodyParts3D has the extensor hallucis brevis",
 }
+# Sheet muscles fitted one by one land in each other, and where two sheets share a surface the viewer
+# draws a shattered mix of both. Measured on the section 3 build (left side, along the radial line from
+# the spine's vertical axis through each vertex): the internal oblique's sheet lies 2.8 mm outside the
+# rectus abdominis and within 2 mm of it over 80% of the rectus; the transversus within 2 mm of the
+# internal oblique over 34%; the internal oblique crosses BodyParts3D's external oblique on 5% of its
+# triangles; the serratus posterior inferior is 26% inside the latissimus; the deep masseter sits inside
+# the superficial on 8%. Each stack below is ordered innermost to outermost as the data has it (the
+# external oblique of BodyParts3D carries the rectus sheath's anterior wall, so it is outermost).
+# BodyParts3D's layers are fixed; ours move, along that radial line, by just enough to clear every layer
+# beyond them by LAYER_GAP - inward for a layer inside the fixed one, outward for a layer outside it - so
+# a vertex already clear does not move (no global inflate). The requirement is carried across the sheet's
+# thickness (the largest within LAYER_CARRY, so the sheet shifts rather than thins) and feathered along
+# the mesh. The build stops if two carried parts in one region are still inside each other on more
+# than LAYER_MAX_OVERLAP of their triangles, and the atlas validator checks the same.
+LAYER_GAP = 0.002            # metres, the minimum clearance between neighbouring sheets
+LAYER_WINDOW = 0.03          # hits further than this along the radial line are another part of the body
+LAYER_CARRY = 0.006          # the requirement reaches this far across the sheet
+LAYER_SMOOTH = 5             # feathering iterations along the mesh
+LAYER_MAX_OVERLAP = 0.02     # fraction of a carried part's triangles allowed inside another carried part
+LAYER_STACKS = [
+    dict(name="abdominal wall", axis=(0.0, -0.03),
+         innermostToOutermost=["Quadratus lumborum muscle", "Transversus abdominis muscle", "Rectus abdominis muscle",
+                               "Internal abdominal oblique muscle", "BodyParts3D: external oblique"],
+         # The rules, in the order they run. The internal oblique's two laminae sandwich the rectus in the
+         # model, so the oblique steps off the rectus the short way (the anterior lamina forward, the
+         # posterior backward) and the rectus stays; it must still sit inside the external oblique, which
+         # is BodyParts3D's and fixed, so that comes after, and the rectus once more in case the second
+         # move put a lamina back on it. Everything deeper moves inward from everything outside it.
+         rules=[
+             (["Internal abdominal oblique muscle"], dict(ours=["Rectus abdominis muscle"]), "nearest"),
+             (["Internal abdominal oblique muscle"], dict(bp3d=["external oblique"]), "inward"),
+             (["Internal abdominal oblique muscle"], dict(ours=["Rectus abdominis muscle"]), "nearest"),
+             (["Transversus abdominis muscle"], dict(ours=["Internal abdominal oblique muscle", "Rectus abdominis muscle"], bp3d=["external oblique"]), "inward"),
+             (["Quadratus lumborum muscle"], dict(ours=["Transversus abdominis muscle", "Internal abdominal oblique muscle"]), "inward"),
+             # the multifidus lies against the laminae; where the quadratus lumborum's medial edge runs into it, the
+             # multifidus steps off the short way rather than into bone
+             (["Multifidus lumborum muscle"], dict(ours=["Quadratus lumborum muscle"]), "nearest"),
+         ]),
+    dict(name="back", axis=(0.0, -0.03),
+         innermostToOutermost=["BodyParts3D: erector spinae, serratus posterior inferior, external oblique, serratus anterior", "Latissimus dorsi muscle"],
+         rules=[
+             (["Latissimus dorsi muscle"], dict(bp3d=["iliocostalis thoracis", "iliocostalis lumborum", "longissimus thoracis", "spinalis thoracis",
+                                                     "serratus posterior inferior", "external oblique", "serratus anterior"]), "outward"),
+         ]),
+    dict(name="jaw", axis=(0.0, 0.0),
+         innermostToOutermost=["Temporalis muscle", "Deep part of masseter", "Superficial part of masseter"],
+         rules=[
+             (["Deep part of masseter"], dict(ours=["Temporalis muscle"]), "outward"),
+             (["Superficial part of masseter"], dict(ours=["Temporalis muscle", "Deep part of masseter"]), "outward"),
+         ]),
+]
+# Parts of one muscle, or one continuous sheet, overlap where they join and are not layers to separate:
+# the two heads of the lateral pterygoid (15-19% inside each other as Z-Anatomy models them) and the
+# scalp's bellies where they run into the epicranial aponeurosis (4-8%). Exempt from LAYER_MAX_OVERLAP,
+# measured and recorded all the same.
+LAYER_SIBLINGS = [
+    ["Superior head of lateral pterygoid muscle", "Inferior head of lateral pterygoid muscle"],
+    ["Epicranial aponeurosis", "Frontalis muscle", "Occipitalis muscle"],
+]
 CENTRAL_NERVES = ("nerve-cervical-roots", "nerve-lumbosacral-plexus")
 INSERTION_LIFT = 0.0005        # metres off the bone after projection, so the patch is not in the surface
 LANDMARK_RADIUS = 0.004
@@ -605,6 +665,171 @@ def main():
         if not m["home"]:
             m["home"] = region_of(m["V0"].mean(axis=0)[None, :])[0]
         m["V"] = T(m["V"], m["home"])   # BP3D frame, fitted
+
+    # ---- sheet layers that overlap after the fit: see LAYER_STACKS
+    log("separating overlapping sheet layers")
+    by_name = {m["name"]: m for m in meshes}
+    separation_rows = []
+
+    def layer_members(spec, side):
+        out = []
+        for n in spec.get("ours", []):
+            m = by_name.get("%s.%s" % (n, side))
+            if m is None:
+                raise ValueError("LAYER_STACKS names a mesh the export does not hold: %s.%s" % (n, side))
+            out.append(("ours", m))
+        for n in spec.get("bp3d", []):
+            p = bp_parts.get("%s %s" % ("left" if side == "l" else "right", n))
+            if p is None:
+                raise ValueError("LAYER_STACKS names a BodyParts3D part the atlas lacks: %s %s" % (side, n))
+            out.append(("bp3d", p))
+        return out
+
+    def union_tree(members):
+        Vs, Fs, base = [], [], 0
+        for kind, x in members:
+            V, F = (x["V"], x["F"].astype(np.int64)) if kind == "ours" else bone_geometry(x)
+            Vs.append(V)
+            Fs.append(F + base)
+            base += len(V)
+        V, F = np.vstack(Vs), np.vstack(Fs)
+        return BVHTree.FromPolygons([tuple(v) for v in V], [tuple(int(i) for i in f) for f in F]), V, F
+
+    def radial(V, axis):
+        r = V.copy()
+        r[:, 0] -= axis[0]
+        r[:, 1] = 0.0
+        r[:, 2] -= axis[1]
+        return r / np.maximum(np.linalg.norm(r, axis=1), 1e-9)[:, None]
+
+    def hits_along(tree, origin, d, span):
+        out, s, o = [], 0.0, Vector(origin)
+        while s < span:
+            loc, _n, _i, dist = tree.ray_cast(o, d, span - s)
+            if loc is None:
+                break
+            s += dist
+            out.append(s)
+            o = loc + d * 1e-5
+            s += 1e-5
+        return out
+
+    def within(m, V_ref, F_ref, dist):
+        """fraction of m's sampled vertices within dist of the reference surface, and of its triangle centroids inside it"""
+        tree = BVHTree.FromPolygons([tuple(v) for v in V_ref], [tuple(int(i) for i in f) for f in F_ref])
+        V, F = m["V"], m["F"].astype(np.int64)
+        step = max(1, len(V) // 1200)
+        near = float(np.mean([tree.find_nearest(Vector(v))[3] < dist for v in V[::step]]))
+        C = V[F].mean(axis=1)
+        cstep = max(1, len(C) // 1200)
+        inside = float((winding_number(C[::cstep], V_ref, F_ref) > 0.5).mean())
+        return near, inside
+
+    def push(m, tree, V_ref, F_ref, axis, mode, label):
+        V, F = m["V"], m["F"].astype(np.int64)
+        near0, inside0 = within(m, V_ref, F_ref, LAYER_GAP)
+        r = radial(V, axis)
+        # the nearest free slot along the line: outside every solid of the reference and at least LAYER_GAP
+        # from every surface crossing, in the rule's direction, or the shorter way for "nearest", so a layer
+        # between two laminae of its neighbour steps off the one it touches rather than past the other. A
+        # vertex with no free slot inside the window is left where it is (the line runs along the sheet
+        # there) and counted.
+        inside_now = winding_number(V, V_ref, F_ref) > 0.5
+        need = np.zeros(len(V))           # signed: + outward, - inward
+        stuck = 0
+        for i in range(len(V)):
+            ts = [s - LAYER_WINDOW for s in hits_along(tree, V[i] - r[i] * LAYER_WINDOW, Vector(r[i]), 2 * LAYER_WINDOW)]
+            if not ts:
+                continue
+
+            def allowed(pos):
+                crossings = sum(1 for t in ts if min(pos, 0.0) < t < max(pos, 0.0))
+                if bool(inside_now[i]) != bool(crossings % 2):
+                    return False
+                return all(abs(pos - t) >= LAYER_GAP - 1e-9 for t in ts)
+
+            if allowed(0.0):
+                continue
+            outward = sorted([t + LAYER_GAP for t in ts if t + LAYER_GAP > 0])
+            inward = sorted([t - LAYER_GAP for t in ts if t - LAYER_GAP < 0], reverse=True)
+            cands = outward if mode == "outward" else inward if mode == "inward" else sorted(outward + inward, key=abs)
+            pos = next((c for c in cands if allowed(c)), None)
+            if pos is None:
+                stuck += 1
+                continue
+            need[i] = pos
+        row = dict(layer=m["name"], against=label, direction=mode,
+                   within2mmBefore=round(near0, 3), insideBefore=round(inside0, 3), verticesWithoutSlot=stuck)
+        if need.any():
+            # carry the requirement across the sheet's thickness, each direction on its own, then feather along
+            # the mesh holding the requirement, so the sheet shifts as a slab and the edge of the moved patch is soft
+            kd = KDTree(len(V))
+            for i in range(len(V)):
+                kd.insert(Vector(V[i]), i)
+            kd.balance()
+            nbr = [[] for _ in range(len(V))]
+            for a, b in {(int(x), int(y)) for f in F for x, y in ((f[0], f[1]), (f[1], f[2]), (f[2], f[0]))}:
+                nbr[a].append(b)
+                nbr[b].append(a)
+            delta = np.zeros(len(V))
+            for s in (1.0, -1.0):
+                part = np.maximum(s * need, 0.0)
+                if not part.any():
+                    continue
+                carried = part.copy()
+                for i in np.nonzero(part)[0]:
+                    for _co, j, _d in kd.find_range(Vector(V[i]), LAYER_CARRY):
+                        if part[i] > carried[j]:
+                            carried[j] = part[i]
+                d = carried.copy()
+                for _ in range(LAYER_SMOOTH):
+                    avg = np.array([d[n].mean() if n else d[i] for i, n in enumerate(nbr)])
+                    d = np.maximum(0.5 * (d + avg), carried)
+                delta += s * d
+            m["V"] = V + delta[:, None] * r
+            moved = np.abs(delta) > 1e-9
+            near1, inside1 = within(m, V_ref, F_ref, LAYER_GAP)
+            row.update(verticesMoved=int(moved.sum()), vertices=len(V), maxMoveMm=round(float(np.abs(delta).max()) * 1000, 2),
+                       meanMoveMm=round(float(np.abs(delta[moved]).mean()) * 1000, 2), within2mmAfter=round(near1, 3), insideAfter=round(inside1, 3))
+        else:
+            row.update(verticesMoved=0, vertices=len(V), maxMoveMm=0.0, meanMoveMm=0.0, within2mmAfter=round(near0, 3), insideAfter=round(inside0, 3))
+        separation_rows.append(row)
+        log("  %-44s %-8s from %-52s moved %5d/%5d  max %5.1f mm  no slot %4d  within 2 mm %3.0f%% -> %3.0f%%  inside %4.1f%% -> %4.1f%%" % (
+            m["name"], row["direction"], label[:52], row["verticesMoved"], len(V), row["maxMoveMm"], row["verticesWithoutSlot"],
+            100 * row["within2mmBefore"], 100 * row["within2mmAfter"], 100 * row["insideBefore"], 100 * row["insideAfter"]))
+
+    for stack in LAYER_STACKS:
+        for side in ("l", "r"):
+            for moving, ref, mode in stack["rules"]:
+                members = layer_members(ref, side)
+                tree, Vr, Fr = union_tree(members)
+                label = " + ".join(x["name"] for _k, x in members)
+                for _k, m in layer_members(dict(ours=moving), side):
+                    push(m, tree, Vr, Fr, stack["axis"], mode, label)
+
+    # every pair of carried parts in one region, after the moves: none may be inside another beyond LAYER_MAX_OVERLAP
+    carried_overlap = []
+    carried_meshes = [m for m in meshes if m["extras"].get("carried")]
+    for i, a in enumerate(carried_meshes):
+        for b in carried_meshes[i + 1:]:
+            if a["home"] != b["home"] or a["side"] != b["side"]:
+                continue
+            lo_a, hi_a, lo_b, hi_b = a["V"].min(axis=0), a["V"].max(axis=0), b["V"].min(axis=0), b["V"].max(axis=0)
+            if np.any(hi_a < lo_b) or np.any(hi_b < lo_a):
+                continue
+            _, ab = within(a, b["V"], b["F"].astype(np.int64), LAYER_GAP)
+            _, ba = within(b, a["V"], a["F"].astype(np.int64), LAYER_GAP)
+            base_a, base_b = re.sub(r"\.[lr]$", "", a["name"]), re.sub(r"\.[lr]$", "", b["name"])
+            sibling = any(base_a in g and base_b in g for g in LAYER_SIBLINGS)
+            carried_overlap.append(dict(a=a["name"], b=b["name"], region=a["home"], aInB=round(ab, 3), bInA=round(ba, 3), siblings=sibling))
+    judged = [r for r in carried_overlap if not r["siblings"]]
+    worst = max(judged, key=lambda r: max(r["aInB"], r["bInA"]), default=None)
+    if worst and max(worst["aInB"], worst["bInA"]) > LAYER_MAX_OVERLAP:
+        bad = [r for r in judged if max(r["aInB"], r["bInA"]) > LAYER_MAX_OVERLAP]
+        raise ValueError("carried parts still inside each other beyond %d%%: %s" % (
+            LAYER_MAX_OVERLAP * 100, "; ".join("%s / %s %.1f%% / %.1f%%" % (r["a"], r["b"], 100 * r["aInB"], 100 * r["bInA"]) for r in bad)))
+    log("carried parts inside each other: worst pair %s / %s at %.1f%% / %.1f%% (limit %d%%)" % (
+        worst["a"], worst["b"], 100 * worst["aInB"], 100 * worst["bInA"], LAYER_MAX_OVERLAP * 100) if worst else "carried parts inside each other: none checked")
 
     # ---- project insertions: those that sit on bone in the source go onto BP3D bone; the
     # ones that attach to soft tissue there (an aponeurosis, a fascia) are left where the fit puts them
@@ -1191,6 +1416,10 @@ def main():
                         medianOfMeans=round(float(np.median([r["mean"] for r in projected])), 5) if projected else None,
                         worst=sorted(projected, key=lambda r: -r["mean"])[:15],
                         softTissue=sorted(soft, key=lambda r: -r["sourceBoneDistance"])),
+        layerSeparation=dict(gapMm=LAYER_GAP * 1000, carryMm=LAYER_CARRY * 1000, windowMm=LAYER_WINDOW * 1000, maxOverlap=LAYER_MAX_OVERLAP,
+                             stacks=[dict(name=s["name"], axis=s["axis"], innermostToOutermost=s["innermostToOutermost"],
+                                          rules=[dict(moving=mv, against=rf, mode=md) for mv, rf, md in s["rules"]]) for s in LAYER_STACKS],
+                             siblings=LAYER_SIBLINGS, moves=separation_rows, carriedOverlap=carried_overlap),
         carriedMuscles=dict(why=CARRIED_MUSCLES,
                             parts=[dict(name=p["name"], structure=p["carriedFor"], system=p["system"], region=p["region"],
                                         triangles=p["indexCount"] // 3, fitConfidence=p["fitConfidence"], fitRule=p["fitRule"],

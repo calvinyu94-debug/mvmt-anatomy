@@ -190,6 +190,71 @@ peripheral nerve is under 6% in bone (the tibial behind the tibia) and under
 5% outside the skin (the median and common fibular at the wrist and knee); the
 record holds every nerve's fractions, low or not.
 
+## Sheet layers, separated
+
+The carried abdominal wall rendered shattered. The cause is coincidence, not
+normals: every carried mesh is welded (unique positions equal vertices) and
+its stored normals are area-weighted smooth normals (0° from the smooth
+normal of the welded mesh, so no hard-edge threshold applies - a muscle belly
+has no edge to keep). What the measurements found instead, on the left side
+along the radial line from the spine's vertical axis through each vertex:
+
+| A | B | A's triangles inside B | B inside A | A's vertices within 2 mm of B | where B sits |
+|---|---|---:|---:|---:|---|
+| rectus abdominis | internal oblique | 3.3% | 2.6% | 80% | 2.8 mm outside, both laminae |
+| transversus | internal oblique | 3.8% | 5.6% | 34% | 8.8 mm outside |
+| internal oblique | external oblique (BP3D) | 5.0% | 4.0% | 11% | 10.8 mm outside |
+| rectus abdominis | external oblique (BP3D) | 1.3% | 0.7% | 4% | 13 mm outside |
+| latissimus dorsi | serratus posterior inferior (BP3D) | 8.4% | 26.1% | 42% | 1.2 mm inside |
+| latissimus dorsi | external oblique (BP3D) | 0.9% | 1.4% | 33% | 1.4 mm inside |
+| superficial masseter | deep masseter | 3.8% | 8.1% | 47% | 3.9 mm inside |
+| lateral pterygoid, inferior head | superior head | 14.8% | 18.8% | | the heads of one muscle |
+
+Two sheets sharing a surface draw as a shattered mix of both. The order the
+data gives, innermost to outermost, is quadratus lumborum, transversus,
+rectus abdominis, internal oblique, external oblique: the internal oblique's
+two laminae sandwich the rectus in this model, and BodyParts3D's external
+oblique carries the rectus sheath's anterior wall, so it is outermost (the
+brief's order put the rectus outside it; the data does not). `LAYER_STACKS`
+in `tools/bp3d_export.py` holds the stacks and the rules that run on them.
+BodyParts3D's layers are fixed; ours move along the radial line to the
+nearest free slot, at least 2 mm from every surface crossing of the reference
+and outside its solid, in the rule's direction or the shorter way for
+"nearest" (the internal oblique steps off the rectus the short way, the
+anterior lamina forward and the posterior backward, so it never crosses the
+rectus to clear it). A vertex already clear does not move; one with no free
+slot within 30 mm along its line (the line runs along the sheet there) is
+left and counted. The requirement is carried across the sheet's thickness (the
+largest within 6 mm, so the slab shifts rather than thins) and feathered along
+the mesh.
+
+| layer | rule | vertices moved | mean | max | within 2 mm before → after | inside before → after |
+|---|---|---:|---:|---:|---|---|
+| internal oblique | nearest, off the rectus | 5,768 / 7,207 | 1.3 mm | 2.9 mm | 41% → 16% | 2.7% → 0.2% |
+| internal oblique | inward, under the external oblique | 3,210 / 7,207 | 2.8 mm | 14.1 mm | 18% → 5% | 6.9% → 0.7% |
+| internal oblique | nearest, off the rectus again | 5,089 / 7,207 | 0.9 mm | 5.6 mm | 24% → 12% | 7.1% → 0.9% |
+| transversus | inward, under the rectus, internal and external obliques | 6,271 / 8,582 | 3.4 mm | 26.6 mm (61 vertices without a slot) | 34% → 5% | 10.8% → 0.2% |
+| quadratus lumborum | inward, under the transversus and internal oblique | 264 / 708 | 1.5 mm | 8.4 mm | 5% → 2% | 2.5% → 0% |
+| multifidus lumborum | nearest, off the quadratus lumborum | 709 / 709 | 0.8 mm | 4.6 mm | 12% → 4% | 1.8% → 0% |
+| latissimus dorsi | outward, over the erector spinae, serrati and external oblique | 4,528 / 5,401 | 4.1 mm | 25 mm (14 without a slot) | 28% → 7% | 17.0% → 2.3% |
+| superficial masseter | outward, over the deep masseter and temporalis | 351 / 351 | 1.4 mm | 2.3 mm | 29% → 12% | 3.8% → 0% |
+
+Left side; the right is within a millimetre of it. The large maxima are the
+transversus's posterior aponeurosis where the internal oblique's belly is
+25 mm thick, and the latissimus where it ran through the serratus posterior
+inferior. After the moves no two carried parts in one region are inside each
+other beyond 2% (worst pair the internal oblique and rectus abdominis, right, at 1.2% and 1.4%; 1.7% by the atlas validator's 800-centroid sample); the two heads of the lateral pterygoid and the
+scalp's bellies against the epicranial aponeurosis are parts of one muscle,
+measured (15 to 19%, 2 to 8%) and exempt as `LAYER_SIBLINGS`. The export
+stops on any other pair over the limit, and mvmt-atlas's `validate-atlas.mjs`
+checks the same on the atlas as built.
+
+The whole-body overview had a second cause: the carried sheets fell to the
+sloppy simplifier, and BodyParts3D's external oblique, decimated to 12% with
+a 3%-of-extent error bound, wobbled through the 2 mm gaps. The overview now
+copies the carried parts and the BodyParts3D sheets they were separated from
+whole (they are small): 56 parts, the 38 carried meshes and 18 BodyParts3D sheets (external obliques, serrati anterior and posterior inferior, iliocostalis, longissimus, spinalis, semispinalis and interspinales thoracis), taking the overview from 635,612 to 838,294 triangles and from 9.1 to 11.8 MB gzipped.
+
 ## Muscles BodyParts3D lacks
 
 The depth match in mvmt-atlas reported 29 MVMT muscle structures with no

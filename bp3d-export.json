@@ -382,7 +382,7 @@
     [
      -0.2282858625971483,
      0.9493998727295181,
-     -0.1137430694973994
+     -0.1137432369161379
     ],
     [
      0.2285849588384985,
@@ -1240,6 +1240,851 @@
     }
    ]
   },
+  "layerSeparation": {
+   "gapMm": 2.0,
+   "carryMm": 6.0,
+   "windowMm": 30.0,
+   "maxOverlap": 0.02,
+   "stacks": [
+    {
+     "name": "abdominal wall",
+     "axis": [
+      0.0,
+      -0.03
+     ],
+     "innermostToOutermost": [
+      "Quadratus lumborum muscle",
+      "Transversus abdominis muscle",
+      "Rectus abdominis muscle",
+      "Internal abdominal oblique muscle",
+      "BodyParts3D: external oblique"
+     ],
+     "rules": [
+      {
+       "moving": [
+        "Internal abdominal oblique muscle"
+       ],
+       "against": {
+        "ours": [
+         "Rectus abdominis muscle"
+        ]
+       },
+       "mode": "nearest"
+      },
+      {
+       "moving": [
+        "Internal abdominal oblique muscle"
+       ],
+       "against": {
+        "bp3d": [
+         "external oblique"
+        ]
+       },
+       "mode": "inward"
+      },
+      {
+       "moving": [
+        "Internal abdominal oblique muscle"
+       ],
+       "against": {
+        "ours": [
+         "Rectus abdominis muscle"
+        ]
+       },
+       "mode": "nearest"
+      },
+      {
+       "moving": [
+        "Transversus abdominis muscle"
+       ],
+       "against": {
+        "ours": [
+         "Internal abdominal oblique muscle",
+         "Rectus abdominis muscle"
+        ],
+        "bp3d": [
+         "external oblique"
+        ]
+       },
+       "mode": "inward"
+      },
+      {
+       "moving": [
+        "Quadratus lumborum muscle"
+       ],
+       "against": {
+        "ours": [
+         "Transversus abdominis muscle",
+         "Internal abdominal oblique muscle"
+        ]
+       },
+       "mode": "inward"
+      },
+      {
+       "moving": [
+        "Multifidus lumborum muscle"
+       ],
+       "against": {
+        "ours": [
+         "Quadratus lumborum muscle"
+        ]
+       },
+       "mode": "nearest"
+      }
+     ]
+    },
+    {
+     "name": "back",
+     "axis": [
+      0.0,
+      -0.03
+     ],
+     "innermostToOutermost": [
+      "BodyParts3D: erector spinae, serratus posterior inferior, external oblique, serratus anterior",
+      "Latissimus dorsi muscle"
+     ],
+     "rules": [
+      {
+       "moving": [
+        "Latissimus dorsi muscle"
+       ],
+       "against": {
+        "bp3d": [
+         "iliocostalis thoracis",
+         "iliocostalis lumborum",
+         "longissimus thoracis",
+         "spinalis thoracis",
+         "serratus posterior inferior",
+         "external oblique",
+         "serratus anterior"
+        ]
+       },
+       "mode": "outward"
+      }
+     ]
+    },
+    {
+     "name": "jaw",
+     "axis": [
+      0.0,
+      0.0
+     ],
+     "innermostToOutermost": [
+      "Temporalis muscle",
+      "Deep part of masseter",
+      "Superficial part of masseter"
+     ],
+     "rules": [
+      {
+       "moving": [
+        "Deep part of masseter"
+       ],
+       "against": {
+        "ours": [
+         "Temporalis muscle"
+        ]
+       },
+       "mode": "outward"
+      },
+      {
+       "moving": [
+        "Superficial part of masseter"
+       ],
+       "against": {
+        "ours": [
+         "Temporalis muscle",
+         "Deep part of masseter"
+        ]
+       },
+       "mode": "outward"
+      }
+     ]
+    }
+   ],
+   "siblings": [
+    [
+     "Superior head of lateral pterygoid muscle",
+     "Inferior head of lateral pterygoid muscle"
+    ],
+    [
+     "Epicranial aponeurosis",
+     "Frontalis muscle",
+     "Occipitalis muscle"
+    ]
+   ],
+   "moves": [
+    {
+     "layer": "Internal abdominal oblique muscle.l",
+     "against": "Rectus abdominis muscle.l",
+     "direction": "nearest",
+     "within2mmBefore": 0.413,
+     "insideBefore": 0.027,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 5768,
+     "vertices": 7207,
+     "maxMoveMm": 2.86,
+     "meanMoveMm": 1.32,
+     "within2mmAfter": 0.16,
+     "insideAfter": 0.002
+    },
+    {
+     "layer": "Internal abdominal oblique muscle.l",
+     "against": "Left external oblique",
+     "direction": "inward",
+     "within2mmBefore": 0.179,
+     "insideBefore": 0.069,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 3210,
+     "vertices": 7207,
+     "maxMoveMm": 14.07,
+     "meanMoveMm": 2.79,
+     "within2mmAfter": 0.048,
+     "insideAfter": 0.007
+    },
+    {
+     "layer": "Internal abdominal oblique muscle.l",
+     "against": "Rectus abdominis muscle.l",
+     "direction": "nearest",
+     "within2mmBefore": 0.244,
+     "insideBefore": 0.071,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 5089,
+     "vertices": 7207,
+     "maxMoveMm": 5.58,
+     "meanMoveMm": 0.91,
+     "within2mmAfter": 0.121,
+     "insideAfter": 0.009
+    },
+    {
+     "layer": "Transversus abdominis muscle.l",
+     "against": "Internal abdominal oblique muscle.l + Rectus abdominis muscle.l + Left external oblique",
+     "direction": "inward",
+     "within2mmBefore": 0.338,
+     "insideBefore": 0.108,
+     "verticesWithoutSlot": 61,
+     "verticesMoved": 6271,
+     "vertices": 8582,
+     "maxMoveMm": 26.59,
+     "meanMoveMm": 3.39,
+     "within2mmAfter": 0.046,
+     "insideAfter": 0.002
+    },
+    {
+     "layer": "Quadratus lumborum muscle.l",
+     "against": "Transversus abdominis muscle.l + Internal abdominal oblique muscle.l",
+     "direction": "inward",
+     "within2mmBefore": 0.047,
+     "insideBefore": 0.025,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 264,
+     "vertices": 708,
+     "maxMoveMm": 8.4,
+     "meanMoveMm": 1.46,
+     "within2mmAfter": 0.02,
+     "insideAfter": 0.0
+    },
+    {
+     "layer": "Multifidus lumborum muscle.l",
+     "against": "Quadratus lumborum muscle.l",
+     "direction": "nearest",
+     "within2mmBefore": 0.121,
+     "insideBefore": 0.018,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 709,
+     "vertices": 709,
+     "maxMoveMm": 4.6,
+     "meanMoveMm": 0.78,
+     "within2mmAfter": 0.035,
+     "insideAfter": 0.0
+    },
+    {
+     "layer": "Internal abdominal oblique muscle.r",
+     "against": "Rectus abdominis muscle.r",
+     "direction": "nearest",
+     "within2mmBefore": 0.414,
+     "insideBefore": 0.027,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 5767,
+     "vertices": 7207,
+     "maxMoveMm": 2.85,
+     "meanMoveMm": 1.31,
+     "within2mmAfter": 0.154,
+     "insideAfter": 0.003
+    },
+    {
+     "layer": "Internal abdominal oblique muscle.r",
+     "against": "Right external oblique",
+     "direction": "inward",
+     "within2mmBefore": 0.173,
+     "insideBefore": 0.076,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 3301,
+     "vertices": 7207,
+     "maxMoveMm": 13.91,
+     "meanMoveMm": 2.7,
+     "within2mmAfter": 0.039,
+     "insideAfter": 0.01
+    },
+    {
+     "layer": "Internal abdominal oblique muscle.r",
+     "against": "Rectus abdominis muscle.r",
+     "direction": "nearest",
+     "within2mmBefore": 0.246,
+     "insideBefore": 0.077,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 5207,
+     "vertices": 7207,
+     "maxMoveMm": 5.62,
+     "meanMoveMm": 0.89,
+     "within2mmAfter": 0.109,
+     "insideAfter": 0.012
+    },
+    {
+     "layer": "Transversus abdominis muscle.r",
+     "against": "Internal abdominal oblique muscle.r + Rectus abdominis muscle.r + Right external oblique",
+     "direction": "inward",
+     "within2mmBefore": 0.337,
+     "insideBefore": 0.107,
+     "verticesWithoutSlot": 55,
+     "verticesMoved": 6344,
+     "vertices": 8582,
+     "maxMoveMm": 26.62,
+     "meanMoveMm": 3.39,
+     "within2mmAfter": 0.034,
+     "insideAfter": 0.001
+    },
+    {
+     "layer": "Quadratus lumborum muscle.r",
+     "against": "Transversus abdominis muscle.r + Internal abdominal oblique muscle.r",
+     "direction": "inward",
+     "within2mmBefore": 0.048,
+     "insideBefore": 0.024,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 264,
+     "vertices": 708,
+     "maxMoveMm": 8.27,
+     "meanMoveMm": 1.43,
+     "within2mmAfter": 0.02,
+     "insideAfter": 0.0
+    },
+    {
+     "layer": "Multifidus lumborum muscle.r",
+     "against": "Quadratus lumborum muscle.r",
+     "direction": "nearest",
+     "within2mmBefore": 0.123,
+     "insideBefore": 0.018,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 709,
+     "vertices": 709,
+     "maxMoveMm": 4.6,
+     "meanMoveMm": 0.78,
+     "within2mmAfter": 0.035,
+     "insideAfter": 0.0
+    },
+    {
+     "layer": "Latissimus dorsi muscle.l",
+     "against": "Left iliocostalis thoracis + Left iliocostalis lumborum + Left longissimus thoracis + Left spinalis thoracis + Left serratus posterior inferior + Left external oblique + Left serratus anterior",
+     "direction": "outward",
+     "within2mmBefore": 0.281,
+     "insideBefore": 0.17,
+     "verticesWithoutSlot": 14,
+     "verticesMoved": 4528,
+     "vertices": 5401,
+     "maxMoveMm": 25.0,
+     "meanMoveMm": 4.06,
+     "within2mmAfter": 0.066,
+     "insideAfter": 0.023
+    },
+    {
+     "layer": "Latissimus dorsi muscle.r",
+     "against": "Right iliocostalis thoracis + Right iliocostalis lumborum + Right longissimus thoracis + Right spinalis thoracis + Right serratus posterior inferior + Right external oblique + Right serratus anterior",
+     "direction": "outward",
+     "within2mmBefore": 0.253,
+     "insideBefore": 0.172,
+     "verticesWithoutSlot": 29,
+     "verticesMoved": 4627,
+     "vertices": 5401,
+     "maxMoveMm": 24.59,
+     "meanMoveMm": 3.95,
+     "within2mmAfter": 0.073,
+     "insideAfter": 0.021
+    },
+    {
+     "layer": "Deep part of masseter.l",
+     "against": "Temporalis muscle.l",
+     "direction": "outward",
+     "within2mmBefore": 0.004,
+     "insideBefore": 0.0,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 0,
+     "vertices": 248,
+     "maxMoveMm": 0.0,
+     "meanMoveMm": 0.0,
+     "within2mmAfter": 0.004,
+     "insideAfter": 0.0
+    },
+    {
+     "layer": "Superficial part of masseter.l",
+     "against": "Temporalis muscle.l + Deep part of masseter.l",
+     "direction": "outward",
+     "within2mmBefore": 0.293,
+     "insideBefore": 0.038,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 351,
+     "vertices": 351,
+     "maxMoveMm": 2.3,
+     "meanMoveMm": 1.35,
+     "within2mmAfter": 0.12,
+     "insideAfter": 0.0
+    },
+    {
+     "layer": "Deep part of masseter.r",
+     "against": "Temporalis muscle.r",
+     "direction": "outward",
+     "within2mmBefore": 0.004,
+     "insideBefore": 0.0,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 0,
+     "vertices": 248,
+     "maxMoveMm": 0.0,
+     "meanMoveMm": 0.0,
+     "within2mmAfter": 0.004,
+     "insideAfter": 0.0
+    },
+    {
+     "layer": "Superficial part of masseter.r",
+     "against": "Temporalis muscle.r + Deep part of masseter.r",
+     "direction": "outward",
+     "within2mmBefore": 0.293,
+     "insideBefore": 0.04,
+     "verticesWithoutSlot": 0,
+     "verticesMoved": 351,
+     "vertices": 351,
+     "maxMoveMm": 2.3,
+     "meanMoveMm": 1.35,
+     "within2mmAfter": 0.12,
+     "insideAfter": 0.0
+    }
+   ],
+   "carriedOverlap": [
+    {
+     "a": "Deep part of masseter.l",
+     "b": "Inferior head of lateral pterygoid muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.l",
+     "b": "Medial pterygoid muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.l",
+     "b": "Superficial part of masseter.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.l",
+     "b": "Superior head of lateral pterygoid muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.l",
+     "b": "Temporalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.r",
+     "b": "Inferior head of lateral pterygoid muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.r",
+     "b": "Medial pterygoid muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.r",
+     "b": "Superficial part of masseter.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.r",
+     "b": "Superior head of lateral pterygoid muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Deep part of masseter.r",
+     "b": "Temporalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Epicranial aponeurosis.l",
+     "b": "Frontalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.023,
+     "bInA": 0.042,
+     "siblings": true
+    },
+    {
+     "a": "Epicranial aponeurosis.l",
+     "b": "Occipitalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.021,
+     "bInA": 0.081,
+     "siblings": true
+    },
+    {
+     "a": "Epicranial aponeurosis.l",
+     "b": "Temporalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Epicranial aponeurosis.r",
+     "b": "Frontalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.021,
+     "bInA": 0.042,
+     "siblings": true
+    },
+    {
+     "a": "Epicranial aponeurosis.r",
+     "b": "Occipitalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.017,
+     "bInA": 0.082,
+     "siblings": true
+    },
+    {
+     "a": "Epicranial aponeurosis.r",
+     "b": "Temporalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Frontalis muscle.l",
+     "b": "Temporalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.003,
+     "bInA": 0.005,
+     "siblings": false
+    },
+    {
+     "a": "Frontalis muscle.r",
+     "b": "Temporalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.003,
+     "bInA": 0.005,
+     "siblings": false
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.l",
+     "b": "Medial pterygoid muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.l",
+     "b": "Superficial part of masseter.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.l",
+     "b": "Superior head of lateral pterygoid muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.148,
+     "bInA": 0.188,
+     "siblings": true
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.l",
+     "b": "Temporalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.r",
+     "b": "Medial pterygoid muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.r",
+     "b": "Superficial part of masseter.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.r",
+     "b": "Superior head of lateral pterygoid muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.148,
+     "bInA": 0.188,
+     "siblings": true
+    },
+    {
+     "a": "Inferior head of lateral pterygoid muscle.r",
+     "b": "Temporalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Medial pterygoid muscle.l",
+     "b": "Superior head of lateral pterygoid muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Medial pterygoid muscle.r",
+     "b": "Superior head of lateral pterygoid muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Superficial part of masseter.l",
+     "b": "Superior head of lateral pterygoid muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Superficial part of masseter.l",
+     "b": "Temporalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Superficial part of masseter.r",
+     "b": "Superior head of lateral pterygoid muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Superficial part of masseter.r",
+     "b": "Temporalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Superior head of lateral pterygoid muscle.l",
+     "b": "Temporalis muscle.l",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Superior head of lateral pterygoid muscle.r",
+     "b": "Temporalis muscle.r",
+     "region": "head-jaw",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Multifidus colli muscle.l",
+     "b": "Spinalis capitis muscle.l",
+     "region": "cervical",
+     "aInB": 0.001,
+     "bInA": 0.003,
+     "siblings": false
+    },
+    {
+     "a": "Multifidus colli muscle.r",
+     "b": "Spinalis capitis muscle.r",
+     "region": "cervical",
+     "aInB": 0.001,
+     "bInA": 0.003,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.l",
+     "b": "Multifidus lumborum muscle.l",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.l",
+     "b": "Quadratus lumborum muscle.l",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.l",
+     "b": "Rectus abdominis muscle.l",
+     "region": "lumbar",
+     "aInB": 0.009,
+     "bInA": 0.013,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.l",
+     "b": "Transversus abdominis muscle.l",
+     "region": "lumbar",
+     "aInB": 0.004,
+     "bInA": 0.001,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.r",
+     "b": "Multifidus lumborum muscle.r",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.r",
+     "b": "Quadratus lumborum muscle.r",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.r",
+     "b": "Rectus abdominis muscle.r",
+     "region": "lumbar",
+     "aInB": 0.012,
+     "bInA": 0.014,
+     "siblings": false
+    },
+    {
+     "a": "Internal abdominal oblique muscle.r",
+     "b": "Transversus abdominis muscle.r",
+     "region": "lumbar",
+     "aInB": 0.003,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Multifidus lumborum muscle.l",
+     "b": "Quadratus lumborum muscle.l",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Multifidus lumborum muscle.l",
+     "b": "Transversus abdominis muscle.l",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Multifidus lumborum muscle.r",
+     "b": "Quadratus lumborum muscle.r",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Multifidus lumborum muscle.r",
+     "b": "Transversus abdominis muscle.r",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.0,
+     "siblings": false
+    },
+    {
+     "a": "Quadratus lumborum muscle.l",
+     "b": "Transversus abdominis muscle.l",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.001,
+     "siblings": false
+    },
+    {
+     "a": "Quadratus lumborum muscle.r",
+     "b": "Transversus abdominis muscle.r",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.001,
+     "siblings": false
+    },
+    {
+     "a": "Rectus abdominis muscle.l",
+     "b": "Transversus abdominis muscle.l",
+     "region": "lumbar",
+     "aInB": 0.0,
+     "bInA": 0.001,
+     "siblings": false
+    },
+    {
+     "a": "Rectus abdominis muscle.r",
+     "b": "Transversus abdominis muscle.r",
+     "region": "lumbar",
+     "aInB": 0.001,
+     "bInA": 0.001,
+     "siblings": false
+    }
+   ]
+  },
   "carriedMuscles": {
    "why": {
     "head-jaw-masseter": "no masseter in BodyParts3D (both parts)",
@@ -1422,9 +2267,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.199,
-     "fitFarFraction": 0.234,
-     "fitMedianMm": 1.3
+     "fitInBoneFraction": 0.131,
+     "fitFarFraction": 0.265,
+     "fitMedianMm": 2.1
     },
     {
      "name": "Superficial part of masseter (right)",
@@ -1432,12 +2277,12 @@
      "system": "muscular",
      "region": "head-jaw",
      "triangles": 702,
-     "fitConfidence": "low",
+     "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.239,
-     "fitFarFraction": 0.225,
-     "fitMedianMm": 1.3
+     "fitInBoneFraction": 0.134,
+     "fitFarFraction": 0.259,
+     "fitMedianMm": 1.9
     },
     {
      "name": "Superior head of lateral pterygoid muscle (left)",
@@ -1552,9 +2397,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.081,
-     "fitFarFraction": 0.244,
-     "fitMedianMm": 2.8
+     "fitInBoneFraction": 0.053,
+     "fitFarFraction": 0.321,
+     "fitMedianMm": 4.4
     },
     {
      "name": "Latissimus dorsi muscle (right)",
@@ -1565,9 +2410,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.11,
-     "fitFarFraction": 0.248,
-     "fitMedianMm": 2.2
+     "fitInBoneFraction": 0.065,
+     "fitFarFraction": 0.301,
+     "fitMedianMm": 4.0
     },
     {
      "name": "Multifidus thoracis muscle (left)",
@@ -1604,9 +2449,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.0,
-     "fitFarFraction": 0.593,
-     "fitMedianMm": 8.4
+     "fitInBoneFraction": 0.004,
+     "fitFarFraction": 0.56,
+     "fitMedianMm": 7.5
     },
     {
      "name": "Internal abdominal oblique muscle (right)",
@@ -1617,9 +2462,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.008,
-     "fitFarFraction": 0.581,
-     "fitMedianMm": 8.0
+     "fitInBoneFraction": 0.012,
+     "fitFarFraction": 0.556,
+     "fitMedianMm": 7.2
     },
     {
      "name": "Multifidus lumborum muscle (left)",
@@ -1630,9 +2475,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.006,
-     "fitFarFraction": 0.175,
-     "fitMedianMm": 3.1
+     "fitInBoneFraction": 0.011,
+     "fitFarFraction": 0.166,
+     "fitMedianMm": 2.9
     },
     {
      "name": "Multifidus lumborum muscle (right)",
@@ -1643,9 +2488,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.006,
-     "fitFarFraction": 0.166,
-     "fitMedianMm": 3.3
+     "fitInBoneFraction": 0.008,
+     "fitFarFraction": 0.138,
+     "fitMedianMm": 3.0
     },
     {
      "name": "Quadratus lumborum muscle (left)",
@@ -1656,9 +2501,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.093,
-     "fitFarFraction": 0.271,
-     "fitMedianMm": 3.0
+     "fitInBoneFraction": 0.09,
+     "fitFarFraction": 0.294,
+     "fitMedianMm": 3.4
     },
     {
      "name": "Quadratus lumborum muscle (right)",
@@ -1669,9 +2514,9 @@
      "fitConfidence": "high",
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
-     "fitInBoneFraction": 0.093,
-     "fitFarFraction": 0.288,
-     "fitMedianMm": 2.9
+     "fitInBoneFraction": 0.088,
+     "fitFarFraction": 0.319,
+     "fitMedianMm": 3.4
     },
     {
      "name": "Rectus abdominis muscle (left)",
@@ -1709,8 +2554,8 @@
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
      "fitInBoneFraction": 0.053,
-     "fitFarFraction": 0.528,
-     "fitMedianMm": 7.3
+     "fitFarFraction": 0.565,
+     "fitMedianMm": 8.8
     },
     {
      "name": "Transversus abdominis muscle (right)",
@@ -1722,8 +2567,8 @@
      "fitRule": "envelope",
      "fitOutsideFraction": 0.0,
      "fitInBoneFraction": 0.061,
-     "fitFarFraction": 0.484,
-     "fitMedianMm": 5.8
+     "fitFarFraction": 0.537,
+     "fitMedianMm": 7.3
     },
     {
      "name": "Extensor digitorum brevis (left)",
@@ -1768,7 +2613,7 @@
     "muscular": {
      "rule": "envelope",
      "parts": 36,
-     "low": 14
+     "low": 13
     },
     "fascia": {
      "rule": "surface",
@@ -2346,15 +3191,6 @@
      "inBone": 0.253,
      "outside": 0.0,
      "far": 0.012,
-     "median": 0.001
-    },
-    {
-     "name": "Superficial part of masseter.r",
-     "system": "muscular",
-     "rule": "envelope",
-     "inBone": 0.239,
-     "outside": 0.0,
-     "far": 0.225,
      "median": 0.001
     },
     {
@@ -4261,7 +5097,7 @@
    }
   },
   "seamMaxMm": 10.535,
-  "seconds": 188.2
+  "seconds": 594.1
  },
  "parts": 1530,
  "concepts": 1416

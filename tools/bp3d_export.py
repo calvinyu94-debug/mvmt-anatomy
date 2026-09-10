@@ -156,6 +156,42 @@ def tube(points, radius, segments=12, ellipse=None):
     return V, np.array(F, dtype=np.uint32)
 
 
+def winding_number(P, V, F, chunk=3000):
+    """Generalised winding number (Jacobson et al. 2013) of points P against the triangles F of V:
+    about 1 inside a closed, outward-oriented surface, about 0 outside, and graceful where the
+    surface has holes. BP3D's decimated bones have them (480 boundary edges on L3, 792 on the
+    atlas), so ray parity is not usable there: a ray through an open lamina crosses once and calls
+    the canal bone. The sum depends on consistent face orientation, which BP3D has (no edge is
+    traversed the same way by both its faces on any of eight bones and the skin, checked)."""
+    P = np.asarray(P, dtype=np.float64)
+    out = np.zeros(len(P))
+    for s in range(0, len(F), chunk):
+        f = F[s:s + chunk]
+        A = V[f[:, 0]][None] - P[:, None]
+        B = V[f[:, 1]][None] - P[:, None]
+        C = V[f[:, 2]][None] - P[:, None]
+        la, lb, lc = np.linalg.norm(A, axis=2), np.linalg.norm(B, axis=2), np.linalg.norm(C, axis=2)
+        num = np.einsum("ijk,ijk->ij", A, np.cross(B, C))
+        den = (la * lb * lc + np.einsum("ijk,ijk->ij", A, B) * lc + np.einsum("ijk,ijk->ij", B, C) * la
+               + np.einsum("ijk,ijk->ij", C, A) * lb)
+        out += np.arctan2(num, den).sum(axis=1)
+    return out / (2 * np.pi)
+
+
+def solid_runs(x, solid):
+    """Consecutive stretches of `solid` along the sampled coordinate x, as (start, end) pairs."""
+    runs, start = [], None
+    for xi, s in zip(x, solid):
+        if s and start is None:
+            start = xi
+        elif not s and start is not None:
+            runs.append((start, xi))
+            start = None
+    if start is not None:
+        runs.append((start, x[-1]))
+    return runs
+
+
 def icosphere(centre, radius):
     bm = bmesh.new()
     bmesh.ops.create_icosphere(bm, subdivisions=1, radius=radius)
@@ -320,6 +356,37 @@ def main():
     def nearest_bone(p):
         loc, nrm, idx, dist = bvh.find_nearest(Vector(p))
         return np.array(loc), np.array(nrm), bone_face_part[idx], dist
+
+    # inside bone, by winding number against every bone whose box comes within 2 cm of the points
+    bone_geom = {}
+    bone_parts_list = [p for p in atlas["parts"] if p["system"] == "skeletal"]
+
+    def bone_geometry(p):
+        if p["name"] not in bone_geom:
+            b = chunks[p["chunk"]]
+            pos = np.frombuffer(b, dtype=np.float32, count=p["vertexCount"] * 3, offset=p["positions"]).reshape(-1, 3)
+            idx = np.frombuffer(b, dtype=np.uint32, count=p["indexCount"], offset=p["indices"]).reshape(-1, 3)
+            bone_geom[p["name"]] = (pos.astype(np.float64), idx.astype(np.int64))
+        return bone_geom[p["name"]]
+
+    def bones_near(lo, hi, margin=0.02):
+        vs, fs, base = [], [], 0
+        for p in bone_parts_list:
+            blo, bhi = np.array(p["bounds"][0]), np.array(p["bounds"][1])
+            if np.any(hi < blo - margin) or np.any(lo > bhi + margin):
+                continue
+            V, F = bone_geometry(p)
+            vs.append(V)
+            fs.append(F + base)
+            base += len(V)
+        if not vs:
+            return np.zeros((0, 3)), np.zeros((0, 3), dtype=np.int64)
+        return np.vstack(vs), np.vstack(fs)
+
+    def in_bone_of(P):
+        P = np.asarray(P, dtype=np.float64)
+        V, F = bones_near(P.min(axis=0), P.max(axis=0))
+        return winding_number(P, V, F) > 0.5 if len(F) else np.zeros(len(P), dtype=bool)
 
     # ---- collect our meshes
     meshes = []        # dicts: name, side, system, region(home or None), V (fitted), F, material, extras
@@ -585,29 +652,79 @@ def main():
                                                      "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth")]
              + ["%s lumbar vertebra" % n for n in ("First", "Second", "Third", "Fourth", "Fifth")])
 
-    def canal_centre(name, y=None, xband=0.004, min_gap=0.006):
+    # The canal of a vertebra is the empty stretch immediately posterior to its body, at mid-height on
+    # the midline; its width is the empty stretch across the midline at that depth, between the
+    # pedicles. Solid and empty are read with the winding number along the sagittal and transverse
+    # lines. Phase 4 took "the largest midline gap between vertices" instead, which is the canal
+    # in the neck and the vertebral body's own thickness from T1 down (the body's front and back
+    # walls put few vertices on the midline at mid-height): the cord below C7 was authored through
+    # bone, and the record's "33 to 36 mm at L3 to L5" was the lumbar bodies. The new fit rule for
+    # central nerves found it.
+    def canal_centre(name, y=None, min_gap=0.006):
         p = bp_parts[name.lower()]
-        V = FIT.part_vertices(p, chunks)
+        V, F = bone_geometry(p)
         lo, hi = V.min(axis=0), V.max(axis=0)
         ym = (lo[1] + hi[1]) / 2 if y is None else y
-        for band in (0.004, 0.008, 0.012):
-            s = V[(abs(V[:, 0]) < xband + band) & (abs(V[:, 1] - ym) < band)]
-            if len(s) < 6:
+        zs = np.arange(lo[2] - 0.002, hi[2] + 0.002, 0.001)
+        # the box's mid-height is not always a level with a body in front and a lamina behind on the
+        # midline (the axis's dens lifts its box, its spinous process is bifid): try nearby heights
+        # and a few millimetres either side of the midline, nearest first
+        tried = []
+        for dy in ((0.0, -0.005, 0.005, -0.010, 0.010) if y is None else (0.0,)):
+            for x0 in (0.0, 0.003, -0.003):
+                runs = solid_runs(zs, winding_number(np.array([[x0, ym + dy, z] for z in zs]), V, F) > 0.5)
+                # merge solid stretches separated by less than the canal's minimum: a hole in the mesh, not a canal
+                merged = []
+                for r in runs:
+                    if merged and r[0] - merged[-1][1] < min_gap:
+                        merged[-1] = (merged[-1][0], r[1])
+                    else:
+                        merged.append(r)
+                tried.append((dy, x0, merged))
+                if len(merged) >= 2:
+                    break
+            else:
                 continue
-            z = np.sort(s[:, 2])
-            gaps = z[1:] - z[:-1]
-            k = int(gaps.argmax())
-            if gaps[k] >= min_gap:
-                return np.array([0.0, ym, (z[k] + z[k + 1]) / 2]), float(gaps[k])
-        raise ValueError("no canal gap found in " + name)
+            break
+        else:
+            raise ValueError("no canal found in %s near y=%.3f: solid runs %s" % (name, ym, tried))
+        yc = ym + dy
+        body, behind = merged[-1], merged[-2]              # +Z is anterior: the body is the most anterior solid
+        z0, z1 = behind[1], body[0]
+        zc, gap = (z0 + z1) / 2, z1 - z0
+        # the canal's width is the interpedicular distance. The pedicles stand on the body's
+        # posterior wall in the upper part of the vertebra: a line further back runs between the
+        # laminae out to the transverse processes and reads 70 mm, a line at the wall itself clips
+        # the body's rounded corners and reads 6 mm, and a line below the pedicles runs out through
+        # the inferior notch. So: at seven heights through the vertebra, the median over six depths
+        # in the anterior half of the canal of the empty stretch around the midline, and the
+        # narrowest height wins, ignoring readings under 12 mm (no adult canal is that narrow; a
+        # slit between two mesh corners is).
+        xs = np.arange(lo[0] - 0.002, hi[0] + 0.002, 0.001)
+        by_height = []
+        for dyh in np.linspace(-0.4, 0.4, 7) * (hi[1] - lo[1]):
+            widths = []
+            for z in np.linspace(z1 - 0.1 * gap, z1 - 0.6 * gap, 6):
+                wx = winding_number(np.array([[x, yc + dyh, z] for x in xs]), V, F) > 0.5
+                empty = [r for r in solid_runs(xs, ~wx) if r[0] <= 0.0 <= r[1]]
+                if empty:
+                    widths.append((empty[0][1] - empty[0][0]) / 2)
+            if widths:
+                by_height.append(float(np.median(widths)))
+        plausible = [w for w in by_height if w >= 0.006]
+        half_x = min(plausible) if plausible else (float(np.median(by_height)) if by_height else gap / 2)
+        return np.array([0.0, yc, zc]), float(gap), float(half_x)
 
     canal = []
     canal_report = []
     for name in order:
-        c, gap = canal_centre(name)
+        c, gap, half_x = canal_centre(name)
         canal.append(c)
-        canal_report.append(dict(vertebra=name, centre=[round(float(x), 4) for x in c], gapWidth=round(gap, 4)))
+        canal_report.append(dict(vertebra=name, centre=[round(float(x), 4) for x in c], gapWidth=round(gap, 4), halfWidthX=round(half_x, 4)))
     canal = np.array(canal)
+    log("canal: AP gap %.0f-%.0f mm, transverse width %.0f-%.0f mm" % (
+        min(r["gapWidth"] for r in canal_report) * 1000, max(r["gapWidth"] for r in canal_report) * 1000,
+        min(r["halfWidthX"] for r in canal_report) * 2000, max(r["halfWidthX"] for r in canal_report) * 2000))
     # The cord as published norms describe it, in the BP3D canal. Cross-section is an ellipse,
     # transverse x anteroposterior: 8 x 6 mm in the thorax, swelling to 13 x 7 mm at the cervical
     # enlargement (C5-C6) and 12 x 8 mm at the lumbar enlargement (T12), then tapering through the
@@ -626,7 +743,7 @@ def main():
     prev = canal[23]
     for k, dy in enumerate((0.015, 0.035, 0.055, 0.075)):           # S1..S4 canal centres, falling back to the line of the canal
         try:
-            c, _ = canal_centre("Sacrum", y=s_top - dy, min_gap=0.003)
+            c, _, _ = canal_centre("Sacrum", y=s_top - dy, min_gap=0.003)
         except ValueError:
             c = np.array([0.0, s_top - dy, prev[2] - 0.004])
         sacral.append(c)
@@ -669,15 +786,65 @@ def main():
         i = int(np.argmin(np.abs(cord[:, 1] - y)))
         return cord[i]
 
-    def foramen(i, side):
-        """The intervertebral foramen of vertebra i on one side: lateral of the canal by half its width
-        plus 6 mm, between this vertebra and the one above (cervical) or below (thoracic, lumbar)."""
-        gap = canal_report[i]["gapWidth"]
+    # A foramen placed by rule can land inside a pedicle or a lateral mass on this model; the foramen is
+    # the empty passage there, so the point is moved to the nearest empty point in the interspace
+    # plane (up or down by up to 6 mm, forward or back by up to 8 mm), and every move is recorded.
+    foramen_moves = []
+    foramen_cache = {}
+
+    def clear_of_bone(p, label):
+        if not in_bone_of([p])[0]:
+            return p
+        best = None
+        for dy in (0.0, 0.001, -0.001, 0.002, -0.002, 0.003, -0.003, 0.004, -0.004, 0.005, -0.005, 0.006, -0.006, 0.008, -0.008, 0.010, -0.010):
+            for dz in (0.0, 0.002, -0.002, 0.004, -0.004, 0.006, -0.006, 0.008, 0.010):
+                q = p + np.array([0.0, dy, dz])
+                if not in_bone_of([q])[0]:
+                    d = math.hypot(dy, dz)
+                    if best is None or d < best[0]:
+                        best = (d, q)
+        if best is None:
+            foramen_moves.append(dict(point=label, movedMm=None, note="no empty point within reach; left in bone"))
+            return p
+        foramen_moves.append(dict(point=label, movedMm=round(best[0] * 1000, 1)))
+        return best[1]
+
+    def passage(i, side):
+        """The intervertebral foramen of vertebra i on one side, found as a passage rather than a point:
+        the height and depth, nearest the interspace, at which a line from inside the canal (60% of
+        the way to its wall) to 6 mm beyond the pedicles meets no bone. The interspace is between
+        this vertebra and the one above (cervical) or below (thoracic, lumbar), in the anterior
+        third of the canal's depth, where the foramen sits between body and disc in front and the
+        facet joint behind. Returns the inner point, the outer point and the number of line steps
+        still in bone at the best height found (0 when the passage is clear)."""
+        key = (i, side)
+        if key in foramen_cache:
+            return foramen_cache[key]
+        half_x, gap = canal_report[i]["halfWidthX"], canal_report[i]["gapWidth"]
         if i < 7:
             y = (level_y[i - 1] + level_y[i]) / 2 if i > 0 else level_y[0] + 0.010
         else:
             y = (level_y[i] + level_y[i + 1]) / 2 if i + 1 < len(canal) else level_y[i] - 0.012
-        return np.array([side * (gap / 2 + 0.006), y, canal[i][2]])
+        z = canal[i][2] + 0.25 * gap
+        x_in, x_out = side * max(0.6 * half_x, 0.004), side * (half_x + 0.006)
+        xs = np.linspace(x_in, x_out, max(3, int(round(abs(x_out - x_in) / 0.001)) + 1))
+        best = None
+        for dy in (0.0, 0.001, -0.001, 0.002, -0.002, 0.003, -0.003, 0.004, -0.004, 0.006, -0.006, 0.008, -0.008):
+            for dz in (0.0, 0.002, -0.002, 0.004, -0.004, 0.006):
+                P = np.array([[x, y + dy, z + dz] for x in xs])
+                n = int(in_bone_of(P).sum())
+                score = (n, math.hypot(dy, dz))
+                if best is None or score < best[0]:
+                    best = (score, P)
+                if n == 0:
+                    break
+            if best[0][0] == 0:
+                break
+        (n, moved), P = best
+        foramen_moves.append(dict(point="%s %s" % (LEVEL_NAMES[i], "l" if side > 0 else "r"), movedMm=round(moved * 1000, 1),
+                                  stepsInBone=n, steps=len(xs)))
+        foramen_cache[key] = (P[0], P[-1], n)
+        return foramen_cache[key]
 
     LEVEL_NAMES = (["C%d" % n for n in range(1, 8)] + ["T%d" % n for n in range(1, 13)] + ["L%d" % n for n in range(1, 6)])
     root_count = 0
@@ -686,11 +853,14 @@ def main():
         c = cord_point(y)
         a, b = half_axes(c[1])
         for side in (1.0, -1.0):
-            f = foramen(i, side)
+            via, f, _ = passage(i, side)
             for kind, dz in (("dorsal", -0.75 * b), ("ventral", 0.75 * b)):
                 start = c + np.array([side * 0.6 * a, 0.0, dz])
-                mid = (start + f) / 2 + np.array([0.0, -0.002, dz * 0.5])
-                pts = smooth_polyline(np.array([start, mid, f]), 5)
+                # a root descends inside the canal to the height of its foramen and only then turns
+                # out through it: the straight line from cord to foramen runs through the pedicle
+                # from T2 down, where the foramen sits a level below the cord segment. Dorsal and
+                # ventral roots converge on the foramen, so the offset between them is at the cord only.
+                pts = smooth_polyline(np.array([start, via, f]), 5)
                 V, F = tube(pts, 0.0009, segments=8)
                 nm = "%s %s root (%s)" % (LEVEL_NAMES[i], kind, "left" if side > 0 else "right")
                 meshes.append(dict(name="Spinal root %s %s.%s" % (LEVEL_NAMES[i], kind, "l" if side > 0 else "r"), display=nm,
@@ -706,13 +876,13 @@ def main():
     cauda_targets = []
     for i, nm in lower_levels:
         for side in (1.0, -1.0):
-            cauda_targets.append((nm, side, foramen(i, side), [canal[j] for j in range(20, i + 1)], 2))
+            cauda_targets.append((nm, side, passage(i, side)[1], [canal[j] for j in range(20, i + 1)], 2))
     for k, nm in enumerate(("S1", "S2", "S3", "S4")):
         for side in (1.0, -1.0):
-            tgt = sacral[k] + np.array([side * 0.018, 0.0, 0.012])
+            tgt = clear_of_bone(sacral[k] + np.array([side * 0.018, 0.0, 0.012]), "%s %s" % (nm, "l" if side > 0 else "r"))
             cauda_targets.append((nm, side, tgt, [canal[j] for j in range(20, 24)] + sacral[:k + 1], 2 if k < 2 else 1))
     for side in (1.0, -1.0):
-        tgt = sacral[3] + np.array([side * 0.006, -0.012, 0.004])
+        tgt = clear_of_bone(sacral[3] + np.array([side * 0.006, -0.012, 0.004]), "Co %s" % ("l" if side > 0 else "r"))
         cauda_targets.append(("Co", side, tgt, [canal[j] for j in range(20, 24)] + sacral, 1))
     for nm, side, tgt, via, count in cauda_targets:
         for k in range(count):
@@ -734,10 +904,15 @@ def main():
     for rid, pts in dsegs.items():
         if len(pts) < 2:
             continue
+        # the norm's dura, held inside the canal this body has: the canal is not an ellipse and its
+        # corners are bone, so where the norm's sheath would reach past three quarters of the
+        # canal's half-width or half-depth (14 mm AP at C5 here) it is held there instead
         ell = []
         for p in pts:
             a, b = half_axes(p[1]) if p[1] >= conus_tip[1] else (0.006, 0.004)
-            ell.append((max(a, 0.006) + 0.0035, max(b, 0.004) + 0.0035))
+            lvl = min(range(len(canal)), key=lambda i: abs(level_y[i] - p[1]))
+            ell.append((min(max(a, 0.006) + 0.0035, 0.75 * canal_report[lvl]["halfWidthX"]),
+                        min(max(b, 0.004) + 0.0035, 0.75 * canal_report[lvl]["gapWidth"] / 2)))
         V, F = tube(pts, 0.008, segments=16, ellipse=ell)
         meshes.append(dict(name="Dura mater (schematic) %s" % rid, side="", system="central-nerves", material="Dura",
                            home=rid, V=V, F=F, authored=True, extras=dict(source="schematic", segment=rid, translucent=True),
@@ -746,11 +921,31 @@ def main():
     cord_summary = dict(roots=root_count, caudaStrands=strand, conus=[round(float(x), 4) for x in conus_tip],
                         sacral=[[round(float(x), 4) for x in c] for c in sacral])
 
-    # ---- fit confidence of every carried-over part: how far it sits from the BP3D body surface
-    # (bones and muscles). A part with more than 20% of its vertices further than 6 mm from any
-    # BP3D surface is fitConfidence: low, and patient view hides it. Insertions are on bone by
-    # construction and landmarks carry the fit's own residual; the rest are measured here.
-    log("measuring fit confidence against the BP3D bone and muscle surface")
+    # ---- fit confidence, one rule per system. Phase 4 measured every carried-over part against the
+    # BP3D bone and muscle surface. That is a fit test for a ligament or a fascia, which sit on bone
+    # and muscle, and a clearance test for a nerve, which sits in soft tissue by design: it flagged
+    # the cord for being in the middle of its canal and the sciatic for being in the middle of the
+    # thigh. So:
+    #   ligaments, fascia   low when more than 20% of sampled vertices lie further than 6 mm from
+    #                       any BP3D bone or muscle surface (unchanged)
+    #   central nerves      measured against the vertebral canal wall, the bone around them: low
+    #                       when more than 20% of sampled vertices lie inside bone. The median
+    #                       clearance from the wall is recorded, not judged.
+    #   peripheral nerves   low when more than 20% of sampled vertices leave the body envelope
+    #                       (BP3D's skin) or lie inside bone; no surface-distance test at all.
+    # Inside bone is the winding number (see winding_number: the bones are open meshes, so ray
+    # parity is wrong on them, and a normal test is out per CLAUDE.md). Inside the envelope is
+    # being enclosed by BP3D's skin, which is a two-layer shell about 2 mm thick, so parity is
+    # even for every point inside the body: a point is enclosed when a ray in each of the six
+    # axis directions meets the skin. Insertions are on bone by construction and landmarks carry
+    # the fit's own residual; the rest are measured here.
+    log("measuring fit confidence: surface distance for ligaments and fascia, bone winding number for nerves, the skin envelope for peripheral nerves")
+    skin_bvh = bvh_of(bp_parts["skin"])
+    RAYS = ((1.0, 0.0, 0.0), (-1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, -1.0, 0.0), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0))
+
+    def enclosed(p):
+        o = Vector(p)
+        return all(skin_bvh.ray_cast(o, Vector(d))[0] is not None for d in RAYS)
     body_verts, body_faces, bbase = [BV], [BF], len(BV)
     for p in atlas["parts"]:
         if p["system"] != "muscular":
@@ -766,23 +961,47 @@ def main():
     body_bvh = BVHTree.FromPolygons([tuple(v) for v in BODYV], [tuple(int(i) for i in f) for f in BODYF])
     log("body surface: %d triangles" % len(BODYF))
     FAR, FAR_FRACTION, SAMPLE = 0.006, 0.20, 240
+    FIT_RULES = {
+        "ligaments": "surface", "fascia": "surface", "central-nerves": "canal", "peripheral-nerves": "envelope"}
+    FIT_RULE_TEXT = {
+        "surface": "low when more than %d%% of sampled vertices lie further than %d mm from any BP3D bone or muscle surface" % (FAR_FRACTION * 100, FAR * 1000),
+        "canal": "low when more than %d%% of sampled vertices lie inside bone (the vertebral canal wall); clearance from the wall is recorded, not judged" % (FAR_FRACTION * 100),
+        "envelope": "low when more than %d%% of sampled vertices lie outside the body envelope (BP3D's skin) or inside bone; no surface-distance test" % (FAR_FRACTION * 100)}
     confidence_rows = []
     for m in meshes:
         if m["system"] in ("insertions", "landmarks"):
             continue
+        rule = FIT_RULES[m["system"]]
         V = m["V"]
         step = max(1, len(V) // SAMPLE)
-        d = np.array([body_bvh.find_nearest(Vector(v))[3] for v in V[::step]])
-        far = float((d > FAR).mean())
-        conf = "low" if far > FAR_FRACTION else "high"
-        m["extras"].update(fitConfidence=conf, fitFarFraction=round(far, 3), fitMedianDistance=round(float(np.median(d)), 5))
-        confidence_rows.append(dict(name=m["name"], system=m["system"], far=far, median=float(np.median(d)), confidence=conf))
+        S = V[::step]
+        row = dict(name=m["name"], system=m["system"], rule=rule)
+        if rule == "surface":
+            d = np.array([body_bvh.find_nearest(Vector(v))[3] for v in S])
+            far = float((d > FAR).mean())
+            conf = "low" if far > FAR_FRACTION else "high"
+            m["extras"].update(fitConfidence=conf, fitRule=rule, fitFarFraction=round(far, 3), fitMedianDistance=round(float(np.median(d)), 5))
+            row.update(far=far, median=float(np.median(d)))
+        elif rule == "canal":
+            in_bone = float(in_bone_of(S).mean())
+            clearance = float(np.median([bvh.find_nearest(Vector(v))[3] for v in S]))
+            conf = "low" if in_bone > FAR_FRACTION else "high"
+            m["extras"].update(fitConfidence=conf, fitRule=rule, fitInBoneFraction=round(in_bone, 3), fitWallClearance=round(clearance, 5))
+            row.update(inBone=in_bone, clearance=clearance)
+        else:
+            in_bone = float(in_bone_of(S).mean())
+            outside = float(np.mean([not enclosed(v) for v in S]))
+            conf = "low" if in_bone > FAR_FRACTION or outside > FAR_FRACTION else "high"
+            m["extras"].update(fitConfidence=conf, fitRule=rule, fitInBoneFraction=round(in_bone, 3), fitOutsideFraction=round(outside, 3))
+            row.update(inBone=in_bone, outside=outside)
+        row["confidence"] = conf
+        confidence_rows.append(row)
     conf_by_system = {}
     for r in confidence_rows:
-        s = conf_by_system.setdefault(r["system"], dict(parts=0, low=0))
+        s = conf_by_system.setdefault(r["system"], dict(rule=FIT_RULES[r["system"]], parts=0, low=0))
         s["parts"] += 1
         s["low"] += r["confidence"] == "low"
-    log("fit confidence: " + ", ".join("%s %d/%d low" % (k, v["low"], v["parts"]) for k, v in conf_by_system.items()))
+    log("fit confidence: " + ", ".join("%s %d/%d low (%s)" % (k, v["low"], v["parts"], v["rule"]) for k, v in conf_by_system.items()))
 
     # ---- regions, spanning, seam check
     log("regions and seams")
@@ -909,14 +1128,19 @@ def main():
                         medianOfMeans=round(float(np.median([r["mean"] for r in projected])), 5) if projected else None,
                         worst=sorted(projected, key=lambda r: -r["mean"])[:15],
                         softTissue=sorted(soft, key=lambda r: -r["sourceBoneDistance"])),
-        fitConfidence=dict(rule="low when more than %d%% of sampled vertices lie further than %d mm from any BP3D bone or muscle surface" % (FAR_FRACTION * 100, FAR * 1000),
-                           bySystem=conf_by_system,
-                           low=[dict(name=r["name"], system=r["system"], farFraction=round(r["far"], 3), medianMm=round(r["median"] * 1000, 1))
-                                for r in sorted(confidence_rows, key=lambda r: -r["far"]) if r["confidence"] == "low"]),
+        fitConfidence=dict(rules=FIT_RULE_TEXT, bySystem=conf_by_system,
+                           low=[dict(name=r["name"], system=r["system"], rule=r["rule"],
+                                     **{k: round(v, 3) for k, v in r.items() if k in ("far", "median", "inBone", "clearance", "outside")})
+                                for r in sorted(confidence_rows, key=lambda r: -max(r.get("far", 0), r.get("inBone", 0), r.get("outside", 0)))
+                                if r["confidence"] == "low"],
+                           # every nerve's measurements, low or not: the rule is new and the numbers are what it is judged on
+                           nerves=[dict(name=r["name"], system=r["system"], confidence=r["confidence"],
+                                        **{k: round(v, 3) for k, v in r.items() if k in ("inBone", "clearance", "outside")})
+                                   for r in confidence_rows if r["system"].endswith("nerves")]),
         landmarks=dict(count=len(landmark_rows), low=sorted(set(r["id"] for r in landmark_rows if r["confidence"] == "low")),
                        surfaceDistance=dict(min=round(min(r["surfaceDistance"] for r in landmark_rows), 5),
                                             max=round(max(r["surfaceDistance"] for r in landmark_rows), 5))),
-        spinalCord=dict(canal=canal_report, foramenMagnum=[round(float(x), 4) for x in fm], **cord_summary),
+        spinalCord=dict(canal=canal_report, foramenMagnum=[round(float(x), 4) for x in fm], foramina=foramen_moves, **cord_summary),
         seams={pair: {name: dict(edges=v["edges"], maxDeltaMm=round(v["maxDelta"] * 1000, 3),
                                  maxDeltaMmPerCm=round(v["maxDeltaPerCm"] * 1000, 3)) for name, v in names.items()}
                for pair, names in seam.items()},
@@ -1018,13 +1242,15 @@ def render(outdir, meshes, atlas, chunks, region_table):
     scene.display.shading.background_type = "VIEWPORT"
     scene.display.shading.background_color = (0.96, 0.94, 0.91)
 
-    def shoot(name, centre, size, view):
+    def shoot(name, centre, size, view, clip_start=0.1):
         # the scene is in the BP3D frame: Y up, +Z anterior, +X left. A camera looks down its own -Z,
         # so the anterior view is the unrotated camera on +Z, and the lateral view turns it about Y.
+        # clip_start at the camera's distance from the centre cuts the scene at the centre's plane.
         d = {"anterior": (0, 0, 1), "lateral": (1, 0, 0), "posterior": (0, 0, -1)}[view]
         cam.location = Vector(centre) + Vector(d) * 3.0
         cam.rotation_euler = {"anterior": (0, 0, 0), "lateral": (0, math.pi / 2, 0), "posterior": (0, math.pi, 0)}[view]
         cam.data.ortho_scale = size
+        cam.data.clip_start = clip_start
         cam.data.clip_end = 10
         scene.render.filepath = os.path.join(outdir, name + ".png")
         bpy.ops.render.render(write_still=True)
@@ -1049,6 +1275,10 @@ def render(outdir, meshes, atlas, chunks, region_table):
     shoot("body-fascia-nerves-lateral", (0, 0.87, 0), 1.85, "lateral")
     show({"landmarks", "ligaments"})
     shoot("body-landmarks-anterior", (0, 0.87, 0), 1.85, "anterior")
+    # the schematic cord in the canal: a mid-sagittal section, the bones cut at the midline so the
+    # canal is open to the camera, from the skull base to the sacrum
+    show({"central-nerves"})
+    shoot("spine-cord-midsagittal", (0, 1.16, -0.03), 0.95, "lateral", clip_start=3.0)
 
 
 if __name__ == "__main__":

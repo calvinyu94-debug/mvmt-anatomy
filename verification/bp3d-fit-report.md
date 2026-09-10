@@ -1,8 +1,9 @@
 # Our layers on the BodyParts3D body
 
-What `tools/bp3d_fit.py` and `tools/bp3d_export.py` did on 2026-09-08, read back
-from `bp3d-fit.json`, `bp3d-export.json` and the merged `atlas.json` in mvmt-atlas.
-The renders are in [`bp3d/`](bp3d/).
+What `tools/bp3d_fit.py` and `tools/bp3d_export.py` did on 2026-09-08, re-run on
+2026-09-09 with one fit-confidence rule per system and the corrected canal, read
+back from `bp3d-fit.json`, `bp3d-export.json` and the merged `atlas.json` in
+mvmt-atlas. The renders are in [`bp3d/`](bp3d/).
 
 ## The fit
 
@@ -45,8 +46,8 @@ in the exported landmark parts, with the residual beside it: Gerdy's tubercle
 | fascia | 165 | 201,678 | transformed as geometry |
 | ligaments (joints & ligaments) | 409 | 163,607 | transformed as geometry |
 | insertions | 705 | 63,843 | transformed, then projected onto BP3D bone |
-| peripheral-nerves | 16 | 41,152 | transformed as geometry; schematic |
-| central-nerves | 13 | 10,840 | cervical roots and lumbosacral plexus transformed; spinal cord and cauda equina authored here; schematic |
+| peripheral-nerves | 16 | 30,912 | tubes rebuilt from the authored centrelines through the fit, tapered; schematic |
+| central-nerves | 120 | 35,656 | cervical roots and lumbosacral plexus through the fit; spinal cord, 80 roots, 30 cauda strands and dura authored here through the BP3D canal; schematic |
 | landmarks | 77 | 1,540 | the BP3D rule results, as 4 mm spheres |
 
 Every part carries `source` (`zanatomy` or `schematic`), `sourceName`, `region`,
@@ -104,14 +105,87 @@ the muscles, which are BP3D's), so it has no seam to check.
 
 ## The schematic spinal cord
 
-A 5 mm tube through the BP3D vertebral canal, found per vertebra as the largest
-midline gap between body and lamina at mid-height (gaps of 10 to 22 mm in the
-cervical and thoracic canal, 33 to 36 mm at L3 to L5), from 2 cm above the
-atlas (the foramen magnum) to the conus at the L1 mid-height, in three
-segments (cervical, thoracic, lumbar) so each region's chunk holds its own;
-cauda equina as six 1.2 mm strands fanning from the conus to L5, S1 and S2
-through the sacral canal. All of it `authored: true, source: "schematic"`,
+The cord follows published cross-sections (8 x 6 mm in the thorax, 13 x 7 mm at
+the cervical enlargement, 12 x 8 mm at the lumbar) through the BP3D vertebral
+canal, from 2 cm above the atlas (the foramen magnum) to the conus in the body
+of L1, in three segments (cervical, thoracic, lumbar) so each region's chunk
+holds its own. Dorsal and ventral roots leave it at every level from C1 to L1,
+descend inside the canal to the height of their foramen and turn out through
+it; below the conus thirty cauda strands run down the canal to the lumbar
+foramina and the sacral foramina. A dura sheath 3.5 mm wider than the cord runs
+from the foramen magnum to S2. All of it `authored: true, source: "schematic"`,
 the same flags the nerves carry.
+
+**The canal is read from the bone, and the first reading was wrong.** Phase 4
+found it per vertebra as "the largest midline gap between vertices at
+mid-height", and recorded gaps of 10 to 22 mm in the neck and thorax and 33 to
+36 mm at L3 to L5. The 33 to 36 mm was the lumbar vertebral body: at mid-height
+the body's front and back walls leave few vertices on the midline, so the
+largest gap between vertices is the body's own thickness from T1 down, and
+the cord below C7 was authored through bone. It is a wrong description, the
+failure class CLAUDE.md separates from a wrong coordinate, and the fit rule
+for central nerves (below) is what found it. The canal is now "the empty
+stretch immediately posterior to the body, at mid-height on the midline",
+solid and empty read with the winding number along the sagittal line, and its
+width is the interpedicular distance: the narrowest empty stretch across the
+midline over seven heights through the vertebra, at six depths in the
+anterior half of the canal (a line further back runs between the laminae to
+the transverse processes and reads 70 mm, one at the body wall clips its
+corners and reads 6 mm). AP 14 to 20 mm from C2 to L5 and 34 mm at the atlas;
+transverse 20 to 27 mm in the neck, 13 to 18 mm in the thorax, 18 to 22 mm in
+the lumbar spine. The record keeps both per vertebra.
+
+The intervertebral foramina are found as passages, not points: the height and
+depth nearest the interspace at which a line from inside the canal to 6 mm
+beyond the pedicles meets no bone, in the anterior third of the canal's
+depth. 42 of the 50 moved from the interspace's midpoint, by a median of
+4.1 mm and at most 8.9 mm (T6); at T4 and T5 no fully clear passage exists on
+this decimated skeleton (1 to 3 of 10 steps in bone), which is why those
+roots stay low below. The dura is the norm's sheath held to three quarters of
+the canal's half-width and half-depth where the norm would reach past that
+(14 mm AP at C5 here): the canal is not an ellipse and its corners are bone.
+[`bp3d/spine-cord-midsagittal.png`](bp3d/spine-cord-midsagittal.png) is the
+skeleton cut at the midline with the cord in the canal from skull base to
+sacrum.
+
+## Fit confidence, one rule per system
+
+Phase 4 judged every carried-over part by one rule, the fraction of sampled
+vertices further than 6 mm from any BP3D bone or muscle surface. That is a fit
+test for a ligament or a fascia, which sit on bone and muscle, and a clearance
+test for a nerve, which sits in soft tissue by design: it flagged the cord for
+being in the middle of its canal and the sciatic for being in the middle of the
+thigh. Each system now has its own rule, named in every part's `fitRule`, and
+`low` means more than 20% of the part's sampled vertices fail it:
+
+| System | Rule | Low before | Low now |
+|---|---|---:|---:|
+| ligaments | `surface`: further than 6 mm from any BP3D bone or muscle surface | 23 / 409 | 23 / 409 |
+| fascia | `surface`, the same | 52 / 165 | 52 / 165 |
+| central nerves | `canal`: inside bone, the vertebral canal wall; the median clearance from the wall is recorded (`fitWallClearance`), not judged | 44 / 120 | 9 / 120 |
+| peripheral nerves | `envelope`: outside the body envelope (BP3D's skin) or inside bone; no surface-distance test | 10 / 16 | 0 / 16 |
+
+Two things about the BodyParts3D meshes decided how "inside" is measured.
+Its skin is a two-layer shell about 2 mm thick, so ray parity is even for
+every point inside the body; a point is enclosed when a ray in each of the
+six axis directions meets the skin. Its bones are open meshes (480 boundary
+edges on L3, 792 on the atlas, 992 on the skin), so a ray through an open
+lamina crosses once and parity calls the canal bone; inside bone is the
+generalised winding number against every bone whose box comes within 2 cm,
+which reads 0 or 1 cleanly on these meshes because their faces are
+consistently oriented (checked on eight bones and the skin). Ray parity was
+what CLAUDE.md prescribed for the Z-Anatomy meshes, whose problem is winding,
+not holes; it is the wrong tool here.
+
+The nine central parts still low are five roots at 21 to 23% in bone (T4
+dorsal and ventral left, T9 dorsal left, T10 dorsal both sides, where the
+passage is not fully clear) and the four S2 cauda strands at 22%, which cross
+the sacrum's anterior wall on the way to a sacral foramen the decimated
+sacrum does not resolve as a hole. The cord's three segments are at 0 to 4.5%
+with 4 to 6 mm of clearance from the wall, the dura's at 5 to 19%. Every
+peripheral nerve is under 6% in bone (the tibial behind the tibia) and under
+5% outside the skin (the median and common fibular at the wrist and knee); the
+record holds every nerve's fractions, low or not.
 
 ## Chunks
 
@@ -141,9 +215,16 @@ barely covers ligaments and has nothing for insertion patches, so the FMA ids
 on the systems we add are sparse by the nature of the source, not the match.
 
 The twelve fascial lines keep their named-structure storage
-(`public/models/fascial-lines.json`): each station resolves at load to our
-exported concept and to the BP3D concept of the same name, with a manual table
-for groups BP3D names differently (hamstrings, erector spinae, rotator cuff,
-adductors, the first plantar layer). 94 stations; 93 resolve on this body;
-the one that does not is the Lateral Line's intercostals (BP3D names each
-intercostal space separately, and no group concept matches).
+(`public/models/fascial-lines.json`): each station resolves at build to our
+exported concept and to every BP3D concept under the same normalised name
+(BP3D holds many muscles as sided pairs, so a name is several concepts and a
+match must return all of them), with `CONCEPT_MATCHES` in mvmt-atlas's
+`scripts/overrides.mjs` for the structures BP3D names differently, the same
+table that gives BP3D's muscles their depth. Each station records what it
+resolved to, a `status` and its mesh count per side. 92 stations: 79 resolve
+to the structure itself, 13 to its insertion patches alone because BP3D has no
+belly for it (occipitofrontalis, temporalis, medial pterygoid, latissimus
+dorsi, rectus abdominis, internal oblique, patellar tendon, the common
+extensor origin), none to nothing; every bilateral station resolves on both
+sides. The viewer lights the stations and ghosts the rest of the body, and
+says on the row when a station is attachments only.

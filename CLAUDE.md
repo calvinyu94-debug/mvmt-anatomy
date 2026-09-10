@@ -500,6 +500,26 @@ renders. What the job established:
   concept. A carried muscle's fit rule is the envelope, not the surface: BP3D
   has no abdominal wall but the external oblique, so the rectus abdominis
   reads 59% "far" for sitting exactly where BP3D has nothing.
+- **Sheets fitted one by one share surfaces, and a shared surface draws
+  shattered.** The carried abdominal wall looked broken not because of its
+  normals (welded, area-weighted smooth: measured 0° off) but because the
+  internal oblique's sheet lay 2.8 mm off the rectus and within 2 mm of it
+  over 80% of the rectus, the transversus within 2 mm of the internal oblique
+  over a third, and the latissimus ran through the serratus posterior
+  inferior. `LAYER_STACKS` orders each stack as the data has it (quadratus
+  lumborum, transversus, rectus, internal oblique, BodyParts3D's external
+  oblique outermost, since it carries the rectus sheath) and moves our layers
+  along the radial line from the spine to the nearest free slot 2 mm off the
+  reference, in the rule's direction or the shorter way ("nearest") where a
+  layer sits between the two laminae of its neighbour. "Clear everything
+  beyond you" threw the rectus 25 mm past the oblique's posterior lamina;
+  "the nearest free slot" moves it 1 to 3 mm. A vertex with no slot within
+  the window is left, not thrown to the window. Parts of one muscle
+  (`LAYER_SIBLINGS`) overlap where they join and are exempt from the 2% limit
+  the build and the atlas validator enforce on carried pairs. The whole-body
+  overview must copy the sheets whole, ours and the BodyParts3D layers they
+  sit against: a 12% decimation of the external oblique wobbles through a
+  2 mm gap.
 - **The export reads the atlas the previous export was merged into.** Every
   reference set in `bp3d_export.py` (the bone and body surfaces, the bones
   for the winding number, the concept table) must take BP3D's own parts
